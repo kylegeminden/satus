@@ -1,0 +1,6 @@
+# robotstxt.org/
+
+User-agent: *
+
+# remove following when read to index site
+Disallow: /
