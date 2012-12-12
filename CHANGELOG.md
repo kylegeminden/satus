@@ -4,4 +4,4 @@
 
 ### 1.0.1 December 11, 2012
 
-* Fixed table of content comment as some were `-n-` instead of `!n!`
+* Fixed table of content comments as some were `-n-` instead of `!n!`
