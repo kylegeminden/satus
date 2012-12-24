@@ -20,13 +20,12 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57x57-precomposed.png">
+    <meta name="application-name" content="Satus Framework"/> 
+    <meta name="msapplication-TileColor" content="#212121"/> 
+    <meta name="msapplication-TileImage" content="assets/ms-tile.png"/>
 
-    <!--[if gte IE 9]><!-->
-      <link rel="stylesheet" id="satus-main-css-css"  href="assets/css/main.css" type="text/css" media="all">
-    <!--<![endif]-->
-    <!--[if IE 8]>
-      <link rel="stylesheet" id="satus-main-css-ie-css"  href="assets/css/main-ie.css" type="text/css" media="all">
-    <![endif]-->
+    <link rel="stylesheet" href="assets/css/satus.css" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/app.css" type="text/css" media="all">
 
     <script src="assets/js/vendor/modernizr.js"></script>
 
@@ -37,7 +36,7 @@
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
   
-    <header id="header" role="banner">
+    <header id="header" class="row expand" role="banner">
   
       <hgroup id="brand">
         <h1 id="site-title"><a href="/" title="Site Name" rel="home">Site Name</a></h1>
@@ -56,32 +55,35 @@
     </header>
     <!-- /#header -->
 
-    <div id="main" role="main">
-      <div class="page-header">
-        <h1 property="headline">Main Heading</h1>
+    <div id="content" class="row">
+      <div id="main" class="span8" role="main">
+        <div class="page-header">
+          <h1 property="headline">Main Heading</h1>
+        </div>
+        <div property="mainContentOfPage">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit, nisi euismod rhoncus semper, nibh dolor blandit augue, a lacinia velit eros eu quam. In fermentum diam nibh, ac egestas ante. Fusce in tortor cursus ligula aliquet tincidunt non sit amet orci. Sed euismod justo vitae sapien tempus viverra. Nullam non libero turpis. In varius, orci et aliquet mollis, velit dolor gravida ante, imperdiet tempus odio eros et est. Nulla mauris orci, imperdiet vitae imperdiet eu, semper in eros. Duis vel blandit eros. Fusce pulvinar, lectus vitae iaculis ullamcorper, felis eros pulvinar tellus, non elementum ipsum turpis non enim. Etiam urna mi, pretium ut adipiscing sed, iaculis quis dolor. Proin at ligula sit amet nisl interdum venenatis. Sed fringilla tristique est, id vehicula arcu ullamcorper eget.</p>
+        </div>
       </div>
-      <div property="mainContentOfPage">
-       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit, nisi euismod rhoncus semper, nibh dolor blandit augue, a lacinia velit eros eu quam. In fermentum diam nibh, ac egestas ante. Fusce in tortor cursus ligula aliquet tincidunt non sit amet orci. Sed euismod justo vitae sapien tempus viverra. Nullam non libero turpis. In varius, orci et aliquet mollis, velit dolor gravida ante, imperdiet tempus odio eros et est. Nulla mauris orci, imperdiet vitae imperdiet eu, semper in eros. Duis vel blandit eros. Fusce pulvinar, lectus vitae iaculis ullamcorper, felis eros pulvinar tellus, non elementum ipsum turpis non enim. Etiam urna mi, pretium ut adipiscing sed, iaculis quis dolor. Proin at ligula sit amet nisl interdum venenatis. Sed fringilla tristique est, id vehicula arcu ullamcorper eget.</p>
-      </div>
+      <!-- /#main -->
+      
+      <aside id="sidebar" class="span4" role="complementary">
+        <h2 class="assistive-text">Sidebar</h2>
+        <section>
+          <h3>Heading 3</h3>
+          <ul>
+            <li><a href="#">Category 1</a></li>
+            <li><a href="#">Category 2</a></li>
+            <li><a href="#">Category 3</a></li>
+            <li><a href="#">Category 4</a></li>
+            <li><a href="#">Category 5</a></li>
+          </ul>
+        </section>
+      </aside>
+      <!-- /#sidebar -->
     </div>
-    <!-- /#main -->
-    
-    <aside id="sidebar" role="complementary">
-      <h2 class="assistive-text">Sidebar</h2>
-      <section>
-        <h3>Heading 3</h3>
-        <ul>
-          <li><a href="#">Category 1</a></li>
-          <li><a href="#">Category 2</a></li>
-          <li><a href="#">Category 3</a></li>
-          <li><a href="#">Category 4</a></li>
-          <li><a href="#">Category 5</a></li>
-        </ul>
-      </section>
-    </aside>
-    <!-- /#sidebar -->
+    <!-- /#content -->
 
-    <footer id="footer" role="contentinfo">
+    <footer id="footer" class="row expand" role="contentinfo">
       <section>
 
         <h2 class="assistive-text">Footer</h2>
