@@ -136,10 +136,15 @@ kbd,
 samp {
   font-family: @codeFont;
   .font-size(@codeFontSize);
-  // padding: @codePadding;
-  // background: @codeBackground;
-  // border: @codeBorder;
-  // .border-radius(@codeRadius);
+  color: @codeFontColor;
+  padding: @codePadding;
+  background: @codeBackground;
+  border: @codeBorder;
+  .border-radius(@codeRadius);
+}
+
+pre {
+  padding: @prePadding;
 }
 
 blockquote {
