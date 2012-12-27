@@ -968,6 +968,7 @@ textarea {
 .clearfix:after {
   clear: both;
 }
+/* Highlight Text */
 .highlight {
   background: #ffff99;
 }
