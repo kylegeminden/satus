@@ -25,4 +25,4 @@ Satus Framework is a minimalist responsive framework based off of the [HTML5 Boi
 
 ## Thanks
 
-Thanks to the open source web community's contributions as this project simply would not be possible for me as one person without you.
+Thanks to the open source web community's contributions as this project simply would not be possible for me alone.
