@@ -14,6 +14,7 @@
 * Updates to variables and mixins.
 * Minor Typography updates.
 * Added meta tags for Microsoft tile for Windows 8 in `head`.
+* Deleted `.htaccess` and `crossdomain.xml`. Please see [h5bp/server-configs](https://github.com/h5bp/server-configs) for the latest server configuration files.
 
 ### 1.0.1 December 11, 2012
 
