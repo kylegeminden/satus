@@ -1,6 +1,6 @@
 # [Satus Framework](http://satusframework.com/) 
 
-Satus Framework is a minimalist, [LESS](http://lesscss.org/) powered, mobile first responsive framework based off of of the [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
+Satus Framework is a minimalist responsive framework based off of the [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 
 ## Overview
 
@@ -11,20 +11,18 @@ Satus Framework is a minimalist, [LESS](http://lesscss.org/) powered, mobile fir
 * Uses box-sizing on all elements.
 * Minimal styling.
 * Fluid videos.
-* Uses [Less](http://lesscss.org/) to compile a single style sheet for modern browsers and one for Internet Explorer 8 that has the media queries removed rather than using a js media query reader.
+* Includes [Less](http://lesscss.org/) files.
+* Grid system inspired from Zurb's [Foundation 3](http://foundation.zurb.com/).
+* Responsive Helpers from [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
 * Fix for [iPhone viewport scale bug](http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/).
-* Favicon and touch icons.
-
-## Reporting Bugs
-
-__PLEASE ONLY REPORT BUGS__ as my time is limited.
-
-## Contributing
-
-I am not planning on making signifcant changes to this, however I will be glad to look at suggested improvements within it's current scope when I have time.
+* Favicon, touch icons, Windows 8 tile.
 
 ## Project Information
 
 * Source: [https://github.com/kylegeminden/satushtml](https://github.com/kylegeminden/satushtml)
 * Website: [http://satusframework.com](http://satusframework.com)
 * Author: [Kyle Geminden](http://kylegeminden.com)
+
+## Thanks
+
+Thanks to the open source web community's contributions as this project simply would not be possible for me as one person without you.
