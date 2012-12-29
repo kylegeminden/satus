@@ -1,7 +1,24 @@
-### 1.0.0 November 27, 2012
+### HEAD
 
-* Initial Release.
+### 1.5.0
+
+* Changed from mobile first to desktop first responsive.
+* Base styles are now compiled to `satus.css` and layout styles to `app.css`.
+* Deleted `480`, `600`, `768`, `980` and `modules` less files.
+* Changed `.fluid-video` to `.flex-video` and moved from modules.less to normalize.less
+* Added grid system inspired from Zurb's [Foundation 3](http://foundation.zurb.com/).
+* Added `media-queries.less` file.
+* Reduced number of elements for reset in `reset.less`.
+* Changed font weight from 600 to 700 for `td` and `th` elements in tables.less.
+* Uncommented code for radius table styling and made it so you can add a class of radius if desired.
+* Updates to variables and mixins.
+* Minor Typography updates.
+* Additions to `helpers.less` including responsive helpers from [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
 
 ### 1.0.1 December 11, 2012
 
 * Fixed css table of content comments as some were `-n-` instead of `!n!`.
+
+### 1.0.0 November 27, 2012
+
+* Initial Release.
