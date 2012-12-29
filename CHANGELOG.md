@@ -8,7 +8,7 @@
 * Changed `.fluid-video` to `.flex-video` and moved from `modules.less` to `normalize.less`.
 * Added grid system inspired from Zurb's [Foundation 3](http://foundation.zurb.com/).
 * Additions to `helpers.less` including responsive helpers from [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
-* Added `media-queries.less` file.
+* Added `media-queries.less` and `plugins.less` files.
 * Reduced number of elements for reset in `reset.less`.
 * Changed font weight from 600 to 700 for `td` and `th` elements in `tables.less`. Uncommented code for radius table styling and made it so you can add a class of radius if desired.
 * Updates to variables and mixins.
