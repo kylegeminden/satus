@@ -11,8 +11,7 @@
 * Added `media-queries.less` and `plugins.less` files.
 * Reduced number of elements for reset in `reset.less`.
 * Changed font weight from 600 to 700 for `td` and `th` elements in `tables.less`. Uncommented code for radius table styling and made it so you can add a class of radius if desired.
-* Updates to variables and mixins.
-* Minor typography updates.
+* Other miscellaneous style updates.
 * Added meta tags for Microsoft tile for Windows 8 in `head`.
 * Renamed `satusframework.html` to `elements.html`.
 * Added `grid.html`. Contains grid examples and documentation.
