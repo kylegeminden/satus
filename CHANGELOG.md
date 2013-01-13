@@ -6,7 +6,7 @@
 * Base styles are now compiled to `satus.css` and layout styles to `app.css`.
 * Deleted `480`, `600`, `768`, `980` and `modules` less files.
 * Changed `.fluid-video` to `.flex-video` and moved from `modules.less` to `normalize.less`.
-* Added grid system inspired from Zurb's [Foundation 3](http://foundation.zurb.com/).
+* Added responsive grid system inspired from [Object Oriented CSS Framework](https://github.com/stubbornella/oocss/tree/master/core/grid).
 * Additions to `helpers.less` including responsive helpers from [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
 * Added `media-queries.less` and `plugins.less` files.
 * Reduced number of elements for reset in `reset.less`.
