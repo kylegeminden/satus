@@ -1,6 +1,6 @@
 ### HEAD
 
-### 1.5.0
+### 1.5.0 January 13, 2013
 
 * Changed from mobile first to desktop first responsive.
 * Base styles are now compiled to `satus.css` and layout styles to `app.css`.
