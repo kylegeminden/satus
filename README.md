@@ -15,7 +15,7 @@ Satus Framework is a minimalist responsive framework based off of the [HTML5 Boi
 * Grid system inspired from [Object Oriented CSS Framework](https://github.com/stubbornella/oocss/tree/master/core/grid).
 * Responsive Helpers from [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
 * Fix for [iPhone viewport scale bug](http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/).
-* Favicon, touch icons, Windows 8 tile.
+* Favicon and touch icons.
 
 ## Project Information
 

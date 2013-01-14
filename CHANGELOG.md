@@ -12,7 +12,6 @@
 * Reduced number of elements for reset in `reset.less`.
 * Changed font weight from 600 to 700 for `td` and `th` elements in `tables.less`. Uncommented code for radius table styling and made it so you can add a class of radius if desired.
 * Other miscellaneous style updates.
-* Added meta tags for Microsoft tile for Windows 8 in `head`.
 * Renamed `satusframework.html` to `elements.html`.
 * Added `grid.html`. Contains grid examples and documentation.
 * Deleted `.htaccess` and `crossdomain.xml`. Please see [h5bp/server-configs](https://github.com/h5bp/server-configs) for the latest server configuration files.
