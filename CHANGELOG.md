@@ -1,5 +1,18 @@
 ### HEAD
 
+### 2.0.0
+
+* Changed back to mobile first responsive similar to the initial release.
+* Update OOCSS grid for mobile first and added semantic grid.
+* Removed rounded corners off of touch icons.
+* Added in meta tags for Windows 8 tile.
+* Removed ie conditional comments on the `html` tag.
+* Move list style classes and highlight class to typography.less.
+* Updated to jQuery 1.9.0.
+* Updates to normalize.
+* Removed uneccessary vendor prefixes from `mixins.less`.
+* Removed border radius from `mixins.less` as it is no longer needed.
+
 ### 1.5.1 January 14, 2013
 
 * Removed code comments in `grid.less` regarding only using even numbers as that is no longer valid.
