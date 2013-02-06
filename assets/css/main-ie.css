@@ -440,7 +440,6 @@ samp {
   border-radius: 3px;
 }
 pre {
-  display: inline-block;
   padding: 5px;
 }
 pre ol {
@@ -728,7 +727,8 @@ textarea {
 .width1of1 {
   width: 100%;
 }
-.width1of2 {
+.width1of2,
+.width2of4 {
   width: 50%;
 }
 .width1of3 {
@@ -849,6 +849,13 @@ body {
 /* ==|== Footer ftr !n! ====================================================== *//* ==========================================================================
    Helper Classes !hlp !n!
    ========================================================================== */
+/* Floats */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
 /* Image replacement */
 .ir {
   background-color: transparent;
@@ -903,6 +910,50 @@ body {
 }
 .clearfix:after {
   clear: both;
+}
+/* Responsive Visibility Helpers */
+.hide0 {
+  display: none !important;
+}
+@media only screen and (min-width: 480px) {
+  .hide480 {
+    display: none !important;
+  }
+  .show480 {
+    display: inherit !important;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .hide600 {
+    display: none !important;
+  }
+  .show600 {
+    display: inherit !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .hide768 {
+    display: none !important;
+  }
+  .show768 {
+    display: inherit !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hide992 {
+    display: none !important;
+  }
+  .show992 {
+    display: inherit !important;
+  }
+}
+@media only screen and (min-width: 1382px) {
+  .hide1382 {
+    display: none !important;
+  }
+  .show1382 {
+    display: inherit !important;
+  }
 }
 /* =============================================================================
    Print Styles !n! !prnt
