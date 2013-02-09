@@ -7,7 +7,6 @@
 * Changed responsive helpers.
 * Removed rounded corners off of touch icons.
 * Added in meta tags for Windows 8 tile.
-* Moved list style classes and highlight text class to typography.less.
 * Updated to jQuery 1.9.1.
 * Updates to normalize.
 * Removed uneccessary vendor prefixes from `mixins.less`.
