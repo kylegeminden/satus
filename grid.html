@@ -107,11 +107,13 @@
           <dt><code>.row</code></dt>
           <dd>Contains the columns. The outermost rows contain padding. Nested rows have the padding removed and negative left and right margin added for grid alignment.</dd>
           <dt><code>.nocolumns</code></dt>
-          <dd>Additional class for rows that contain no columns to ensure proper grid alignment.</dd>
+          <dd>Extension for the row class for outermost rows that contain no columns. It doubles the padding of the row to ensure proper grid alignment.</dd>
+          <dt><code>.fullwidth</code></dt>
+          <dd>Extension for the row class for rows that contain no columns and need to be full width. It removes the padding and negative margin for nested rows.</dd>
           <dt><code>.column</code></dt>
-          <dd>Base class for making columns. Contains float, padding and min-height to prevent empty columns from collapsing. By default columns are set to stack when the screen width is below 768 pixels.</dd>
+          <dd>Base class for making columns. Contains float and padding. By default columns are set to stack when the screen width is below 768 pixels.</dd>
           <dt><code>.widthXofY</code></dt>
-          <dd>Used in conjuction with the column class. Defines the width of the column. Columns can be thirds, quarters, fifths, halves or full. Total columns in a row must equal 1, for example &frac13; plus &frac23; equals 1.</dd>
+          <dd>Extension for the column class. Defines the width of the column. Columns can be thirds, quarters, fifths, halves or full. Total columns in a row must equal 1, for example &frac13; plus &frac23; equals 1.</dd>
         </dl>
 
         <h2>Responsive Visibility Classes</h2>
