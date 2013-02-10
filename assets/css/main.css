@@ -794,36 +794,6 @@ body {
   color: #000000;
   background: #999999;
 }
-.assistive-text {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-/* Navigation ul */
-.nav {
-  *zoom: 1;
-}
-.nav:before,
-.nav:after {
-  content: "";
-  display: table;
-}
-.nav:after {
-  clear: both;
-}
-.nav:before,
-.nav:after {
-  content: "";
-  display: table;
-}
-.nav:after {
-  clear: both;
-}
 /* ==|== Header hdr !n! ====================================================== */
 /* ==|== Content cnt !n! ===================================================== */
 /* ==|== Main main !n! ======================================================= */
