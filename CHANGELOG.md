@@ -1,6 +1,6 @@
 ### HEAD
 
-### 2.0.0
+### 2.0.0 February 12, 2013
 
 * Changed back to mobile first responsive similar to the initial release.
 * Updated OOCSS grid for mobile first and added semantic grid option.
