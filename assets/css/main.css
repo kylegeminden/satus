@@ -81,6 +81,7 @@ figure,
 footer,
 header,
 hgroup,
+main,
 nav,
 section,
 summary {
@@ -110,8 +111,7 @@ a:focus {
   outline: thin dotted;
 }
 a:active,
-a:hover,
-a:visited {
+a:hover {
   outline: 0;
 }
 /* Typography */
@@ -395,8 +395,11 @@ a {
 a:hover {
   color: #a53318;
 }
+a:visited {
+  color: #792511;
+}
 a:focus {
-  color: #a53318;
+  color: #4c180b;
   outline: thin dotted;
 }
 ::-moz-selection {
@@ -674,11 +677,13 @@ textarea {
   background: #a53318;
   color: #ffffff;
 }
+a.button:visited {
+  color: #ffffff;
+}
 /* =============================================================================
    Grid !n! !grd 
    ========================================================================== */
 .row {
-  padding: 0 20px;
   *zoom: 1;
 }
 .row:before,
@@ -697,28 +702,55 @@ textarea {
 .row:after {
   clear: both;
 }
-.row .row {
-  padding: 0;
+.row.nocolumns {
+  padding-left: 20px;
+  padding-right: 20px;
 }
-.row.fullwidth {
-  padding: 0;
+.row .row {
+  margin-left: -20px;
+  margin-right: -20px;
 }
 .row .row.fullwidth {
-  margin: 0;
+  margin-left: -40px;
+  margin-right: -40px;
+}
+.column {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @media only screen and (min-width: 768px) {
   .row {
-    padding: 0 10px;
-  }
-  .row .row {
-    margin: 0 -10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .row.nocolumns {
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .row.fullwidth {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .row .row {
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .row .row.fullwidth {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .row .row.collapse {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .column {
     float: left;
-    padding: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .width1of1 {
     width: 100%;
@@ -754,30 +786,46 @@ textarea {
 }
 @media only screen and (min-width: 992px) {
   .row {
-    padding: 0 15px;
-  }
-  .row .row {
-    margin: 0 -15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .row.nocolumns {
-    padding: 0 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .row .row {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .row .row.collapse {
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .column {
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 @media only screen and (min-width: 1382px) {
   .row {
-    padding: 0 20px;
-  }
-  .row .row {
-    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .row.nocolumns {
-    padding: 0 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .row .row {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .row .row.collapse {
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .column {
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 /* =============================================================================
