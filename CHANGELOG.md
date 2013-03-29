@@ -1,5 +1,12 @@
 ### HEAD
 
+### 2.0.1 March 28, 2013
+
+* Additions, updates and fixes for grid.
+* Removed type="text/css" on css links.
+* Added in visited color for links.
+* Miscelaneous cleanup.
+
 ### 2.0.0 February 12, 2013
 
 * Changed back to mobile first responsive similar to the initial release.
