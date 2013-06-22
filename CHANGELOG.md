@@ -1,5 +1,11 @@
 ### HEAD
 
+### 2.0.2 June 21, 2013
+
+* Changed id's to classes
+* Updated jQuery to 1.10.1
+* Updated Google Analytics to Google Universal Analytics
+
 ### 2.0.1 March 28, 2013
 
 * Additions, updates and fixes for grid.
