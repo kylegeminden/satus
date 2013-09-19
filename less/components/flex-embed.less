@@ -1,0 +1,41 @@
+/* ==========================================================================
+    $FLEX-EMBED
+   ========================================================================== */
+
+/**
+ * Flexible/responsive embedded content.
+ * http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+ *
+ * <div class="flex-embed flex-embed--16by9">
+ *   <iframe>
+ * </div>
+ */
+
+.flex-embed {
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  margin-bottom: @font-margin;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--4by3 {
+    padding-bottom: 67.5%;
+  }
+
+  &--16by9 {
+    padding-bottom: 56.25%;
+  }
+
+  &--youtube {
+    padding-top: 25px; // padding accounts for youtube's chrome (controls)
+  }
+}

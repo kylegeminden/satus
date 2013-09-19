@@ -1,4 +1,4 @@
-# [Satus Framework](http://satusframework.com/) 
+# [Satus Framework](http://satusframework.com/)
 
 Satus Framework is a minimalist, [LESS](http://lesscss.org/) powered, mobile first responsive framework based off of of the [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 

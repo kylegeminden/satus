@@ -1,0 +1,142 @@
+/* ==========================================================================
+    $TYPOGRAPHY
+   ========================================================================== */
+
+
+html {
+  font-family: @font-family-sans-serif;
+  font-size: @font-size-root;
+  line-height: @line-height;
+  color: @text-color;
+}
+
+/**
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: @selectionBackground;
+  text-shadow: none;
+}
+
+::selection {
+  background: @selectionBackground;
+  text-shadow: none;
+}
+
+/**
+ * Headings
+ */
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: @headings-font-family;
+  font-weight: @headings-font-weight;
+  line-height: 1.2;
+  text-rendering: optimizelegibility;
+  color: @headings-color;
+}
+
+h1, .h1 {
+  font-size: 2.25em; // ~36px
+}
+
+h2, .h2 {
+  font-size: 1.875em; // ~30px
+}
+
+h3, .h3 {
+  font-size: 1.5em; // ~24px
+}
+
+h4, .h4 {
+  font-size: 1.25em; // ~20px
+}
+
+h5, .h5 {
+  font-size: 1em; // ~16px
+}
+
+h6, .h6 {
+  font-size: 0.875em; // 14px
+}
+
+/**
+ * Set defaults to em for proper scaling.
+ */
+
+dd {
+  margin-left: 2.5em;
+}
+
+menu,
+ol,
+ul {
+  padding-left: 2.5em;
+}
+
+/**
+ * Link styles
+ */
+
+a {
+  color: @link-color;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: @link-color-hover;
+  text-decoration: underline;
+}
+
+/**
+ * Set font weight
+ */
+
+b, strong {
+  font-weight: @font-weight-bold;
+}
+
+dt {
+  font-weight: @font-weight-bold;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small,
+.small {
+  font-size: 80%;
+}
+
+/**
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  /* background color can be added to make for bevel effect */
+  background: @hr-bg;
+  border: 0;
+  border-top: 1px solid @hr-border-bolor;
+  .box-sizing(content-box);
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+  background: @mark-bg;
+  color: @mark-font-color;
+}

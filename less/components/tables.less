@@ -1,0 +1,105 @@
+/* ==========================================================================
+    $TABLES
+   ========================================================================== */
+
+.table {
+  background-color: @table-bg;
+  border: @table-bg;
+  border-left: none;
+  border-collapse: separate;
+}
+
+.table thead th,
+.table tfoot td {
+  font-weight: 700;
+}
+
+.table thead th {
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.table th,
+.table td {
+  padding: @table-padding;
+  border-top: @table-border;
+  border-left: @table-border;
+  vertical-align: top;
+  .transition(background-color .25s 0 linear)
+}
+
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+  background-color: @table-hover-bg;
+}
+
+.table caption + thead tr:first-child th,
+.table caption + tbody tr:first-child th,
+.table caption + tbody tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + tbody tr:first-child th,
+.table colgroup + tbody tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table tbody:first-child tr:first-child th,
+.table tbody:first-child tr:first-child td{
+  border-top: none;
+}
+
+.table thead,
+.table tfoot {
+  background-color: @table-thead-tfoot-bg;
+}
+
+.table tr.even,
+.table tr.alt {
+  background-color: @table-tr-even-bg;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: @table-tr-even-bg;
+}
+
+// Uncomment if radius cornered table is needed
+
+.table.radius {
+  border-radius: @table-radius;
+  caption + thead tr:first-child th:first-child,
+  caption + tbody tr:first-child td:first-child,
+  colgroup + thead tr:first-child th:first-child,
+  colgroup + tbody tr:first-child td:first-child,
+  thead:first-child tr:first-child th:first-child,
+  tbody:first-child tr:first-child td:first-child {
+    border-radius: @table-radius 0 0 0;
+  }
+  caption + thead tr:first-child th:first-child,
+  caption + tbody tr:first-child td:first-child,
+  colgroup + thead tr:first-child th:first-child,
+  colgroup + tbody tr:first-child td:first-child,
+  thead:first-child tr:first-child th:first-child,
+  tbody:first-child tr:first-child td:first-child {
+    border-radius: @table-radius 0 0 0;
+  }
+  caption + thead tr:first-child th:last-child,
+  caption + tbody tr:first-child td:last-child,
+  colgroup + thead tr:first-child th:last-child,
+  colgroup + tbody tr:first-child td:last-child,
+  thead:first-child tr:first-child th:last-child,
+  tbody:first-child tr:first-child td:last-child {
+    border-radius: 0 @table-radius 0 0;
+  }
+  thead:last-child tr:last-child th:first-child,
+  tbody:last-child tr:last-child td:first-child,
+  tfoot:last-child tr:last-child td:first-child{
+    border-radius: 0 0 0 @table-radius;
+  }
+  thead:last-child tr:last-child th:first-child,
+  tbody:last-child tr:last-child td:first-child,
+  tfoot:last-child tr:last-child td:first-child{
+    border-radius: 0 0 0 @table-radius;
+  }
+  thead:last-child tr:last-child th:last-child,
+  tbody:last-child tr:last-child td:last-child,
+  tfoot:last-child tr:last-child td:last-child {
+    border-radius: 0 0 @table-radius 0;
+  }
+}

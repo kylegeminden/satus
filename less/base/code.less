@@ -1,0 +1,38 @@
+/* ==========================================================================
+    $CODE
+   ========================================================================== */
+
+/**
+ * Better default styling for pre, code, kbd, samp and pre elements
+ */
+
+pre,
+code,
+kbd,
+samp {
+  font-family: @font-family-monospace;
+  font-size: @code-font-size;
+}
+
+code {
+  padding: @code-padding;
+  background: @code-bg;
+  font-size: @code-font-size;
+  color: @code-color;
+}
+
+pre {
+  padding: @pre-padding;
+  background: @pre-bg;
+  border: @pre-border;
+  border-radius: @pre-radius;
+  font-size: @pre-font-size;
+  color: @pre-color;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  ol {
+    margin: 0;
+  }
+}

@@ -1,0 +1,489 @@
+// *** TABLE OF CONTENTS ***
+
+// $COLOR
+// $TYPOGRAPHY
+// $BORDERS
+// $SHADOWS
+// $TRANSFORMS
+// $TRANSISTION
+// $BACKGROUND
+// $GRADIENTS
+// $HELPERS
+
+// ==========================================================================
+//  $COLOR
+// ==========================================================================
+
+.colork(@percent) {
+  color: darken(@white, (@percent * 1%));
+}
+
+.backgroundk(@percent) {
+  background: darken(@white, (@percent * 1%));
+}
+
+.highlight() {
+  color: @highlight-bg;
+}
+
+// ==========================================================================
+//  $TYPOGRAPHY
+// ==========================================================================
+
+// Requires inline-block or block for proper styling
+
+.text-truncate() {
+       max-width : 100%;
+       overflow  : hidden;
+  text-overflow  : ellipsis;
+    white-space  : nowrap;
+    word-wrap    : normal;
+}
+
+.text-break() {
+  word-break : break-all;
+  word-break : break-word;
+   word-wrap : break-word;
+}
+
+// http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+
+.hyphens() {
+   -ms-word-break : break-all;
+       word-break : break-all;
+  // Non standard for webkit
+       word-break : break-word;
+  -webkit-hyphens : auto;
+     -moz-hyphens : auto;
+          hyphens : auto;
+}
+
+// .resize(VALUE); (both, horizontal, vertical)
+// resize does not apply to blocks for which the overflow property is set to visible.
+
+.resize(@direction: both) {
+    resize : @direction;
+  overflow : auto;
+}
+
+// .columns(auto, 2, 40px, #eee, solid, 1px)
+
+.columns(@colWidth: auto; @colCount: 2; @colGap: 40px; @columnRuleColor: #eee; @columnRuleStyle: solid; @columnRuleWidth: 0px) {
+       -webkit-column-width : @colWidth;
+       -webkit-column-count : @colCount;
+         -webkit-column-gap : @colGap;
+  -webkit-column-rule-color : @columnRuleColor;
+  -webkit-column-rule-style : @columnRuleStyle;
+  -webkit-column-rule-width : @columnRuleWidth;
+          -moz-column-width : @colWidth;
+          -moz-column-count : @colCount;
+            -moz-column-gap : @colGap;
+     -moz-column-rule-color : @columnRuleColor;
+     -moz-column-rule-style : @columnRuleStyle;
+     -moz-column-rule-width : @columnRuleWidth;
+               column-width : @colWidth;
+               column-count : @colCount;
+                 column-gap : @colGap;
+          column-rule-color : @columnRuleColor;
+          column-rule-style : @columnRuleStyle;
+          column-rule-width : @columnRuleWidth;
+}
+
+// ==========================================================================
+//  $FORMS
+// ==========================================================================
+
+// http://css-tricks.com/almanac/selectors/p/placeholder/
+.placeholder(@color: @placeholder-color) {
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  // Firefox 19+
+  &::-moz-placeholder {
+    color: @color;
+  }
+  // Intenet Expolorer 10+
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+  // Firefox 18-
+  &:-moz-placeholder {
+    color: @color;
+  }
+}
+
+.tab-focus() {
+  &:focus {
+    // Default
+    outline: thin dotted;
+    // // Webkit
+    // outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+}
+
+
+
+// ==========================================================================
+//  $BORDERS
+// ==========================================================================
+
+// .bordered(1px, solid, #bbb);
+
+.bordered(@width: 1px; @style: solid; @color: @lightGrey) {
+  border-width : @width;
+  border-style : @style;
+  border-color : @color;
+}
+
+// ==========================================================================
+//  $SHADOWS
+// ==========================================================================
+
+// Multiple shadow solution from
+// http://toekneestuck.com/blog/2012/05/15/less-css-arguments-variable/
+
+.box-shadow(@shadowA; @shadowB:X; ...){
+  @props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+  -webkit-box-shadow: @props; // iOS <4.3 & Android <4.1
+          box-shadow: @props;
+}
+
+// ==========================================================================
+//  $TRANSFORMS
+// ==========================================================================
+
+// .rotate(VALUEdeg);
+
+.rotate(@deg) {
+  -webkit-transform : rotate(@deg);
+     -moz-transform : rotate(@deg);
+      -ms-transform : rotate(@deg);
+       -o-transform : rotate(@deg);
+          transform : rotate(@deg);
+}
+
+// .scale(VALUE);
+
+.scale(@ratio) {
+  -webkit-transform : scale(@ratio);
+     -moz-transform : scale(@ratio);
+      -ms-transform : scale(@ratio);
+       -o-transform : scale(@ratio);
+          transform : scale(@ratio);
+}
+
+// .skew(VALUE, VALUE);
+
+.skew(@x; @y;) {
+  -webkit-transform : skew(@x, @y);
+     -moz-transform : skew(@x, @y);
+      -ms-transform : skew(@x, @y);
+       -o-transform : skew(@x, @y);
+          transform : skew(@x, @y);
+}
+
+// .translate(VALUE, VALUE)
+
+.translate(@x; @y;) {
+  -webkit-transform : translate(@x, @y);
+     -moz-transform : translate(@x, @y);
+      -ms-transform : translate(@x, @y);
+       -o-transform : translate(@x, @y);
+          transform : translate(@x, @y);
+}
+
+// .translate(VALUE, VALUE, VALUE)
+
+.translate3d(@x; @y; @z) {
+  -webkit-transform : translate(@x, @y, @z);
+     -moz-transform : translate(@x, @y, @z);
+      -ms-transform : translate(@x, @y, @z);
+       -o-transform : translate(@x, @y, @z);
+          transform : translate(@x, @y, @z);
+}
+
+// ==========================================================================
+//  $TRANSISTION
+// ==========================================================================
+
+// .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
+
+.transition(@transition) {
+  -webkit-transition : @transition;
+     -moz-transition : @transition;
+       -o-transition : @transition;
+          transition : @transition;
+}
+
+// ==========================================================================
+//  $BACKGROUND
+// ==========================================================================
+
+// http://css-tricks.com/almanac/properties/b/backface-visibility/
+// default is visibile
+// .backface-visibility(VALUE); (hidden or visible)
+
+.backface-visibility(@visibility) {
+  -webkit-backface-visibility : @visibility;
+     -moz-backface-visibility : @visibility;
+          backface-visibility : @visibility;
+}
+
+// .background-size(VALUE(s)); (width and or height, or keyword)
+
+.background-size(@size) {
+  -webkit-background-size : @size;
+     -moz-background-size : @size;
+       -o-background-size : @size;
+          background-size : @size;
+}
+
+// .background-clip(VALUE); (border-box, padding-box, content-box)
+
+.background-clip(@clip) {
+  -webkit-background-clip : @clip;
+     -moz-background-clip : @clip;
+          background-clip : @clip;
+}
+
+// .box-sizing(VALUE); (border-box, padding-box, content-box)
+
+.box-sizing(@boxsize: border-box) {
+  -webkit-box-sizing : @boxsize;
+     -moz-box-sizing : @boxsize;
+          box-sizing : @boxsize;
+}
+
+// ==========================================================================
+//  $GRADIENTS
+// ==========================================================================
+
+// Gradients
+
+#gradient {
+
+  // #gradient > .vertical(#333, #555, 0%, #333, 100%)
+
+  .vertical(@fallBack: #333; @firstColor: #555; @firstStop: 0%; @lastColor: #333; @lastStop: 100%) {
+    background: @fallBack;
+    background: -moz-linear-gradient(top, @firstColor @firstStop, @lastColor @lastStop);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@firstStop, @firstColor), color-stop(@lastStop, @lastColor));
+    background-image: -webkit-linear-gradient(top, @firstColor @firstStop, @lastColor @lastStop);
+    background: -o-linear-gradient(top, @firstColor @firstStop, @lastColor @lastStop);
+    background: linear-gradient(to bottom, @firstColor @firstStop, @lastColor @lastStop);
+  }
+
+  // #gradient > .vertical3(#333, #333, 0%, #555, 50%, #333, 100%);
+
+  .vertical3(@fallBack: #333; @firstColor: #333; @firstStop: 0%; @secondColor: #555; @secondStop: 50%; @lastColor: #333; @lastStop: 100%) {
+    background: @fallBack;
+    background: -moz-linear-gradient(top, @firstColor @firstStop, @secondColor @secondStop, @lastColor @lastStop);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@firstStop,@firstColor), color-stop(@secondStop,@secondColor), color-stop(@lastStop,@lastColor));
+    background: -webkit-linear-gradient(top, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
+    background: -o-linear-gradient(top, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
+    background: linear-gradient(to bottom, @firstColor @firstStop, @secondColor @secondStop, @lastColor @lastStop);
+  }
+
+  // #gradient > .vertical4(#333, #333, 0%, #555, 50%, #333, 51%, #333, 100%);
+
+  .vertical4(@fallBack: #333; @firstColor: #333; @firstStop: 0%; @secondColor: #555; @secondStop: 50%; @thirdColor: #333; @thirdStop: 51%; @lastColor: #333; @lastStop: 100%) {
+    background: @fallBack;
+    background: -moz-linear-gradient(top, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@firstStop, @firstColor), color-stop(@secondStop, @secondColor), color-stop(@thirdStop, @thirdColor), color-stop(@lastStop, @lastColor));
+    background: -webkit-linear-gradient(top, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
+    background: -o-linear-gradient(top, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
+    background: linear-gradient(to bottom, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
+  }
+
+  // #gradient > .directional(#333, 45deg, #555, 0%, #333, 100%);
+
+  .directional(@fallBack: #333; @deg: 45deg; @firstColor: #333; @firstStop: 0%; @lastColor: #555; @lastStop: 50%) {
+    background: @fallBack;
+    background: -moz-linear-gradient(@deg, @firstColor @firstStop, @lastColor @lastStop);
+    background: -webkit-linear-gradient(@deg, @firstColor @firstStop,@lastColor @lastStop);
+    background: -o-linear-gradient(@deg, @firstColor @firstStop,@lastColor @lastStop);
+    background: linear-gradient(@deg, @firstColor @firstStop,@lastColor @lastStop);
+  }
+
+  // #gradient > .directional3(#333, 45deg, #333, 0%, #555, 50%, #333, 100%);
+
+  .directional3(@fallBack: #333; @deg: 45deg; @firstColor: #333; @firstStop: 0%; @secondColor: #555; @secondStop: 50%; @lastColor: #333; @lastStop: 100%) {
+    background: @fallBack;
+    background: -moz-linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @lastColor @lastStop);
+    background: -webkit-linear-gradient(@deg, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
+    background: -o-linear-gradient(@deg, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
+    background: linear-gradient(@deg, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
+  }
+
+  // #gradient > .directional4(#333, 45deg, #333, 0%, #555, 50%, #333, 51%, #333, 100%);
+
+  .directional4(@fallBack: #333; @deg: 45deg; @firstColor: #333; @firstStop: 0%; @secondColor: #555; @secondStop: 50%; @thirdColor: #333; @thirdStop: 51%; @lastColor: #333; @lastStop: 100%) {
+    background: @fallBack;
+    background: -moz-linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(@firstStop, @firstColor), color-stop(@secondStop, @secondColor), color-stop(@thirdStop, @thirdColor), color-stop(@lastStop, @lastColor));
+    background: -webkit-linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
+    background: -o-linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
+    background: linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
+  }
+
+  // #gradient > .ellipse(#333, #555, 0%, #333, 100%);
+
+  .ellipse(@fallBack: #333; @firstColor: #555; @firstStop: 0%; @lastColor: #333; @lastStop: 100%)  {
+    background: @fallBack;
+    background: -moz-radial-gradient(center, ellipse cover, @firstColor @firstStop, @lastColor @lastStop);
+    background: -webkit-gradient(radial, center center, 0px, center center, @lastStop, color-stop(@firstStop, @firstColor), color-stop(@lastStop, @lastColor));
+    background: -webkit-radial-gradient(center, ellipse cover, @firstColor @firstStop, @lastColor @lastStop);
+    background: -o-radial-gradient(center, ellipse cover, @firstColor @firstStop, @lastColor @lastStop);
+    background: radial-gradient(ellipse at center, @firstColor @firstStop, @lastColor @lastStop);
+  }
+
+  // #gradient > .circle(#333, #555, 0%, #333, 100%);
+
+  .circle(@fallBack: #333; @firstColor: #555; @firstStop: 0%; @lastColor: #333; @lastStop: 100%)  {
+    background: @fallBack;
+    background: -moz-radial-gradient(center, circle cover, @firstColor @firstStop, @lastColor @lastStop);
+    background: -webkit-gradient(radial, center center, 0px, center center, @lastStop, color-stop(@firstStop, @firstColor), color-stop(@lastStop, @lastColor));
+    background: -webkit-radial-gradient(center, circle cover, @firstColor @firstStop, @lastColor @lastStop);
+    background: -o-radial-gradient(center, circle cover, @firstColor @firstStop, @lastColor @lastStop);
+    background: radial-gradient(circle at center, @firstColor @firstStop, @lastColor @lastStop);
+  }
+
+}
+
+// ==========================================================================
+//  $SHAPES
+// ==========================================================================
+
+// http://css-tricks.com/examples/ShapesOfCSS/
+
+#triangle {
+
+  // #triangle > .up(10px, 20px, #ccc)
+
+  .up(@width: 10px; @height: 20px; @color: @k40) {
+    width: 0;
+    height: 0;
+    border-left: @width solid transparent;
+    border-right: @width solid transparent;
+    border-bottom: @height solid @color;
+  }
+
+  .down(@width: 10px; @height: 20px; @color: @k40) {
+    width: 0;
+    height: 0;
+    border-left: @width solid transparent;
+    border-right: @width solid transparent;
+    border-top: @height solid @color;
+  }
+
+  .left(@width: 20px; @height: 10px; @color: @k40) {
+    width: 0;
+    height: 0;
+    border-top: @height solid transparent;
+    border-right: @width solid @color;
+    border-bottom: @height solid transparent;
+  }
+
+  .right(@width: 20px; @height: 10px; @color: @k40) {
+    width: 0;
+    height: 0;
+    border-top: @height solid transparent;
+    border-left: @width solid @color;
+    border-bottom: @height solid transparent;
+  }
+
+  .top-left(@width: 20px; @height: 20px; @color: @k40) {
+    width: 0;
+    height: 0;
+    border-top: @height solid @color;
+    border-right: @width solid transparent;
+  }
+
+  .top-right(@width: 20px; @height: 20px; @color: @k40) {
+    width: 0;
+    height: 0;
+    border-top: @height solid @color;
+    border-left: @width solid transparent;
+  }
+
+  .bottom-left(@width: 20px; @height: 20px; @color: @k40) {
+    width: 0;
+    height: 0;
+    border-bottom: @height solid @color;
+    border-right: @width solid transparent;
+  }
+
+  .bottom-right(@width: 20px; @height: 20px; @color: @k40) {
+    width: 0;
+    height: 0;
+    border-bottom: @height solid @color;
+    border-left: @width solid transparent;
+  }
+
+}
+
+// ==========================================================================
+//  $HELPERS
+// ==========================================================================
+
+// Create fractional widths
+// if you want 1/3 use .width(1,3);
+.width(@column; @columns) {
+  width: percentage((@column / @columns));
+}
+
+// Image replacement
+
+.ir() {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+  }
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+
+.visuallyhidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable when navigated to via
+// the keyboard: h5bp.com/p
+// Add mixin to :active and :focus pseudo classes
+
+.visuallyhidden-focusable() {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+// Contain floats: h5bp.com/q
+// Clearfix
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

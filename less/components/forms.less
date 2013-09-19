@@ -1,0 +1,82 @@
+.form__fieldset {
+  padding: @fieldset-padding;
+  border: @fieldset-border;
+  border-radius: @fieldset-radius;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: .35em
+}
+
+.form__input {
+
+  // Apply .form__input to any of the following form inputs
+  //
+  // select,
+  // textarea,
+  // input[type="text"],
+  // input[type="password"],
+  // input[type="search"],
+  // input[type="email"],
+  // input[type="url"],
+  // input[type="tel"],
+  // input[type="number"],
+  // input[type="datetime"],
+  // input[type="datetime-local"],
+  // input[type="date"],
+  // input[type="month"],
+  // input[type="time"],
+  // input[type="week"],
+  // input[type="color"]
+
+  display: block;
+  width: 100%;
+  height: @input-height;
+  margin: 0;
+  padding: @input-padding-vertical @input-padding-horizontal;
+  background: @input-bg;
+  border: @input-border;
+  border-radius: @input-radius;
+  outline-style: none;
+  color: @input-color;
+  .placeholder();
+
+  // Reset width and padding
+  &[type="color"] {
+    width: @input-height * 1.4;
+    padding: 0;
+  }
+
+  // Reset height for multiple select
+  &[size],
+  &[multiple="multiple"] {
+    height: auto;
+  }
+
+  &[disabled],
+  [disabled] & {
+    background: @input-disabled-bg;
+    color: @input-disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+.form__range {
+  display: block;
+  width: 100%;
+  margin-top: @input-padding-vertical;
+}
+
+.form__file {
+  display: block;
+  margin-top: @input-padding-vertical;
+}
+
+// for output element
+// http://html5doctor.com/the-output-element/
+.form__output {
+  padding: @input-padding-vertical 0;
+  font-size: @font-size-large;
+  vertical-align: middle;
+}

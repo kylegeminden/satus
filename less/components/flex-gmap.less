@@ -1,0 +1,23 @@
+/* ==========================================================================
+    $FLEX-GMAP
+   ========================================================================== */
+
+/**
+ * Flexible/responsive Google maps when using Google's API to generate the map
+ * and not the iframe, use flex-embed for that.
+ *
+ * <div id="map-canvas" class="flex-gmap"></div>
+ */
+
+#map-canvas img,
+#map_canvas embed,
+#map-canvas object {
+  max-width: none !important;
+}
+
+.flex-gmap {
+  width: 100%;
+  height: 0;
+  margin-bottom: @font-margin;
+  padding-bottom: 67.5%;
+}

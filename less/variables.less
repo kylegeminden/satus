@@ -1,0 +1,202 @@
+// *** TABLE OF CONTENTS ***
+
+// $PALETTE
+// $BASE
+// $TYPOGRAPHY
+// $COMPONENTS
+// $GRID
+// $TABLES
+// $FORMS
+
+// ==========================================================================
+//  $PALETTE
+// ==========================================================================
+
+@baseColor       : #002779;
+@compColor       : spin(@baseColor, 180);
+@splitCompColor1 : spin(@baseColor, 157.5);
+@splitCompColor2 : spin(@baseColor, 202.5);
+@borderColor     : lighten(@baseColor, 60%);
+
+// greyscale
+@white : #fff;
+@black : #000;
+@k5  : darken(@white, 5%);
+@k10 : darken(@white, 10%);
+@k15 : darken(@white, 15%);
+@k20 : darken(@white, 20%);
+@k25 : darken(@white, 25%);
+@k30 : darken(@white, 30%);
+@k35 : darken(@white, 35%);
+@k40 : darken(@white, 40%);
+@k45 : darken(@white, 45%);
+@k50 : darken(@white, 50%);
+@k55 : darken(@white, 55%);
+@k60 : darken(@white, 60%);
+@k65 : darken(@white, 65%);
+@k70 : darken(@white, 70%);
+@k75 : darken(@white, 75%);
+@k80 : darken(@white, 80%);
+@k85 : darken(@white, 85%);
+@k90 : darken(@white, 90%);
+@k95 : darken(@white, 95%);
+
+// ==========================================================================
+//  $BASE
+// ==========================================================================
+
+@body-bg         : @white;
+
+// ==========================================================================
+//  $TYPOGRAPHY
+// ==========================================================================
+
+@text-color      : @k85;
+
+@font-family-sans-serif : sans-serif;
+@font-family-serif      : sans-serif;
+@font-family-monospace  : Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-base       : @font-family-sans-serif;
+
+@font-weight-lighter : 300;
+@font-weight-normal  : 400;
+@font-weight-bold    : 600;
+@font-weight-bolder  : 700;
+@font-weight-base    : @font-weight-normal;
+
+@font-size-root  : 16px; // placed on html tag
+@font-size-small : 0.85em;
+@font-size-large : 1.25em;
+
+@line-height : 1.5;
+@font-margin : round(@line-height * 0.75em, 4);
+
+// headings
+
+@headings-font-family : inherit;
+@headings-font-weight : @font-weight-bolder;
+@headings-color       : inherit;
+
+// alternate font
+
+@alt-font-family  : serif;
+@alt-font-weight  : @font-weight-base;
+
+// links
+
+@link-color        : rgb(210, 65, 30);
+@link-color-hover   : darken(@link-color, 10%);
+
+// text selection
+
+@selectionBackground : #b3d4fc;
+
+// horizontal rule
+// background color can be added to make for bevel effect
+
+@hr-bg           : transparent;
+@hr-border-bolor : @k20;
+
+// mark
+
+@mark-font-color : @black;
+@mark-bg : #ff0;
+
+// blockquotes
+
+@blockquote-color           : @text-color;
+@blockquote-small-color     : @k40;
+@blockquote-small-font-size : 0.875em;
+@blockquote-padding         : 0 1.25em 0;
+
+// code, kbd, samp
+
+@code-padding    : 0.0625em 0.1875em;
+@code-bg         : #f9f2f4;
+@code-font-size  : 0.9em;
+@code-color      : #c7254e;
+
+// pre
+
+@pre-padding     : 0.3125em 0.75em;
+@pre-bg          : @k5;
+@pre-border      : none;
+@pre-radius      : 3px;
+@pre-font-size   : 0.9em;
+@pre-color       : @k85;
+
+// highlight
+
+@highlight-bg : #ffff99;
+
+// ==========================================================================
+//  $COMPONENTS
+// ==========================================================================
+
+// border radius
+@border-radius  : 0.25em;
+
+// ==========================================================================
+//  $GRID
+// ==========================================================================
+
+@grid-gutter : 1.5em;
+
+@grid-1-name : xs;
+@grid-2      : 480px;
+@grid-2-name : sm;
+@grid-3      : 600px;
+@grid-3-name : md;
+@grid-4      : 800px;
+@grid-4-name : lg;
+
+//  max widths
+@grid-1-max  : (@grid-2 - 1);
+@grid-2-max  : (@grid-3 - 1);
+@grid-3-max  : (@grid-4 - 1);
+
+
+// ==========================================================================
+//  $TABLES
+// ==========================================================================
+
+@table-padding        : 0.5em 0.75em;
+@table-bg             : @white;
+@table-thead-tfoot-bg : @k10;
+@table-tr-even-bg     : darken(@white, 4%);
+@table-hover-bg       : darken(@white, 8%);
+@table-border         : 1px solid @k20;
+@table-radius         : @border-radius;
+
+// ==========================================================================
+//  $FORMS
+// ==========================================================================
+
+// inputs
+@placeholder-color : @k30;
+
+@input-height             : 2.25em;
+@input-padding-horizontal : 0.75em;
+@input-padding-vertical   : 0.5em;
+@input-bg                 : @white;
+@input-border             : 1px solid @k20;
+@input-radius             : @border-radius;
+@input-color              : @text-color;
+@input-disabled-bg        : darken(@input-bg, 3%);
+@input-disabled-color     : @placeholder-color;
+
+// fieldsets
+@fieldset-padding         : 0.625em;
+@fieldset-border          : 1px solid @k20;
+@fieldset-radius          : @border-radius;
+
+// buttons
+@button-font              : @font-family-sans-serif;
+@button-font-size         : 1em;
+@button-font-color        : @white;
+@button-padding           : 0.75em 0.875em;
+@button-bg                : @link-color;
+@button-bg-hover          : @link-color-hover;
+@button-disabled          : lighten(@link-color, 15%);
+@button-border            : none;
+@button-radius            : @border-radius;

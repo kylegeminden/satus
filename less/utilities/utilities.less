@@ -1,0 +1,85 @@
+/* ==========================================================================
+    $UTILITIES
+   ========================================================================== */
+
+/**
+ * Floats
+ */
+
+.u-pull-right {
+  float: right;
+}
+
+.u-pull-left {
+  float: left;
+}
+
+/**
+ * Clears
+ */
+
+.u-clear {
+  clear: both;
+}
+
+.u-clear--right {
+  clear: right;
+}
+
+.u-clear--left {
+  clear: left;
+}
+
+/**
+ * Visibility
+ */
+
+.u-hide {
+  display: none !important;
+}
+
+.u-show {
+  display: inherit !important;
+}
+
+/**
+ * Highlight Text
+ */
+
+.u-highlight {
+  background: @highlight-bg;
+}
+
+/**
+ * Image replacement
+ */
+
+.u-hide-text {
+  .ir();
+}
+
+/**
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.u-sr-only {
+  .visuallyhidden();
+}
+
+/**
+ * Extends the .visuallyhidden class to allow the element to be focusable when navigated
+ * to via the keyboard: h5bp.com/p
+ */
+
+.u-sr-only--focusable:active,
+.u-sr-only--focusable:focus {
+  .visuallyhidden-focusable();
+}
+
+/**
+ * Contain floats: h5bp.com/q
+ */
+
+.u-cf {
+  .clearfix();
+}

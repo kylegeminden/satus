@@ -1,0 +1,85 @@
+/* ==========================================================================
+    $FORMS
+   ========================================================================== */
+
+/**
+ * Disables default glow.
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
+ */
+
+:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow:none;
+}
+
+/**
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Reset search back to border box due to normalize
+ */
+
+input[type="search"] {
+  .box-sizing(border-box);
+}
+
+/**
+ * Remove default webkit styles (for iOS)
+ */
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"] {
+  -webkit-appearance: none;
+}
+
+/**
+ * Fix optgroup Firefox bug
+ */
+
+select optgroup {
+  font-size: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-weight: inherit; // possibly change to bold variable?
+}
+
+/**
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/**
+ * Consistent focus styles for form elements and buttons
+ */
+
+input,
+button,
+select,
+textarea {
+  &:focus {
+    .tab-focus();
+  }
+}
