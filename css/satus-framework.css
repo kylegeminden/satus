@@ -4,14 +4,16 @@
  *    |--$NORMALIZE
  *    |--$RESET
  *    |--$TYPOGRAPHY
+ *    |--$CODE
  *    |--$EMBEDDED CONTENT
  *    |--$FORMS
  *
  * |--COMPONENTS
+ *    |--$GRID
+ *    |--$FORMS
  *    |--$BUTTONS
  *    |--$TABLES
- *    |--$GRID
- *    |--$FLEX-VIDEO
+ *    |--$FLEX-EMBED
  *    |--$FLEX-GMAP
  *
  * |--UTILITIES
@@ -791,6 +793,9 @@ textarea:focus:focus {
     clear: none;
   }
 }
+/* ==========================================================================
+    $FORMS
+   ========================================================================== */
 .form__fieldset {
   padding: 0.625em;
   border: 1px solid #cccccc;
@@ -892,61 +897,6 @@ a:active .button {
   font-size: 1.25em;
 }
 /* ==========================================================================
-    $FLEX-EMBED
-   ========================================================================== */
-/**
- * Flexible/responsive embedded content.
- * http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
- *
- * <div class="flex-embed flex-embed--16by9">
- *   <iframe>
- * </div>
- */
-.flex-embed {
-  overflow: hidden;
-  position: relative;
-  height: 0;
-  margin-bottom: 1.125em;
-}
-.flex-embed iframe,
-.flex-embed object,
-.flex-embed embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.flex-embed--4by3 {
-  padding-bottom: 67.5%;
-}
-.flex-embed--16by9 {
-  padding-bottom: 56.25%;
-}
-.flex-embed--youtube {
-  padding-top: 25px;
-}
-/* ==========================================================================
-    $FLEX-GMAP
-   ========================================================================== */
-/**
- * Flexible/responsive Google maps when using Google's API to generate the map
- * and not the iframe, use flex-embed for that.
- *
- * <div id="map-canvas" class="flex-gmap"></div>
- */
-#map-canvas img,
-#map_canvas embed,
-#map-canvas object {
-  max-width: none !important;
-}
-.flex-gmap {
-  width: 100%;
-  height: 0;
-  margin-bottom: 1.125em;
-  padding-bottom: 67.5%;
-}
-/* ==========================================================================
     $TABLES
    ========================================================================== */
 .table {
@@ -1041,6 +991,61 @@ a:active .button {
 .table.radius tbody:last-child tr:last-child td:last-child,
 .table.radius tfoot:last-child tr:last-child td:last-child {
   border-radius: 0 0 0.25em 0;
+}
+/* ==========================================================================
+    $FLEX-EMBED
+   ========================================================================== */
+/**
+ * Flexible/responsive embedded content.
+ * http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+ *
+ * <div class="flex-embed flex-embed--16by9">
+ *   <iframe>
+ * </div>
+ */
+.flex-embed {
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  margin-bottom: 1.125em;
+}
+.flex-embed iframe,
+.flex-embed object,
+.flex-embed embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.flex-embed--4by3 {
+  padding-bottom: 67.5%;
+}
+.flex-embed--16by9 {
+  padding-bottom: 56.25%;
+}
+.flex-embed--youtube {
+  padding-top: 25px;
+}
+/* ==========================================================================
+    $FLEX-GMAP
+   ========================================================================== */
+/**
+ * Flexible/responsive Google maps when using Google's API to generate the map
+ * and not the iframe, use flex-embed for that.
+ *
+ * <div id="map-canvas" class="flex-gmap"></div>
+ */
+#map-canvas img,
+#map_canvas embed,
+#map-canvas object {
+  max-width: none !important;
+}
+.flex-gmap {
+  width: 100%;
+  height: 0;
+  margin-bottom: 1.125em;
+  padding-bottom: 67.5%;
 }
 /* ==========================================================================
     $UTILITIES
