@@ -381,7 +381,7 @@ table {
   border-spacing: 0;
 }
 /* ==========================================================================
-    $RESET
+   $RESET
    ========================================================================== */
 /**
  * Change `box-sizing` from default `content-box` to `border-box` on all elements
@@ -402,7 +402,7 @@ table {
   width: device-width;
 }
 /* ==========================================================================
-    $TYPOGRAPHY
+   $TYPOGRAPHY
    ========================================================================== */
 html {
   font-family: sans-serif;
@@ -532,7 +532,7 @@ mark {
   color: #000000;
 }
 /* ==========================================================================
-    $CODE
+   $CODE
    ========================================================================== */
 /**
  * Better default styling for pre, code, kbd, samp and pre elements
@@ -566,7 +566,7 @@ pre ol {
   margin: 0;
 }
 /* ==========================================================================
-    $EMBEDDED CONTENT
+   EMBEDDED CONTENT
    ========================================================================== */
 /**
  * Remove the gap between images, videos, audio and canvas and the bottom of
@@ -590,7 +590,7 @@ embed {
   height: auto;
 }
 /* ==========================================================================
-    $FORMS
+   FORMS
    ========================================================================== */
 /**
  * Disables default glow.
@@ -660,7 +660,7 @@ textarea:focus:focus {
   outline-offset: -2px;
 }
 /* ==========================================================================
-    $GRID
+   $GRID
    ========================================================================== */
 .grid-container {
   max-width: 1200px;
@@ -794,7 +794,7 @@ textarea:focus:focus {
   }
 }
 /* ==========================================================================
-    $FORMS
+   $FORMS
    ========================================================================== */
 .form__fieldset {
   padding: 0.625em;
@@ -833,12 +833,14 @@ textarea:focus:focus {
   width: 3.15em;
   padding: 0;
 }
+textarea.form__input,
 .form__input[size],
 .form__input[multiple="multiple"] {
   height: auto;
 }
+.form__input[readonly],
 .form__input[disabled],
-[disabled] .form__input {
+fieldset[disabled] .form__input {
   background: #f7f7f7;
   color: #b3b3b3;
   cursor: not-allowed;
@@ -858,7 +860,7 @@ textarea:focus:focus {
   vertical-align: middle;
 }
 /* ==========================================================================
-    $BUTTONS
+   $BUTTONS
    ========================================================================== */
 .button {
   display: inline-block;
@@ -897,100 +899,18 @@ a:active .button {
   font-size: 1.25em;
 }
 /* ==========================================================================
-    $TABLES
+   $TABLES
    ========================================================================== */
 .table {
-  background-color: #ffffff;
-  border: #ffffff;
-  border-left: none;
-  border-collapse: separate;
+  width: 100%;
 }
-.table thead th,
-.table tfoot td {
+.table .table__th {
   font-weight: 700;
-}
-.table thead th {
   text-align: left;
-  vertical-align: bottom;
 }
-.table th,
-.table td {
-  padding: 0.5em 0.75em;
-  border-top: 1px solid #cccccc;
-  border-left: 1px solid #cccccc;
-  vertical-align: top;
-  -webkit-transition: background-color 0.25s 0 linear;
-  -moz-transition: background-color 0.25s 0 linear;
-  -o-transition: background-color 0.25s 0 linear;
-  transition: background-color 0.25s 0 linear;
-}
-.table tbody tr:hover td,
-.table tbody tr:hover th {
-  background-color: #ebebeb;
-}
-.table caption + thead tr:first-child th,
-.table caption + tbody tr:first-child th,
-.table caption + tbody tr:first-child td,
-.table colgroup + thead tr:first-child th,
-.table colgroup + tbody tr:first-child th,
-.table colgroup + tbody tr:first-child td,
-.table thead:first-child tr:first-child th,
-.table tbody:first-child tr:first-child th,
-.table tbody:first-child tr:first-child td {
-  border-top: none;
-}
-.table thead,
-.table tfoot {
-  background-color: #e6e6e6;
-}
-.table tr.even,
-.table tr.alt {
-  background-color: #f5f5f5;
-}
-.table tbody tr:nth-child(even) {
-  background-color: #f5f5f5;
-}
-.table.radius {
-  border-radius: 0.25em;
-}
-.table.radius caption + thead tr:first-child th:first-child,
-.table.radius caption + tbody tr:first-child td:first-child,
-.table.radius colgroup + thead tr:first-child th:first-child,
-.table.radius colgroup + tbody tr:first-child td:first-child,
-.table.radius thead:first-child tr:first-child th:first-child,
-.table.radius tbody:first-child tr:first-child td:first-child {
-  border-radius: 0.25em 0 0 0;
-}
-.table.radius caption + thead tr:first-child th:first-child,
-.table.radius caption + tbody tr:first-child td:first-child,
-.table.radius colgroup + thead tr:first-child th:first-child,
-.table.radius colgroup + tbody tr:first-child td:first-child,
-.table.radius thead:first-child tr:first-child th:first-child,
-.table.radius tbody:first-child tr:first-child td:first-child {
-  border-radius: 0.25em 0 0 0;
-}
-.table.radius caption + thead tr:first-child th:last-child,
-.table.radius caption + tbody tr:first-child td:last-child,
-.table.radius colgroup + thead tr:first-child th:last-child,
-.table.radius colgroup + tbody tr:first-child td:last-child,
-.table.radius thead:first-child tr:first-child th:last-child,
-.table.radius tbody:first-child tr:first-child td:last-child {
-  border-radius: 0 0.25em 0 0;
-}
-.table.radius thead:last-child tr:last-child th:first-child,
-.table.radius tbody:last-child tr:last-child td:first-child,
-.table.radius tfoot:last-child tr:last-child td:first-child {
-  border-radius: 0 0 0 0.25em;
-}
-.table.radius thead:last-child tr:last-child th:first-child,
-.table.radius tbody:last-child tr:last-child td:first-child,
-.table.radius tfoot:last-child tr:last-child td:first-child {
-  border-radius: 0 0 0 0.25em;
-}
-.table.radius thead:last-child tr:last-child th:last-child,
-.table.radius tbody:last-child tr:last-child td:last-child,
-.table.radius tfoot:last-child tr:last-child td:last-child {
-  border-radius: 0 0 0.25em 0;
+.table .table__th,
+.table .table__td {
+  padding: 0.5em 1em;
 }
 /* ==========================================================================
     $FLEX-EMBED
@@ -1028,7 +948,7 @@ a:active .button {
   padding-top: 25px;
 }
 /* ==========================================================================
-    $FLEX-GMAP
+   $FLEX-GMAP
    ========================================================================== */
 /**
  * Flexible/responsive Google maps when using Google's API to generate the map

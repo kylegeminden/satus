@@ -1,45 +1,45 @@
 /* ==========================================================================
-    $BUTTONS
+   $BUTTONS
    ========================================================================== */
 
 .button {
-  display: inline-block;
-  padding: @button-padding;
-  background: @button-bg;
-  border: @button-border;
-  border-radius: @button-radius;
-  font-family: @button-font;
-  font-size: @button-font-size;
-  line-height: 1;
-  text-decoration: none;
-  color: @button-font-color;
-  -webkit-appearance: none;
-
-  &:hover {
-    background: @button-bg-hover;
-    color: @button-font-color;
-  }
-
-  &:focus {
-    .tab-focus();
-  }
-
-  a:hover &,
-  a:focus &,
-  a:active & {
+    display: inline-block;
+    padding: @button-padding;
+    background: @button-bg;
+    border: @button-border;
+    border-radius: @button-radius;
+    font-family: @button-font;
+    font-size: @button-font-size;
+    line-height: 1;
     text-decoration: none;
-  }
+    color: @button-font-color;
+    -webkit-appearance: none;
 
-  &[disabled] {
-    background: @button-disabled;
-    cursor: not-allowed;
-  }
+    &:hover {
+        background: @button-bg-hover;
+        color: @button-font-color;
+    }
 
-  &--small {
-    font-size: @font-size-small;
-  }
+    &:focus {
+        .tab-focus();
+    }
 
-  &--large {
-    font-size: @font-size-large;
-  }
+    a:hover &,
+    a:focus &,
+    a:active & {
+        text-decoration: none;
+    }
+
+    &[disabled] {
+        background: @button-disabled;
+        cursor: not-allowed;
+    }
+
+    &--small {
+        font-size: @font-size-small;
+    }
+
+    &--large {
+        font-size: @font-size-large;
+    }
 }

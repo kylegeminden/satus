@@ -1,5 +1,5 @@
 /* ==========================================================================
-    $FORMS
+   FORMS
    ========================================================================== */
 
 /**
@@ -8,15 +8,15 @@
  */
 
 :invalid {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 :-moz-submit-invalid {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 :-moz-ui-invalid {
-  box-shadow:none;
+    box-shadow:none;
 }
 
 /**
@@ -24,9 +24,9 @@
  */
 
 fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /**
@@ -34,7 +34,7 @@ fieldset {
  */
 
 input[type="search"] {
-  .box-sizing(border-box);
+    .box-sizing(border-box);
 }
 
 /**
@@ -49,7 +49,7 @@ input[type="email"],
 input[type="url"],
 input[type="tel"],
 input[type="number"] {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 /**
@@ -57,10 +57,10 @@ input[type="number"] {
  */
 
 select optgroup {
-  font-size: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  font-weight: inherit; // possibly change to bold variable?
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-weight: inherit; // possibly change to bold variable?
 }
 
 /**
@@ -68,7 +68,7 @@ select optgroup {
  */
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 /**
@@ -79,7 +79,7 @@ input,
 button,
 select,
 textarea {
-  &:focus {
-    .tab-focus();
-  }
+    &:focus {
+        .tab-focus();
+    }
 }

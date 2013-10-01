@@ -17,7 +17,7 @@ Satus Framework is a minimalist, [LESS](http://lesscss.org/) powered, mobile fir
 
 ## Project Information
 
-* Source: [https://github.com/kylegeminden/satushtml](https://github.com/kylegeminden/satushtml)
+* Source: [https://github.com/kylegeminden/satus](https://github.com/kylegeminden/satus)
 * Website: [http://satusframework.com](http://satusframework.com)
 * Author: [Kyle Geminden](http://kylegeminden.com)
 
