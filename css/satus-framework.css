@@ -1,24 +1,24 @@
 /*** TABLE OF CONTENTS ***
  *
- * |--BASE
- *    |--$NORMALIZE
- *    |--$RESET
- *    |--$TYPOGRAPHY
- *    |--$CODE
- *    |--$EMBEDDED CONTENT
- *    |--$FORMS
+ * |-- BASE
+ *    |-- $NORMALIZE
+ *    |-- $RESET
+ *    |-- $TYPOGRAPHY
+ *    |-- $CODE
+ *    |-- $EMBEDDED CONTENT
+ *    |-- $FORMS
  *
- * |--COMPONENTS
- *    |--$GRID
- *    |--$FORMS
- *    |--$BUTTONS
- *    |--$TABLES
- *    |--$FLEX-EMBED
- *    |--$FLEX-GMAP
+ * |-- COMPONENTS
+ *    |-- $GRID
+ *    |-- $FORMS
+ *    |-- $BUTTONS
+ *    |-- $TABLES
+ *    |-- $FLEX-EMBED
+ *    |-- $FLEX-GMAP
  *
- * |--UTILITIES
- *    |--$UTILITIES
- *    |--$RESPONSIVE UTILITIES
+ * |-- UTILITIES
+ *    |-- $UTILITIES
+ *    |-- $RESPONSIVE UTILITIES
  *
 */
 /* ==========================================================================
@@ -405,10 +405,10 @@ table {
    $TYPOGRAPHY
    ========================================================================== */
 html {
-  font-family: sans-serif;
+  color: #262626;
   font-size: 16px;
   line-height: 1.5;
-  color: #262626;
+  font-family: sans-serif;
 }
 /**
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -438,11 +438,11 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: inherit;
+  color: inherit;
   font-weight: 700;
   line-height: 1.2;
+  font-family: inherit;
   text-rendering: optimizelegibility;
-  color: inherit;
 }
 h1,
 .h1 {
@@ -541,22 +541,22 @@ pre,
 code,
 kbd,
 samp {
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   font-size: 0.9em;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 code {
   padding: 0.0625em 0.1875em;
   background: #f9f2f4;
-  font-size: 0.9em;
   color: #c7254e;
+  font-size: 0.9em;
 }
 pre {
   padding: 0.3125em 0.75em;
   background: #f2f2f2;
   border: none;
   border-radius: 3px;
-  font-size: 0.9em;
   color: #262626;
+  font-size: 0.9em;
   white-space: pre;
   white-space: pre-wrap;
   word-break: break-all;
@@ -609,9 +609,9 @@ embed {
  * Remove default fieldset styles.
  */
 fieldset {
-  border: 0;
   margin: 0;
   padding: 0;
+  border: 0;
 }
 /**
  * Reset search back to border box due to normalize
@@ -638,10 +638,10 @@ input[type="number"] {
  * Fix optgroup Firefox bug
  */
 select optgroup {
-  font-size: inherit;
   font-style: inherit;
-  font-family: inherit;
   font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
 }
 /**
  * Allow only vertical resizing of textareas.
@@ -868,16 +868,16 @@ fieldset[disabled] .form__input {
   background: #d2411e;
   border: none;
   border-radius: 0.25em;
-  font-family: sans-serif;
+  color: #ffffff;
   font-size: 1em;
   line-height: 1;
+  font-family: sans-serif;
   text-decoration: none;
-  color: #ffffff;
   -webkit-appearance: none;
 }
 .button:hover {
-  background: #a53318;
   color: #ffffff;
+  background: #a53318;
 }
 .button:focus:focus {
   outline: thin dotted;
@@ -1010,9 +1010,9 @@ a:active .button {
  * Image replacement
  */
 .u-hide-text {
+  overflow: hidden;
   background-color: transparent;
   border: 0;
-  overflow: hidden;
 }
 .u-hide-text:before {
   content: "";
@@ -1024,14 +1024,14 @@ a:active .button {
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 .u-sr-only {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
   overflow: hidden;
-  padding: 0;
+  clip: rect(0 0 0 0);
   position: absolute;
+  height: 1px;
   width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
 /**
  * Extends the .visuallyhidden class to allow the element to be focusable when navigated
@@ -1039,12 +1039,12 @@ a:active .button {
  */
 .u-sr-only--focusable:active,
 .u-sr-only--focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
   overflow: visible;
+  clip: auto;
   position: static;
   width: auto;
+  height: auto;
+  margin: 0;
 }
 /**
  * Contain floats: h5bp.com/q

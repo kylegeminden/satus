@@ -31,10 +31,13 @@
 <pre><code>.module {
     /* Display & Box model */
     display: block;
+    float: left;
+    clear: right;
     overflow: hidden;
     position: relative;
+    right: 0;
+    top: 0;
     z-index: 1;
-    float: left;
     width: 200px;
     height: 100px;
     background: #ccc;
@@ -44,6 +47,7 @@
     box-shadow: 1px 1px 3px rgba(0,0,0,.15);
 
     /* Typography */
+    color: #222;
     font-style: italic;
     font-variant: small-caps;
     font-weight: 500;
@@ -51,6 +55,7 @@
     line-height: 1.5;
     vertical: align;
     font-family: sans-serif;
+    text-shadow: 1px 1px 1px #222;
     white-space: nowrap;
     word-wrap: normal;
 
