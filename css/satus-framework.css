@@ -876,8 +876,8 @@ fieldset[disabled] .form__input {
   -webkit-appearance: none;
 }
 .button:hover {
-  color: #ffffff;
   background: #a53318;
+  color: #ffffff;
 }
 .button:focus:focus {
   outline: thin dotted;
