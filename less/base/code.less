@@ -10,22 +10,19 @@ pre,
 code,
 kbd,
 samp {
-    font-size: @code-font-size;
     font-family: @font-family-monospace;
 }
 
 code {
-    padding: @code-padding;
-    background: @code-bg;
     color: @code-color;
-    font-size: @code-font-size;
+    font-weight: @font-weight-bold;
 }
 
 pre {
     padding: @pre-padding;
     background: @pre-bg;
     border: @pre-border;
-    border-radius: @pre-radius;
+    .border-radius(@pre-radius);
     color: @pre-color;
     font-size: @pre-font-size;
     white-space: pre;

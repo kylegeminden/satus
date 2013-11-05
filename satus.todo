@@ -1,0 +1,30 @@
+Base Tasks:
+ ✔ Simplify grayscale variables @done (13-11-02 08:24)
+ ✔ Fix focus style @done (13-11-02 13:52)
+ ✔ Make border-radius mixin @done (13-11-02 14:18)
+ ✔ Clean up utility classes. @done (13-11-02 14:01)
+ ✔ Update Tab Focus @done (13-11-02 14:02)
+ ✔ default link styles @done (13-11-02 14:21)
+ ✔ Clean up BEM on forms and other files @done (13-11-04 19:13)
+ ✔ Make large and small input classes @done (13-11-04 19:13)
+ ✔ Clean up comments in normalize @done (13-11-04 19:20)
+ ☐ Clean up mixins
+ ☐ Clean up variables
+ ☐ Create style guide
+ ☐ Create color palette generator
+ ☐ Create semantic grid framework
+ ☐ Update and add in table of contents for everything
+
+Components:
+ ☐ flyouts
+ ☐ navs
+ ☐ lists
+ ☐ breadcrumbs
+ ☐ pagination
+ ☐ pager
+ ☐ typography
+ ☐ page header
+ ☐ lead paragraph
+ ☐ progress bar
+ ☐ matrix
+ ☐ media element

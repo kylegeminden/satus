@@ -5,12 +5,12 @@
 .form__fieldset {
     padding: @fieldset-padding;
     border: @fieldset-border;
-    border-radius: @fieldset-radius;
+    .border-radius(@fieldset-radius);
 }
 
 .form__label {
-    display: block;
-    margin-bottom: .35em
+    display: inline-block;
+    margin-bottom: .35em;
 }
 
 .form__input {
@@ -33,15 +33,13 @@
     // input[type="time"],
     // input[type="week"],
     // input[type="color"]
-
-    display: block;
-    width: 100%;
+    display: inline-block;
     height: @input-height;
     margin: 0;
     padding: @input-padding-vertical @input-padding-horizontal;
     background: @input-bg;
     border: @input-border;
-    border-radius: @input-radius;
+    .border-radius(@input-radius);
     outline-style: none;
     color: @input-color;
     .placeholder();
@@ -59,23 +57,32 @@
         height: auto;
     }
 
+    // Styling for disabled and read only inputs
+    // Note for fieldsets: "If this Boolean attribute is set, the form controls that are its
+    // descendants, except descendants of its first optional <legend> element, are disabled,
+    // i.e., not editable."
+    // source: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+    // Fieldsets are styled anyway so if yours falls under this edge case simply remove the
+    // fieldset selector.
     &[readonly],
     &[disabled],
     fieldset[disabled] & {
         background: @input-disabled-bg;
         color: @input-disabled-color;
-        cursor: not-allowed;
     }
+
 }
 
+// does not require .form__input
 .form__range {
-    display: block;
-    width: 100%;
+    // display: block;
+    // width: 100%;
     margin-top: @input-padding-vertical;
 }
 
+// does not require .form__input
 .form__file {
-    display: block;
+    // display: block;
     margin-top: @input-padding-vertical;
 }
 
@@ -85,4 +92,26 @@
     padding: @input-padding-vertical 0;
     font-size: @font-size-large;
     vertical-align: middle;
+}
+
+// make form elements full-width
+.form--full {
+    .form__input,
+    .form__range,
+    .form__file {
+        width: 100%;
+    }
+}
+
+.form__input--full {
+    width: 100%;
+}
+
+// form input size
+.form__input--large {
+    font-size: @font-size-large;
+}
+
+.form__input--small {
+    font-size: @font-size-small;
 }

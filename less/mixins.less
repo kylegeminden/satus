@@ -1,6 +1,5 @@
 // *** TABLE OF CONTENTS ***
 
-// $COLOR
 // $TYPOGRAPHY
 // $BORDERS
 // $SHADOWS
@@ -9,22 +8,6 @@
 // $BACKGROUND
 // $GRADIENTS
 // $HELPERS
-
-// ==========================================================================
-//  $COLOR
-// ==========================================================================
-
-.colork(@percent) {
-    color: darken(@white, (@percent * 1%));
-}
-
-.backgroundk(@percent) {
-    background: darken(@white, (@percent * 1%));
-}
-
-.highlight() {
-    color: @highlight-bg;
-}
 
 // ==========================================================================
 //  $TYPOGRAPHY
@@ -115,7 +98,7 @@
 .tab-focus() {
     &:focus {
         // Default
-        outline: thin dotted;
+        outline: 1px dashed #96C0E6;
         // // Webkit
         // outline: 5px auto -webkit-focus-ring-color;
         outline-offset: -2px;
@@ -133,6 +116,13 @@
     border-width : @width;
     border-style : @style;
     border-color : @color;
+}
+
+
+// won't output css if it is 0
+// .border-radius(.3rem);
+.border-radius(@radius) when (@radius > 0) {
+    border-radius: @radius;
 }
 
 // ==========================================================================

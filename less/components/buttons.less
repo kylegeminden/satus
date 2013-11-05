@@ -7,7 +7,7 @@
     padding: @button-padding;
     background: @button-bg;
     border: @button-border;
-    border-radius: @button-radius;
+    .border-radius(@button-radius);
     color: @button-font-color;
     font-size: @button-font-size;
     line-height: 1;
@@ -24,9 +24,9 @@
         .tab-focus();
     }
 
-    a:hover &,
-    a:focus &,
-    a:active & {
+    a&:hover,
+    a&:focus,
+    a&:active {
         text-decoration: none;
     }
 

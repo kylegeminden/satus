@@ -87,14 +87,16 @@ ul {
 
 a {
     color: @link-color;
-    text-decoration: none;
-}
 
-a:hover,
-a:focus,
-a:active {
-    color: @link-color-hover;
-    text-decoration: underline;
+    &:hover,
+    &:focus,
+    &:active {
+        color: @link-color-hover;
+    }
+
+    &:focus {
+        .tab-focus();
+    }
 }
 
 /**

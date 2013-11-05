@@ -15,41 +15,41 @@
         <meta name="msapplication-TileImage" content="../img/ico/apple-touch-icon-precomposed.png">
         <meta name="msapplication-TileColor" content="#222222">
 
-        <link rel="stylesheet" href="../css/satus-framework.css">
+        <link rel="stylesheet" href="../css/satus.css">
     </head>
     <body>
 
         <h1>Forms</h1>
         <hr>
 
-        <form>
+        <form class="">
             <fieldset class="form__fieldset">
                 <legend>Inputs as descendents of labels (form legend). This doubles up as a long legend that can test word wrapping.</legend>
-                <p><label classs="form__label">Text input</label> <input class="form__input" type="text" placeholder="text"><!--  = <output class="form__output">5</output> --></p>
-                <p><label classs="form__label">Search</label> <input class="form__input" type="search" name="search5" placeholder="search"></p>
-                <p><label classs="form__label">Email</label> <input class="form__input" type="email" name="email5" placeholder="email address"></p>
-                <p><label classs="form__label">Url</label> <input class="form__input" type="url" name="url5" placeholder="website address"></p>
-                <p><label classs="form__label">Telephone</label> <input class="form__input" type="tel" name="tel5" placeholder="telephone number"></p>
-                <p><label classs="form__label">Number input</label> <input class="form__input" type="number" value="default value" placeholder="number"></p>
-                <p><label classs="form__label">Date input</label> <input class="form__input" type="date" value="default value"></p>
-                <p><label classs="form__label">Date Time input</label> <input class="form__input" type="datetime" value="default value"></p>
-                <p><label classs="form__label">Date Time Local input</label> <input class="form__input" type="datetime-local" value="default value"></p>
-                <p><label classs="form__label">Month Time input</label> <input class="form__input" type="month" value="default value"></p>
-                <p><label classs="form__label">Week Time input</label> <input class="form__input" type="week" value="default value"></p>
-                <p><label classs="form__label">Time input</label> <input class="form__input" type="time" value="default value"></p>
-                <p><label classs="form__label">Password input</label> <input class="form__input" type="password" value="password"></p>
-                <p><label classs="form__label">Range</label> <input class="form__range" type="range"></p>
-                <p><label classs="form__label">File input</label> <input class="form__file" type="file"></p>
-                <p><label classs="form__label">Color Picker</label> <input class="form__input" type="color"></p>
+                <p><label class="form__label">Text input</label> <input class="form__input" type="text" placeholder="text"><!--  = <output class="form__output">5</output> --></p>
+                <p><label class="form__label">Search</label> <input class="form__input" type="search" name="search5" placeholder="search"></p>
+                <p><label class="form__label">Email</label> <input class="form__input" type="email" name="email5" placeholder="email address"></p>
+                <p><label class="form__label">Url</label> <input class="form__input" type="url" name="url5" placeholder="website address"></p>
+                <p><label class="form__label">Telephone</label> <input class="form__input" type="tel" name="tel5" placeholder="telephone number"></p>
+                <p><label class="form__label">Number input</label> <input class="form__input" type="number" value="default value" placeholder="number"></p>
+                <p><label class="form__label">Date input</label> <input class="form__input" type="date" value="default value"></p>
+                <p><label class="form__label">Date Time input</label> <input class="form__input" type="datetime" value="default value"></p>
+                <p><label class="form__label">Date Time Local input</label> <input class="form__input" type="datetime-local" value="default value"></p>
+                <p><label class="form__label">Month Time input</label> <input class="form__input" type="month" value="default value"></p>
+                <p><label class="form__label">Week Time input</label> <input class="form__input" type="week" value="default value"></p>
+                <p><label class="form__label">Time input</label> <input class="form__input" type="time" value="default value"></p>
+                <p><label class="form__label">Password input</label> <input class="form__input" type="password" value="password"></p>
+                <p><label class="form__label">Range</label> <input class="form__range" type="range"></p>
+                <p><label class="form__label">File input</label> <input class="form__file" type="file"></p>
+                <p><label class="form__label">Color Picker</label> <input class="form__input form__input--inline" type="color"></p>
                 <p>
-                    <label classs="form__label">Select field</label>
+                    <label class="form__label">Select field</label>
                     <select class="form__input">
                         <option>Option 01</option>
                         <option>Option 02</option>
                     </select>
                 </p>
                 <p>
-                    <label classs="form__label">Select field with</label>
+                    <label class="form__label">Select field with</label>
                     <select class="form__input">
                         <optgroup label="Option Group 2">
                             <option value="First Choice">First Choice</option>
@@ -63,9 +63,9 @@
                         </optgroup>
                     </select>
                 </p>
-                <p><label classs="form__label">Textarea</label> <textarea class="form__input"cols="30" rows="5">Textarea text</textarea></p>
+                <p><label class="form__label">Textarea</label> <textarea class="form__input"cols="30" rows="5">Textarea text</textarea></p>
                 <p>
-                    <label classs="form__label">Multiple Select</label>
+                    <label class="form__label">Multiple Select</label>
                     <select class="form__input" multiple="multiple" size="7" name="input_5[]" id="input_1_5" value="Select from 3">
                             <option value="First Choice">First Choice</option>
                             <option value="Second Choice">Second Choice</option>
@@ -73,7 +73,7 @@
                     </select>
                 </p>
                 <p>
-                    <label classs="form__label">Multiple Select with Optgroup</label>
+                    <label class="form__label">Multiple Select with Optgroup</label>
                     <select class="form__input" multiple="multiple" size="7" name="input_5[]" id="input_1_5" value="Select from 3">
                         <optgroup label="Option Group 2">
                             <option value="First Choice">First Choice</option>
@@ -87,11 +87,18 @@
                         </optgroup>
                     </select>
                 </p>
-                <p><label classs="form__label">Radio input</label> <input type="radio" name="radio"></p>
-                <p><label classs="form__label">Checkbox input</label> <input type="checkbox"></p>
-                <p><input type="radio" name="rad"> <label classs="form__label">Radio input</label></p>
-                <p><input type="checkbox"> <label classs="form__label">Checkbox input</label></p>
+                <p><label class="form__label">Radio input</label> <input type="radio" name="radio"></p>
+                <p><label class="form__label">Checkbox input</label> <input type="checkbox"></p>
+                <p><input type="radio" name="rad"> <label class="form__label">Radio input</label></p>
+                <p><input type="checkbox"> <label class="form__label">Checkbox input</label></p>
             </fieldset>
+
+            <p><input class="form__input form__input--small" type="text" placeholder="text"><button class="button button--small">Button Small</button></p>
+            <p><input class="form__input" type="text" placeholder="text"><button class="button">Button Default</button></p>
+            <p><input class="form__input form__input--large" type="text" placeholder="text"><button class="button button--large">Button Large</button></p>
+            <p><input class="form__input form__input--small" type="text" placeholder="text"><a href="#" class="button button--small">Button Small</a></p>
+            <p><input class="form__input" type="text" placeholder="text"><a href="#" class="button">Button Default</a></p>
+            <p><input class="form__input form__input--large" type="text" placeholder="text"><a href="#" class="button button--large">Button Large</a></p>
 
         </form>
 

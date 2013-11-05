@@ -1,0 +1,45 @@
+@cp-scheme             : mono;
+@cp-primary            : #f00;
+@cp-primary-saturation : 70%;
+
+.cp-generator() when (@cp-scheme = mono) {
+    @cp-secondary  : tint(@cp-primary, 20%);
+    @cp-tertiary   : tint(@cp-primary, 40%);
+    @cp-quaternary : shade(@cp-primary, 40%);
+    @cp-quinary    : ;
+}
+
+// Swatches
+.swatches {
+    .clearfix();
+}
+
+.swatch {
+    float: left;
+    width: 5em;
+    height: 5em;
+
+    &--primary {
+        background: @cp-primary;
+    }
+
+   &--secondary {
+        background: @cp-secondary;
+        .cp-generator();
+    }
+
+   &--tertiary {
+        background: @cp-tertiary;
+        .cp-generator();
+    }
+
+   &--quaternary {
+        background: @cp-quaternary;
+        .cp-generator();
+    }
+
+   &--quinary {
+        background: @cp-quinary;
+        .cp-generator();
+    }
+}

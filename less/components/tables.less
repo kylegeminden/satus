@@ -5,13 +5,25 @@
 .table {
     width: 100%;
 
-    .table__th {
-        font-weight: @font-weight-bolder;
+    &__header {}
+
+    &__footer {}
+
+    &__body {}
+
+    &__tr {}
+
+    &__th,
+    &__td {
+        padding: 0.5em 1em;
+    }
+
+    &__th {
+        font-weight: @font-weight-bold;
         text-align: left;
     }
 
-    .table__th,
-    .table__td {
-        padding: @table-padding;
+    &__td {
+
     }
 }
