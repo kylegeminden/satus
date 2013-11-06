@@ -8,8 +8,10 @@ Base Tasks:
  ✔ Clean up BEM on forms and other files @done (13-11-04 19:13)
  ✔ Make large and small input classes @done (13-11-04 19:13)
  ✔ Clean up comments in normalize @done (13-11-04 19:20)
- ☐ Clean up mixins
- ☐ Clean up variables
+ ☐ Update mixins
+ ☐ Add in ir mixin
+ ☐ Clean up mixins formatting
+ ☐ Clean up variables and formatting
  ☐ Create style guide
  ☐ Create color palette generator
  ☐ Create semantic grid framework
