@@ -29,24 +29,52 @@
   clear: both;
 }
 .swatch {
+  position: relative;
   float: left;
-  width: 5em;
-  height: 5em;
+  width: 8em;
+  height: 9em;
+  margin-left: .75em;
+  border: 1px solid #999999;
+}
+.swatch:first-child {
+  margin-left: 0;
+}
+.swatch:before {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: .25em .5em;
 }
 .swatch--primary {
   background: #ff0000;
 }
+.swatch--primary:before {
+  content: '#ff0000';
+}
 .swatch--secondary {
-  background: #ff3333;
+  background: #ff4040;
+}
+.swatch--secondary:before {
+  content: '#ff4040';
 }
 .swatch--tertiary {
-  background: #ff6666;
+  background: #ff7373;
+}
+.swatch--tertiary:before {
+  content: '#ff7373';
 }
 .swatch--quaternary {
-  background: #990000;
+  background: #a60000;
+}
+.swatch--quaternary:before {
+  content: '#a60000';
 }
 .swatch--quinary {
-  background: ;
+  background: #bf4747;
+}
+.swatch--quinary:before {
+  content: '#bf4747';
 }
 /* ==========================================================================
     $NORMALIZE
