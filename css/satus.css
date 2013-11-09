@@ -64,17 +64,11 @@
 .swatch--tertiary:before {
   content: '#ff7373';
 }
-.swatch--quaternary {
-  background: #a60000;
+.swatch--quadrary {
+  background: #40ff00;
 }
-.swatch--quaternary:before {
-  content: '#a60000';
-}
-.swatch--quinary {
-  background: #bf4747;
-}
-.swatch--quinary:before {
-  content: '#bf4747';
+.swatch--quadrary:before {
+  content: '#40ff00';
 }
 /* ==========================================================================
     $NORMALIZE
