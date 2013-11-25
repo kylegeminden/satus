@@ -87,15 +87,12 @@ ul {
 
 a {
     color: @link-color;
+    .tab-focus();
 
     &:hover,
     &:focus,
     &:active {
         color: @link-color-hover;
-    }
-
-    &:focus {
-        .tab-focus();
     }
 }
 
