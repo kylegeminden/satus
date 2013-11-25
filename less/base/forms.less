@@ -79,7 +79,25 @@ input,
 button,
 select,
 textarea {
-    &:focus {
-        .tab-focus();
+    .tab-focus();
+}
+
+/**
+ * Styling for disabled and read only inputs
+ * Note for fieldsets: "If this Boolean attribute is set, the form controls that are its
+ * descendants, except descendants of its first optional <legend> element, are disabled,
+ * i.e., not editable."
+ * source: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+ * Fieldsets are styled anyway so if yours falls under this edge case simply remove the
+ * fieldset selector.
+ */
+
+input,
+select,
+textarea {
+    &[readonly],
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
     }
 }
