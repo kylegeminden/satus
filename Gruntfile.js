@@ -15,7 +15,7 @@ module.exports = function(grunt) {
                     sourceMapRootpath: '../',
                 },
                 files: {
-                    'css/<%= pkg.name %>.css': [ 'less/satus.less' ]
+                    'css/<%= pkg.name %>.css': [ 'less/main.less' ]
                 },
             },
         },
