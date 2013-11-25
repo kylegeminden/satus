@@ -126,9 +126,9 @@
 // inputs
 @placeholder-color : @gray-light;
 
-@input-height             : (1 + (@input-padding-vertical * 2));
+@input-height             : (((@line-height + (unit(@input-padding-vertical) * 2)) * 16 + 2) / 16 * 1em);
 @input-padding-horizontal : 0.875em;
-@input-padding-vertical   : 0.75em;
+@input-padding-vertical   : 0.4em;
 @input-bg                 : @white;
 @input-border             : 1px solid lighten(@gray-light, 15%);
 @input-radius             : @border-radius;
@@ -149,5 +149,5 @@
 @button-bg                : @link-color;
 @button-bg-hover          : @link-color-hover;
 @button-disabled          : lighten(@link-color, 15%);
-@button-border            : none;
+@button-border            : 1px solid @button-bg;
 @button-radius            : @border-radius;
