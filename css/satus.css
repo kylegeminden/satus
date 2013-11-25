@@ -20,56 +20,6 @@
  *    |-- $UTILITIES
  *
 */
-.swatches:before,
-.swatches:after {
-  content: "";
-  display: table;
-}
-.swatches:after {
-  clear: both;
-}
-.swatch {
-  position: relative;
-  float: left;
-  width: 8em;
-  height: 9em;
-  margin-left: .75em;
-  border: 1px solid #999999;
-}
-.swatch:first-child {
-  margin-left: 0;
-}
-.swatch:before {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: #ffffff;
-  padding: .25em .5em;
-}
-.swatch--primary {
-  background: #ff0000;
-}
-.swatch--primary:before {
-  content: '#ff0000';
-}
-.swatch--secondary {
-  background: #ff4040;
-}
-.swatch--secondary:before {
-  content: '#ff4040';
-}
-.swatch--tertiary {
-  background: #ff7373;
-}
-.swatch--tertiary:before {
-  content: '#ff7373';
-}
-.swatch--quadrary {
-  background: #40ff00;
-}
-.swatch--quadrary:before {
-  content: '#40ff00';
-}
 /* ==========================================================================
     $NORMALIZE
    ========================================================================== */
@@ -518,14 +468,14 @@ ul {
 a {
   color: #0066cc;
 }
+a:focus {
+  outline: 1px dashed #96C0E6;
+  outline-offset: -2px;
+}
 a:hover,
 a:focus,
 a:active {
   color: #004c99;
-}
-a:focus:focus {
-  outline: 1px dashed #96C0E6;
-  outline-offset: -2px;
 }
 /**
  * Set font weight
@@ -683,35 +633,90 @@ textarea {
 /**
  * Consistent focus styles for form elements and buttons
  */
-input:focus:focus,
-button:focus:focus,
-select:focus:focus,
-textarea:focus:focus {
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
   outline: 1px dashed #96C0E6;
   outline-offset: -2px;
+}
+/**
+ * Styling for disabled and read only inputs
+ * Note for fieldsets: "If this Boolean attribute is set, the form controls that are its
+ * descendants, except descendants of its first optional <legend> element, are disabled,
+ * i.e., not editable."
+ * source: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+ * Fieldsets are styled anyway so if yours falls under this edge case simply remove the
+ * fieldset selector.
+ */
+input[readonly],
+select[readonly],
+textarea[readonly],
+input[disabled],
+select[disabled],
+textarea[disabled],
+fieldset[disabled] input,
+fieldset[disabled] select,
+fieldset[disabled] textarea {
+  cursor: not-allowed;
 }
 /* ==========================================================================
    $FORMS
    ========================================================================== */
+/**
+ * Fieldsets
+ * <fieldset class="form__fieldset">
+ */
 .form__fieldset {
   padding: 0.625em;
   border: 1px solid #bfbfbf;
   border-radius: 0.25em;
 }
+/**
+ * Labels
+ * <label class="form__label">
+ */
 .form__label {
   display: inline-block;
   margin-bottom: .35em;
 }
+.form__label--top {
+  vertical-align: top;
+}
+/**
+ * Form Inputs
+ *
+ * Apply .form__input to any of the following form inputs
+ * <input class="form__input">
+ *
+ * select,
+ * textarea,
+ * input[type="text"],
+ * input[type="password"],
+ * input[type="search"],
+ * input[type="email"],
+ * input[type="url"],
+ * input[type="tel"],
+ * input[type="number"],
+ * input[type="datetime"],
+ * input[type="datetime-local"],
+ * input[type="date"],
+ * input[type="month"],
+ * input[type="time"],
+ * input[type="week"],
+ * input[type="color"]
+ *
+ */
 .form__input {
-  display: inline-block;
-  height: 2.5em;
+  height: 2.425em;
   margin: 0;
-  padding: 0.75em 0.875em;
+  padding: 0.4em 0.875em;
   background: #ffffff;
   border: 1px solid #bfbfbf;
   border-radius: 0.25em;
   outline-style: none;
   color: #222222;
+  vertical-align: middle;
 }
 .form__input::-webkit-input-placeholder {
   color: #999999;
@@ -726,7 +731,6 @@ textarea:focus:focus {
   color: #999999;
 }
 .form__input[type="color"] {
-  width: 3.5em;
   padding: 0;
 }
 textarea.form__input,
@@ -740,17 +744,27 @@ fieldset[disabled] .form__input {
   background: #f7f7f7;
   color: #999999;
 }
-.form__range {
-  margin-top: 0.75em;
+/**
+ * Set consistent width for color input
+ */
+.form__input[type="color"],
+.form--full .form__input[type="color"] {
+  width: 3.3949999999999996em;
 }
-.form__file {
-  margin-top: 0.75em;
-}
+/**
+ * Form output element, Does Not Need .fomr__input class
+ * http://html5doctor.com/the-output-element/
+ * <output class="form__output">
+ */
 .form__output {
-  padding: 0.75em 0;
-  font-size: 1.25em;
+  height: 2.425em;
+  padding: 0.4em 0;
   vertical-align: middle;
 }
+/**
+ * Make form elements full-width
+ * <form class="form--full"> or <input class="form__input form__input--full">
+ */
 .form--full .form__input,
 .form--full .form__range,
 .form--full .form__file {
@@ -759,6 +773,10 @@ fieldset[disabled] .form__input {
 .form__input--full {
   width: 100%;
 }
+/**
+ * Form input size
+ * <input class="form__input form__input--large">
+ */
 .form__input--large {
   font-size: 1.25em;
 }
@@ -768,26 +786,30 @@ fieldset[disabled] .form__input {
 /* ==========================================================================
    $BUTTONS
    ========================================================================== */
+/**
+ * <button class="button button--large">
+ */
 .button {
   display: inline-block;
-  padding: 0.75em 0.875em;
+  padding: 0.4em 0.875em;
   background: #0066cc;
-  border: none;
+  border: 1px solid #0066cc;
   border-radius: 0.25em;
   color: #ffffff;
   font-size: 1em;
-  line-height: 1;
+  line-height: 1.5;
   font-family: sans-serif;
   text-decoration: none;
+  vertical-align: middle;
   -webkit-appearance: none;
+}
+.button:focus {
+  outline: 1px dashed #96C0E6;
+  outline-offset: -2px;
 }
 .button:hover {
   background: #004c99;
   color: #ffffff;
-}
-.button:focus:focus {
-  outline: 1px dashed #96C0E6;
-  outline-offset: -2px;
 }
 a.button:hover,
 a.button:focus,
@@ -807,6 +829,9 @@ a.button:active {
 /* ==========================================================================
    $TABLES
    ========================================================================== */
+/**
+ * <table class="table">
+ */
 .table {
   width: 100%;
 }
