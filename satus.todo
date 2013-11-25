@@ -8,13 +8,16 @@ Base Tasks:
  ✔ Clean up BEM on forms and other files @done (13-11-04 19:13)
  ✔ Make large and small input classes @done (13-11-04 19:13)
  ✔ Clean up comments in normalize @done (13-11-04 19:20)
+ ✔ Tab-focus @done (13-11-12 13:13)
+ ✔ Change button line-height and adjust form input height @done (13-11-14 13:50)
+ ✔ Change satus.less to main.less @done (13-11-18 13:46)
+ ✔ Clean up components/form.less comments. @done (13-11-20 13:18)
+ ☐ Create semantic grid framework.
+ ☐ Separate mixins into files.
  ☐ Update mixins
- ☐ Add in ir mixin
- ☐ Clean up mixins formatting
- ☐ Clean up variables and formatting
+ ☐ Clean up variables and formatting and possibly separate out.
  ☐ Create style guide
- ☐ Create color palette generator
- ☐ Create semantic grid framework
+ ✔ Add, update or clean up comments where needed. @done (13-11-19 13:48)
  ☐ Update and add in table of contents for everything
 
 Components:
