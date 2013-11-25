@@ -2,6 +2,10 @@
    $BUTTONS
    ========================================================================== */
 
+/**
+ * <button class="button button--large">
+ */
+
 .button {
     display: inline-block;
     padding: @button-padding;
@@ -10,18 +14,16 @@
     .border-radius(@button-radius);
     color: @button-font-color;
     font-size: @button-font-size;
-    line-height: 1;
+    line-height: @line-height;
     font-family: @button-font;
     text-decoration: none;
+    vertical-align: middle;
     -webkit-appearance: none;
+    .tab-focus();
 
     &:hover {
         background: @button-bg-hover;
         color: @button-font-color;
-    }
-
-    &:focus {
-        .tab-focus();
     }
 
     a&:hover,
