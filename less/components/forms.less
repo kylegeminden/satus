@@ -2,38 +2,57 @@
    $FORMS
    ========================================================================== */
 
+/**
+ * Fieldsets
+ * <fieldset class="form__fieldset">
+ */
+
 .form__fieldset {
     padding: @fieldset-padding;
     border: @fieldset-border;
     .border-radius(@fieldset-radius);
 }
 
+/**
+ * Labels
+ * <label class="form__label">
+ */
+
 .form__label {
     display: inline-block;
     margin-bottom: .35em;
+
+    &--top {
+        vertical-align: top;
+    }
 }
 
-.form__input {
+/**
+ * Form Inputs
+ *
+ * Apply .form__input to any of the following form inputs
+ * <input class="form__input">
+ *
+ * select,
+ * textarea,
+ * input[type="text"],
+ * input[type="password"],
+ * input[type="search"],
+ * input[type="email"],
+ * input[type="url"],
+ * input[type="tel"],
+ * input[type="number"],
+ * input[type="datetime"],
+ * input[type="datetime-local"],
+ * input[type="date"],
+ * input[type="month"],
+ * input[type="time"],
+ * input[type="week"],
+ * input[type="color"]
+ *
+ */
 
-    // Apply .form__input to any of the following form inputs
-    //
-    // select,
-    // textarea,
-    // input[type="text"],
-    // input[type="password"],
-    // input[type="search"],
-    // input[type="email"],
-    // input[type="url"],
-    // input[type="tel"],
-    // input[type="number"],
-    // input[type="datetime"],
-    // input[type="datetime-local"],
-    // input[type="date"],
-    // input[type="month"],
-    // input[type="time"],
-    // input[type="week"],
-    // input[type="color"]
-    display: inline-block;
+.form__input {
     height: @input-height;
     margin: 0;
     padding: @input-padding-vertical @input-padding-horizontal;
@@ -42,11 +61,11 @@
     .border-radius(@input-radius);
     outline-style: none;
     color: @input-color;
+    vertical-align: middle;
     .placeholder();
 
-    // Reset width and padding
+    // Reset padding
     &[type="color"] {
-        width: @input-height * 1.4;
         padding: 0;
     }
 
@@ -70,31 +89,35 @@
         background: @input-disabled-bg;
         color: @input-disabled-color;
     }
-
 }
 
-// does not require .form__input
-.form__range {
-    // display: block;
-    // width: 100%;
-    margin-top: @input-padding-vertical;
+/**
+ * Set consistent width for color input
+ */
+
+.form__input[type="color"],
+.form--full .form__input[type="color"] {
+    width: @input-height * 1.4;
 }
 
-// does not require .form__input
-.form__file {
-    // display: block;
-    margin-top: @input-padding-vertical;
-}
 
-// for output element
-// http://html5doctor.com/the-output-element/
+/**
+ * Form output element, Does Not Need .fomr__input class
+ * http://html5doctor.com/the-output-element/
+ * <output class="form__output">
+ */
+
 .form__output {
+    height: @input-height;
     padding: @input-padding-vertical 0;
-    font-size: @font-size-large;
     vertical-align: middle;
 }
 
-// make form elements full-width
+/**
+ * Make form elements full-width
+ * <form class="form--full"> or <input class="form__input form__input--full">
+ */
+
 .form--full {
     .form__input,
     .form__range,
@@ -107,7 +130,11 @@
     width: 100%;
 }
 
-// form input size
+/**
+ * Form input size
+ * <input class="form__input form__input--large">
+ */
+
 .form__input--large {
     font-size: @font-size-large;
 }
