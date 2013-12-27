@@ -1,11 +1,11 @@
 {
-    "name": "satus",
-    "version": "3.0.0_wip",
-    "devDependencies": {
-        "grunt"                  : "~0.4.1",
-        "grunt-contrib-less"     : "*",
-        "grunt-contrib-uglify"   : "*",
-        "grunt-contrib-watch"    : "*",
-        "grunt-contrib-imagemin" : "*"
-    }
+  "name": "satus",
+  "version": "3.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-imagemin": "*"
+  }
 }
