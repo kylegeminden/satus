@@ -257,96 +257,25 @@
 //  $GRADIENTS
 // ==========================================================================
 
-// Gradients
+// * @color-stops were designed to be escaped in order to allow for multiples.
+// * fallbacks can be either an image or a color or both.
 
-#gradient {
+// .linear-gradident(#ccc, 0deg, ~"#ccc 0%, #fff 100%");
 
-    // #gradient > .vertical(#333, #555, 0%, #333, 100%)
+.linear-gradient(@fallback; @angle; @color-stops) {
+    background: @fallback;
+    background: -webkit-linear-gradient((90 - @angle), @color-stops); // Chrome 10-25, iOS 5+, Safari 5.1+
+    background: -moz-linear-gradient((90 - @angle), @color-stops); // Firefox 3.6-15
+    background: linear-gradient(@angle, @color-stops); // Chrome 26, Firefox 16+, IE 10+, Opera 12.10+
+}
 
-    .vertical(@fallBack: #333; @firstColor: #555; @firstStop: 0%; @lastColor: #333; @lastStop: 100%) {
-        background: @fallBack;
-        background: -moz-linear-gradient(top, @firstColor @firstStop, @lastColor @lastStop);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(@firstStop, @firstColor), color-stop(@lastStop, @lastColor));
-        background-image: -webkit-linear-gradient(top, @firstColor @firstStop, @lastColor @lastStop);
-        background: -o-linear-gradient(top, @firstColor @firstStop, @lastColor @lastStop);
-        background: linear-gradient(to bottom, @firstColor @firstStop, @lastColor @lastStop);
-    }
+// .radial-gradient(white, 25% 25%, ellipse, ~"white 0%, black 50%");
 
-    // #gradient > .vertical3(#333, #333, 0%, #555, 50%, #333, 100%);
-
-    .vertical3(@fallBack: #333; @firstColor: #333; @firstStop: 0%; @secondColor: #555; @secondStop: 50%; @lastColor: #333; @lastStop: 100%) {
-        background: @fallBack;
-        background: -moz-linear-gradient(top, @firstColor @firstStop, @secondColor @secondStop, @lastColor @lastStop);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(@firstStop,@firstColor), color-stop(@secondStop,@secondColor), color-stop(@lastStop,@lastColor));
-        background: -webkit-linear-gradient(top, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
-        background: -o-linear-gradient(top, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
-        background: linear-gradient(to bottom, @firstColor @firstStop, @secondColor @secondStop, @lastColor @lastStop);
-    }
-
-    // #gradient > .vertical4(#333, #333, 0%, #555, 50%, #333, 51%, #333, 100%);
-
-    .vertical4(@fallBack: #333; @firstColor: #333; @firstStop: 0%; @secondColor: #555; @secondStop: 50%; @thirdColor: #333; @thirdStop: 51%; @lastColor: #333; @lastStop: 100%) {
-        background: @fallBack;
-        background: -moz-linear-gradient(top, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(@firstStop, @firstColor), color-stop(@secondStop, @secondColor), color-stop(@thirdStop, @thirdColor), color-stop(@lastStop, @lastColor));
-        background: -webkit-linear-gradient(top, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
-        background: -o-linear-gradient(top, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
-        background: linear-gradient(to bottom, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
-    }
-
-    // #gradient > .directional(#333, 45deg, #555, 0%, #333, 100%);
-
-    .directional(@fallBack: #333; @deg: 45deg; @firstColor: #333; @firstStop: 0%; @lastColor: #555; @lastStop: 50%) {
-        background: @fallBack;
-        background: -moz-linear-gradient(@deg, @firstColor @firstStop, @lastColor @lastStop);
-        background: -webkit-linear-gradient(@deg, @firstColor @firstStop,@lastColor @lastStop);
-        background: -o-linear-gradient(@deg, @firstColor @firstStop,@lastColor @lastStop);
-        background: linear-gradient(@deg, @firstColor @firstStop,@lastColor @lastStop);
-    }
-
-    // #gradient > .directional3(#333, 45deg, #333, 0%, #555, 50%, #333, 100%);
-
-    .directional3(@fallBack: #333; @deg: 45deg; @firstColor: #333; @firstStop: 0%; @secondColor: #555; @secondStop: 50%; @lastColor: #333; @lastStop: 100%) {
-        background: @fallBack;
-        background: -moz-linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @lastColor @lastStop);
-        background: -webkit-linear-gradient(@deg, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
-        background: -o-linear-gradient(@deg, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
-        background: linear-gradient(@deg, @firstColor @firstStop,@secondColor @secondStop,@lastColor @lastStop);
-    }
-
-    // #gradient > .directional4(#333, 45deg, #333, 0%, #555, 50%, #333, 51%, #333, 100%);
-
-    .directional4(@fallBack: #333; @deg: 45deg; @firstColor: #333; @firstStop: 0%; @secondColor: #555; @secondStop: 50%; @thirdColor: #333; @thirdStop: 51%; @lastColor: #333; @lastStop: 100%) {
-        background: @fallBack;
-        background: -moz-linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
-        background: -webkit-gradient(linear, left bottom, right top, color-stop(@firstStop, @firstColor), color-stop(@secondStop, @secondColor), color-stop(@thirdStop, @thirdColor), color-stop(@lastStop, @lastColor));
-        background: -webkit-linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
-        background: -o-linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
-        background: linear-gradient(@deg, @firstColor @firstStop, @secondColor @secondStop, @thirdColor @thirdStop, @lastColor @lastStop);
-    }
-
-    // #gradient > .ellipse(#333, #555, 0%, #333, 100%);
-
-    .ellipse(@fallBack: #333; @firstColor: #555; @firstStop: 0%; @lastColor: #333; @lastStop: 100%)  {
-        background: @fallBack;
-        background: -moz-radial-gradient(center, ellipse cover, @firstColor @firstStop, @lastColor @lastStop);
-        background: -webkit-gradient(radial, center center, 0px, center center, @lastStop, color-stop(@firstStop, @firstColor), color-stop(@lastStop, @lastColor));
-        background: -webkit-radial-gradient(center, ellipse cover, @firstColor @firstStop, @lastColor @lastStop);
-        background: -o-radial-gradient(center, ellipse cover, @firstColor @firstStop, @lastColor @lastStop);
-        background: radial-gradient(ellipse at center, @firstColor @firstStop, @lastColor @lastStop);
-    }
-
-    // #gradient > .circle(#333, #555, 0%, #333, 100%);
-
-    .circle(@fallBack: #333; @firstColor: #555; @firstStop: 0%; @lastColor: #333; @lastStop: 100%)  {
-        background: @fallBack;
-        background: -moz-radial-gradient(center, circle cover, @firstColor @firstStop, @lastColor @lastStop);
-        background: -webkit-gradient(radial, center center, 0px, center center, @lastStop, color-stop(@firstStop, @firstColor), color-stop(@lastStop, @lastColor));
-        background: -webkit-radial-gradient(center, circle cover, @firstColor @firstStop, @lastColor @lastStop);
-        background: -o-radial-gradient(center, circle cover, @firstColor @firstStop, @lastColor @lastStop);
-        background: radial-gradient(circle at center, @firstColor @firstStop, @lastColor @lastStop);
-    }
-
+.radial-gradient(@fallback; @position; @shape; @stops) {
+    background: @fallback;
+    background: -webkit-radial-gradient(@position, @shape cover,  @stops); /* Chrome10+,Safari5.1+ */
+    background: -moz-radial-gradient(@position, @shape cover,  @stops); /* FF3.6+ */
+    background: radial-gradient(@shape at @position,  @stops); /* W3C */
 }
 
 // ==========================================================================
