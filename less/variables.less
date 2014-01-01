@@ -119,10 +119,6 @@
 // border radius
 @border-radius  : 0.25em;
 
-// ==========================================================================
-//  $FORMS
-// ==========================================================================
-
 // inputs
 @placeholder-color : @gray-light;
 
@@ -151,3 +147,35 @@
 @button-disabled          : lighten(@link-color, 15%);
 @button-border            : 1px solid @button-bg;
 @button-radius            : @border-radius;
+
+// ==========================================================================
+//  $MEDIA-QUERIES
+// ==========================================================================
+
+@phone-max      : ((640 / 16) * 1em);
+@tablet-min     : ((641 / 16) * 1em);
+@tablet-max     : ((1024 / 16) * 1em);
+@laptop-min     : ((1025 / 16) * 1em);
+@laptop-max     : ((1440 / 16) * 1em);
+@desktop-min    : ((1441 / 16) * 1em);
+@desktop-max    : ((1920 / 16) * 1em);
+@widescreen-min : ((1921 / 16) * 1em);
+
+@query-phone-max       : ~"only screen and (max-width: @{phone-max})";
+@query-tablet-min      : ~"only screen and (min-width: @{tablet-min})";
+@query-tablet-max      : ~"only screen and (max-width: @{tablet-max})";
+@query-tablet-min-max  : ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
+@query-laptop-min      : ~"only screen and (min-width: @{laptop-min})";
+@query-laptop-max      : ~"only screen and (max-width: @{laptop-max})";
+@query-laptop-min-max  : ~"only screen and (min-width: @{laptop-min}) and (max-width: @{laptop-max})";
+@query-desktop-min     : ~"only screen and (min-width: @{desktop-min})";
+@query-desktop-max     : ~"only screen and (min-width: @{desktop-max})";
+@query-desktop-min-max : ~"only screen and (min-width: @{desktop-min}) and (min-width: @{desktop-max})";
+@query-widescreen-min  : ~"only screen and (min-width: @{widescreen-min})";
+
+// ==========================================================================
+//  $GRID
+// ==========================================================================
+
+@grid-columns     : 12;
+@grid-gutter-phone : ((15 / 16) * 1em);

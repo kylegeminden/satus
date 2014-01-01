@@ -15,6 +15,7 @@
  *    |-- $TABLES
  *    |-- $FLEX-EMBED
  *    |-- $FLEX-GMAP
+ *    |-- $GRID
  *
  * |-- UTILITIES
  *    |-- $UTILITIES
@@ -38,6 +39,20 @@
 @import 'components/tables';
 @import 'components/flex-embed';
 @import 'components/flex-gmap';
+@import 'components/grid';
+@import 'components/grid-phone';
+@media @query-tablet-min {
+    @import 'components/grid-tablet';
+}
+@media @query-laptop-min {
+    @import 'components/grid-laptop';
+}
+@media @query-desktop-min {
+    @import 'components/grid-desktop';
+}
+@media @query-widescreen-min {
+    @import 'components/grid-widescreen';
+}
 
 // Utilities
 @import 'utilities/utilities';

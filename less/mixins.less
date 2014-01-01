@@ -414,15 +414,24 @@
 
 .make-row() {
     .clearfix();
-    margin-left: ;
 }
 
-.make-column(@x; @total-columns) {
-    float: left;
+.make-cell(@column; @total-columns: @grid-columns) {
     width: (100 / @total-columns) * @column * 1%;
-    padding-left: ;
 }
 
-.width(@x; @total-columns) {
-    width: (100 / @total-columns) * @column * 1%;
+.make-cell-offset(@column; @total-columns: @grid-columns) {
+    margin-left: (100 / @total-columns) * @column * 1%;
+}
+
+.make-cell-push(@column; @total-columns: @grid-columns) {
+    position: relative;
+    left: (100 / @total-columns) * @column * 1%;
+    right: auto;
+}
+
+.make-cell-pull(@column; @total-columns: @grid-columns) {
+    position: relative;
+    right: (100 / @total-columns) * @column * 1%;
+    left: auto;
 }

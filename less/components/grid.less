@@ -1,0 +1,40 @@
+/* ==========================================================================
+    $GRID
+   ========================================================================== */
+
+.grid {
+    margin: 0;
+    padding: 0;
+    margin-left: -@grid-gutter-phone;
+    padding-left: @grid-gutter-phone;
+    padding-right: @grid-gutter-phone;
+    list-style: none;
+    .clearfix();
+
+    .grid {
+        padding: 0;
+    }
+
+    &__cell {
+        float: left;
+        width: 100%;
+        min-height: 1px;
+        padding-left: @grid-gutter-phone;
+
+        code {
+            display: block;
+            margin-bottom: @grid-gutter-phone;
+            background: hsl(0, 70%, 90%);
+        }
+    }
+
+    &.grid--collapse {
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        .grid__cell {
+            padding-left: 0;
+        }
+    }
+}

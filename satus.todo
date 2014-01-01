@@ -12,8 +12,13 @@ Base Tasks:
  ✔ Change button line-height and adjust form input height @done (13-11-14 13:50)
  ✔ Change satus.less to main.less @done (13-11-18 13:46)
  ✔ Clean up components/form.less comments. @done (13-11-20 13:18)
- ☐ Create semantic grid framework.
- ☐ Style select input.
+ ✔ Create new semantic grid mixins. @done (14-01-01 15:46)
+ ✔ Create new BEM grid system. @done (14-01-01 15:46)
+ ☐ Document Grid
+ ☐ Make Responsive Utilities
+ ✔ Revisit BEM Syntax @done (14-01-01 16:02)
+ ☐ Revisit Forms
+ ✔ Revisit REM @done (14-01-01 16:02)
  ☐ Separate mixins into files.
  ☐ Update mixins
      ☐ fix transition

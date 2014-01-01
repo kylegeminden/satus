@@ -1,0 +1,51 @@
+// Cells
+.phone-grid (@index) when (@index > 0) {
+
+    .phone-@{index}of@{grid-columns} {
+        .make-cell(@index);
+    }
+
+    .phone-grid(@index - 1);
+}
+
+.phone-grid(0) {} // stop loop
+.phone-grid(@grid-columns); // generate columns
+
+// Offset Cells
+.phone-offsets (@index) when (@index > 0) {
+
+    .phone-offset-@{index}of@{grid-columns} {
+        .make-cell-offset(@index);
+    }
+
+    .phone-offsets(@index - 1);
+}
+
+.phone-offsets(0) {} // stop loop
+.phone-offsets((@grid-columns - 1)); // generate offsets
+
+// Pull Cells
+.phone-pull (@index) when (@index > 0) {
+
+    .phone-pull-@{index}of@{grid-columns} {
+        .make-cell-pull(@index);
+    }
+
+    .phone-pull(@index - 1);
+}
+
+.phone-pull(0) {} // stop loop
+.phone-pull((@grid-columns - 1)); // generate pulls
+
+// Push Cells
+.phone-push (@index) when (@index > 0) {
+
+    .phone-push-@{index}of@{grid-columns} {
+        .make-cell-push(@index);
+    }
+
+    .phone-push(@index - 1);
+}
+
+.phone-push(0) {} // stop loop
+.phone-push((@grid-columns - 1)); // generate pushes

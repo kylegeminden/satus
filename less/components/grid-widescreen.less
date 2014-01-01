@@ -1,0 +1,64 @@
+// Cells
+.wide-grid (@index) when (@index > 0) {
+
+    .wide-@{index}of@{grid-columns} {
+        .make-cell(@index);
+    }
+
+    .wide-grid(@index - 1);
+}
+
+.wide-grid(0) {} // stop loop
+.wide-grid(@grid-columns); // generate columns
+
+// Offset Cells
+.wide-offsets (@index) when (@index > 0) {
+
+    .wide-offset-@{index}of@{grid-columns} {
+        .make-cell-offset(@index);
+    }
+
+    .wide-offsets(@index - 1);
+}
+
+.wide-offsets(0) {} // stop loop
+.wide-offsets((@grid-columns - 1)); // generate offsets
+
+// Reset offsets from prior queries
+.wide-offset-0of@{grid-columns} {
+    margin-left: 0;
+}
+
+// Pull Cells
+.wide-pull (@index) when (@index > 0) {
+
+    .wide-pull-@{index}of@{grid-columns} {
+        .make-cell-pull(@index);
+    }
+
+    .wide-pull(@index - 1);
+}
+
+.wide-pull(0) {} // stop loop
+.wide-pull((@grid-columns - 1)); // generate pulls
+
+// Push Cells
+.wide-push (@index) when (@index > 0) {
+
+    .wide-push-@{index}of@{grid-columns} {
+        .make-cell-push(@index);
+    }
+
+    .wide-push(@index - 1);
+}
+
+.wide-push(0) {} // stop loop
+.wide-push((@grid-columns - 1)); // generate pushes
+
+// Reset pushes and pulls from prior queries
+.wide-pull-0of@{grid-columns},
+.wide-push-0of@{grid-columns} {
+    position: static;
+    left: auto;
+    right: auto;
+}
