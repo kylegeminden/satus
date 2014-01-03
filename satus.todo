@@ -14,22 +14,24 @@ Base Tasks:
  ✔ Clean up components/form.less comments. @done (13-11-20 13:18)
  ✔ Create new semantic grid mixins. @done (14-01-01 15:46)
  ✔ Create new BEM grid system. @done (14-01-01 15:46)
+ ✔ Add center cell ability to grids @done (14-01-03 14:19)
+ ✔ Add gutter variables @done (14-01-03 14:36)
+ ☐ Make Grid Utilities
  ☐ Document Grid
  ☐ Make Responsive Utilities
  ✔ Revisit BEM Syntax @done (14-01-01 16:02)
  ☐ Revisit Forms
+ ☐ Revisit Flexible Embeds
  ✔ Revisit REM @done (14-01-01 16:02)
- ☐ Separate mixins into files.
- ☐ Update mixins
-     ☐ fix transition
-     ✔ update linear gradient @done (13-12-26 18:13)
-     ✔ add back in opacity @done (13-11-27 10:36)
+ ✔ Update mixins @done (14-01-03 13:33)
  ☐ fix wherever tab-focus is called
  ☐ Add margin top and bottom to figure?
- ☐ Clean up variables and formatting and possibly separate out.
- ☐ Create style guide
+ ✔ Clean up variables and formatting @done (14-01-03 13:36)
  ✔ Add, update or clean up comments where needed. @done (13-11-19 13:48)
- ☐ Update table of contents
+ ✔ Update table of contents @done (14-01-03 13:36)
+ ☐ Change main.less back to satus.less
+ ☐ Switch back to 2 space tabs?
+ ☐ Create style guide
 
 Components:
  ☐ flyouts
@@ -39,8 +41,8 @@ Components:
  ☐ pagination
  ☐ pager
  ☐ typography
- ☐ page header
- ☐ lead paragraph
+     ☐ page header
+     ☐ lead paragraph
  ☐ progress bar
  ☐ matrix
  ☐ media element
