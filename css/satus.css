@@ -1,28 +1,27 @@
 /*** TABLE OF CONTENTS ***
  *
  * |-- BASE
- *    |-- $NORMALIZE
- *    |-- $RESET
- *    |-- $TYPOGRAPHY
- *    |-- $CODE
- *    |-- $EMBEDDED CONTENT
- *    |-- $FORMS
+ *    |-- 1.0 Normalize
+ *    |-- 2.0 Reset
+ *    |-- 3.0 Typography
+ *    |-- 4.0 Code
+ *    |-- 5.0 Embedded Content
+ *    |-- 6.0 Forms
  *
  * |-- COMPONENTS
- *    |-- $GRID
- *    |-- $FORMS
- *    |-- $BUTTONS
- *    |-- $TABLES
- *    |-- $FLEX-EMBED
- *    |-- $FLEX-GMAP
- *    |-- $GRID
+ *    |-- 7.0 Forms
+ *    |-- 8.0 Buttons
+ *    |-- 9.0 Tables
+ *    |-- 10.0 Flexible Embeds
+ *    |-- 11.0 Flexible Google Map
+ *    |-- 12.0 Grid
  *
  * |-- UTILITIES
- *    |-- $UTILITIES
+ *    |-- 100.0 Utilities
  *
 */
 /* ==========================================================================
-    $NORMALIZE
+   1.0 Normalize
    ========================================================================== */
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* --------------------------------------------------------------------------
@@ -365,7 +364,7 @@ table {
   border-spacing: 0;
 }
 /* ==========================================================================
-   $RESET
+   2.0 Reset
    ========================================================================== */
 /**
  * Change `box-sizing` from default `content-box` to `border-box` on all elements
@@ -386,7 +385,7 @@ table {
   width: device-width;
 }
 /* ==========================================================================
-   $TYPOGRAPHY
+   3.0 Typography
    ========================================================================== */
 html {
   color: #222222;
@@ -517,7 +516,7 @@ mark {
   color: #000000;
 }
 /* ==========================================================================
-   $CODE
+   4.0 Code
    ========================================================================== */
 /**
  * Better default styling for pre, code, kbd, samp and pre elements
@@ -548,7 +547,7 @@ pre ol {
   margin: 0;
 }
 /* ==========================================================================
-   EMBEDDED CONTENT
+   5.0 Embedded Content
    ========================================================================== */
 /**
  * Remove the gap between images, videos, audio and canvas and the bottom of
@@ -572,7 +571,7 @@ embed {
   height: auto;
 }
 /* ==========================================================================
-   FORMS
+   6.0 Forms
    ========================================================================== */
 /**
  * Disables default glow.
@@ -662,7 +661,7 @@ fieldset[disabled] textarea {
   cursor: not-allowed;
 }
 /* ==========================================================================
-   $FORMS
+   7.0 Forms
    ========================================================================== */
 /**
  * Fieldsets
@@ -785,7 +784,7 @@ fieldset[disabled] .form__input {
   font-size: 0.85em;
 }
 /* ==========================================================================
-   $BUTTONS
+   8.0 Buttons
    ========================================================================== */
 /**
  * <button class="button button--large">
@@ -828,7 +827,7 @@ a.button:active {
   font-size: 1.25em;
 }
 /* ==========================================================================
-   $TABLES
+   9.0 Tables
    ========================================================================== */
 /**
  * <table class="table">
@@ -845,7 +844,7 @@ a.button:active {
   text-align: left;
 }
 /* ==========================================================================
-    $FLEX-EMBED
+   10.0 Flexible Embeds
    ========================================================================== */
 /**
  * Flexible/responsive embedded content.
@@ -880,7 +879,7 @@ a.button:active {
   padding-top: 25px;
 }
 /* ==========================================================================
-   $FLEX-GMAP
+   11.0 Flexible Google Map
    ========================================================================== */
 /**
  * Flexible/responsive Google maps when using Google's API to generate the map
@@ -900,14 +899,11 @@ a.button:active {
   padding-bottom: 67.5%;
 }
 /* ==========================================================================
-    $GRID
+   12.0 Grid
    ========================================================================== */
 .grid {
   margin: 0;
   padding: 0;
-  margin-left: -0.9375em;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
   list-style: none;
 }
 .grid:before,
@@ -925,7 +921,6 @@ a.button:active {
   float: left;
   width: 100%;
   min-height: 1px;
-  padding-left: 0.9375em;
 }
 .grid__cell code {
   display: block;
@@ -939,6 +934,14 @@ a.button:active {
 }
 .grid.grid--collapse .grid__cell {
   padding-left: 0;
+}
+.grid {
+  margin-left: -0.9375em;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+}
+.grid__cell {
+  padding-left: 0.9375em;
 }
 .phone-12of12 {
   width: 100%;
@@ -1119,7 +1122,20 @@ a.button:active {
   left: 8.333333333333334%;
   right: auto;
 }
+.phone-centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
 @media only screen and (min-width: 40.0625em) {
+  .grid {
+    margin-left: -1.25em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+  }
+  .grid__cell {
+    padding-left: 1.25em;
+  }
   .tablet-12of12 {
     width: 100%;
   }
@@ -1308,8 +1324,26 @@ a.button:active {
     left: auto;
     right: auto;
   }
+  .tablet-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tablet-uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 @media only screen and (min-width: 64.0625em) {
+  .grid {
+    margin-left: -1.875em;
+    padding-left: 1.875em;
+    padding-right: 1.875em;
+  }
+  .grid__cell {
+    padding-left: 1.875em;
+  }
   .laptop-12of12 {
     width: 100%;
   }
@@ -1498,8 +1532,26 @@ a.button:active {
     left: auto;
     right: auto;
   }
+  .laptop-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .laptop-uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 @media only screen and (min-width: 90.0625em) {
+  .grid {
+    margin-left: -1.875em;
+    padding-left: 1.875em;
+    padding-right: 1.875em;
+  }
+  .grid__cell {
+    padding-left: 1.875em;
+  }
   .desktop-12of12 {
     width: 100%;
   }
@@ -1688,8 +1740,26 @@ a.button:active {
     left: auto;
     right: auto;
   }
+  .desktop-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .desktop-uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 @media only screen and (min-width: 120.0625em) {
+  .grid {
+    margin-left: -1.875em;
+    padding-left: 1.875em;
+    padding-right: 1.875em;
+  }
+  .grid__cell {
+    padding-left: 1.875em;
+  }
   .wide-12of12 {
     width: 100%;
   }
@@ -1878,9 +1948,19 @@ a.button:active {
     left: auto;
     right: auto;
   }
+  .wide-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wide-uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 /* ==========================================================================
-    $UTILITIES
+   100.0 Utilities
    ========================================================================== */
 /**
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
@@ -1920,6 +2000,6 @@ a.button:active {
   clear: both;
 }
 /**
- * Widths
+ * Responsive visibility
  */
 /*# sourceMappingURL=../css/satus.css.map */
