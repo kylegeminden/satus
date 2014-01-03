@@ -1,3 +1,14 @@
+// Gutters
+.grid {
+    margin-left: -@grid-gutter-laptop;
+    padding-left: @grid-gutter-laptop;
+    padding-right: @grid-gutter-laptop;
+
+    &__cell {
+        padding-left: @grid-gutter-laptop;
+    }
+}
+
 // Cells
 .laptop-grid (@index) when (@index > 0) {
 
@@ -61,4 +72,18 @@
     position: static;
     left: auto;
     right: auto;
+}
+
+// Center Cell
+.laptop-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Uncenter Cell from prior queries
+.laptop-uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
 }

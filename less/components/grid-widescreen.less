@@ -1,3 +1,14 @@
+// Gutters
+.grid {
+    margin-left: -@grid-gutter-widescreen;
+    padding-left: @grid-gutter-widescreen;
+    padding-right: @grid-gutter-widescreen;
+
+    &__cell {
+        padding-left: @grid-gutter-widescreen;
+    }
+}
+
 // Cells
 .wide-grid (@index) when (@index > 0) {
 
@@ -61,4 +72,18 @@
     position: static;
     left: auto;
     right: auto;
+}
+
+// Center Cell
+.wide-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Uncenter Cell from prior queries
+.wide-uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
 }
