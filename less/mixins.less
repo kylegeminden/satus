@@ -1,78 +1,62 @@
 // *** TABLE OF CONTENTS ***
 
-// $TYPOGRAPHY
-// $BORDERS
-// $SHADOWS
-// $TRANSFORMS
-// $TRANSISTION
-// $BACKGROUND
-// $GRADIENTS
-// $HELPERS
+// 1.0 Typography
+// 2.0 Forms
+// 3.0 Box
+// 4.0 Gradients
+// 5.0 Borders
+// 6.0 Shadows
+// 7.0 Transforms
+// 8.0 Transistions
+// 9.0 Animations
+// 10.0 Shapes
+// 11.0 Grid
+// 12.0 Helpers
 
 // ==========================================================================
-//  $TYPOGRAPHY
+// 1.0 Typography
 // ==========================================================================
 
 // Requires inline-block or block for proper styling
-
 .text-truncate() {
-         overflow  : hidden;
-         max-width : 100%;
-    text-overflow  : ellipsis;
-      white-space  : nowrap;
-      word-wrap    : normal;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
 }
 
 .text-break() {
-    word-break : break-all;
-    word-break : break-word;
-     word-wrap : break-word;
+    word-break: break-all;
+    word-break: break-word;
+    word-wrap: break-word;
 }
 
 // http://blog.kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
-.hyphens() {
-     -ms-word-break : break-all;
-         word-break : break-all;
-    // Non standard for webkit
-         word-break : break-word;
-    -webkit-hyphens : auto;
-       -moz-hyphens : auto;
-            hyphens : auto;
+.hyphens(@mode: auto) {
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: @mode;
+    -moz-hyphens: @mode;
+    -ms-hyphens: @mode;
+    hyphens: @mode;
 }
 
-// .resize(VALUE); (both, horizontal, vertical)
-// resize does not apply to blocks for which the overflow property is set to visible.
-
-.resize(@direction: both) {
-    overflow : auto;
-      resize : @direction;
-}
-
-// .columns(auto, 2, 40px, #eee, solid, 1px)
-
-.columns(@colWidth: auto; @colCount: 2; @colGap: 40px; @columnRuleColor: #eee; @columnRuleStyle: solid; @columnRuleWidth: 0px) {
-         -webkit-column-width : @colWidth;
-         -webkit-column-count : @colCount;
-           -webkit-column-gap : @colGap;
-    -webkit-column-rule-color : @columnRuleColor;
-    -webkit-column-rule-style : @columnRuleStyle;
-    -webkit-column-rule-width : @columnRuleWidth;
-            -moz-column-width : @colWidth;
-            -moz-column-count : @colCount;
-              -moz-column-gap : @colGap;
-       -moz-column-rule-color : @columnRuleColor;
-       -moz-column-rule-style : @columnRuleStyle;
-       -moz-column-rule-width : @columnRuleWidth;
-                 column-width : @colWidth;
-                 column-count : @colCount;
-                   column-gap : @colGap;
-            column-rule-color : @columnRuleColor;
-            column-rule-style : @columnRuleStyle;
-            column-rule-width : @columnRuleWidth;
+.columns(@column-count; @column-gap) {
+    -webkit-column-count: @column-count;
+    -moz-column-count: @column-count;
+    column-count: @column-count;
+    -webkit-column-gap: @column-gap;
+    -moz-column-gap: @column-gap;
+    column-gap: @column-gap;
 }
 
 // ==========================================================================
-//  $FORMS
+// 2.0 Forms
 // ==========================================================================
 
 // http://css-tricks.com/almanac/selectors/p/placeholder/
@@ -105,146 +89,33 @@
     }
 }
 
-
 // ==========================================================================
-//  $BORDERS
+// 3.0 Box
 // ==========================================================================
 
-// .bordered(1px, solid, #bbb);
 
-.bordered(@width: 1px; @style: solid; @color: @lightGrey) {
-    border-width : @width;
-    border-style : @style;
-    border-color : @color;
+// .resize(VALUE); (both, horizontal, vertical)
+// resize does not apply to blocks for which the overflow property is set to visible.
+.resize(@direction: both) {
+    overflow: auto;
+    resize: @direction;
 }
-
-
-// won't output css if it is 0
-// .border-radius(.3rem);
-.border-radius(@radius) when (@radius > 0) {
-    border-radius: @radius;
-}
-
-// ==========================================================================
-//  $SHADOWS
-// ==========================================================================
-
-// Multiple shadow solution from
-// http://toekneestuck.com/blog/2012/05/15/less-css-arguments-variable/
-
-.box-shadow(@shadowA; @shadowB:X; ...){
-    @props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
-    -webkit-box-shadow: @props; // iOS <4.3 & Android <4.1
-            box-shadow: @props;
-}
-
-// ==========================================================================
-//  $TRANSFORMS
-// ==========================================================================
-
-// .rotate(VALUEdeg);
-
-.rotate(@deg) {
-    -webkit-transform : rotate(@deg);
-       -moz-transform : rotate(@deg);
-        -ms-transform : rotate(@deg);
-         -o-transform : rotate(@deg);
-            transform : rotate(@deg);
-}
-
-// .scale(VALUE);
-
-.scale(@ratio) {
-    -webkit-transform : scale(@ratio);
-       -moz-transform : scale(@ratio);
-        -ms-transform : scale(@ratio);
-         -o-transform : scale(@ratio);
-            transform : scale(@ratio);
-}
-
-// .skew(VALUE, VALUE);
-
-.skew(@x; @y;) {
-    -webkit-transform : skew(@x, @y);
-       -moz-transform : skew(@x, @y);
-        -ms-transform : skew(@x, @y);
-         -o-transform : skew(@x, @y);
-            transform : skew(@x, @y);
-}
-
-// .translate(VALUE, VALUE)
-
-.translate(@x; @y;) {
-    -webkit-transform : translate(@x, @y);
-       -moz-transform : translate(@x, @y);
-        -ms-transform : translate(@x, @y);
-         -o-transform : translate(@x, @y);
-            transform : translate(@x, @y);
-}
-
-// .translate(VALUE, VALUE, VALUE)
-
-.translate3d(@x; @y; @z) {
-    -webkit-transform : translate(@x, @y, @z);
-       -moz-transform : translate(@x, @y, @z);
-        -ms-transform : translate(@x, @y, @z);
-         -o-transform : translate(@x, @y, @z);
-            transform : translate(@x, @y, @z);
-}
-
-// ==========================================================================
-//  $TRANSISTION
-// ==========================================================================
-
-// .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
-
-.transition(@transition) {
-    -webkit-transition : @transition;
-       -moz-transition : @transition;
-         -o-transition : @transition;
-            transition : @transition;
-}
-
-// ==========================================================================
-//  $BACKGROUND
-// ==========================================================================
 
 // http://css-tricks.com/almanac/properties/b/backface-visibility/
 // default is visibile
 // .backface-visibility(VALUE); (hidden or visible)
-
 .backface-visibility(@visibility) {
-    -webkit-backface-visibility : @visibility;
-       -moz-backface-visibility : @visibility;
-            backface-visibility : @visibility;
-}
-
-// .background-size(VALUE(s)); (width and or height, or keyword)
-
-.background-size(@size) {
-    -webkit-background-size : @size;
-       -moz-background-size : @size;
-         -o-background-size : @size;
-            background-size : @size;
-}
-
-// .background-clip(VALUE); (border-box, padding-box, content-box)
-
-.background-clip(@clip) {
-    -webkit-background-clip : @clip;
-       -moz-background-clip : @clip;
-            background-clip : @clip;
+    -webkit-backface-visibility: @visibility;
+    -moz-backface-visibility: @visibility;
+    backface-visibility: @visibility;
 }
 
 // .box-sizing(VALUE); (border-box, padding-box, content-box)
-
-.box-sizing(@boxsize: border-box) {
-    -webkit-box-sizing : @boxsize;
-       -moz-box-sizing : @boxsize;
-            box-sizing : @boxsize;
+.box-sizing(@boxmodel) {
+    -webkit-box-sizing: @boxmodel;
+    -moz-box-sizing: @boxmodel;
+    box-sizing: @boxmodel;
 }
-
-// Opacity
 
 .opacity(@opacity) {
     opacity: @opacity;
@@ -254,14 +125,13 @@
 }
 
 // ==========================================================================
-//  $GRADIENTS
+// 4.0 Gradients
 // ==========================================================================
 
 // * @color-stops were designed to be escaped in order to allow for multiples.
 // * fallbacks can be either an image or a color or both.
 
 // .linear-gradident(#ccc, 0deg, ~"#ccc 0%, #fff 100%");
-
 .linear-gradient(@fallback; @angle; @color-stops) {
     background: @fallback;
     background: -webkit-linear-gradient((90 - @angle), @color-stops); // Chrome 10-25, iOS 5+, Safari 5.1+
@@ -270,7 +140,6 @@
 }
 
 // .radial-gradient(white, 25% 25%, ellipse, ~"white 0%, black 50%");
-
 .radial-gradient(@fallback; @position; @shape; @stops) {
     background: @fallback;
     background: -webkit-radial-gradient(@position, @shape cover,  @stops); /* Chrome10+,Safari5.1+ */
@@ -279,7 +148,179 @@
 }
 
 // ==========================================================================
-//  $SHAPES
+// 5.0 Borders
+// ==========================================================================
+
+// .bordered(1px, solid, #bbb); can have multiples
+.bordered(@width: 1px; @style: solid; @color: @lightGrey) {
+    border-width : @width;
+    border-style : @style;
+    border-color : @color;
+}
+
+// won't output css if it is 0
+// .border-radius(.3rem);
+.border-radius(@radius) when (@radius > 0) {
+    border-radius: @radius;
+}
+.border-top-radius(@radius) when (@radius > 0) {
+    border-radius: @radius @radius 0 0;
+}
+.border-right-radius(@radius) when (@radius > 0) {
+    border-radius: 0 @radius @radius 0;
+}
+.border-bottom-radius(@radius) when (@radius > 0) {
+    border-radius: 0 0 @radius @radius;
+}
+.border-left-radius(@radius) when (@radius > 0) {
+    border-radius: @radius 0 0 @radius;
+}
+
+// ==========================================================================
+// 6.0 Shadows
+// ==========================================================================
+
+.box-shadow(@shadow){
+    -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+    box-shadow: @shadow;
+}
+
+// ==========================================================================
+// 7.0 Transforms
+// ==========================================================================
+
+.rotate(@degrees) {
+    -webkit-transform: rotate(@degrees);
+    -ms-transform: rotate(@degrees); // IE9 only
+    transform: rotate(@degrees);
+}
+
+.scale(@ratio; @ratio-y...) {
+    -webkit-transform: scale(@ratio, @ratio-y);
+    -ms-transform: scale(@ratio, @ratio-y); // IE9 only
+    transform: scale(@ratio, @ratio-y);
+}
+
+.translate(@x; @y) {
+    -webkit-transform: translate(@x, @y);
+    -ms-transform: translate(@x, @y); // IE9 only
+    transform: translate(@x, @y);
+}
+
+.skew(@x; @y) {
+    -webkit-transform: skew(@x, @y);
+    -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+    transform: skew(@x, @y);
+}
+
+.translate3d(@x; @y; @z) {
+    -webkit-transform: translate3d(@x, @y, @z);
+    transform: translate3d(@x, @y, @z);
+}
+
+.rotateX(@degrees) {
+    -webkit-transform: rotateX(@degrees);
+    -ms-transform: rotateX(@degrees); // IE9 only
+    transform: rotateX(@degrees);
+}
+
+.rotateY(@degrees) {
+    -webkit-transform: rotateY(@degrees);
+    -ms-transform: rotateY(@degrees); // IE9 only
+    transform: rotateY(@degrees);
+}
+
+.perspective(@perspective) {
+    -webkit-perspective: @perspective;
+    -moz-perspective: @perspective;
+    perspective: @perspective;
+}
+
+.perspective-origin(@perspective) {
+    -webkit-perspective-origin: @perspective;
+    -moz-perspective-origin: @perspective;
+    perspective-origin: @perspective;
+}
+
+.transform-origin(@origin) {
+    -webkit-transform-origin: @origin;
+    -moz-transform-origin: @origin;
+    -ms-transform-origin: @origin; // IE9 only
+    transform-origin: @origin;
+}
+
+// ==========================================================================
+// 8.0 Transistions
+// ==========================================================================
+
+.transition(@transition) {
+    -webkit-transition: @transition;
+    transition: @transition;
+}
+
+.transition-property(@transition-property) {
+    -webkit-transition-property: @transition-property;
+    transition-property: @transition-property;
+}
+
+.transition-delay(@transition-delay) {
+    -webkit-transition-delay: @transition-delay;
+    transition-delay: @transition-delay;
+}
+
+.transition-duration(@transition-duration) {
+    -webkit-transition-duration: @transition-duration;
+    transition-duration: @transition-duration;
+}
+
+.transition-transform(@transition) {
+    -webkit-transition: -webkit-transform @transition;
+    -moz-transition: -moz-transform @transition;
+    -o-transition: -o-transform @transition;
+    transition: transform @transition;
+}
+
+// ==========================================================================
+// 9.0 Animations
+// ==========================================================================
+
+.animation(@animation) {
+    -webkit-animation: @animation;
+    animation: @animation;
+}
+
+.animation-name(@name) {
+    -webkit-animation-name: @name;
+    animation-name: @name;
+}
+
+.animation-duration(@duration) {
+    -webkit-animation-duration: @duration;
+    animation-duration: @duration;
+}
+
+.animation-timing-function(@timing-function) {
+    -webkit-animation-timing-function: @timing-function;
+    animation-timing-function: @timing-function;
+}
+
+.animation-delay(@delay) {
+    -webkit-animation-delay: @delay;
+    animation-delay: @delay;
+}
+
+.animation-iteration-count(@iteration-count) {
+    -webkit-animation-iteration-count: @iteration-count;
+    animation-iteration-count: @iteration-count;
+}
+
+.animation-direction(@direction) {
+    -webkit-animation-direction: @direction;
+    animation-direction: @direction;
+}
+
+// ==========================================================================
+// 9.0 Shapes
 // ==========================================================================
 
 // http://css-tricks.com/examples/ShapesOfCSS/
@@ -289,26 +330,26 @@
     // #triangle > .up(10px, 20px, #ccc)
 
     .up(@width: 10px; @height: 20px; @color: @k40) {
-                width: 0;
-               height: 0;
-          border-left: @width solid transparent;
-         border-right: @width solid transparent;
+        width: 0;
+        height: 0;
+        border-left: @width solid transparent;
+        border-right: @width solid transparent;
         border-bottom: @height solid @color;
     }
 
     .down(@width: 10px; @height: 20px; @color: @k40) {
-               width: 0;
-              height: 0;
-         border-left: @width solid transparent;
+        width: 0;
+        height: 0;
+        border-left: @width solid transparent;
         border-right: @width solid transparent;
-          border-top: @height solid @color;
+        border-top: @height solid @color;
     }
 
     .left(@width: 20px; @height: 10px; @color: @k40) {
-                width: 0;
-               height: 0;
-           border-top: @height solid transparent;
-         border-right: @width solid @color;
+        width: 0;
+        height: 0;
+        border-top: @height solid transparent;
+        border-right: @width solid @color;
         border-bottom: @height solid transparent;
     }
 
@@ -351,7 +392,35 @@
 }
 
 // ==========================================================================
-//  $HELPERS
+// 10.0 Grid
+// ==========================================================================
+
+.make-row() {
+    .clearfix();
+}
+
+.make-cell(@column; @total-columns: @grid-columns) {
+    width: (100 / @total-columns) * @column * 1%;
+}
+
+.make-cell-offset(@column; @total-columns: @grid-columns) {
+    margin-left: (100 / @total-columns) * @column * 1%;
+}
+
+.make-cell-push(@column; @total-columns: @grid-columns) {
+    position: relative;
+    left: (100 / @total-columns) * @column * 1%;
+    right: auto;
+}
+
+.make-cell-pull(@column; @total-columns: @grid-columns) {
+    position: relative;
+    right: (100 / @total-columns) * @column * 1%;
+    left: auto;
+}
+
+// ==========================================================================
+// 11.0 Helpers
 // ==========================================================================
 
 // Image replacement
@@ -406,32 +475,4 @@
     &:after {
         clear: both;
     }
-}
-
-// ==========================================================================
-//  $GRID
-// ==========================================================================
-
-.make-row() {
-    .clearfix();
-}
-
-.make-cell(@column; @total-columns: @grid-columns) {
-    width: (100 / @total-columns) * @column * 1%;
-}
-
-.make-cell-offset(@column; @total-columns: @grid-columns) {
-    margin-left: (100 / @total-columns) * @column * 1%;
-}
-
-.make-cell-push(@column; @total-columns: @grid-columns) {
-    position: relative;
-    left: (100 / @total-columns) * @column * 1%;
-    right: auto;
-}
-
-.make-cell-pull(@column; @total-columns: @grid-columns) {
-    position: relative;
-    right: (100 / @total-columns) * @column * 1%;
-    left: auto;
 }
