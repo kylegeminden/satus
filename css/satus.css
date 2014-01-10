@@ -901,6 +901,36 @@ a.button:active {
 /* ==========================================================================
    12.0 Grid
    ========================================================================== */
+/**
+ * By default the grid is 12 columns across.
+ * <div class="grid">
+ *   <div class="grid__cell tablet-12of12">...</div>
+ *   <div class="grid__cell tablet-8of12">...</div>
+ *   <div class="grid__cell tablet-4of12">...</div>
+ *   <div class="grid__cell tablet-12of12">...</div>
+ * </div>
+ *
+ * Cell widths are:
+ *  - phone-Xof12   (640px/40em and below)
+ *  - tablet-Xof12  (641px/40.0625em and above)
+ *  - laptop-Xof12  (1025px/64.0625em and above)
+ *  - desktop-Xof12 (1441px/90.0625em and above)
+ *  - wide-Xof12    (1921px/120.0625em and above)
+ *
+ * Offsets, pushes and pulls.
+ * You can use offset-0of12, push-0of12 and pull-0of12 to undo prior queries.
+ * <div class="grid__cell tablet-8of12 tablet-offset-4of12">...</div>
+ * <div class="grid__cell tablet-8of12 tablet-pull-4of12">...</div>
+ * <div class="grid__cell tablet-8of12 tablet-push-4of12">...</div>
+ *
+ * A cell can be centered or uncentered from a centering from a prior media query.
+ * <div class="grid__cell tablet-8of12 tablet-centered">...</div>
+ * <div class="grid__cell tablet-8of12 tablet-centered laptop-8of12 laptop-uncentered">...</div>
+ *
+ * A cell can be cleared or uncleared from a prior media query.
+ * <div class="grid__cell tablet-2of12">...</div>
+ * <div class="grid__cell tablet-4of12 laptop-2of12 laptop-clear">...</div>
+ */
 .grid {
   margin: 0;
   padding: 0;
@@ -1127,6 +1157,9 @@ a.button:active {
   margin-left: auto;
   margin-right: auto;
 }
+.phone-clear {
+  clear: left;
+}
 @media only screen and (min-width: 40.0625em) {
   .grid {
     margin-left: -1.25em;
@@ -1333,6 +1366,12 @@ a.button:active {
     float: left;
     margin-left: 0;
     margin-right: 0;
+  }
+  .tablet-clear {
+    clear: left;
+  }
+  .tablet-unclear {
+    clear: left;
   }
 }
 @media only screen and (min-width: 64.0625em) {
@@ -1542,6 +1581,12 @@ a.button:active {
     margin-left: 0;
     margin-right: 0;
   }
+  .laptop-clear {
+    clear: left;
+  }
+  .laptop-unclear {
+    clear: left;
+  }
 }
 @media only screen and (min-width: 90.0625em) {
   .grid {
@@ -1750,6 +1795,12 @@ a.button:active {
     margin-left: 0;
     margin-right: 0;
   }
+  .desktop-clear {
+    clear: left;
+  }
+  .desktop-unclear {
+    clear: left;
+  }
 }
 @media only screen and (min-width: 120.0625em) {
   .grid {
@@ -1957,6 +2008,12 @@ a.button:active {
     float: left;
     margin-left: 0;
     margin-right: 0;
+  }
+  .wide-clear {
+    clear: left;
+  }
+  .wide-unclear {
+    clear: left;
   }
 }
 /* ==========================================================================
