@@ -16,8 +16,8 @@ Base Tasks:
  ✔ Create new BEM grid system. @done (14-01-01 15:46)
  ✔ Add center cell ability to grids @done (14-01-03 14:19)
  ✔ Add gutter variables @done (14-01-03 14:36)
- ☐ Make Grid Utilities
- ☐ Document Grid
+ ✔ Make Grid Utilities @done (14-01-10 13:56)
+ ✔ Document Grid @done (14-01-10 13:56)
  ☐ Make Responsive Utilities
  ✔ Revisit BEM Syntax @done (14-01-01 16:02)
  ☐ Revisit Forms
