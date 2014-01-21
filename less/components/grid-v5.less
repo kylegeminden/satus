@@ -1,0 +1,97 @@
+// Gutters
+.grid {
+    margin-left: -@grid-gutter-v5;
+
+    &__cell {
+        padding-left: @grid-gutter-v5;
+    }
+}
+
+// Cells
+.v5-grid (@index) when (@index > 0) {
+
+    .v5-@{index}of@{grid-columns} {
+        .make-cell(@index);
+    }
+
+    .v5-grid(@index - 1);
+}
+
+.v5-grid(0) {} // stop loop
+.v5-grid(@grid-columns); // generate columns
+
+// Offset Cells
+.v5-offsets (@index) when (@index > 0) {
+
+    .v5-offset-@{index}of@{grid-columns} {
+        .make-cell-offset(@index);
+    }
+
+    .v5-offsets(@index - 1);
+}
+
+.v5-offsets(0) {} // stop loop
+.v5-offsets((@grid-columns - 1)); // generate offsets
+
+// Reset offsets from prior queries
+.v5-offset-0of@{grid-columns} {
+    margin-left: 0;
+}
+
+// Pull Cells
+.v5-pull (@index) when (@index > 0) {
+
+    .v5-pull-@{index}of@{grid-columns} {
+        .make-cell-pull(@index);
+    }
+
+    .v5-pull(@index - 1);
+}
+
+.v5-pull(0) {} // stop loop
+.v5-pull((@grid-columns - 1)); // generate pulls
+
+// Push Cells
+.v5-push (@index) when (@index > 0) {
+
+    .v5-push-@{index}of@{grid-columns} {
+        .make-cell-push(@index);
+    }
+
+    .v5-push(@index - 1);
+}
+
+.v5-push(0) {} // stop loop
+.v5-push((@grid-columns - 1)); // generate pushes
+
+// Reset pushes and pulls from prior queries
+.v5-pull-0of@{grid-columns},
+.v5-push-0of@{grid-columns} {
+    position: static;
+    left: auto;
+    right: auto;
+}
+
+// Center Cell
+.v5-centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Uncenter Cell from prior queries
+.v5-uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+// Clear Cell
+.v5-clear {
+    clear: left;
+}
+
+// Unclear Cell from prior queries
+.v5-unclear {
+    clear: left;
+}

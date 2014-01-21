@@ -5,32 +5,32 @@
 /**
  * By default the grid is 12 columns across.
  * <div class="grid">
- *   <div class="grid__cell tablet-12of12">...</div>
- *   <div class="grid__cell tablet-8of12">...</div>
- *   <div class="grid__cell tablet-4of12">...</div>
- *   <div class="grid__cell tablet-12of12">...</div>
+ *   <div class="grid__cell v2-12of12">...</div>
+ *   <div class="grid__cell v2-8of12">...</div>
+ *   <div class="grid__cell v2-4of12">...</div>
+ *   <div class="grid__cell v2-12of12">...</div>
  * </div>
  *
- * Cell widths are:
- *  - phone-Xof12   (640px/40em and below)
- *  - tablet-Xof12  (641px/40.0625em and above)
- *  - laptop-Xof12  (1025px/64.0625em and above)
- *  - desktop-Xof12 (1441px/90.0625em and above)
- *  - wide-Xof12    (1921px/120.0625em and above)
+ * Cell widths and media queries are:
+ *  - v1-Xof12   (640px/40em and below)
+ *  - v2-Xof12  (641px/40.0625em and above)
+ *  - v3-Xof12  (1025px/64.0625em and above)
+ *  - v4-Xof12 (1441px/90.0625em and above)
+ *  - v5-Xof12    (1921px/120.0625em and above)
  *
  * Offsets, pushes and pulls.
  * You can use offset-0of12, push-0of12 and pull-0of12 to undo prior queries.
- * <div class="grid__cell tablet-8of12 tablet-offset-4of12">...</div>
- * <div class="grid__cell tablet-8of12 tablet-pull-4of12">...</div>
- * <div class="grid__cell tablet-8of12 tablet-push-4of12">...</div>
+ * <div class="grid__cell v2-8of12 v2-offset-4of12">...</div>
+ * <div class="grid__cell v2-8of12 v2-pull-4of12">...</div>
+ * <div class="grid__cell v2-8of12 v2-push-4of12">...</div>
  *
  * A cell can be centered or uncentered from a centering from a prior media query.
- * <div class="grid__cell tablet-8of12 tablet-centered">...</div>
- * <div class="grid__cell tablet-8of12 tablet-centered laptop-8of12 laptop-uncentered">...</div>
+ * <div class="grid__cell v2-8of12 v2-centered">...</div>
+ * <div class="grid__cell v2-8of12 v2-centered v3-8of12 v3-uncentered">...</div>
  *
  * A cell can be cleared or uncleared from a prior media query.
- * <div class="grid__cell tablet-2of12">...</div>
- * <div class="grid__cell tablet-4of12 laptop-2of12 laptop-clear">...</div>
+ * <div class="grid__cell v2-2of12">...</div>
+ * <div class="grid__cell v2-4of12 v3-2of12 v3-clear">...</div>
  */
 
 .grid {
@@ -39,10 +39,6 @@
     list-style: none;
     .clearfix();
 
-    .grid {
-        padding: 0;
-    }
-
     &__cell {
         float: left;
         width: 100%;
@@ -50,7 +46,7 @@
 
         code {
             display: block;
-            margin-bottom: @grid-gutter-phone;
+            margin-bottom: @grid-gutter-v1;
             background: hsl(0, 70%, 90%);
         }
     }

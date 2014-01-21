@@ -18,7 +18,7 @@ Base Tasks:
  ✔ Add gutter variables @done (14-01-03 14:36)
  ✔ Make Grid Utilities @done (14-01-10 13:56)
  ✔ Document Grid @done (14-01-10 13:56)
- ☐ Make Responsive Utilities
+ ✔ Make Responsive Utilities @done (14-01-15 13:32)
  ✔ Revisit BEM Syntax @done (14-01-01 16:02)
  ☐ Revisit Forms
  ☐ Revisit Flexible Embeds
@@ -29,8 +29,7 @@ Base Tasks:
  ✔ Clean up variables and formatting @done (14-01-03 13:36)
  ✔ Add, update or clean up comments where needed. @done (13-11-19 13:48)
  ✔ Update table of contents @done (14-01-03 13:36)
- ☐ Change main.less back to satus.less
- ☐ Switch back to 2 space tabs?
+ ✔ Change main.less back to satus.less @done (14-01-13 12:51)
  ☐ Create style guide
 
 Components:
