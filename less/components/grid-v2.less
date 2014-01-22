@@ -21,56 +21,68 @@
 .v2-grid(@grid-columns); // generate columns
 
 // Offset Cells
-.v2-offsets (@index) when (@index > 0) {
+.v2-offsets-generate() when (@grid-enable-offsets-v2 = true) {
+    .v2-offsets (@index) when (@index > 0) {
 
-    .v2-offset-@{index}of@{grid-columns} {
-        .make-cell-offset(@index);
+        .v2-offset-@{index}of@{grid-columns} {
+            .make-cell-offset(@index);
+        }
+
+        .v2-offsets(@index - 1);
     }
 
-    .v2-offsets(@index - 1);
+    .v2-offsets(0) {} // stop loop
+    .v2-offsets((@grid-columns - 1)); // generate offsets
 }
-
-.v2-offsets(0) {} // stop loop
-.v2-offsets((@grid-columns - 1)); // generate offsets
+.v2-offsets-generate(); // generate offsets if true (set in variables.less)
 
 // Reset offsets from prior queries
-.v2-offset-0of@{grid-columns} {
-    margin-left: 0;
+.v2-reset-offset() when (@grid-enable-offsets-v2 = true) {
+    .v2-offset-0of@{grid-columns} {
+        margin-left: 0;
+    }
 }
+.v2-reset-offset();
 
 // Pull Cells
-.v2-pull (@index) when (@index > 0) {
+.v2-push-pull-generate() when (@grid-enable-push-pull-v2 = true) {
+    .v2-pull (@index) when (@index > 0) {
 
-    .v2-pull-@{index}of@{grid-columns} {
-        .make-cell-pull(@index);
+        .v2-pull-@{index}of@{grid-columns} {
+            .make-cell-pull(@index);
+        }
+
+        .v2-pull(@index - 1);
     }
 
-    .v2-pull(@index - 1);
-}
+    .v2-pull(0) {} // stop loop
+    .v2-pull((@grid-columns - 1)); // generate pulls
 
-.v2-pull(0) {} // stop loop
-.v2-pull((@grid-columns - 1)); // generate pulls
+    // Push Cells
+    .v2-push (@index) when (@index > 0) {
 
-// Push Cells
-.v2-push (@index) when (@index > 0) {
+        .v2-push-@{index}of@{grid-columns} {
+            .make-cell-push(@index);
+        }
 
-    .v2-push-@{index}of@{grid-columns} {
-        .make-cell-push(@index);
+        .v2-push(@index - 1);
     }
 
-    .v2-push(@index - 1);
+    .v2-push(0) {} // stop loop
+    .v2-push((@grid-columns - 1)); // generate pushes
 }
-
-.v2-push(0) {} // stop loop
-.v2-push((@grid-columns - 1)); // generate pushes
+.v2-push-pull-generate(); // generate pushes and pulls if true (set in variables.less)
 
 // Reset pushes and pulls from prior queries
-.v2-pull-0of@{grid-columns},
-.v2-push-0of@{grid-columns} {
-    position: static;
-    left: auto;
-    right: auto;
+.v2-reset-push-pull() when (@grid-enable-push-pull-v2 = true) {
+    .v2-pull-0of@{grid-columns},
+    .v2-push-0of@{grid-columns} {
+        position: static;
+        left: auto;
+        right: auto;
+    }
 }
+.v2-reset-push-pull();
 
 // Center Cell
 .v2-centered {
