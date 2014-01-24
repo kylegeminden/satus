@@ -780,6 +780,16 @@ fieldset[disabled] .form__input {
   width: 100%;
 }
 /**
+ * Add margin to inputs
+ * <input class="form__input form__input--space-right">
+ */
+.form__input--space-right {
+  margin-right: 0.625em;
+}
+.form__input--space-left {
+  margin-left: 0.625em;
+}
+/**
  * Form input size
  * <input class="form__input form__input--large">
  */
@@ -808,6 +818,10 @@ fieldset[disabled] .form__input {
   text-decoration: none;
   vertical-align: middle;
   -webkit-appearance: none;
+  /**
+     * Add margin to buttons
+     * <button class="button button--space-right">
+     */
 }
 .button:focus {
   outline: 1px dashed #96C0E6;
@@ -831,6 +845,12 @@ a.button:active {
 }
 .button--large {
   font-size: 1.25em;
+}
+.button--space-right {
+  margin-right: 0.625em;
+}
+.button--space-left {
+  margin-left: 0.625em;
 }
 /* ==========================================================================
    9.0 Tables
@@ -864,7 +884,6 @@ a.button:active {
   overflow: hidden;
   position: relative;
   height: 0;
-  margin-bottom: 1.125em;
 }
 .flex-embed iframe,
 .flex-embed object,
@@ -901,7 +920,6 @@ a.button:active {
 .flex-gmap {
   width: 100%;
   height: 0;
-  margin-bottom: 1.125em;
   padding-bottom: 67.5%;
 }
 /* ==========================================================================
@@ -916,12 +934,12 @@ a.button:active {
  *   <div class="grid__cell v2-12of12">...</div>
  * </div>
  *
- * Cell widths and media queries are:
- *  - v1-Xof12 (640px/40em and below)
- *  - v2-Xof12 (480px/30em and above)
- *  - v3-Xof12 (768px/48em and above)
- *  - v4-Xof12 (992px/62em and above)
- *  - v5-Xof12 (1382px/86.375em and above)
+ * Media queries are:
+ *  - v1 (640px/40em and below)
+ *  - v2 (480px/30em and above)
+ *  - v3 (768px/48em and above)
+ *  - v4 (992px/62em and above)
+ *  - v5 (1382px/86.375em and above)
  *
  * Offsets, pushes and pulls.
  * You can use offset-0of12, push-0of12 and pull-0of12 to undo prior queries.
