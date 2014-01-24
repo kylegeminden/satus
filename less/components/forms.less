@@ -100,19 +100,6 @@
     width: @input-height * 1.4;
 }
 
-
-/**
- * Form output element, Does Not Need .fomr__input class
- * http://html5doctor.com/the-output-element/
- * <output class="form__output">
- */
-
-.form__output {
-    height: @input-height;
-    padding: @input-padding-vertical 0;
-    vertical-align: middle;
-}
-
 /**
  * Make form elements full-width
  * <form class="form--full"> or <input class="form__input form__input--full">
@@ -160,4 +147,16 @@
 
 .form__input--small {
     font-size: @font-size-small;
+}
+
+/**
+ * Form output element, Does Not Need .fomr__input class
+ * http://html5doctor.com/the-output-element/
+ * <output class="form__output">
+ */
+
+.form__output {
+    height: @input-height;
+    padding: @input-padding-vertical 0;
+    vertical-align: middle;
 }
