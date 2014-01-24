@@ -803,7 +803,7 @@ fieldset[disabled] .form__input {
    8.0 Buttons
    ========================================================================== */
 /**
- * <button class="button button--large">
+ * <button class="button button--large button--space-right">
  */
 .button {
   display: inline-block;
@@ -818,10 +818,6 @@ fieldset[disabled] .form__input {
   text-decoration: none;
   vertical-align: middle;
   -webkit-appearance: none;
-  /**
-     * Add margin to buttons
-     * <button class="button button--space-right">
-     */
 }
 .button:focus {
   outline: 1px dashed #96C0E6;
@@ -861,11 +857,11 @@ a.button:active {
 .table {
   width: 100%;
 }
-.table__th,
-.table__td {
+.table__heading,
+.table__cell {
   padding: 0.5em 1em;
 }
-.table__th {
+.table__heading {
   font-weight: 700;
   text-align: left;
 }
@@ -972,11 +968,6 @@ a.button:active {
   float: left;
   width: 100%;
   min-height: 1px;
-}
-.grid__cell code {
-  display: block;
-  margin-bottom: 0.9375em;
-  background: #f7d4d4;
 }
 .grid.grid--collapse {
   margin-left: 0;
