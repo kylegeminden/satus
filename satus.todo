@@ -1,4 +1,8 @@
 Base Tasks:
+ ☐ Cleanup comments
+ ☐ Separate out grid widths and make utilities
+ ☐ Separate out utilities
+ ☐ Create style guide
  ✔ Simplify grayscale variables @done (13-11-02 08:24)
  ✔ Fix focus style @done (13-11-02 13:52)
  ✔ Make border-radius mixin @done (13-11-02 14:18)
@@ -20,7 +24,6 @@ Base Tasks:
  ✔ Document Grid @done (14-01-10 13:56)
  ✔ Make Responsive Utilities @done (14-01-15 13:32)
  ✔ Revisit BEM Syntax @done (14-01-01 16:02)
- ☐ Revisit Forms
  ✔ Revisit Flexible Embeds @done (14-01-23 13:11)
  ✔ Revisit REM @done (14-01-01 16:02)
  ✔ Update mixins @done (14-01-03 13:33)
@@ -29,7 +32,7 @@ Base Tasks:
  ✔ Add, update or clean up comments where needed. @done (13-11-19 13:48)
  ✔ Update table of contents @done (14-01-03 13:36)
  ✔ Change main.less back to satus.less @done (14-01-13 12:51)
- ☐ Create style guide
+ ✔ Revisit Forms @done (14-01-23 18:56)
 
 Components:
  ☐ flyouts
