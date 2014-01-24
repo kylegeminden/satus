@@ -21,11 +21,10 @@ Base Tasks:
  ✔ Make Responsive Utilities @done (14-01-15 13:32)
  ✔ Revisit BEM Syntax @done (14-01-01 16:02)
  ☐ Revisit Forms
- ☐ Revisit Flexible Embeds
+ ✔ Revisit Flexible Embeds @done (14-01-23 13:11)
  ✔ Revisit REM @done (14-01-01 16:02)
  ✔ Update mixins @done (14-01-03 13:33)
- ☐ fix wherever tab-focus is called
- ☐ Add margin top and bottom to figure?
+ ✔ fix wherever tab-focus is called @done (14-01-23 13:15)
  ✔ Clean up variables and formatting @done (14-01-03 13:36)
  ✔ Add, update or clean up comments where needed. @done (13-11-19 13:48)
  ✔ Update table of contents @done (14-01-03 13:36)
