@@ -1,78 +1,112 @@
-// Gutters
-.grid {
-    margin-left: -@grid-gutter-v1;
+/* ==========================================================================
+   12.0 Grid
+   ========================================================================== */
 
-    &__cell {
-        padding-left: @grid-gutter-v1;
+/**
+ * By default the grid is 12 columns across.
+ * <div class="grid">
+ *   <div class="grid__cell--v2-12of12">
+ *   <div class="grid__cell--v2-8of12">
+ *   <div class="grid__cell--v2-4of12">
+ *   <div class="grid__cell--v2-12of12">
+ * </div>
+ *
+ * Media queries are:
+ *  - v1 (479px/40em and below)
+ *  - v2 (480px/30em and above)
+ *  - v3 (768px/48em and above)
+ *  - v4 (992px/62em and above)
+ *  - v5 (1382px/86.375em and above)
+ *
+ * Offsets, pushes and pulls.
+ * You can use offset-0of12, push-0of12 and pull-0of12 to undo prior queries.
+ * <div class="grid__cell--v2-8of12 grid__cell--v2-offset-4of12">
+ * <div class="grid__cell--v2-8of12 grid__cell--v2-pull-4of12">
+ * <div class="grid__cell--v2-8of12 grid__cell--v2-push-4of12">
+ *
+ * A cell can be centered or uncentered from a centering from a prior media query.
+ * <div class="grid__cell--v2-8of12 grid__cell--v2-centered">
+ * <div class="grid__cell--v2-8of12 grid__cell--v2-centered grid__cell--v3-8of12 v3-uncentered">
+ *
+ * A cell can be cleared or uncleared from a prior media query.
+ * <div class="grid__cell--v2-2of12">
+ * <div class="grid__cell--v2-4of12 grid__cell--v3-2of12 grid__cell--v3-clear">
+ */
+
+.grid-container {
+    .make-grid-container(@grid-v1-gutter);
+}
+
+.grid {
+    .make-grid-row(@grid-v1-gutter);
+}
+
+[class*="grid__cell"] {
+    .make-grid-cells(@grid-v1-gutter);
+}
+
+.grid.grid--collapse {
+    margin-left: 0;
+
+    [class*="grid__cell"] {
+        padding-left: 0;
     }
 }
 
 // Cells
 .v1-grid (@index) when (@index > 0) {
-
-    .v1-@{index}of@{grid-columns} {
-        .make-cell(@index);
+    .grid__cell--v1-@{index}of@{grid-columns} {
+        .make-grid-cell(@index);
     }
-
     .v1-grid(@index - 1);
 }
-
 .v1-grid(0) {} // stop loop
 .v1-grid(@grid-columns); // generate columns
 
 // Offset Cells
-.v1-offsets-generate() when (@grid-enable-offsets-v1 = true) {
+.v1-offsets-generate() when (@grid-v1-enable-offsets = true) {
     .v1-offsets (@index) when (@index > 0) {
-
-        .v1-offset-@{index}of@{grid-columns} {
-            .make-cell-offset(@index);
+        .grid__cell--v1-offset-@{index}of@{grid-columns} {
+            .make-grid-cell-offset(@index);
         }
-
         .v1-offsets(@index - 1);
     }
-
     .v1-offsets(0) {} // stop loop
     .v1-offsets((@grid-columns - 1)); // generate offsets
 }
 .v1-offsets-generate(); // generate offsets if true (set in variables.less)
 
 // Pull Cells
-.v1-push-pull-generate() when (@grid-enable-push-pull-v1 = true) {
+.v1-push-pull-generate() when (@grid-v1-enable-push-pull = true) {
     .v1-pull (@index) when (@index > 0) {
-
-        .v1-pull-@{index}of@{grid-columns} {
-            .make-cell-pull(@index);
+        .grid__cell--v1-pull-@{index}of@{grid-columns} {
+            .make-grid-cell-pull(@index);
         }
-
         .v1-pull(@index - 1);
     }
-
     .v1-pull(0) {} // stop loop
     .v1-pull((@grid-columns - 1)); // generate pulls
 
     // Push Cells
     .v1-push (@index) when (@index > 0) {
-
-        .v1-push-@{index}of@{grid-columns} {
-            .make-cell-push(@index);
+        .grid__cell--v1-push-@{index}of@{grid-columns} {
+            .make-grid-cell-push(@index);
         }
-
         .v1-push(@index - 1);
     }
-
     .v1-push(0) {} // stop loop
     .v1-push((@grid-columns - 1)); // generate pushes
 }
 .v1-push-pull-generate(); // generate pushes and pulls if true (set in variables.less)
 
 // Center Cell
-.v1-centered {
+.grid__cell--v1-centered {
     float: none;
     margin-left: auto;
     margin-right: auto;
 }
 
 // Clear
-.v1-clear {
+.grid__cell--v1-clear {
     clear: left;
 }

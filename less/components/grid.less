@@ -12,7 +12,7 @@
  * </div>
  *
  * Media queries are:
- *  - v1 (640px/40em and below)
+ *  - v1 (479px/40em and below)
  *  - v2 (480px/30em and above)
  *  - v3 (768px/48em and above)
  *  - v4 (992px/62em and above)
@@ -34,24 +34,21 @@
  */
 
 .grid {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    .clearfix();
+    &:extend(.u-clearfix all);
+}
 
-    &__cell {
-        float: left;
-        width: 100%;
-        min-height: 1px;
-    }
+[class*="grid__cell"] {
+    float: left;
+    width: 100%;
+    min-height: 1px;
+}
 
-    &.grid--collapse {
-        margin-left: 0;
+.grid.grid--collapse {
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    [class*="grid__cell"] {
         padding-left: 0;
-        padding-right: 0;
-
-        .grid__cell {
-            padding-left: 0;
-        }
     }
 }

@@ -395,31 +395,43 @@
 // 10.0 Grid
 // ==========================================================================
 
-.make-row() {
-    .clearfix();
+.make-grid-container(@gutter: @grid-v1-gutter) {
+    padding-left: @gutter;
+    padding-right: @gutter;
 }
 
-.make-cell(@column; @total-columns: @grid-columns) {
+.make-grid-row(@gutter: @grid-v1-gutter) {
+    &:extend(.u-clearfix all);
+    margin-left: -@gutter;
+}
+
+.make-grid-cells(@gutter: @grid-v1-gutter) {
+    &:extend(.u-clearfix all);
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: @gutter;
+}
+
+.make-grid-cell(@column; @total-columns: @grid-columns) {
     width: (100 / @total-columns) * @column * 1%;
 }
 
-.make-cell-offset(@column; @total-columns: @grid-columns) {
+.make-grid-cell-offset(@column; @total-columns: @grid-columns) {
     margin-left: (100 / @total-columns) * @column * 1%;
 }
 
-.make-cell-push(@column; @total-columns: @grid-columns) {
+.make-grid-cell-push(@column; @total-columns: @grid-columns) {
     position: relative;
     left: (100 / @total-columns) * @column * 1%;
     right: auto;
 }
 
-.make-cell-pull(@column; @total-columns: @grid-columns) {
+.make-grid-cell-pull(@column; @total-columns: @grid-columns) {
     position: relative;
     right: (100 / @total-columns) * @column * 1%;
     left: auto;
 }
-
-
 
 // ==========================================================================
 // 11.0 Helpers
