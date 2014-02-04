@@ -15,6 +15,9 @@
  *    |-- 10.0 Flexible Embeds
  *    |-- 11.0 Flexible Google Map
  *    |-- 12.0 Grid
+ *    |-- 13.0 Navs
+ *    |-- 14.0 Page Header
+ *    |-- 15.0 Lead Copy
  *
  * |-- UTILITIES
  *    |-- 100.0 Utilities
@@ -50,6 +53,12 @@
 }
 @media @query-v5-min {
     @import 'components/grid-v5';
+}
+@import 'components/navs';
+@import 'components/page-header';
+@import 'components/lead-copy';
+@media @query-v3-min {
+    @import 'components/lead-copy-v3';
 }
 
 // Utilities
