@@ -21,3 +21,36 @@
 @-ms-viewport {
     width: device-width;
 }
+
+/**
+ * Remove default spacing and border for appropriate elements.
+ */
+
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+table, th, td, caption,
+hr, figure, body {
+    margin:0;
+    padding:0;
+}
+
+iframe {
+    border: 0;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/**
+ * Reset search back to border box due to normalize
+ */
+
+input[type="search"] {
+    .box-sizing(border-box);
+}
+
