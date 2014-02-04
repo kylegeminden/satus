@@ -18,6 +18,19 @@ module.exports = function(grunt) {
                     'css/<%= pkg.name %>.css': [ 'less/satus.less' ]
                 },
             },
+            style_guide: {
+                options: {
+                    paths: ['style_guide/css'],
+                    // compress: true,
+                    // report: 'gzip',
+                    sourceMap: true,
+                    sourceMapFilename: 'style_guide/css/style-guide.css.map',
+                    sourceMapRootpath: '../',
+                },
+                files: {
+                    'style_guide/css/style-guide.css': [ 'style_guide/less/style-guide.less' ]
+                },
+            },
         },
 
         uglify: {
@@ -47,7 +60,11 @@ module.exports = function(grunt) {
         watch: {
             less: {
                 files: ['less/**/*.less'],
-                tasks: 'less',
+                tasks: 'less:production',
+            },
+            less_style_guide: {
+                files: ['style_guide/less/**/*.less'],
+                tasks: 'less:style_guide',
             },
             uglify: {
                 files: ['js/plugins/**/*.js'],
