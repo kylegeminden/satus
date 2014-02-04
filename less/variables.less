@@ -38,7 +38,7 @@
 // 3.0 Typography
 // ==========================================================================
 
-@text-color      : @gray-darker;
+@text-color             : @gray-darker;
 
 @font-family-sans-serif : sans-serif;
 @font-family-serif      : serif;
@@ -98,11 +98,12 @@
 
 // code, kbd, samp
 @code-color      : @text-color;
+@code-bg         : darken(@gray-lighter, 2%);
 
 // pre
 
 @pre-padding     : 0.3125em 0.75em;
-@pre-bg          : lighten(@gray-lighter, 2%);
+@pre-bg          : @code-bg;
 @pre-border      : none;
 @pre-radius      : 3px;
 @pre-font-size   : 0.9em;
