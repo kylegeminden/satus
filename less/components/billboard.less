@@ -1,0 +1,26 @@
+/* ==========================================================================
+   16.0 Billboard
+   ========================================================================== */
+
+/**
+ * <div class="billboard">
+ *   <div class="billboard__heading">
+ *   <div class="billboard__body">
+ */
+
+.billboard {
+    margin-top: (@line-height * .2em);
+    margin-bottom: @font-margin;
+    font-size: round(@font-size-root * 1.1875, 1);
+
+    &__heading {
+        margin-bottom: (@line-height * .15em);
+        font-size: 3em;
+    }
+
+    &__body {
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
