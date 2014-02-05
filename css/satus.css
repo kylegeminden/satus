@@ -18,6 +18,7 @@
  *    |-- 13.0 Navs
  *    |-- 14.0 Page Header
  *    |-- 15.0 Lead Copy
+ *    |-- 16.0 Billboard
  *
  * |-- UTILITIES
  *    |-- 100.0 Utilities
@@ -2144,6 +2145,31 @@ a.button:active {
 @media only screen and (min-width: 48em) {
   .lead {
     font-size: 1.3125em;
+  }
+}
+/* ==========================================================================
+   16.0 Billboard
+   ========================================================================== */
+/**
+ * <div class="billboard">
+ *   <div class="billboard__heading">
+ *   <div class="billboard__body">
+ */
+.billboard {
+  margin-top: 0.30000000000000004em;
+  margin-bottom: 1.125em;
+  font-size: 19px;
+}
+.billboard__heading {
+  margin-bottom: 0.22499999999999998em;
+  font-size: 3em;
+}
+.billboard__body > *:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 48em) {
+  .billboard {
+    font-size: 21px;
   }
 }
 /* ==========================================================================
