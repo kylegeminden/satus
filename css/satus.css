@@ -2164,6 +2164,7 @@ a.button:active {
   margin-bottom: 0.22499999999999998em;
   font-size: 3em;
 }
+.billboard__body .is-last,
 .billboard__body > *:last-child {
   margin-bottom: 0;
 }
