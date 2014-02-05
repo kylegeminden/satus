@@ -1,0 +1,33 @@
+/* ==========================================================================
+   17.0 Flyout
+   ========================================================================== */
+
+.flyout {
+    position: relative;
+
+    &__content {
+        position: absolute;
+        left: auto;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+
+        ul& {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+
+    // &.is-open .flyout__content { // ~ if using JS
+    &:hover .flyout__content { // ~ if not using JS
+        clip: auto;
+        height: auto;
+        width: auto;
+        min-width: ((200 / 16) * 1em);
+        margin: 0;
+    }
+}

@@ -19,6 +19,7 @@
  *    |-- 14.0 Page Header
  *    |-- 15.0 Lead Copy
  *    |-- 16.0 Billboard
+ *    |-- 17.0 Flyout
  *
  * |-- UTILITIES
  *    |-- 100.0 Utilities
@@ -2172,6 +2173,34 @@ a.button:active {
   .billboard {
     font-size: 21px;
   }
+}
+/* ==========================================================================
+   17.0 Flyout
+   ========================================================================== */
+.flyout {
+  position: relative;
+}
+.flyout__content {
+  position: absolute;
+  left: auto;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+ul.flyout__content {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.flyout:hover .flyout__content {
+  clip: auto;
+  height: auto;
+  width: auto;
+  min-width: 12.5em;
+  margin: 0;
 }
 /* ==========================================================================
    100.0 Utilities
