@@ -20,6 +20,7 @@
  *    |-- 15.0 Lead Copy
  *    |-- 16.0 Billboard
  *    |-- 17.0 Flyout
+ *    |-- 18.0 Lists
  *
  * |-- UTILITIES
  *    |-- 100.0 Utilities
@@ -938,10 +939,6 @@ a.button:active {
  */
 .table {
   width: 100%;
-}
-.table__heading,
-.table__cell {
-  padding: 0.5em 1em;
 }
 /* ==========================================================================
    10.0 Flexible Embeds
@@ -2177,30 +2174,63 @@ a.button:active {
 /* ==========================================================================
    17.0 Flyout
    ========================================================================== */
+/**
+ * <li class="flyout">
+ *   <a href="#">Flyout</a>
+ *   <ul class="flyout__content">...</ul>
+ * </li>
+ */
 .flyout {
   position: relative;
 }
 .flyout__content {
   position: absolute;
-  left: auto;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
+  left: -10000em;
+  min-width: 9.375em;
 }
 ul.flyout__content {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.flyout:hover .flyout__content {
-  clip: auto;
-  height: auto;
-  width: auto;
-  min-width: 12.5em;
-  margin: 0;
+.flyout:hover > .flyout__content {
+  left: auto;
+}
+/* ==========================================================================
+   18.0 Lists
+   ========================================================================== */
+/**
+ * <ul class="list--square">
+ */
+.list--unstyled {
+  list-style: none;
+}
+.list--circle {
+  list-style-type: circle;
+}
+.list--disc {
+  list-style-type: disc;
+}
+.list--square {
+  list-style-type: square;
+}
+.list--lowerroman {
+  list-style-type: lower-roman;
+}
+.list--upperroman {
+  list-style-type: upper-roman;
+}
+.list--loweralpha {
+  list-style-type: lower-alpha;
+}
+.list--upperalpha {
+  list-style-type: upper-alpha;
+}
+.list--decimal {
+  list-style-type: decimal;
+}
+.list--decimal0 {
+  list-style-type: decimal-leading-zero;
 }
 /* ==========================================================================
    100.0 Utilities
