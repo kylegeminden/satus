@@ -1,0 +1,31 @@
+/* ==========================================================================
+   20.0 Breadcrumbs
+   ========================================================================== */
+
+/**
+ * <ol class="breadcrumbs">
+ * or us the data attribute to change the separator
+ * <ol class="breadcrumbs">
+ *   <li data-breadcrumbs="»">
+ */
+
+.breadcrumbs {
+    &:extend(.u-clearfix all);
+    padding: 0;
+    list-style: none;
+
+    li {
+        float: left;
+
+        &:before {
+            content: '/';
+            padding: 0 .4em;
+        }
+        &[data-breadcrumbs]:before {
+            content: attr(data-breadcrumbs);
+        }
+        &:first-child:before {
+            content: '';
+        }
+    }
+}

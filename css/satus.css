@@ -21,6 +21,7 @@
  *    |-- 16.0 Billboard
  *    |-- 17.0 Flyout
  *    |-- 18.0 Lists
+ *    |-- 19.0 Breadcrumbs
  *
  * |-- UTILITIES
  *    |-- 100.0 Utilities
@@ -2233,6 +2234,32 @@ ul.flyout__content {
   list-style-type: decimal-leading-zero;
 }
 /* ==========================================================================
+   20.0 Breadcrumbs
+   ========================================================================== */
+/**
+ * <ol class="breadcrumbs">
+ * or us the data attribute to change the separator
+ * <ol class="breadcrumbs">
+ *   <li data-breadcrumbs="»">
+ */
+.breadcrumbs {
+  padding: 0;
+  list-style: none;
+}
+.breadcrumbs li {
+  float: left;
+}
+.breadcrumbs li:before {
+  content: '/';
+  padding: 0 .4em;
+}
+.breadcrumbs li[data-breadcrumbs]:before {
+  content: attr(data-breadcrumbs);
+}
+.breadcrumbs li:first-child:before {
+  content: '';
+}
+/* ==========================================================================
    100.0 Utilities
    ========================================================================== */
 /**
@@ -2269,13 +2296,16 @@ ul.flyout__content {
 .grid:before,
 .grid:after,
 [class*="grid__cell"]:before,
-[class*="grid__cell"]:after {
+[class*="grid__cell"]:after,
+.breadcrumbs:before,
+.breadcrumbs:after {
   content: "";
   display: table;
 }
 .u-clearfix:after,
 .grid:after,
-[class*="grid__cell"]:after {
+[class*="grid__cell"]:after,
+.breadcrumbs:after {
   clear: both;
 }
 /**
