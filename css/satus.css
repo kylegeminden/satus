@@ -24,6 +24,8 @@
  *    |-- 19.0 Breadcrumbs
  *    |-- 20.0 Pagination
  *    |-- 21.0 Pager
+ *    |-- 22.0 Media Object
+ *    |-- 23.0 Images
  *
  * |-- UTILITIES
  *    |-- 100.0 Utilities
@@ -1004,10 +1006,10 @@ a.button:active {
 /**
  * By default the grid is 12 columns across.
  * <div class="grid">
- *   <div class="grid__cell--v2-12of12">
- *   <div class="grid__cell--v2-8of12">
- *   <div class="grid__cell--v2-4of12">
- *   <div class="grid__cell--v2-12of12">
+ *   <div class="grid__cell--v3-12of12">
+ *   <div class="grid__cell--v3-8of12">
+ *   <div class="grid__cell--v3-4of12">
+ *   <div class="grid__cell--v3-12of12">
  * </div>
  *
  * Media queries are:
@@ -2245,6 +2247,7 @@ ul.flyout__content {
  *   <li data-breadcrumbs="»">
  */
 .breadcrumbs {
+  margin: 1.125em 0;
   padding: 0;
   list-style: none;
 }
@@ -2265,21 +2268,50 @@ ul.flyout__content {
    20.0 Pagination
    ========================================================================== */
 /**
- * <nav class="pagination">
- *   <ol>
+ * <ol class="pagination pagination--center">
+ *   <li class="pagination__first">
+ *   <li class="pagination__prev">
+ *   <li>
+ *   <li class="is-current">
+ *   <li>
+ *   <li class="pagination__next">
+ *   <li class="pagination__last">
  */
-.pagination ol {
-  margin: 0;
+.pagination {
+  margin: 1.125em 0;
   padding: 0;
   list-style: none;
+}
+.pagination li {
+  display: inline-block;
 }
 /* ==========================================================================
    21.0 Pager
    ========================================================================== */
 /**
- * <nav  class="pager">
- *   <ol>
+ * <ol class="pager">
  */
+.pager {
+  margin: 1.125em 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.pager li {
+  display: inline-block;
+}
+/* ==========================================================================
+   22.0 Media Object
+   ========================================================================== */
+/* ==========================================================================
+   23.0 Images
+   ========================================================================== */
+.img--rounded {
+  border-radius: 0.5em;
+}
+.img--circle {
+  border-radius: 50%;
+}
 /* ==========================================================================
    100.0 Utilities
    ========================================================================== */
