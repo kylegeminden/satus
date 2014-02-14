@@ -1,0 +1,9 @@
+
+.v1-grid (@index) when (@index > 0) {
+    .width--v1-@{index}of@{grid-columns} {
+        .make-grid-cell(@index);
+    }
+    .v1-grid(@index - 1);
+}
+.v1-grid(0) {} // stop loop
+.v1-grid(@grid-columns); // generate columns
