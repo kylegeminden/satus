@@ -1,8 +1,0 @@
-.v2-offsets (@index) when (@index > 0) {
-    .offset--v2-@{index}of@{grid-columns} {
-        .make-grid-cell-offset(@index);
-    }
-    .v2-offsets(@index - 1);
-}
-.v2-offsets(0) {} // stop loop
-.v2-offsets((@grid-columns - 1)); // generate offsets
