@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                     optimizationLevel: 7,
                 },
                 files: {
-                    'img/ico/apple-touch-icon-precomposed.png': 'img/ico/apple-touch-icon-precomposed.png'
+                    'apple-touch-icon-precomposed.png': 'apple-touch-icon-precomposed.png'
                 },
             },
         },
