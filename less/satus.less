@@ -1,34 +1,34 @@
 /*** TABLE OF CONTENTS ***
  *
  * |-- BASE
- *    |-- 1.0 Normalize
- *    |-- 2.0 Reset
- *    |-- 3.0 Typography
- *    |-- 4.0 Code
- *    |-- 5.0 Embedded Content
- *    |-- 6.0 Forms
+ *    |-- Normalize
+ *    |-- Reset
+ *    |-- Typography
+ *    |-- Code
+ *    |-- Embedded Content
+ *    |-- Forms
  *
  * |-- COMPONENTS
- *    |-- 7.0 Forms
- *    |-- 8.0 Buttons
- *    |-- 9.0 Tables
- *    |-- 10.0 Flexible Embeds
- *    |-- 11.0 Flexible Google Map
- *    |-- 12.0 Grid
- *    |-- 13.0 Navs
- *    |-- 14.0 Page Header
- *    |-- 15.0 Lead Copy
- *    |-- 16.0 Billboard
- *    |-- 17.0 Flyout
- *    |-- 18.0 Lists
- *    |-- 19.0 Breadcrumbs
- *    |-- 20.0 Pagination
- *    |-- 21.0 Pager
- *    |-- 22.0 Media Object
- *    |-- 23.0 Images
+ *    |-- Forms
+ *    |-- Buttons
+ *    |-- Tables
+ *    |-- Images
+ *    |-- Flexible Embeds
+ *    |-- Flexible Google Map
+ *    |-- Grid
+ *    |-- Navs
+ *    |-- Flyout
+ *    |-- Breadcrumbs
+ *    |-- Pagination
+ *    |-- Pager
+ *    |-- Page Header
+ *    |-- Lead Copy
+ *    |-- Billboard
+ *    |-- Lists
+ *    |-- Media Object
  *
  * |-- UTILITIES
- *    |-- 100.0 Utilities
+ *    |-- Utilities
  *
 */
 
@@ -47,6 +47,7 @@
 @import 'components/forms';
 @import 'components/buttons';
 @import 'components/tables';
+@import 'components/images';
 @import 'components/flex-embed';
 @import 'components/flex-gmap';
 @import 'components/grid-v1';
@@ -63,6 +64,10 @@
     @import 'components/grid-v5';
 }
 @import 'components/navs';
+@import 'components/flyout';
+@import 'components/breadcrumbs';
+@import 'components/pagination';
+@import 'components/pager';
 @import 'components/page-header';
 @import 'components/lead-copy';
 @media @query-v3-min {
@@ -72,13 +77,8 @@
 @media @query-v3-min {
     @import 'components/billboard-v3';
 }
-@import 'components/flyout';
 @import 'components/lists';
-@import 'components/breadcrumbs';
-@import 'components/pagination';
-@import 'components/pager';
 @import 'components/media-object';
-@import 'components/images';
 
 // Utilities
 @import 'utilities/utilities';
