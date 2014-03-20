@@ -1,38 +1,38 @@
 /*** TABLE OF CONTENTS ***
  *
  * |-- BASE
- *    |-- 1.0 Normalize
- *    |-- 2.0 Reset
- *    |-- 3.0 Typography
- *    |-- 4.0 Code
- *    |-- 5.0 Embedded Content
- *    |-- 6.0 Forms
+ *    |-- Normalize
+ *    |-- Reset
+ *    |-- Typography
+ *    |-- Code
+ *    |-- Embedded Content
+ *    |-- Forms
  *
  * |-- COMPONENTS
- *    |-- 7.0 Forms
- *    |-- 8.0 Buttons
- *    |-- 9.0 Tables
- *    |-- 10.0 Flexible Embeds
- *    |-- 11.0 Flexible Google Map
- *    |-- 12.0 Grid
- *    |-- 13.0 Navs
- *    |-- 14.0 Page Header
- *    |-- 15.0 Lead Copy
- *    |-- 16.0 Billboard
- *    |-- 17.0 Flyout
- *    |-- 18.0 Lists
- *    |-- 19.0 Breadcrumbs
- *    |-- 20.0 Pagination
- *    |-- 21.0 Pager
- *    |-- 22.0 Media Object
- *    |-- 23.0 Images
+ *    |-- Forms
+ *    |-- Buttons
+ *    |-- Tables
+ *    |-- Images
+ *    |-- Flexible Embeds
+ *    |-- Flexible Google Map
+ *    |-- Grid
+ *    |-- Navs
+ *    |-- Flyout
+ *    |-- Breadcrumbs
+ *    |-- Pagination
+ *    |-- Pager
+ *    |-- Page Header
+ *    |-- Lead Copy
+ *    |-- Billboard
+ *    |-- Lists
+ *    |-- Media Object
  *
  * |-- UTILITIES
- *    |-- 100.0 Utilities
+ *    |-- Utilities
  *
 */
 /* ==========================================================================
-   1.0 Normalize
+   |-- Normalize
    ========================================================================== */
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
@@ -389,7 +389,7 @@ th {
   padding: 0;
 }
 /* ==========================================================================
-   2.0 Reset
+   |-- Reset
    ========================================================================== */
 /**
  * Change `box-sizing` from default `content-box` to `border-box` on all elements
@@ -455,7 +455,7 @@ input[type="search"] {
   box-sizing: border-box;
 }
 /* ==========================================================================
-   3.0 Typography
+   |-- Typography
    ========================================================================== */
 html {
   color: #222222;
@@ -602,6 +602,7 @@ small,
 hr {
   display: block;
   height: 1px;
+  margin: 1.125em 0;
   /* background color can be added to make for bevel effect */
   background: transparent;
   border: 0;
@@ -618,7 +619,7 @@ mark {
   color: #000000;
 }
 /* ==========================================================================
-   4.0 Code
+   |-- Code
    ========================================================================== */
 /**
  * Better default styling for pre, code, kbd, samp and pre elements
@@ -651,7 +652,7 @@ pre ol {
   margin: 0;
 }
 /* ==========================================================================
-   5.0 Embedded Content
+   |-- Embedded Content
    ========================================================================== */
 /**
  * Remove the gap between images, videos, audio and canvas and the bottom of
@@ -674,7 +675,7 @@ embed {
   height: auto;
 }
 /* ==========================================================================
-   6.0 Forms
+   |-- Forms
    ========================================================================== */
 /**
  * Disables default glow.
@@ -748,7 +749,7 @@ fieldset[disabled] textarea {
   cursor: not-allowed;
 }
 /* ==========================================================================
-   7.0 Forms
+   |-- Forms
    ========================================================================== */
 /**
  * Fieldsets
@@ -887,7 +888,7 @@ fieldset[disabled] .form__input {
   vertical-align: middle;
 }
 /* ==========================================================================
-   8.0 Buttons
+   |-- Buttons
    ========================================================================== */
 /**
  * <button class="button button--large button--space-right">
@@ -936,7 +937,7 @@ a.button:active {
   margin-left: 0.625em;
 }
 /* ==========================================================================
-   9.0 Tables
+   |-- Tables
    ========================================================================== */
 /**
  * <table class="table">
@@ -945,7 +946,16 @@ a.button:active {
   width: 100%;
 }
 /* ==========================================================================
-   10.0 Flexible Embeds
+   |-- Images
+   ========================================================================== */
+.img--rounded {
+  border-radius: 0.5em;
+}
+.img--circle {
+  border-radius: 50%;
+}
+/* ==========================================================================
+   |-- Flexible Embeds
    ========================================================================== */
 /**
  * Flexible/responsive embedded content.
@@ -980,7 +990,7 @@ a.button:active {
   padding-top: 25px;
 }
 /* ==========================================================================
-   11.0 Flexible Google Map
+   |-- Flexible Google Map
    ========================================================================== */
 /**
  * Flexible/responsive Google maps when using Google's API to generate the map
@@ -1000,7 +1010,7 @@ a.button:active {
   padding-bottom: 67.5%;
 }
 /* ==========================================================================
-   12.0 Grid
+   |-- Grid
    ========================================================================== */
 /**
  * By default the grid is 12 columns across.
@@ -1246,7 +1256,7 @@ a.button:active {
   .grid {
     margin-left: -1.25em;
   }
-  [class*="grid__cell--v2"] {
+  [class*="grid__cell"] {
     padding-left: 1.25em;
   }
   .grid__cell--v2-12of12 {
@@ -1462,7 +1472,7 @@ a.button:active {
   .grid {
     margin-left: -1.875em;
   }
-  [class*="grid__cell--v3"] {
+  [class*="grid__cell"] {
     padding-left: 1.875em;
   }
   .grid__cell--v3-12of12 {
@@ -1678,7 +1688,7 @@ a.button:active {
   .grid {
     margin-left: -1.875em;
   }
-  [class*="grid__cell--v4"] {
+  [class*="grid__cell"] {
     padding-left: 1.875em;
   }
   .grid__cell--v4-12of12 {
@@ -1894,7 +1904,7 @@ a.button:active {
   .grid {
     margin-left: -1.875em;
   }
-  [class*="grid__cell--v5"] {
+  [class*="grid__cell"] {
     padding-left: 1.875em;
   }
   .grid__cell--v5-12of12 {
@@ -2103,7 +2113,7 @@ a.button:active {
   }
 }
 /* ==========================================================================
-   13.0 Navs
+   |-- Navs
    ========================================================================== */
 /**
  * <ul class="nav nav--inline nav--right">
@@ -2129,55 +2139,7 @@ a.button:active {
   text-align: center;
 }
 /* ==========================================================================
-   14.0 Page Header
-   ========================================================================== */
-/**
- * <div class="page-header">
- *   <h1 class="page-header__title">...</h1>
- * </div>
- */
-/* ==========================================================================
-   15.0 Lead Copy
-   ========================================================================== */
-/**
- * <p class="lead">
- */
-.lead {
-  font-size: 1.1875em;
-}
-@media only screen and (min-width: 48em) {
-  .lead {
-    font-size: 1.3125em;
-  }
-}
-/* ==========================================================================
-   16.0 Billboard
-   ========================================================================== */
-/**
- * <div class="billboard">
- *   <div class="billboard__heading">
- *   <div class="billboard__body">
- */
-.billboard {
-  margin-top: 0.3em;
-  margin-bottom: 1.125em;
-  font-size: 19px;
-}
-.billboard__heading {
-  margin-bottom: 0.225em;
-  font-size: 3em;
-}
-.billboard__body .is-last,
-.billboard__body > *:last-child {
-  margin-bottom: 0;
-}
-@media only screen and (min-width: 48em) {
-  .billboard {
-    font-size: 21px;
-  }
-}
-/* ==========================================================================
-   17.0 Flyout
+   |-- Flyout
    ========================================================================== */
 /**
  * <li class="flyout">
@@ -2202,7 +2164,137 @@ ul.flyout__content {
   left: auto;
 }
 /* ==========================================================================
-   18.0 Lists
+   |-- Breadcrumbs
+   ========================================================================== */
+/**
+ * <nav class="breadcrumbs">
+ *   <ol>
+ * or us the data attribute to change the separator
+ * <nav class="breadcrumbs">
+ *   <ol>
+ *     <li data-breadcrumbs="⟩">
+ */
+.breadcrumbs {
+  margin: 1.125em 0;
+}
+.breadcrumbs ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.breadcrumbs li {
+  float: left;
+}
+.breadcrumbs li + li:before {
+  content: '/';
+  padding: 0 .4em;
+}
+.breadcrumbs li + li[data-breadcrumbs]:before {
+  content: attr(data-breadcrumbs);
+}
+.breadcrumbs li a {
+  text-decoration: none;
+}
+/* ==========================================================================
+   |-- Pagination
+   ========================================================================== */
+/**
+ * <nav class="pagination pagination--center">
+ *   <ol>
+ *     <li class="pagination__first">
+ *     <li class="pagination__prev">
+ *     <li>
+ *     <li class="is-current">
+ *     <li>
+ *     <li class="pagination__next">
+ *     <li class="pagination__last">
+ */
+.pagination {
+  margin: 1.125em 0;
+}
+.pagination ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pagination li {
+  display: inline-block;
+}
+.pagination a {
+  text-decoration: none;
+}
+/* ==========================================================================
+   |-- Pager
+   ========================================================================== */
+/**
+ * <nav class="pager">
+ *   <ol>
+ */
+.pager {
+  margin: 1.125em 0;
+}
+.pager ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.pager li {
+  display: inline-block;
+}
+.pager a {
+  text-decoration: none;
+}
+/* ==========================================================================
+   |-- Page Header
+   ========================================================================== */
+/**
+ * <div class="page-header">
+ *   <h1 class="page-header__title">...</h1>
+ * </div>
+ */
+/* ==========================================================================
+   |-- Lead Copy
+   ========================================================================== */
+/**
+ * <p class="lead">
+ */
+.lead {
+  font-size: 1.1875em;
+}
+@media only screen and (min-width: 48em) {
+  .lead {
+    font-size: 1.3125em;
+  }
+}
+/* ==========================================================================
+   |-- Billboard
+   ========================================================================== */
+/**
+ * <div class="billboard">
+ *   <div class="billboard__heading">
+ *   <div class="billboard__body">
+ */
+.billboard {
+  margin-top: 0.3em;
+  margin-bottom: 1.125em;
+  font-size: 19px;
+}
+.billboard__heading {
+  margin-bottom: 0.225em;
+  font-size: 2.25em;
+}
+.billboard__body .is-last,
+.billboard__body > *:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 48em) {
+  .billboard {
+    font-size: 21px;
+  }
+}
+/* ==========================================================================
+   |-- Lists
    ========================================================================== */
 /**
  * <ul class="list--square">
@@ -2238,89 +2330,8 @@ ul.flyout__content {
   list-style-type: decimal-leading-zero;
 }
 /* ==========================================================================
-   19.0 Breadcrumbs
+   |-- Media Object
    ========================================================================== */
-/**
- * <ol class="breadcrumbs">
- * or us the data attribute to change the separator
- * <ol class="breadcrumbs">
- *   <li data-breadcrumbs="»">
- */
-.breadcrumbs {
-  margin: 1.125em 0;
-  padding: 0;
-  list-style: none;
-}
-.breadcrumbs li {
-  float: left;
-}
-.breadcrumbs li:before {
-  content: '/';
-  padding: 0 .4em;
-}
-.breadcrumbs li[data-breadcrumbs]:before {
-  content: attr(data-breadcrumbs);
-}
-.breadcrumbs li:first-child:before {
-  content: '';
-}
-.breadcrumbs li a {
-  text-decoration: none;
-}
-/* ==========================================================================
-   20.0 Pagination
-   ========================================================================== */
-/**
- * <ol class="pagination pagination--center">
- *   <li class="pagination__first">
- *   <li class="pagination__prev">
- *   <li>
- *   <li class="is-current">
- *   <li>
- *   <li class="pagination__next">
- *   <li class="pagination__last">
- */
-.pagination {
-  margin: 1.125em 0;
-  padding: 0;
-  list-style: none;
-}
-.pagination li {
-  display: inline-block;
-}
-.pagination a {
-  text-decoration: none;
-}
-/* ==========================================================================
-   21.0 Pager
-   ========================================================================== */
-/**
- * <ol class="pager">
- */
-.pager {
-  margin: 1.125em 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-.pager li {
-  display: inline-block;
-}
-.pager a {
-  text-decoration: none;
-}
-/* ==========================================================================
-   22.0 Media Object
-   ========================================================================== */
-/* ==========================================================================
-   23.0 Images
-   ========================================================================== */
-.img--rounded {
-  border-radius: 0.5em;
-}
-.img--circle {
-  border-radius: 50%;
-}
 /* ==========================================================================
    100.0 Utilities
    ========================================================================== */
@@ -2359,15 +2370,15 @@ ul.flyout__content {
 .grid:after,
 [class*="grid__cell"]:before,
 [class*="grid__cell"]:after,
-.breadcrumbs:before,
-.breadcrumbs:after {
+.breadcrumbs ol:before,
+.breadcrumbs ol:after {
   content: "";
   display: table;
 }
 .u-clearfix:after,
 .grid:after,
 [class*="grid__cell"]:after,
-.breadcrumbs:after {
+.breadcrumbs ol:after {
   clear: both;
 }
 /**
