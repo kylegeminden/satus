@@ -1,16 +1,21 @@
 /* ==========================================================================
-   21.0 Pager
+   |-- Pager
    ========================================================================== */
 
 /**
- * <ol class="pager">
+ * <nav class="pager">
+ *   <ol>
  */
 
 .pager {
     margin: @font-margin 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
+
+    ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
 
     li {
         display: inline-block;

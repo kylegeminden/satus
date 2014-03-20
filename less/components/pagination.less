@@ -1,22 +1,27 @@
 /* ==========================================================================
-   20.0 Pagination
+   |-- Pagination
    ========================================================================== */
 
 /**
- * <ol class="pagination pagination--center">
- *   <li class="pagination__first">
- *   <li class="pagination__prev">
- *   <li>
- *   <li class="is-current">
- *   <li>
- *   <li class="pagination__next">
- *   <li class="pagination__last">
+ * <nav class="pagination pagination--center">
+ *   <ol>
+ *     <li class="pagination__first">
+ *     <li class="pagination__prev">
+ *     <li>
+ *     <li class="is-current">
+ *     <li>
+ *     <li class="pagination__next">
+ *     <li class="pagination__last">
  */
 
 .pagination {
     margin: @font-margin 0;
-    padding: 0;
-    list-style: none;
+
+    ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 
     li {
         display: inline-block;

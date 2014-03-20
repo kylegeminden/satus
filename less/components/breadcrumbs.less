@@ -1,32 +1,36 @@
 /* ==========================================================================
-   19.0 Breadcrumbs
+   |-- Breadcrumbs
    ========================================================================== */
 
 /**
- * <ol class="breadcrumbs">
+ * <nav class="breadcrumbs">
+ *   <ol>
  * or us the data attribute to change the separator
- * <ol class="breadcrumbs">
- *   <li data-breadcrumbs="»">
+ * <nav class="breadcrumbs">
+ *   <ol>
+ *     <li data-breadcrumbs="⟩">
  */
 
 .breadcrumbs {
-    &:extend(.u-clearfix all);
     margin: @font-margin 0;
-    padding: 0;
-    list-style: none;
+
+    ol {
+        &:extend(.u-clearfix all);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 
     li {
         float: left;
 
-        &:before {
+        + li:before {
             content: '/';
             padding: 0 .4em;
         }
-        &[data-breadcrumbs]:before {
+
+        + li[data-breadcrumbs]:before {
             content: attr(data-breadcrumbs);
-        }
-        &:first-child:before {
-            content: '';
         }
 
         a {
