@@ -1,0 +1,26 @@
+/* ==========================================================================
+   |-- Progress Bar
+   ========================================================================== */
+/**
+ * <div class="progress">
+ * <div class="progress__bar" role="progressbar" aria-valuenow="75%" aria-valuemin="0" aria-valuemax="100"  * style="width: 75%%;">60%</div>
+ * </div>
+ */
+
+.progress {
+    overflow: hidden;
+    height: ((30 / 16) * 1em);
+    margin: @font-margin 0;
+    background: @gray-lighter;
+    .border-radius(0);
+    font-size: 0.8em;
+    line-height: ((30 / 16) * 1em);
+    vertical-align: middle;
+    text-align: center;
+
+    &__bar {
+        float: left;
+        background: @gray;
+        color: @white;
+    }
+}
