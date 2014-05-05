@@ -405,12 +405,10 @@
     margin-left: -@gutter;
 }
 
-.make-grid-cells(@gutter: @grid-v1-gutter) {
-    &:extend(.u-clearfix all);
+.make-grid-cells() {
     float: left;
     width: 100%;
     min-height: 1px;
-    padding-left: @gutter;
 }
 
 .make-grid-cell(@column; @total-columns: @grid-columns) {
