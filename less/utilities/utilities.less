@@ -1,5 +1,5 @@
 /* ==========================================================================
-   100.0 Utilities
+   |-- Utilities
    ========================================================================== */
 
 /**
@@ -26,32 +26,4 @@
 
 .u-clearfix {
     .clearfix();
-}
-
-/**
- * Responsive visibility
- * example useage of hiding on v1 and showing on v2 and up
- * <div class="u-v1-hide u-v2-show">...</div>
- */
-
-.u-v1-hide { display: none !important; }
-
-@media @query-v2-min {
-  .u-v2-hide { display: none !important; }
-  .u-v2-show { display: inherit !important; }
-}
-
-@media @query-v3-min {
-  .u-v3-hide { display: none !important; }
-  .u-v3-show { display: inherit !important; }
-}
-
-@media @query-v4-min {
-  .u-v3-hide { display: none !important; }
-  .u-v3-show { display: inherit !important; }
-}
-
-@media @query-v5-min {
-  .u-v4-hide { display: none !important; }
-  .u-v4-show { display: inherit !important; }
 }
