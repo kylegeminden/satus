@@ -5,14 +5,22 @@
 /**
  * By default the grid is 12 columns across.
  * <div class="grid">
- *   <div class="grid__cell--v3-12of12">
- *   <div class="grid__cell--v3-8of12">
- *   <div class="grid__cell--v3-4of12">
- *   <div class="grid__cell--v3-12of12">
+ *   <div class="grid__cell v3--12of12">
+ *   <div class="grid__cell v3--8of12">
+ *   <div class="grid__cell v3--4of12">
+ *   <div class="grid__cell v3--12of12">
  * </div>
  *
+ * Gutters should be added with a modifier class to keep the grid modular. There is a modifier
+ * class for using the grid for page layouts as well as a container class that wraps the grid when
+ * using page layouts to add left and right padding.
+ * <div class="grid-container">
+ *   <div class="grid grid--page">
+ *     <div class="grid__cell v3--8of12">
+ *     <div class="grid__cell v3--4of12">
+ *
  * Media queries are:
- *  - v1 (479px/40em and below)
+ *  - v1 (479px/29.9375em and below)
  *  - v2 (480px/30em and above)
  *  - v3 (768px/48em and above)
  *  - v4 (992px/62em and above)
@@ -20,93 +28,93 @@
  *
  * Offsets, pushes and pulls.
  * You can use offset-0of12, push-0of12 and pull-0of12 to undo prior queries.
- * <div class="grid__cell--v2-8of12 grid__cell--v2-offset-4of12">
- * <div class="grid__cell--v2-8of12 grid__cell--v2-pull-4of12">
- * <div class="grid__cell--v2-8of12 grid__cell--v2-push-4of12">
+ * <div class="grid__cell v2--8of12 v2--offset--4of12">
+ * <div class="grid__cell v2--8of12 v2--pull--4of12">
+ * <div class="grid__cell v2--8of12 v2--push--4of12">
  *
  * A cell can be centered or uncentered from a centering from a prior media query.
- * <div class="grid__cell--v2-8of12 grid__cell--v2-centered">
- * <div class="grid__cell--v2-8of12 grid__cell--v2-centered grid__cell--v3-8of12 v3-uncentered">
+ * <div class="grid__cell v2--8of12 v2--centered">
+ * <div class="grid__cell v2--8of12 v2--centered v3--8of12 v3--uncentered">
  *
  * A cell can be cleared or uncleared from a prior media query.
- * <div class="grid__cell--v2-2of12">
- * <div class="grid__cell--v2-4of12 grid__cell--v3-2of12 grid__cell--v3-clear">
+ * <div class="grid__cell v2--2of12">
+ * <div class="grid__cell v2--4of12 v3--2of12 v3--clear">
+ *
+ * Show or Hide and element. Example useage of hiding on v1 and showing on v2 and up
+ * <div class="v1--hide v2--show">...</div>
  */
 
 .grid-container {
-    .make-grid-container(@grid-v1-gutter);
+    .make-grid-container(@grid-v1-gutter)
 }
 
 .grid {
-    .make-grid-row(@grid-v1-gutter);
+    &:extend(.u-clearfix all);
 }
 
 [class*="grid__cell"] {
-    .make-grid-cells(@grid-v1-gutter);
+    .make-grid-cells();
 }
 
-.grid.grid--collapse {
-    margin-left: 0;
+.grid--page {
+    margin-left: -@grid-v1-gutter;
 
-    [class*="grid__cell"] {
-        padding-left: 0;
+    > [class*="grid__cell"] {
+        padding-left: @grid-v1-gutter
     }
 }
 
 // Cells
-.v1-grid (@index) when (@index > 0) {
-    .grid__cell--v1-@{index}of@{grid-columns} {
-        .make-grid-cell(@index);
+.v1-cells(@n, @i: 1) when (@i =< @n) {
+    .v1--@{i}of@{n} {
+        .make-grid-cell(@i);
     }
-    .v1-grid(@index - 1);
+    .v1-cells(@n, (@i + 1));
 }
-.v1-grid(0) {} // stop loop
-.v1-grid(@grid-columns); // generate columns
+.v1-cells(@grid-columns); // generate cells
 
 // Offset Cells
-.v1-offsets-generate() when (@grid-v1-enable-offsets = true) {
-    .v1-offsets (@index) when (@index > 0) {
-        .grid__cell--v1-offset-@{index}of@{grid-columns} {
-            .make-grid-cell-offset(@index);
+.v1-offset() when (@grid-v1-enable-offsets = true) {
+    .v1-offsets(@n, @i: 1) when (@i =< @n) {
+        .v1--offset--@{i}of@{n} {
+            .make-grid-cell-offset(@i);
         }
-        .v1-offsets(@index - 1);
+        .v1-offsets(@n, (@i + 1));
     }
-    .v1-offsets(0) {} // stop loop
-    .v1-offsets((@grid-columns - 1)); // generate offsets
+    .v1-offsets(@grid-columns); // generate offsets
 }
-.v1-offsets-generate(); // generate offsets if true (set in variables.less)
+.v1-offset(); // generate offsets if true (set in variables.less)
 
 // Pull Cells
-.v1-push-pull-generate() when (@grid-v1-enable-push-pull = true) {
-    .v1-pull (@index) when (@index > 0) {
-        .grid__cell--v1-pull-@{index}of@{grid-columns} {
-            .make-grid-cell-pull(@index);
+.v1-push-pull() when (@grid-v1-enable-push-pull = true) {
+    .v1-pulls(@n, @i: 1) when (@i =< @n) {
+        .v1--pull--@{i}of@{n} {
+            .make-grid-cell-pull(@i);
         }
-        .v1-pull(@index - 1);
+        .v1-pulls(@n, (@i + 1));
     }
-    .v1-pull(0) {} // stop loop
-    .v1-pull((@grid-columns - 1)); // generate pulls
+    .v1-pulls(@grid-columns); // generate pulls
 
     // Push Cells
-    .v1-push (@index) when (@index > 0) {
-        .grid__cell--v1-push-@{index}of@{grid-columns} {
-            .make-grid-cell-push(@index);
+    .v1-pushes(@n, @i: 1) when (@i =< @n) {
+        .v1--push--@{i}of@{n} {
+            .make-grid-cell-push(@i);
         }
-        .v1-push(@index - 1);
+        .v1-pushes(@n, (@i + 1));
     }
-    .v1-push(0) {} // stop loop
-    .v1-push((@grid-columns - 1)); // generate pushes
+    .v1-pushes(@grid-columns); // generate pushes
 }
-.v1-push-pull-generate(); // generate pushes and pulls if true (set in variables.less)
+.v1-push-pull(); // generate pushes and pulls if true (set in variables.less)
 
 // Center Cell
-.grid__cell--v1-centered {
+.v1--centered {
     float: none;
     margin-left: auto;
     margin-right: auto;
 }
 
 // Clear
-.grid__cell--v1-clear {
-    clear: left;
-}
+.v1--clear { clear: left; }
+
+// Hide
+.v1--hide { display: none !important; }

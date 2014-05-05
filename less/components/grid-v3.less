@@ -1,99 +1,78 @@
 // Gutters
-.grid-container {
+.grid-container when (@grid-v3-gutter > @grid-v2-gutter) {
     .make-grid-container(@grid-v3-gutter);
 }
 
-.grid {
+.grid--page when (@grid-v3-gutter > @grid-v2-gutter) {
     margin-left: -@grid-v3-gutter;
-}
 
-[class*="grid__cell"] {
-    padding-left: @grid-v3-gutter;
+    > [class*="grid__cell"] {
+        padding-left: @grid-v3-gutter;
+    }
 }
 
 // Cells
-.v3-grid (@index) when (@index > 0) {
-
-    .grid__cell--v3-@{index}of@{grid-columns} {
-        .make-grid-cell(@index);
+.v3-cells(@n, @i: 1) when (@i =< @n) {
+    .v3--@{i}of@{n} {
+        .make-grid-cell(@i);
     }
-
-    .v3-grid(@index - 1);
+    .v3-cells(@n, (@i + 1));
 }
-.v3-grid(0) {} // stop loop
-.v3-grid(@grid-columns); // generate columns
+.v3-cells(@grid-columns); // generate cells
 
 // Offset Cells
-.v3-offsets-generate() when (@grid-v3-enable-offsets = true) {
-    .v3-offsets (@index) when (@index > 0) {
-        .grid__cell--v3-offset-@{index}of@{grid-columns} {
-            .make-grid-cell-offset(@index);
+.v3-offset() when (@grid-v1-enable-offsets = true) {
+    .v3-offsets(@n, @i: 1) when (@i =< @n) {
+        .v3--offset--@{i}of@{n} {
+            .make-grid-cell-offset(@i);
         }
-        .v3-offsets(@index - 1);
+        .v3-offsets(@n, (@i + 1));
     }
-    .v3-offsets(0) {} // stop loop
-    .v3-offsets((@grid-columns - 1)); // generate offsets
-
-    // Reset offsets from prior queries
-    .grid__cell--v3-offset-0of@{grid-columns} {
-        margin-left: 0;
-    }
+    .v3-offsets(@grid-columns); // generate offsets
 }
-.v3-offsets-generate(); // generate offsets if true (set in variables.less)
-
+.v3-offset(); // generate offsets if true (set in variables.less)
 
 // Pull Cells
-.v3-push-pull-generate() when (@grid-v3-enable-push-pull = true) {
-    .v3-pull (@index) when (@index > 0) {
-        .grid__cell--v3-pull-@{index}of@{grid-columns} {
-            .make-grid-cell-pull(@index);
+.v3-push-pull() when (@grid-v1-enable-push-pull = true) {
+    .v3-pulls(@n, @i: 1) when (@i =< @n) {
+        .v3--pull--@{i}of@{n} {
+            .make-grid-cell-pull(@i);
         }
-        .v3-pull(@index - 1);
+        .v3-pulls(@n, (@i + 1));
     }
-    .v3-pull(0) {} // stop loop
-    .v3-pull((@grid-columns - 1)); // generate pulls
+    .v3-pulls(@grid-columns); // generate pulls
 
     // Push Cells
-    .v3-push (@index) when (@index > 0) {
-        .grid__cell--v3-push-@{index}of@{grid-columns} {
-            .make-grid-cell-push(@index);
+    .v3-pushes(@n, @i: 1) when (@i =< @n) {
+        .v3--push--@{i}of@{n} {
+            .make-grid-cell-push(@i);
         }
-        .v3-push(@index - 1);
+        .v3-pushes(@n, (@i + 1));
     }
-    .v3-push(0) {} // stop loop
-    .v3-push((@grid-columns - 1)); // generate pushes
-
-    // Reset pushes and pulls from prior queries
-    .grid__cell--v3-pull-0of@{grid-columns},
-    .grid__cell--v3-push-0of@{grid-columns} {
-        position: static;
-        left: auto;
-        right: auto;
-    }
+    .v3-pushes(@grid-columns); // generate pushes
 }
-.v3-push-pull-generate(); // generate pushes and pulls if true (set in variables.less)
-
+.v3-push-pull(); // generate pushes and pulls if true (set in variables.less)
 
 // Center Cell
-.grid__cell--v3-centered {
+.v3--centered {
     float: none;
     margin-left: auto;
     margin-right: auto;
 }
 
 // Uncenter Cell from prior queries
-.grid__cell--v3-uncentered {
+.v3--uncentered {
     float: left;
     margin-left: 0;
     margin-right: 0;
 }
 
 // Clear Cell
-.grid__cell--v3-clear {
-    clear: left;
-}
+.v3--clear { clear: left; }
 
 // Unclear Cell from prior queries
-.grid__cell--v3-unclear {
-    clear: left;
-}
+.v3--unclear { float: left; }
+
+// Show and Hide
+.v3--hide { display: none !important; }
+.v3--show { display: inherit !important; }
