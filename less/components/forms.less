@@ -3,6 +3,49 @@
    ========================================================================== */
 
 /**
+ * Remove default webkit styles (for iOS)
+ */
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"] {
+    -webkit-appearance: none;
+}
+
+/**
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/**
+ * Better default styling for labels
+ */
+
+label {
+    display: inline-block;
+    margin-bottom: .35em;
+}
+
+/**
+ * Forms
+ */
+
+.form {
+
+}
+
+/**
  * Fieldsets
  * <fieldset class="form__fieldset">
  */
@@ -19,9 +62,6 @@
  */
 
 .form__label {
-    display: inline-block;
-    margin-bottom: .35em;
-
     &--top {
         vertical-align: top;
     }
@@ -63,6 +103,7 @@
     color: @input-color;
     vertical-align: middle;
     .placeholder();
+    .tab-focus();
 
     // Reset padding
     &[type="color"] {
@@ -86,7 +127,9 @@
     &[readonly],
     &[disabled],
     fieldset[disabled] & {
+        cursor: not-allowed;
         background: @input-disabled-bg;
+        opacity: 1; // iOS fix for unreadable disabled content
         color: @input-disabled-color;
     }
 }
@@ -110,12 +153,6 @@
     .form__range,
     .form__file {
         width: 100%;
-    }
-    .grid {
-        margin-left: -@grid-form-gutter;
-    }
-    .grid__cell {
-        padding-left: @grid-form-gutter;
     }
 }
 
@@ -159,4 +196,25 @@
     height: @input-height;
     padding: @input-padding-vertical 0;
     vertical-align: middle;
+}
+
+/**
+ * Form Grid. Will make form elements full width within the grid.
+ * <div class="grid grid--form">
+ *   <div class="grid__cell v2--6of12">
+ *     <input class="form__input">
+ */
+
+.grid--form {
+    margin-left: -@grid-form-gutter;
+
+    > [class*="grid__cell"] {
+        padding-left: @grid-form-gutter
+    }
+
+    .form__input,
+    .form__range,
+    .form__file {
+        width: 100%;
+    }
 }
