@@ -54,3 +54,19 @@ input[type="search"] {
     .box-sizing(border-box);
 }
 
+/**
+ * Disables default styles for invalid form fields.
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
+ */
+
+:invalid {
+    box-shadow: none;
+}
+
+:-moz-submit-invalid {
+    box-shadow: none;
+}
+
+:-moz-ui-invalid {
+    box-shadow: none;
+}
