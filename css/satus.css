@@ -878,7 +878,7 @@ fieldset[disabled] .form__input {
  */
 .button {
   display: inline-block;
-  padding: 0.4em 0.875em;
+  padding: 0.44em 0.875em 0.36em;
   background: #0066cc;
   border: 1px solid #0066cc;
   border-radius: 0.25em;
@@ -888,6 +888,7 @@ fieldset[disabled] .form__input {
   font-family: sans-serif;
   text-decoration: none;
   vertical-align: middle;
+  white-space: nowrap;
   -webkit-appearance: none;
 }
 .button:focus {
