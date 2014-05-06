@@ -139,15 +139,15 @@
 @fieldset-radius          : @border-radius;
 
 // buttons
-@button-font              : @font-family-sans-serif;
-@button-font-size         : 1em;
-@button-font-color        : @white;
-@button-padding           : @input-padding-vertical @input-padding-horizontal;
+@button-padding           : (@input-padding-vertical * 1.1) @input-padding-horizontal (@input-padding-vertical * .9);
 @button-bg                : @link-color;
 @button-bg-hover          : @link-color-hover;
 @button-disabled          : lighten(@link-color, 15%);
 @button-border            : 1px solid @button-bg;
 @button-radius            : @border-radius;
+@button-font-color        : @white;
+@button-font              : @font-family-sans-serif;
+@button-font-size         : 1em;
 
 // ==========================================================================
 // |-- Media Queries
