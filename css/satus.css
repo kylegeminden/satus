@@ -6,7 +6,6 @@
  *    |-- Typography
  *    |-- Code
  *    |-- Embedded Content
- *    |-- Forms
  *
  * |-- Components
  *    |-- Forms
@@ -456,6 +455,19 @@ input[type="search"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+/**
+ * Disables default styles for invalid form fields.
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
+ */
+:invalid {
+  box-shadow: none;
+}
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+:-moz-ui-invalid {
+  box-shadow: none;
+}
 /* ==========================================================================
    |-- Typography
    ========================================================================== */
@@ -573,8 +585,7 @@ a {
   color: #0066cc;
 }
 a:focus {
-  outline: 1px dashed #96C0E6;
-  outline-offset: -2px;
+  border-color: #129FEA;
 }
 a:hover,
 a:focus,
@@ -680,19 +691,6 @@ embed {
    |-- Forms
    ========================================================================== */
 /**
- * Disables default glow.
- * https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
- */
-:invalid {
-  box-shadow: none;
-}
-:-moz-submit-invalid {
-  box-shadow: none;
-}
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-/**
  * Remove default webkit styles (for iOS)
  */
 textarea,
@@ -702,17 +700,11 @@ input[type="search"],
 input[type="email"],
 input[type="url"],
 input[type="tel"],
-input[type="number"] {
+input[type="number"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"] {
   -webkit-appearance: none;
-}
-/**
- * Fix optgroup Firefox bug
- */
-select optgroup {
-  font-style: inherit;
-  font-weight: inherit;
-  font-size: inherit;
-  font-family: inherit;
 }
 /**
  * Allow only vertical resizing of textareas.
@@ -721,38 +713,15 @@ textarea {
   resize: vertical;
 }
 /**
- * Consistent focus styles for form elements and buttons
+ * Better default styling for labels
  */
-input:focus,
-button:focus,
-select:focus,
-textarea:focus {
-  outline: 1px dashed #96C0E6;
-  outline-offset: -2px;
+label {
+  display: inline-block;
+  margin-bottom: .35em;
 }
 /**
- * Styling for disabled and read only inputs
- * Note for fieldsets: "If this Boolean attribute is set, the form controls that are its
- * descendants, except descendants of its first optional <legend> element, are disabled,
- * i.e., not editable."
- * source: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
- * Fieldsets are styled anyway so if yours falls under this edge case simply remove the
- * fieldset selector.
+ * Forms
  */
-input[readonly],
-select[readonly],
-textarea[readonly],
-input[disabled],
-select[disabled],
-textarea[disabled],
-fieldset[disabled] input,
-fieldset[disabled] select,
-fieldset[disabled] textarea {
-  cursor: not-allowed;
-}
-/* ==========================================================================
-   |-- Forms
-   ========================================================================== */
 /**
  * Fieldsets
  * <fieldset class="form__fieldset">
@@ -766,10 +735,6 @@ fieldset[disabled] textarea {
  * Labels
  * <label class="form__label">
  */
-.form__label {
-  display: inline-block;
-  margin-bottom: .35em;
-}
 .form__label--top {
   vertical-align: top;
 }
@@ -820,6 +785,9 @@ fieldset[disabled] textarea {
 .form__input:-moz-placeholder {
   color: #999999;
 }
+.form__input:focus {
+  border-color: #129FEA;
+}
 .form__input[type="color"] {
   padding: 0;
 }
@@ -831,7 +799,9 @@ textarea.form__input,
 .form__input[readonly],
 .form__input[disabled],
 fieldset[disabled] .form__input {
+  cursor: not-allowed;
   background: #f7f7f7;
+  opacity: 1;
   color: #999999;
 }
 /**
@@ -849,12 +819,6 @@ fieldset[disabled] .form__input {
 .form--full .form__range,
 .form--full .form__file {
   width: 100%;
-}
-.form--full .grid {
-  margin-left: -0.625em;
-}
-.form--full .grid__cell {
-  padding-left: 0.625em;
 }
 .form__input--full {
   width: 100%;
@@ -889,6 +853,23 @@ fieldset[disabled] .form__input {
   padding: 0.4em 0;
   vertical-align: middle;
 }
+/**
+ * Form Grid. Will make form elements full width within the grid.
+ * <div class="grid grid--form">
+ *   <div class="grid__cell v2--6of12">
+ *     <input class="form__input">
+ */
+.grid--form {
+  margin-left: -0.625em;
+}
+.grid--form > [class*="grid__cell"] {
+  padding-left: 0.625em;
+}
+.grid--form .form__input,
+.grid--form .form__range,
+.grid--form .form__file {
+  width: 100%;
+}
 /* ==========================================================================
    |-- Buttons
    ========================================================================== */
@@ -910,8 +891,7 @@ fieldset[disabled] .form__input {
   -webkit-appearance: none;
 }
 .button:focus {
-  outline: 1px dashed #96C0E6;
-  outline-offset: -2px;
+  border-color: #129FEA;
 }
 .button:hover {
   background: #004c99;
