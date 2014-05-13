@@ -688,6 +688,25 @@ embed {
   height: auto;
 }
 /* ==========================================================================
+   |-- Billboard
+   ========================================================================== */
+/**
+ * From HTML5 Boilerplate http://html5boilerplate.com/
+ * http://browsehappy.com/
+ * <!--[if lt IE 8]>
+ *  <p class="browsehappy">
+ *   You are using an <strong>outdated</strong> browser.
+ *   Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+ *  </p>
+ * <![endif]-->
+ */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+/* ==========================================================================
    |-- Forms
    ========================================================================== */
 /**
@@ -733,7 +752,7 @@ label {
 }
 /**
  * Labels
- * <label class="form__label">
+ * <label class="form__label--top">
  */
 .form__label--top {
   vertical-align: top;
@@ -874,7 +893,7 @@ fieldset[disabled] .form__input {
    |-- Buttons
    ========================================================================== */
 /**
- * <button class="button button--large button--space-right">
+ * <button class="button button--large button--space--right">
  */
 .button {
   display: inline-block;
@@ -913,10 +932,10 @@ a.button:active {
 .button--large {
   font-size: 1.25em;
 }
-.button--space-right {
+.button--space--right {
   margin-right: 0.625em;
 }
-.button--space-left {
+.button--space--left {
   margin-left: 0.625em;
 }
 /* ==========================================================================
@@ -925,8 +944,9 @@ a.button:active {
 /**
  * <table class="table">
  */
-.table {
-  width: 100%;
+.table th,
+.table td {
+  padding: 0;
 }
 /* ==========================================================================
    |-- Images
@@ -2287,25 +2307,25 @@ ul.flyout__content {
    |-- Billboard
    ========================================================================== */
 /**
- * <div class="billboard">
- *   <div class="billboard__heading">
- *   <div class="billboard__body">
+ * <div class="hero">
+ *   <div class="hero__heading">
+ *   <div class="hero__body">
  */
-.billboard {
+.hero {
   margin-top: 0.3em;
   margin-bottom: 1.125em;
   font-size: 19px;
 }
-.billboard__heading {
+.hero__heading {
   margin-bottom: 0.225em;
   font-size: 2.25em;
 }
-.billboard__body .is-last,
-.billboard__body > *:last-child {
+.hero__body .is-last,
+.hero__body > *:last-child {
   margin-bottom: 0;
 }
 @media only screen and (min-width: 48em) {
-  .billboard {
+  .hero {
     font-size: 21px;
   }
 }
