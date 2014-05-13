@@ -1311,6 +1311,9 @@ a.button:active {
   .v2--12of12 {
     width: 100%;
   }
+  .v2--offset--0of12 {
+    margin-left: 0;
+  }
   .v2--offset--1of12 {
     margin-left: 8.33333333%;
   }
@@ -1346,6 +1349,11 @@ a.button:active {
   }
   .v2--offset--12of12 {
     margin-left: 100%;
+  }
+  .v2--pull--0of12 {
+    position: static;
+    left: auto;
+    right: auto;
   }
   .v2--pull--1of12 {
     position: relative;
@@ -1406,6 +1414,11 @@ a.button:active {
     position: relative;
     right: 100%;
     left: auto;
+  }
+  .v2--push--0of12 {
+    position: static;
+    left: auto;
+    right: auto;
   }
   .v2--push--1of12 {
     position: relative;
@@ -1537,6 +1550,9 @@ a.button:active {
   .v3--12of12 {
     width: 100%;
   }
+  .v3--offset--0of12 {
+    margin-left: 0;
+  }
   .v3--offset--1of12 {
     margin-left: 8.33333333%;
   }
@@ -1572,6 +1588,11 @@ a.button:active {
   }
   .v3--offset--12of12 {
     margin-left: 100%;
+  }
+  .v3--pull--0of12 {
+    position: static;
+    left: auto;
+    right: auto;
   }
   .v3--pull--1of12 {
     position: relative;
@@ -1632,6 +1653,11 @@ a.button:active {
     position: relative;
     right: 100%;
     left: auto;
+  }
+  .v3--push--0of12 {
+    position: static;
+    left: auto;
+    right: auto;
   }
   .v3--push--1of12 {
     position: relative;
@@ -1753,6 +1779,9 @@ a.button:active {
   .v4--12of12 {
     width: 100%;
   }
+  .v4--offset--0of12 {
+    margin-left: 0;
+  }
   .v4--offset--1of12 {
     margin-left: 8.33333333%;
   }
@@ -1788,6 +1817,11 @@ a.button:active {
   }
   .v4--offset--12of12 {
     margin-left: 100%;
+  }
+  .v4--pull--0of12 {
+    position: static;
+    left: auto;
+    right: auto;
   }
   .v4--pull--1of12 {
     position: relative;
@@ -1848,6 +1882,11 @@ a.button:active {
     position: relative;
     right: 100%;
     left: auto;
+  }
+  .v4--push--0of12 {
+    position: static;
+    left: auto;
+    right: auto;
   }
   .v4--push--1of12 {
     position: relative;
@@ -1969,6 +2008,9 @@ a.button:active {
   .v5--12of12 {
     width: 100%;
   }
+  .v5--offset--0of12 {
+    margin-left: 0;
+  }
   .v5--offset--1of12 {
     margin-left: 8.33333333%;
   }
@@ -2004,6 +2046,11 @@ a.button:active {
   }
   .v5--offset--12of12 {
     margin-left: 100%;
+  }
+  .v5--pull--0of12 {
+    position: static;
+    left: auto;
+    right: auto;
   }
   .v5--pull--1of12 {
     position: relative;
@@ -2064,6 +2111,11 @@ a.button:active {
     position: relative;
     right: 100%;
     left: auto;
+  }
+  .v5--push--0of12 {
+    position: static;
+    left: auto;
+    right: auto;
   }
   .v5--push--1of12 {
     position: relative;
