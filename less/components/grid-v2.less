@@ -21,24 +21,34 @@
 .v2-cells(@grid-columns); // generate cells
 
 // Offset Cells
-.v2-offset() when (@grid-v1-enable-offsets = true) {
+.v2-offset() when (@grid-v2-enable-offsets = true) {
     .v2-offsets(@n, @i: 1) when (@i =< @n) {
         .v2--offset--@{i}of@{n} {
             .make-grid-cell-offset(@i);
         }
         .v2-offsets(@n, (@i + 1));
     }
+    // Undo Offset from prior queries
+    .v2--offset--0of@{grid-columns} {
+        margin-left: 0;
+    }
     .v2-offsets(@grid-columns); // generate offsets
 }
 .v2-offset(); // generate offsets if true (set in variables.less)
 
 // Pull Cells
-.v2-push-pull() when (@grid-v1-enable-push-pull = true) {
+.v2-push-pull() when (@grid-v2-enable-push-pull = true) {
     .v2-pulls(@n, @i: 1) when (@i =< @n) {
         .v2--pull--@{i}of@{n} {
             .make-grid-cell-pull(@i);
         }
         .v2-pulls(@n, (@i + 1));
+    }
+    // Undo Pull from prior queries
+    .v2--pull--0of@{grid-columns} {
+        position: static;
+        left: auto;
+        right: auto;
     }
     .v2-pulls(@grid-columns); // generate pulls
 
@@ -48,6 +58,12 @@
             .make-grid-cell-push(@i);
         }
         .v2-pushes(@n, (@i + 1));
+    }
+    // Undo Push from prior queries
+    .v2--push--0of@{grid-columns} {
+        position: static;
+        left: auto;
+        right: auto;
     }
     .v2-pushes(@grid-columns); // generate pushes
 }
