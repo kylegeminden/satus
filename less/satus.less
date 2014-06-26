@@ -22,7 +22,7 @@
  *    |-- Pager
  *    |-- Page Header
  *    |-- Lead Copy
- *    |-- Billboard
+ *    |-- Hero
  *    |-- Lists
  *    |-- Media Object
  *    |-- Progress Bar
@@ -38,6 +38,9 @@
 @import 'base/normalize';
 @import 'base/reset';
 @import 'base/typography';
+@media @query-v3-min {
+    @import 'base/typography-v3';
+}
 @import 'base/code';
 @import 'base/embed';
 
