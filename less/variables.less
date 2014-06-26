@@ -11,14 +11,6 @@
 // |-- Color Palette
 // ==========================================================================
 
-@cp-primary   : #ff0000;
-@cp-secondary : spin(@cp-primary, 80);
-@cp-tertiary  : spin(@cp-primary, 160);
-@cp-quadrary  : darken(@cp-primary, 15%);
-
-
-// grayscale
-
 @white : #fff;
 @black : #000;
 
@@ -27,6 +19,16 @@
 @gray:                   lighten(@black, 33.5%); // #555
 @gray-light:             lighten(@black, 60%);   // #999
 @gray-lighter:           lighten(@black, 93.5%); // #eee
+
+@cp-primary   : hsl(0, 100%, 50%);
+@cp-secondary : tint(@cp-primary, 25%);
+@cp-tertiary  : tint(@cp-primary, 45%);
+@cp-quadrary  : shade(@cp-primary, 35%);
+
+@cp-info    : hsl(200, 75%, 45%);
+@cp-success : hsl(110, 70%, 40%);
+@cp-warning : hsl(29, 84%, 48%);
+@cp-error   : hsl(0, 57%, 51%);
 
 // ==========================================================================
 // |-- Base
