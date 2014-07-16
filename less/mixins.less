@@ -3,12 +3,7 @@
 // |-- Typography
 // |-- Forms
 // |-- Box
-// |-- Gradients
 // |-- Borders
-// |-- Shadows
-// |-- Transforms
-// |-- Transistions
-// |-- Animations
 // |-- Shapes
 // |-- Grid
 // |-- Helpers
@@ -46,38 +41,9 @@
     hyphens: @mode;
 }
 
-.columns(@column-count; @column-gap) {
-    -webkit-column-count: @column-count;
-    -moz-column-count: @column-count;
-    column-count: @column-count;
-    -webkit-column-gap: @column-gap;
-    -moz-column-gap: @column-gap;
-    column-gap: @column-gap;
-}
-
 // ==========================================================================
 // |-- Forms
 // ==========================================================================
-
-// http://css-tricks.com/almanac/selectors/p/placeholder/
-.placeholder(@color: @placeholder-color) {
-    // Safari and Chrome
-    &::-webkit-input-placeholder {
-        color: @color;
-    }
-    // Firefox 19+
-    &::-moz-placeholder {
-        color: @color;
-    }
-    // Intenet Expolorer 10+
-    &:-ms-input-placeholder {
-        color: @color;
-    }
-    // Firefox 18-
-    &:-moz-placeholder {
-        color: @color;
-    }
-}
 
 .tab-focus() {
     &:focus {
@@ -97,52 +63,6 @@
     resize: @direction;
 }
 
-// http://css-tricks.com/almanac/properties/b/backface-visibility/
-// default is visibile
-// .backface-visibility(VALUE); (hidden or visible)
-.backface-visibility(@visibility) {
-    -webkit-backface-visibility: @visibility;
-    -moz-backface-visibility: @visibility;
-    backface-visibility: @visibility;
-}
-
-// .box-sizing(VALUE); (border-box, padding-box, content-box)
-.box-sizing(@boxmodel) {
-    -webkit-box-sizing: @boxmodel;
-    -moz-box-sizing: @boxmodel;
-    box-sizing: @boxmodel;
-}
-
-.opacity(@opacity) {
-    opacity: @opacity;
-    // IE8 filter
-    @opacity-ie: (@opacity * 100);
-    filter: ~"alpha(opacity=@{opacity-ie})";
-}
-
-// ==========================================================================
-// |-- Gradients
-// ==========================================================================
-
-// * @color-stops were designed to be escaped in order to allow for multiples.
-// * fallbacks can be either an image or a color or both.
-
-// .linear-gradident(#ccc, 0deg, ~"#ccc 0%, #fff 100%");
-.linear-gradient(@fallback; @angle; @color-stops) {
-    background: @fallback;
-    background: -webkit-linear-gradient((90 - @angle), @color-stops); // Chrome 10-25, iOS 5+, Safari 5.1+
-    background: -moz-linear-gradient((90 - @angle), @color-stops); // Firefox 3.6-15
-    background: linear-gradient(@angle, @color-stops); // Chrome 26, Firefox 16+, IE 10+, Opera 12.10+
-}
-
-// .radial-gradient(white, 25% 25%, ellipse, ~"white 0%, black 50%");
-.radial-gradient(@fallback; @position; @shape; @stops) {
-    background: @fallback;
-    background: -webkit-radial-gradient(@position, @shape cover,  @stops); /* Chrome10+,Safari5.1+ */
-    background: -moz-radial-gradient(@position, @shape cover,  @stops); /* FF3.6+ */
-    background: radial-gradient(@shape at @position,  @stops); /* W3C */
-}
-
 // ==========================================================================
 // |-- Borders
 // ==========================================================================
@@ -152,167 +72,6 @@
     border-width : @width;
     border-style : @style;
     border-color : @color;
-}
-
-// won't output css if it is 0
-// .border-radius(.3rem);
-.border-radius(@radius) when (@radius > 0) {
-    border-radius: @radius;
-}
-.border-top-radius(@radius) when (@radius > 0) {
-    border-radius: @radius @radius 0 0;
-}
-.border-right-radius(@radius) when (@radius > 0) {
-    border-radius: 0 @radius @radius 0;
-}
-.border-bottom-radius(@radius) when (@radius > 0) {
-    border-radius: 0 0 @radius @radius;
-}
-.border-left-radius(@radius) when (@radius > 0) {
-    border-radius: @radius 0 0 @radius;
-}
-
-// ==========================================================================
-// |-- Shadows
-// ==========================================================================
-
-.box-shadow(@shadow){
-    -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
-    box-shadow: @shadow;
-}
-
-// ==========================================================================
-// |-- Transforms
-// ==========================================================================
-
-.rotate(@degrees) {
-    -webkit-transform: rotate(@degrees);
-    -ms-transform: rotate(@degrees); // IE9 only
-    transform: rotate(@degrees);
-}
-
-.scale(@ratio; @ratio-y...) {
-    -webkit-transform: scale(@ratio, @ratio-y);
-    -ms-transform: scale(@ratio, @ratio-y); // IE9 only
-    transform: scale(@ratio, @ratio-y);
-}
-
-.translate(@x; @y) {
-    -webkit-transform: translate(@x, @y);
-    -ms-transform: translate(@x, @y); // IE9 only
-    transform: translate(@x, @y);
-}
-
-.skew(@x; @y) {
-    -webkit-transform: skew(@x, @y);
-    -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
-    transform: skew(@x, @y);
-}
-
-.translate3d(@x; @y; @z) {
-    -webkit-transform: translate3d(@x, @y, @z);
-    transform: translate3d(@x, @y, @z);
-}
-
-.rotateX(@degrees) {
-    -webkit-transform: rotateX(@degrees);
-    -ms-transform: rotateX(@degrees); // IE9 only
-    transform: rotateX(@degrees);
-}
-
-.rotateY(@degrees) {
-    -webkit-transform: rotateY(@degrees);
-    -ms-transform: rotateY(@degrees); // IE9 only
-    transform: rotateY(@degrees);
-}
-
-.perspective(@perspective) {
-    -webkit-perspective: @perspective;
-    -moz-perspective: @perspective;
-    perspective: @perspective;
-}
-
-.perspective-origin(@perspective) {
-    -webkit-perspective-origin: @perspective;
-    -moz-perspective-origin: @perspective;
-    perspective-origin: @perspective;
-}
-
-.transform-origin(@origin) {
-    -webkit-transform-origin: @origin;
-    -moz-transform-origin: @origin;
-    -ms-transform-origin: @origin; // IE9 only
-    transform-origin: @origin;
-}
-
-// ==========================================================================
-// |-- Transistions
-// ==========================================================================
-
-.transition(@transition) {
-    -webkit-transition: @transition;
-    transition: @transition;
-}
-
-.transition-property(@transition-property) {
-    -webkit-transition-property: @transition-property;
-    transition-property: @transition-property;
-}
-
-.transition-delay(@transition-delay) {
-    -webkit-transition-delay: @transition-delay;
-    transition-delay: @transition-delay;
-}
-
-.transition-duration(@transition-duration) {
-    -webkit-transition-duration: @transition-duration;
-    transition-duration: @transition-duration;
-}
-
-.transition-transform(@transition) {
-    -webkit-transition: -webkit-transform @transition;
-    -moz-transition: -moz-transform @transition;
-    -o-transition: -o-transform @transition;
-    transition: transform @transition;
-}
-
-// ==========================================================================
-// |-- Animations
-// ==========================================================================
-
-.animation(@animation) {
-    -webkit-animation: @animation;
-    animation: @animation;
-}
-
-.animation-name(@name) {
-    -webkit-animation-name: @name;
-    animation-name: @name;
-}
-
-.animation-duration(@duration) {
-    -webkit-animation-duration: @duration;
-    animation-duration: @duration;
-}
-
-.animation-timing-function(@timing-function) {
-    -webkit-animation-timing-function: @timing-function;
-    animation-timing-function: @timing-function;
-}
-
-.animation-delay(@delay) {
-    -webkit-animation-delay: @delay;
-    animation-delay: @delay;
-}
-
-.animation-iteration-count(@iteration-count) {
-    -webkit-animation-iteration-count: @iteration-count;
-    animation-iteration-count: @iteration-count;
-}
-
-.animation-direction(@direction) {
-    -webkit-animation-direction: @direction;
-    animation-direction: @direction;
 }
 
 // ==========================================================================
