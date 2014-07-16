@@ -6,6 +6,7 @@
  * Remove default webkit styles (for iOS)
  */
 
+select,
 textarea,
 input[type="text"],
 input[type="password"],
@@ -98,11 +99,11 @@ label {
     padding: @input-padding-vertical @input-padding-horizontal;
     background: @input-bg;
     border: @input-border;
-    .border-radius(@input-radius);
+    .radius(@input-radius);
     outline-style: none;
     color: @input-color;
     vertical-align: middle;
-    .placeholder();
+    .placeholder(@placeholder-color);
     .tab-focus();
 
     // Reset padding
@@ -115,6 +116,14 @@ label {
     &[size],
     &[multiple="multiple"] {
         height: auto;
+    }
+
+    select&:not(*:root) {
+        background: @input-bg;
+    }
+
+    select[multiple]&:not(*:root) {
+        background: @input-bg;
     }
 
     // Styling for disabled and read only inputs
