@@ -4,6 +4,29 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
+        bowercopy: {
+            less: {
+                options: {
+                    destPrefix: 'less/',
+                },
+                // dest : src
+                files: {
+                    'lesshat.less': 'lesshat/build/lesshat.less',
+                    'base/normalize.less': 'normalize-css/normalize.css',
+                }
+            },
+            jsVendor: {
+                options: {
+                    destPrefix: 'js/vendor',
+                },
+                // dest : src
+                files: {
+                    'modernizr.js': 'modernizr/modernizr.js',
+                    'jquery.min.js': 'jquery/dist/jquery.min.js',
+                },
+            },
+        },
+
         less: {
             production: {
                 options: {
@@ -11,11 +34,11 @@ module.exports = function(grunt) {
                     // compress: true,
                     // report: 'gzip',
                     sourceMap: true,
-                    sourceMapFilename: 'css/<%= pkg.name %>.css.map',
+                    sourceMapFilename: 'css/main.css.map',
                     sourceMapRootpath: '../',
                 },
                 files: {
-                    'css/<%= pkg.name %>.css': [ 'less/satus.less' ]
+                    'css/main.css': [ 'less/satus.less' ]
                 },
             },
             style_guide: {
@@ -63,7 +86,7 @@ module.exports = function(grunt) {
                 tasks: 'less:production',
             },
             less_style_guide: {
-                files: ['style_guide/less/**/*.less'],
+                files: ['style_guide/**/*.less'],
                 tasks: 'less:style_guide',
             },
             uglify: {
@@ -93,6 +116,7 @@ module.exports = function(grunt) {
     });
 
     //load our tasks
+    grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
