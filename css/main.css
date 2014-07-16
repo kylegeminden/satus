@@ -685,12 +685,6 @@ pre {
   padding: 0.3125em 0.75em;
   background: #e9e9e9;
   border: none;
-  -webkit-border-radius: 3px;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 3px;
-  -moz-background-clip: padding;
-  border-radius: 3px;
-  background-clip: padding-box;
   color: #222222;
   font-size: 0.9em;
   white-space: pre;
@@ -2492,11 +2486,11 @@ ul.flyout__content {
   height: 1.875em;
   margin: 1.125em 0;
   background: #eeeeee;
-  -webkit-border-radius: 0;
+  -webkit-border-radius: 0.15em;
   -webkit-background-clip: padding-box;
-  -moz-border-radius: 0;
+  -moz-border-radius: 0.15em;
   -moz-background-clip: padding;
-  border-radius: 0;
+  border-radius: 0.15em;
   background-clip: padding-box;
   font-size: 0.8em;
   line-height: 1.875em;
