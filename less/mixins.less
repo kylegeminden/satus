@@ -74,6 +74,11 @@
     border-color : @color;
 }
 
+// dependent on less hat .border-radius mixin
+.radius(@radius) when (@radius > 0) {
+    .border-radius(@radius);
+}
+
 // ==========================================================================
 // |-- Shapes
 // ==========================================================================
