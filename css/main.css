@@ -22,7 +22,7 @@
  *    |-- Pager
  *    |-- Page Header
  *    |-- Lead Copy
- *    |-- Billboard
+ *    |-- Hero
  *    |-- Lists
  *    |-- Media Object
  *    |-- Progress Bar
@@ -513,23 +513,23 @@ h6,
 }
 h1,
 .h1 {
-  margin-bottom: 0.45em;
-  font-size: 2.25em;
+  margin-bottom: 0.6em;
+  font-size: 2em;
 }
 h2,
 .h2 {
-  margin-bottom: 0.6em;
-  font-size: 1.875em;
+  margin-bottom: 0.75em;
+  font-size: 1.5em;
 }
 h3,
 .h3 {
   margin-bottom: 0.675em;
-  font-size: 1.5em;
+  font-size: 1.3125em;
 }
 h4,
 .h4 {
-  margin-bottom: 0.9em;
-  font-size: 1.25em;
+  margin-bottom: 1.125em;
+  font-size: 1.125em;
 }
 h5,
 .h5 {
@@ -539,7 +539,7 @@ h5,
 h6,
 .h6 {
   margin-bottom: 1.35em;
-  font-size: 0.875em;
+  font-size: .875em;
 }
 /**
  * Set bottom margin on appropriate elements due to reset
@@ -631,6 +631,38 @@ mark {
   background: #ffff00;
   color: #000000;
 }
+@media only screen and (min-width: 48em) {
+  h1,
+  .h1 {
+    margin-bottom: 0.45em;
+    font-size: 2.25em;
+  }
+  h2,
+  .h2 {
+    margin-bottom: 0.6em;
+    font-size: 1.875em;
+  }
+  h3,
+  .h3 {
+    margin-bottom: 0.675em;
+    font-size: 1.5em;
+  }
+  h4,
+  .h4 {
+    margin-bottom: 0.9em;
+    font-size: 1.25em;
+  }
+  h5,
+  .h5 {
+    margin-bottom: 0.975em;
+    font-size: 1em;
+  }
+  h6,
+  .h6 {
+    margin-bottom: 1.35em;
+    font-size: .875em;
+  }
+}
 /* ==========================================================================
    |-- Code
    ========================================================================== */
@@ -653,7 +685,12 @@ pre {
   padding: 0.3125em 0.75em;
   background: #e9e9e9;
   border: none;
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
   border-radius: 3px;
+  background-clip: padding-box;
   color: #222222;
   font-size: 0.9em;
   white-space: pre;
@@ -712,6 +749,7 @@ embed {
 /**
  * Remove default webkit styles (for iOS)
  */
+select,
 textarea,
 input[type="text"],
 input[type="password"],
@@ -748,7 +786,12 @@ label {
 .form__fieldset {
   padding: 0.625em;
   border: 1px solid #bfbfbf;
+  -webkit-border-radius: 0.25em;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0.25em;
+  -moz-background-clip: padding;
   border-radius: 0.25em;
+  background-clip: padding-box;
 }
 /**
  * Labels
@@ -787,7 +830,12 @@ label {
   padding: 0.4em 0.875em;
   background: #ffffff;
   border: 1px solid #bfbfbf;
+  -webkit-border-radius: 0.25em;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0.25em;
+  -moz-background-clip: padding;
   border-radius: 0.25em;
+  background-clip: padding-box;
   outline-style: none;
   color: #222222;
   vertical-align: middle;
@@ -795,13 +843,13 @@ label {
 .form__input::-webkit-input-placeholder {
   color: #999999;
 }
+.form__input:-moz-placeholder {
+  color: #999999;
+}
 .form__input::-moz-placeholder {
   color: #999999;
 }
 .form__input:-ms-input-placeholder {
-  color: #999999;
-}
-.form__input:-moz-placeholder {
   color: #999999;
 }
 .form__input:focus {
@@ -814,6 +862,12 @@ textarea.form__input,
 .form__input[size],
 .form__input[multiple="multiple"] {
   height: auto;
+}
+select.form__input:not(*:root) {
+  background: #ffffff;
+}
+select[multiple].form__input:not(*:root) {
+  background: #ffffff;
 }
 .form__input[readonly],
 .form__input[disabled],
@@ -900,7 +954,12 @@ fieldset[disabled] .form__input {
   padding: 0.44em 0.875em 0.36em;
   background: #0066cc;
   border: 1px solid #0066cc;
+  -webkit-border-radius: 0.25em;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0.25em;
+  -moz-background-clip: padding;
   border-radius: 0.25em;
+  background-clip: padding-box;
   color: #ffffff;
   font-size: 1em;
   line-height: 1.5;
@@ -2356,7 +2415,7 @@ ul.flyout__content {
   }
 }
 /* ==========================================================================
-   |-- Billboard
+   |-- Hero
    ========================================================================== */
 /**
  * <div class="hero">
@@ -2433,6 +2492,12 @@ ul.flyout__content {
   height: 1.875em;
   margin: 1.125em 0;
   background: #eeeeee;
+  -webkit-border-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0;
+  -moz-background-clip: padding;
+  border-radius: 0;
+  background-clip: padding-box;
   font-size: 0.8em;
   line-height: 1.875em;
   vertical-align: middle;
@@ -2489,4 +2554,4 @@ ul.flyout__content {
 .breadcrumbs ol:after {
   clear: both;
 }
-/*# sourceMappingURL=../css/satus.css.map */
+/*# sourceMappingURL=../css/main.css.map */
