@@ -75,7 +75,9 @@
 }
 
 // dependent on less hat .border-radius mixin
-.radius(@radius) when (@radius > 0) {
+// https://github.com/madebysource/lesshat/blob/master/README.md#border-radius
+// use 0 if no output is desired
+.radius(@radius) when not (@radius = 0) {
     .border-radius(@radius);
 }
 
