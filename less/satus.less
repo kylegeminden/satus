@@ -39,9 +39,6 @@
 @import 'base/normalize';
 @import 'base/reset';
 @import 'base/typography';
-@media @query-v3-min {
-    @import 'base/typography-v3';
-}
 @import 'base/code';
 @import 'base/embed';
 
@@ -54,18 +51,10 @@
 @import 'components/flex-embed';
 @import 'components/flex-gmap';
 @import 'components/grid-v1';
-@media @query-v2-min {
-    @import 'components/grid-v2';
-}
-@media @query-v3-min {
-    @import 'components/grid-v3';
-}
-@media @query-v4-min {
-    @import 'components/grid-v4';
-}
-@media @query-v5-min {
-    @import 'components/grid-v5';
-}
+@import 'components/grid-v2';
+@import 'components/grid-v3';
+@import 'components/grid-v4';
+@import 'components/grid-v5';
 @import 'components/navs';
 @import 'components/flyout';
 @import 'components/breadcrumbs';
@@ -73,13 +62,7 @@
 @import 'components/pager';
 @import 'components/page-header';
 @import 'components/lead-copy';
-@media @query-v3-min {
-    @import 'components/lead-copy-v3';
-}
 @import 'components/hero';
-@media @query-v3-min {
-    @import 'components/hero-v3';
-}
 @import 'components/lists';
 @import 'components/media-object';
 @import 'components/progress-bar';
