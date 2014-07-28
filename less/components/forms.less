@@ -6,18 +6,13 @@
  * Remove default webkit styles (for iOS)
  */
 
-select,
-textarea,
 input[type="text"],
 input[type="password"],
 input[type="search"],
 input[type="email"],
 input[type="url"],
 input[type="tel"],
-input[type="number"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"] {
+input[type="number"] {
     -webkit-appearance: none;
 }
 
@@ -114,16 +109,8 @@ label {
     // Reset height for multiple select and text area
     textarea&,
     &[size],
-    &[multiple="multiple"] {
+    &[multiple] {
         height: auto;
-    }
-
-    select&:not(*:root) {
-        background: @input-bg;
-    }
-
-    select[multiple]&:not(*:root) {
-        background: @input-bg;
     }
 
     // Styling for disabled and read only inputs
@@ -143,30 +130,32 @@ label {
     }
 }
 
-/**
- * Set consistent width for color input
- */
-
-.form__input[type="color"],
-.form--full .form__input[type="color"] {
-    width: @input-height * 1.4;
+.form__input,
+.form__range,
+.form__file {
+    width: 100%;
 }
 
 /**
- * Make form elements full-width
- * <form class="form--full"> or <input class="form__input form__input--full">
+ * Make form elements inlnie
+ * <form class="form--inline"> or <input class="form__input form__input--inline">
  */
 
-.form--full {
+.form--inline {
     .form__input,
     .form__range,
     .form__file {
-        width: 100%;
+        width: auto;
     }
 }
 
-.form__input--full {
-    width: 100%;
+.form__input--inline {
+    width: auto;
+
+    // Set consistent width for color input
+    &[type="color"] {
+        width: @input-height * 1.4;
+    }
 }
 
 /**
@@ -208,7 +197,7 @@ label {
 }
 
 /**
- * Form Grid. Will make form elements full width within the grid.
+ * Form Grid.
  * <div class="grid grid--form">
  *   <div class="grid__cell v2--6of12">
  *     <input class="form__input">
@@ -219,11 +208,5 @@ label {
 
     > [class*="grid__cell"] {
         padding-left: @grid-form-gutter
-    }
-
-    .form__input,
-    .form__range,
-    .form__file {
-        width: 100%;
     }
 }
