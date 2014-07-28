@@ -15,12 +15,15 @@
 /**
  * IE10 Metro responsive
  * Required for Windows 8 Metro split-screen snapping with IE10
- * Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+ * http://timkadlec.com/2013/01/windows-phone-8-and-device-width/
+ * http://mattstow.com/responsive-design-in-ie10-on-windows-phone-8.html
  */
 
-@-ms-viewport {
-    width: device-width;
-}
+@-webkit-viewport { width: device-width }
+@-moz-viewport    { width: device-width }
+@-ms-viewport     { width: device-width }
+@-o-viewport      { width: device-width }
+@viewport         { width: device-width }
 
 /**
  * Remove default spacing and border for appropriate elements.
