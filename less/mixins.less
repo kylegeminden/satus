@@ -6,6 +6,7 @@
 // |-- Borders
 // |-- Shapes
 // |-- Grid
+// |-- Browser Support
 // |-- Helpers
 
 // ==========================================================================
@@ -191,6 +192,25 @@
     position: relative;
     right: (100 / @total-columns) * @column * 1%;
     left: auto;
+}
+
+// ==========================================================================
+// |-- Browser Support
+// ==========================================================================
+
+// http://browserhacks.com/
+
+// Media Queries and IE8 Support
+.query-ie8(@query : @query-v4-min, @rules) {
+    @media @query { @rules(); }
+    @ie8:  ~"\0screen";
+    @media @ie8 { @rules(); }
+}
+
+// IE8 Only
+.ie8(@rules) {
+    @ie8:  ~"\0screen";
+    @media @ie8 { @rules(); }
 }
 
 // ==========================================================================
