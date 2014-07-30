@@ -155,26 +155,33 @@
 // |-- Media Queries
 // ==========================================================================
 
-@v1-max : ((479 / 16) * 1em);
-@v2-min : ((480 / 16) * 1em);
-@v2-max : ((767 / 16) * 1em);
-@v3-min : ((768 / 16) * 1em);
-@v3-max : ((991 / 16) * 1em);
-@v4-min : ((992 / 16) * 1em);
-@v4-max : ((1381 / 16) * 1em);
-@v5-min : ((1382 / 16) * 1em);
+@xs-max : ((479 / 16) * 1em);
+@sm-min : ((480 / 16) * 1em);
+@sm-max : ((767 / 16) * 1em);
+@md-min : ((768 / 16) * 1em);
+@md-max : ((991 / 16) * 1em);
+@lg-min : ((992 / 16) * 1em);
+@lg-max : ((1381 / 16) * 1em);
+@xl-min : ((1382 / 16) * 1em);
 
-@query-v1-max     : ~"only screen and (max-width: @{v1-max})";
-@query-v2-min     : ~"only screen and (min-width: @{v2-min})";
-@query-v2-max     : ~"only screen and (max-width: @{v2-max})";
-@query-v2-min-max : ~"only screen and (min-width: @{v2-min}) and (max-width: @{v2-max})";
-@query-v3-min     : ~"only screen and (min-width: @{v3-min})";
-@query-v3-max     : ~"only screen and (max-width: @{v3-max})";
-@query-v3-min-max : ~"only screen and (min-width: @{v3-min}) and (max-width: @{v3-max})";
-@query-v4-min     : ~"only screen and (min-width: @{v4-min})";
-@query-v4-max     : ~"only screen and (min-width: @{v4-max})";
-@query-v4-min-max : ~"only screen and (min-width: @{v4-min}) and (min-width: @{v4-max})";
-@query-v5-min     : ~"only screen and (min-width: @{v5-min})";
+@query-xs-max     : ~"only screen and (max-width: @{xs-max})";
+@query-sm-min     : ~"only screen and (min-width: @{sm-min})";
+@query-sm-max     : ~"only screen and (max-width: @{sm-max})";
+@query-sm-min-max : ~"only screen and (min-width: @{sm-min}) and (max-width: @{sm-max})";
+@query-md-min     : ~"only screen and (min-width: @{md-min})";
+@query-md-max     : ~"only screen and (max-width: @{md-max})";
+@query-md-min-max : ~"only screen and (min-width: @{md-min}) and (max-width: @{md-max})";
+@query-lg-min     : ~"only screen and (min-width: @{lg-min})";
+@query-lg-max     : ~"only screen and (min-width: @{lg-max})";
+@query-lg-min-max : ~"only screen and (min-width: @{lg-min}) and (min-width: @{lg-max})";
+@query-xl-min     : ~"only screen and (min-width: @{xl-min})";
+
+// query selector namespace
+@xs-ns : ~"xs";
+@sm-ns : ~"sm";
+@md-ns : ~"md";
+@lg-ns : ~"lg";
+@xl-ns : ~"xl";
 
 // ==========================================================================
 // |-- Grid
@@ -182,25 +189,25 @@
 
 @grid-columns   : 12;
 
-@grid-v1-gutter : ((20 / 16) * 1em);
-@grid-v2-gutter : ((20 / 16) * 1em);
-@grid-v3-gutter : ((30 / 16) * 1em);
-@grid-v4-gutter : ((30 / 16) * 1em);
-@grid-v5-gutter : ((30 / 16) * 1em);
+@grid-xs-gutter : ((20 / 16) * 1em);
+@grid-sm-gutter : ((20 / 16) * 1em);
+@grid-md-gutter : ((30 / 16) * 1em);
+@grid-lg-gutter : ((30 / 16) * 1em);
+@grid-xl-gutter : ((30 / 16) * 1em);
 
 @grid-form-gutter : ((10 / 16) * 1em);
 
-@grid-v1-enable-offsets   : true;
-@grid-v1-enable-push-pull : true;
+@grid-xs-enable-offsets   : true;
+@grid-xs-enable-push-pull : true;
 
-@grid-v2-enable-offsets   : true;
-@grid-v2-enable-push-pull : true;
+@grid-sm-enable-offsets   : true;
+@grid-sm-enable-push-pull : true;
 
-@grid-v3-enable-offsets   : true;
-@grid-v3-enable-push-pull : true;
+@grid-md-enable-offsets   : true;
+@grid-md-enable-push-pull : true;
 
-@grid-v4-enable-offsets   : true;
-@grid-v4-enable-push-pull : true;
+@grid-lg-enable-offsets   : true;
+@grid-lg-enable-push-pull : true;
 
-@grid-v5-enable-offsets   : true;
-@grid-v5-enable-push-pull : true;
+@grid-xl-enable-offsets   : true;
+@grid-xl-enable-push-pull : true;

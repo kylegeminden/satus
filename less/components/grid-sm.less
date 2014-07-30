@@ -1,0 +1,98 @@
+@media @query-sm-min {
+
+    // Gutters
+    .grid-container when (@grid-sm-gutter > @grid-xs-gutter) {
+        .make-grid-container(@grid-sm-gutter);
+    }
+
+    .grid--page when (@grid-sm-gutter > @grid-xs-gutter) {
+        margin-left: -@grid-sm-gutter;
+
+        > [class*="grid__cell"] {
+            padding-left: @grid-sm-gutter;
+        }
+    }
+
+    // Cells
+    .sm-cells(@n, @i: 1) when (@i =< @n) {
+        .sm--@{i}of@{n} {
+            .make-grid-cell(@i);
+        }
+        .sm-cells(@n, (@i + 1));
+    }
+    .sm-cells(@grid-columns); // generate cells
+
+    // Offset Cells
+    .sm-offset() when (@grid-sm-enable-offsets = true) {
+        .sm-offsets(@n, @i: 1) when (@i =< @n) {
+            .sm--offset--@{i}of@{n} {
+                .make-grid-cell-offset(@i);
+            }
+            .sm-offsets(@n, (@i + 1));
+        }
+        // Undo Offset from prior queries
+        .sm--offset--0of@{grid-columns} {
+            margin-left: 0;
+        }
+        .sm-offsets(@grid-columns); // generate offsets
+    }
+    .sm-offset(); // generate offsets if true (set in variables.less)
+
+    // Pull Cells
+    .sm-push-pull() when (@grid-sm-enable-push-pull = true) {
+        .sm-pulls(@n, @i: 1) when (@i =< @n) {
+            .sm--pull--@{i}of@{n} {
+                .make-grid-cell-pull(@i);
+            }
+            .sm-pulls(@n, (@i + 1));
+        }
+        // Undo Pull from prior queries
+        .sm--pull--0of@{grid-columns} {
+            position: static;
+            left: auto;
+            right: auto;
+        }
+        .sm-pulls(@grid-columns); // generate pulls
+
+        // Push Cells
+        .sm-pushes(@n, @i: 1) when (@i =< @n) {
+            .sm--push--@{i}of@{n} {
+                .make-grid-cell-push(@i);
+            }
+            .sm-pushes(@n, (@i + 1));
+        }
+        // Undo Push from prior queries
+        .sm--push--0of@{grid-columns} {
+            position: static;
+            left: auto;
+            right: auto;
+        }
+        .sm-pushes(@grid-columns); // generate pushes
+    }
+    .sm-push-pull(); // generate pushes and pulls if true (set in variables.less)
+
+    // Center Cell
+    .sm--centered {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    // Uncenter Cell from prior queries
+    .sm--uncentered {
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    // Clear Cell
+    .sm--clear { clear: left; }
+
+    // Unclear Cell from prior queries
+    .sm--unclear { float: left; }
+
+    // Show and Hide
+    .sm--hide { display: none !important; }
+    .sm--show { display: inherit !important; }
+
+}

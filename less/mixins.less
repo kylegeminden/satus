@@ -158,12 +158,12 @@
 // |-- Grid
 // ==========================================================================
 
-.make-grid-container(@gutter: @grid-v1-gutter) {
+.make-grid-container(@gutter: @grid-xs-gutter) {
     padding-left: @gutter;
     padding-right: @gutter;
 }
 
-.make-grid-row(@gutter: @grid-v1-gutter) {
+.make-grid-row(@gutter: @grid-xs-gutter) {
     &:extend(.u-clearfix all);
     margin-left: -@gutter;
 }
@@ -201,7 +201,7 @@
 // http://browserhacks.com/
 
 // Media Queries and IE8 Support
-.query-ie8(@query : @query-v4-min, @rules) {
+.query-ie8(@query : @query-lg-min, @rules) {
     @media @query { @rules(); }
     @ie8:  ~"\0screen";
     @media @ie8 { @rules(); }

@@ -1,0 +1,120 @@
+/* ==========================================================================
+   |-- Grid
+   ========================================================================== */
+
+/**
+ * By default the grid is 12 columns across.
+ * <div class="grid">
+ *   <div class="grid__cell md--12of12">
+ *   <div class="grid__cell md--8of12">
+ *   <div class="grid__cell md--4of12">
+ *   <div class="grid__cell md--12of12">
+ * </div>
+ *
+ * Gutters should be added with a modifier class to keep the grid modular. There is a modifier
+ * class for using the grid for page layouts as well as a container class that wraps the grid when
+ * using page layouts to add left and right padding.
+ * <div class="grid-container">
+ *   <div class="grid grid--page">
+ *     <div class="grid__cell md--8of12">
+ *     <div class="grid__cell md--4of12">
+ *
+ * Media queries are:
+ *  - xs (479px/29.9375em and below)
+ *  - sm (480px/30em and above)
+ *  - md (768px/48em and above)
+ *  - lg (992px/62em and above)
+ *  - xl (1382px/86.375em and above)
+ *
+ * Offsets, pushes and pulls.
+ * You can use offset-0of12, push-0of12 and pull-0of12 to undo prior queries.
+ * <div class="grid__cell sm--8of12 sm--offset--4of12">
+ * <div class="grid__cell sm--8of12 sm--pull--4of12">
+ * <div class="grid__cell sm--8of12 sm--push--4of12">
+ *
+ * A cell can be centered or uncentered from a centering from a prior media query.
+ * <div class="grid__cell sm--8of12 sm--centered">
+ * <div class="grid__cell sm--8of12 sm--centered md--8of12 md--uncentered">
+ *
+ * A cell can be cleared or uncleared from a prior media query.
+ * <div class="grid__cell sm--2of12">
+ * <div class="grid__cell sm--4of12 md--2of12 md--clear">
+ *
+ * Show or Hide and element. Example useage of hiding on xs and showing on sm and up
+ * <div class="xs--hide sm--show">...</div>
+ */
+
+.grid-container {
+    .make-grid-container(@grid-xs-gutter)
+}
+
+.grid {
+    &:extend(.u-clearfix all);
+}
+
+[class*="grid__cell"] {
+    .make-grid-cells();
+}
+
+.grid--page {
+    margin-left: -@grid-xs-gutter;
+
+    > [class*="grid__cell"] {
+        padding-left: @grid-xs-gutter
+    }
+}
+
+// Cells
+.xs-cells(@n, @i: 1) when (@i =< @n) {
+    .xs--@{i}of@{n} {
+        .make-grid-cell(@i);
+    }
+    .xs-cells(@n, (@i + 1));
+}
+.xs-cells(@grid-columns); // generate cells
+
+// Offset Cells
+.xs-offset() when (@grid-xs-enable-offsets = true) {
+    .xs-offsets(@n, @i: 1) when (@i =< @n) {
+        .xs--offset--@{i}of@{n} {
+            .make-grid-cell-offset(@i);
+        }
+        .xs-offsets(@n, (@i + 1));
+    }
+    .xs-offsets(@grid-columns); // generate offsets
+}
+.xs-offset(); // generate offsets if true (set in variables.less)
+
+// Pull Cells
+.xs-push-pull() when (@grid-xs-enable-push-pull = true) {
+    .xs-pulls(@n, @i: 1) when (@i =< @n) {
+        .xs--pull--@{i}of@{n} {
+            .make-grid-cell-pull(@i);
+        }
+        .xs-pulls(@n, (@i + 1));
+    }
+    .xs-pulls(@grid-columns); // generate pulls
+
+    // Push Cells
+    .xs-pushes(@n, @i: 1) when (@i =< @n) {
+        .xs--push--@{i}of@{n} {
+            .make-grid-cell-push(@i);
+        }
+        .xs-pushes(@n, (@i + 1));
+    }
+    .xs-pushes(@grid-columns); // generate pushes
+}
+.xs-push-pull(); // generate pushes and pulls if true (set in variables.less)
+
+// Center Cell
+.xs--centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Clear
+.xs--clear { clear: left; }
+
+// Hide
+.xs--hide { display: none !important; }
