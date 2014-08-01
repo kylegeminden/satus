@@ -136,6 +136,20 @@ label {
     width: 100%;
 }
 
+.form__group {
+    margin-bottom: @font-margin;
+
+    &.has-success {
+        .form-input-validation(lighten(@cp-success, 65%); @cp-success; @cp-success; fade(@cp-success, 70%));
+    }
+    &.has-warning {
+        .form-input-validation(lighten(@cp-warning, 52%); @cp-warning; @cp-warning; fade(@cp-warning, 70%));
+    }
+    &.has-error {
+        .form-input-validation(lighten(@cp-danger, 50%); @cp-danger; @cp-danger; fade(@cp-danger, 70%));
+    }
+}
+
 /**
  * Make form elements inlnie
  * <form class="form--inline"> or <input class="form__input form__input--inline">
