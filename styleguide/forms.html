@@ -9,20 +9,24 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="../css/satus.css">
+        <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="css/style-guide.css">
         <script src="../js/vendor/modernizr.js"></script>
+        <script src="../js/plugins/layout.engine.js"></script>
     </head>
     <body>
 
         <h1>Forms</h1>
         <hr>
 
-        <form>
+        <form class="form">
             <fieldset class="form__fieldset">
                 <legend>Inputs as descendents of labels (form legend). This doubles up as a long legend that can test word wrapping.</legend>
-                <p><label class="form__label">Text input</label> <input class="form__input" type="text" placeholder="text"> = <output class="form__output">5</output></p>
-                <p><label class="form__label">Search</label> <input class="form__input" type="search" name="search5" placeholder="search"></p>
+                <p><label class="form__label">Text input</label> <input class="form__input form__input--inline" type="text" placeholder="text"> = <output class="form__output">5</output></p>
+                <div class="form__group has-error">
+                    <label class="form__label">Search</label>
+                    <input class="form__input" type="search" name="search5" placeholder="search">
+                </div>
                 <p><label class="form__label">Email</label> <input class="form__input" type="email" name="email5" placeholder="email address"></p>
                 <p><label class="form__label">Url</label> <input class="form__input" type="url" name="url5" placeholder="website address"></p>
                 <p><label class="form__label">Telephone</label> <input class="form__input" type="tel" name="tel5" placeholder="telephone number"></p>
@@ -98,6 +102,5 @@
 
         </form>
 
-    <script src="http://localhost:35729/livereload.js?snipver=1"></script>
     </body>
 </html>
