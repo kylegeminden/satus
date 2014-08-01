@@ -5,6 +5,7 @@
 // |-- Box
 // |-- Borders
 // |-- Shapes
+// |-- Components
 // |-- Grid
 // |-- Browser Support
 // |-- Helpers
@@ -152,6 +153,26 @@
         border-left: @width solid transparent;
     }
 
+}
+
+
+// ==========================================================================
+// |-- Components
+// ==========================================================================
+
+.alert-variant(@background; @border; @color) {
+    background: @background;
+    border-color: @border;
+    color: @color;
+}
+
+.form-input-validation(@background; @border-color; @color; @placeholder) {
+    color: @color;
+    .form__input {
+        background: @background;
+        border-color: @border-color;
+        .placeholder(@placeholder)
+    }
 }
 
 // ==========================================================================
