@@ -17,12 +17,12 @@
  *    |-- Grid
  *    |-- Alerts
  *    |-- Navs
- *    |-- Flyout
+ *    |-- Dropdown
  *    |-- Breadcrumbs
  *    |-- Pagination
  *    |-- Pager
  *    |-- Page Header
- *    |-- Lead Copy
+ *    |-- Lead Paragraph
  *    |-- Hero
  *    |-- Lists
  *    |-- Media Object
@@ -52,18 +52,26 @@
 @import 'components/flex-embed';
 @import 'components/flex-gmap';
 @import 'components/grid-xs';
-@import 'components/grid-sm';
-@import 'components/grid-md';
-@import 'components/grid-lg';
-@import 'components/grid-xl';
+@media @query-sm-min {
+    @import 'components/grid-sm';
+}
+@media @query-md-min {
+    @import 'components/grid-md';
+}
+@media @query-lg-min {
+    @import 'components/grid-lg';
+}
+@media @query-xl-min {
+    @import 'components/grid-xl';
+}
 @import 'components/alerts';
 @import 'components/navs';
-@import 'components/flyout';
+@import 'components/dropdown';
 @import 'components/breadcrumbs';
 @import 'components/pagination';
 @import 'components/pager';
 @import 'components/page-header';
-@import 'components/lead-copy';
+@import 'components/lead-paragraph';
 @import 'components/hero';
 @import 'components/lists';
 @import 'components/media-object';
