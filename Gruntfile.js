@@ -23,6 +23,7 @@ module.exports = function(grunt) {
                 files: {
                     'modernizr.js': 'modernizr/modernizr.js',
                     'jquery.min.js': 'jquery/dist/jquery.min.js',
+                    'angular.min.js': 'angular/angular.min.js',
                 },
             },
         },
@@ -38,7 +39,8 @@ module.exports = function(grunt) {
                     sourceMapRootpath: '../',
                 },
                 files: {
-                    'css/main.css': [ 'less/satus.less' ]
+                    'css/main.css': [ 'less/satus.less' ],
+                    'css/ie-grid.css': [ 'less/ie-grid.less' ]
                 },
             },
             style_guide: {
