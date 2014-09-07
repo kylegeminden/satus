@@ -17,12 +17,12 @@
  *    |-- Grid
  *    |-- Alerts
  *    |-- Navs
- *    |-- Flyout
+ *    |-- Dropdown
  *    |-- Breadcrumbs
  *    |-- Pagination
  *    |-- Pager
  *    |-- Page Header
- *    |-- Lead Copy
+ *    |-- Lead Paragraph
  *    |-- Hero
  *    |-- Lists
  *    |-- Media Object
@@ -555,70 +555,6 @@ h6,
   margin-bottom: 1.35em;
   font-size: .875em;
 }
-@media only screen and (min-width: 62em) {
-  h1,
-  .h1 {
-    margin-bottom: 0.45em;
-    font-size: 2.25em;
-  }
-  h2,
-  .h2 {
-    margin-bottom: 0.6em;
-    font-size: 1.875em;
-  }
-  h3,
-  .h3 {
-    margin-bottom: 0.675em;
-    font-size: 1.5em;
-  }
-  h4,
-  .h4 {
-    margin-bottom: 0.9em;
-    font-size: 1.25em;
-  }
-  h5,
-  .h5 {
-    margin-bottom: 0.975em;
-    font-size: 1em;
-  }
-  h6,
-  .h6 {
-    margin-bottom: 1.35em;
-    font-size: .875em;
-  }
-}
-@media \0screen {
-  h1,
-  .h1 {
-    margin-bottom: 0.45em;
-    font-size: 2.25em;
-  }
-  h2,
-  .h2 {
-    margin-bottom: 0.6em;
-    font-size: 1.875em;
-  }
-  h3,
-  .h3 {
-    margin-bottom: 0.675em;
-    font-size: 1.5em;
-  }
-  h4,
-  .h4 {
-    margin-bottom: 0.9em;
-    font-size: 1.25em;
-  }
-  h5,
-  .h5 {
-    margin-bottom: 0.975em;
-    font-size: 1em;
-  }
-  h6,
-  .h6 {
-    margin-bottom: 1.35em;
-    font-size: .875em;
-  }
-}
 /**
  * Set bottom margin on appropriate elements due to reset
  */
@@ -771,7 +707,7 @@ embed {
   height: auto;
 }
 /* ==========================================================================
-   |-- Billboard
+   |-- Browse Happy
    ========================================================================== */
 /**
  * From HTML5 Boilerplate http://html5boilerplate.com/
@@ -795,31 +731,32 @@ embed {
 /**
  * Remove default webkit styles (for iOS)
  */
-input[type="text"],
-input[type="password"],
-input[type="search"],
-input[type="email"],
-input[type="url"],
-input[type="tel"],
-input[type="number"] {
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="search"],
+.form input[type="email"],
+.form input[type="url"],
+.form input[type="tel"],
+.form input[type="number"] {
   -webkit-appearance: none;
 }
 /**
  * Allow only vertical resizing of textareas.
  */
-textarea {
+.form textarea {
   resize: vertical;
 }
 /**
  * Better default styling for labels
  */
-label {
+.form label {
   display: inline-block;
   margin-bottom: .35em;
 }
-/**
- * Forms
- */
+.form [type="radio"],
+.form [type="checkbox"] {
+  margin: 0 .2em;
+}
 /**
  * Fieldsets
  * <fieldset class="form__fieldset">
@@ -912,78 +849,25 @@ fieldset[disabled] .form__input {
   opacity: 1;
   color: #999999;
 }
+/**
+ * Set form elements to full width
+ */
 .form__input,
 .form__range,
 .form__file {
   width: 100%;
-}
-.form__group {
-  margin-bottom: 1.125em;
-}
-.form__group.has-success {
-  color: #2d8f19;
-}
-.form__group.has-success .form__input {
-  background: #f8fdf6;
-  border-color: #2d8f19;
-}
-.form__group.has-success .form__input::-webkit-input-placeholder {
-  color: rgba(45, 143, 25, 0.7);
-}
-.form__group.has-success .form__input:-moz-placeholder {
-  color: rgba(45, 143, 25, 0.7);
-}
-.form__group.has-success .form__input::-moz-placeholder {
-  color: rgba(45, 143, 25, 0.7);
-}
-.form__group.has-success .form__input:-ms-input-placeholder {
-  color: rgba(45, 143, 25, 0.7);
-}
-.form__group.has-warning {
-  color: #d87213;
-}
-.form__group.has-warning .form__input {
-  background: #fefaf6;
-  border-color: #d87213;
-}
-.form__group.has-warning .form__input::-webkit-input-placeholder {
-  color: rgba(216, 114, 19, 0.7);
-}
-.form__group.has-warning .form__input:-moz-placeholder {
-  color: rgba(216, 114, 19, 0.7);
-}
-.form__group.has-warning .form__input::-moz-placeholder {
-  color: rgba(216, 114, 19, 0.7);
-}
-.form__group.has-warning .form__input:-ms-input-placeholder {
-  color: rgba(216, 114, 19, 0.7);
-}
-.form__group.has-error {
-  color: #c03535;
-}
-.form__group.has-error .form__input {
-  background: #fdf7f7;
-  border-color: #c03535;
-}
-.form__group.has-error .form__input::-webkit-input-placeholder {
-  color: rgba(192, 53, 53, 0.7);
-}
-.form__group.has-error .form__input:-moz-placeholder {
-  color: rgba(192, 53, 53, 0.7);
-}
-.form__group.has-error .form__input::-moz-placeholder {
-  color: rgba(192, 53, 53, 0.7);
-}
-.form__group.has-error .form__input:-ms-input-placeholder {
-  color: rgba(192, 53, 53, 0.7);
+  max-width: 100%;
 }
 /**
  * Make form elements inlnie
  * <form class="form--inline"> or <input class="form__input form__input--inline">
  */
 .form--inline .form__input,
+.form__group--inline .form__input,
 .form--inline .form__range,
-.form--inline .form__file {
+.form__group--inline .form__range,
+.form--inline .form__file,
+.form__group--inline .form__file {
   width: auto;
 }
 .form__input--inline {
@@ -1023,6 +907,35 @@ fieldset[disabled] .form__input {
   vertical-align: middle;
 }
 /**
+ * Form Groups
+ * Contains labels and inputs and adds bottom margin.
+ * <div class="form__group">
+ *   <label>...</label>
+ *   <input class="form__input" type="text">
+ * </div>
+ */
+.form__group {
+  margin-bottom: 1.125em;
+}
+.form__group.has-success label {
+  color: #2d8f19;
+}
+.form__group.has-success .form__input {
+  border-color: #2d8f19;
+}
+.form__group.has-warning label {
+  color: #d87213;
+}
+.form__group.has-warning .form__input {
+  border-color: #d87213;
+}
+.form__group.has-error label {
+  color: #c03535;
+}
+.form__group.has-error .form__input {
+  border-color: #c03535;
+}
+/**
  * Form Grid.
  * <div class="grid grid--form">
  *   <div class="grid__cell sm--6of12">
@@ -1038,7 +951,8 @@ fieldset[disabled] .form__input {
    |-- Buttons
    ========================================================================== */
 /**
- * <button class="button button--large button--space--right">
+ * <button class="button button--large button--space--right">...</button>
+ * <a class="button button--large button--space--right" role="button">...</a>
  */
 .button {
   display: inline-block;
@@ -1056,6 +970,7 @@ fieldset[disabled] .form__input {
   line-height: 1.5;
   font-family: sans-serif;
   text-decoration: none;
+  text-align: center;
   vertical-align: middle;
   white-space: nowrap;
   -webkit-appearance: none;
@@ -1076,6 +991,9 @@ a.button:active {
   background: #1a8cff;
   cursor: not-allowed;
 }
+.button--block {
+  display: block;
+}
 .button--small {
   font-size: 0.85em;
 }
@@ -1092,7 +1010,7 @@ a.button:active {
    |-- Tables
    ========================================================================== */
 /**
- * <table class="table">
+ * <table class="table">...</table>
  */
 .table th,
 .table td {
@@ -1101,6 +1019,9 @@ a.button:active {
 /* ==========================================================================
    |-- Images
    ========================================================================== */
+/**
+ * <img classs="img--rounded" src="image.jpg" alt="">
+ */
 .img--rounded {
   -webkit-border-radius: 0.5em;
   -webkit-background-clip: padding-box;
@@ -1159,7 +1080,7 @@ a.button:active {
  * Flexible/responsive Google maps when using Google's API to generate the map
  * and not the iframe, use flex-embed for that.
  *
- * <div id="map-canvas" class="flex-gmap"></div>
+ * <div id="map-canvas" class="flex-gmap">...</div>
  */
 #map-canvas img,
 #map_canvas embed,
@@ -1178,10 +1099,10 @@ a.button:active {
 /**
  * By default the grid is 12 columns across.
  * <div class="grid">
- *   <div class="grid__cell md--12of12">
- *   <div class="grid__cell md--8of12">
- *   <div class="grid__cell md--4of12">
- *   <div class="grid__cell md--12of12">
+ *   <div class="grid__cell md--12of12">..</div>
+ *   <div class="grid__cell md--8of12">..</div>
+ *   <div class="grid__cell md--4of12">..</div>
+ *   <div class="grid__cell md--12of12">..</div>
  * </div>
  *
  * Gutters should be added with a modifier class to keep the grid modular. There is a modifier
@@ -1189,8 +1110,10 @@ a.button:active {
  * using page layouts to add left and right padding.
  * <div class="grid-container">
  *   <div class="grid grid--page">
- *     <div class="grid__cell md--8of12">
- *     <div class="grid__cell md--4of12">
+ *     <div class="grid__cell md--8of12">...</div>
+ *     <div class="grid__cell md--4of12">...</div>
+ *   </div>
+ * </div>
  *
  * Media queries are:
  *  - xs (479px/29.9375em and below)
@@ -1199,19 +1122,19 @@ a.button:active {
  *  - lg (992px/62em and above)
  *  - xl (1382px/86.375em and above)
  *
- * Offsets, pushes and pulls.
+ * Offsets, pushes and pulls. These are disabled by default and are enabled in less/variables.less
  * You can use offset-0of12, push-0of12 and pull-0of12 to undo prior queries.
- * <div class="grid__cell sm--8of12 sm--offset--4of12">
- * <div class="grid__cell sm--8of12 sm--pull--4of12">
- * <div class="grid__cell sm--8of12 sm--push--4of12">
+ * <div class="grid__cell sm--8of12 sm--offset--4of12">...</div>
+ * <div class="grid__cell sm--8of12 sm--pull--4of12">...</div>
+ * <div class="grid__cell sm--8of12 sm--push--4of12">...</div>
  *
  * A cell can be centered or uncentered from a centering from a prior media query.
- * <div class="grid__cell sm--8of12 sm--centered">
- * <div class="grid__cell sm--8of12 sm--centered md--8of12 md--uncentered">
+ * <div class="grid__cell sm--8of12 sm--centered">...</div>
+ * <div class="grid__cell sm--8of12 sm--centered md--8of12 md--uncentered">...</div>
  *
  * A cell can be cleared or uncleared from a prior media query.
- * <div class="grid__cell sm--2of12">
- * <div class="grid__cell sm--4of12 md--2of12 md--clear">
+ * <div class="grid__cell sm--2of12">...</div>
+ * <div class="grid__cell sm--4of12 md--2of12 md--clear">...</div>
  *
  * Show or Hide and element. Example useage of hiding on xs and showing on sm and up
  * <div class="xs--hide sm--show">...</div>
@@ -1267,162 +1190,6 @@ a.button:active {
 .xs--12of12 {
   width: 100%;
 }
-.xs--offset--1of12 {
-  margin-left: 8.33333333%;
-}
-.xs--offset--2of12 {
-  margin-left: 16.66666667%;
-}
-.xs--offset--3of12 {
-  margin-left: 25%;
-}
-.xs--offset--4of12 {
-  margin-left: 33.33333333%;
-}
-.xs--offset--5of12 {
-  margin-left: 41.66666667%;
-}
-.xs--offset--6of12 {
-  margin-left: 50%;
-}
-.xs--offset--7of12 {
-  margin-left: 58.33333333%;
-}
-.xs--offset--8of12 {
-  margin-left: 66.66666667%;
-}
-.xs--offset--9of12 {
-  margin-left: 75%;
-}
-.xs--offset--10of12 {
-  margin-left: 83.33333333%;
-}
-.xs--offset--11of12 {
-  margin-left: 91.66666667%;
-}
-.xs--offset--12of12 {
-  margin-left: 100%;
-}
-.xs--pull--1of12 {
-  position: relative;
-  right: 8.33333333%;
-  left: auto;
-}
-.xs--pull--2of12 {
-  position: relative;
-  right: 16.66666667%;
-  left: auto;
-}
-.xs--pull--3of12 {
-  position: relative;
-  right: 25%;
-  left: auto;
-}
-.xs--pull--4of12 {
-  position: relative;
-  right: 33.33333333%;
-  left: auto;
-}
-.xs--pull--5of12 {
-  position: relative;
-  right: 41.66666667%;
-  left: auto;
-}
-.xs--pull--6of12 {
-  position: relative;
-  right: 50%;
-  left: auto;
-}
-.xs--pull--7of12 {
-  position: relative;
-  right: 58.33333333%;
-  left: auto;
-}
-.xs--pull--8of12 {
-  position: relative;
-  right: 66.66666667%;
-  left: auto;
-}
-.xs--pull--9of12 {
-  position: relative;
-  right: 75%;
-  left: auto;
-}
-.xs--pull--10of12 {
-  position: relative;
-  right: 83.33333333%;
-  left: auto;
-}
-.xs--pull--11of12 {
-  position: relative;
-  right: 91.66666667%;
-  left: auto;
-}
-.xs--pull--12of12 {
-  position: relative;
-  right: 100%;
-  left: auto;
-}
-.xs--push--1of12 {
-  position: relative;
-  left: 8.33333333%;
-  right: auto;
-}
-.xs--push--2of12 {
-  position: relative;
-  left: 16.66666667%;
-  right: auto;
-}
-.xs--push--3of12 {
-  position: relative;
-  left: 25%;
-  right: auto;
-}
-.xs--push--4of12 {
-  position: relative;
-  left: 33.33333333%;
-  right: auto;
-}
-.xs--push--5of12 {
-  position: relative;
-  left: 41.66666667%;
-  right: auto;
-}
-.xs--push--6of12 {
-  position: relative;
-  left: 50%;
-  right: auto;
-}
-.xs--push--7of12 {
-  position: relative;
-  left: 58.33333333%;
-  right: auto;
-}
-.xs--push--8of12 {
-  position: relative;
-  left: 66.66666667%;
-  right: auto;
-}
-.xs--push--9of12 {
-  position: relative;
-  left: 75%;
-  right: auto;
-}
-.xs--push--10of12 {
-  position: relative;
-  left: 83.33333333%;
-  right: auto;
-}
-.xs--push--11of12 {
-  position: relative;
-  left: 91.66666667%;
-  right: auto;
-}
-.xs--push--12of12 {
-  position: relative;
-  left: 100%;
-  right: auto;
-}
 .xs--centered {
   float: none;
   margin-left: auto;
@@ -1470,175 +1237,6 @@ a.button:active {
   }
   .sm--12of12 {
     width: 100%;
-  }
-  .sm--offset--0of12 {
-    margin-left: 0;
-  }
-  .sm--offset--1of12 {
-    margin-left: 8.33333333%;
-  }
-  .sm--offset--2of12 {
-    margin-left: 16.66666667%;
-  }
-  .sm--offset--3of12 {
-    margin-left: 25%;
-  }
-  .sm--offset--4of12 {
-    margin-left: 33.33333333%;
-  }
-  .sm--offset--5of12 {
-    margin-left: 41.66666667%;
-  }
-  .sm--offset--6of12 {
-    margin-left: 50%;
-  }
-  .sm--offset--7of12 {
-    margin-left: 58.33333333%;
-  }
-  .sm--offset--8of12 {
-    margin-left: 66.66666667%;
-  }
-  .sm--offset--9of12 {
-    margin-left: 75%;
-  }
-  .sm--offset--10of12 {
-    margin-left: 83.33333333%;
-  }
-  .sm--offset--11of12 {
-    margin-left: 91.66666667%;
-  }
-  .sm--offset--12of12 {
-    margin-left: 100%;
-  }
-  .sm--pull--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .sm--pull--1of12 {
-    position: relative;
-    right: 8.33333333%;
-    left: auto;
-  }
-  .sm--pull--2of12 {
-    position: relative;
-    right: 16.66666667%;
-    left: auto;
-  }
-  .sm--pull--3of12 {
-    position: relative;
-    right: 25%;
-    left: auto;
-  }
-  .sm--pull--4of12 {
-    position: relative;
-    right: 33.33333333%;
-    left: auto;
-  }
-  .sm--pull--5of12 {
-    position: relative;
-    right: 41.66666667%;
-    left: auto;
-  }
-  .sm--pull--6of12 {
-    position: relative;
-    right: 50%;
-    left: auto;
-  }
-  .sm--pull--7of12 {
-    position: relative;
-    right: 58.33333333%;
-    left: auto;
-  }
-  .sm--pull--8of12 {
-    position: relative;
-    right: 66.66666667%;
-    left: auto;
-  }
-  .sm--pull--9of12 {
-    position: relative;
-    right: 75%;
-    left: auto;
-  }
-  .sm--pull--10of12 {
-    position: relative;
-    right: 83.33333333%;
-    left: auto;
-  }
-  .sm--pull--11of12 {
-    position: relative;
-    right: 91.66666667%;
-    left: auto;
-  }
-  .sm--pull--12of12 {
-    position: relative;
-    right: 100%;
-    left: auto;
-  }
-  .sm--push--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .sm--push--1of12 {
-    position: relative;
-    left: 8.33333333%;
-    right: auto;
-  }
-  .sm--push--2of12 {
-    position: relative;
-    left: 16.66666667%;
-    right: auto;
-  }
-  .sm--push--3of12 {
-    position: relative;
-    left: 25%;
-    right: auto;
-  }
-  .sm--push--4of12 {
-    position: relative;
-    left: 33.33333333%;
-    right: auto;
-  }
-  .sm--push--5of12 {
-    position: relative;
-    left: 41.66666667%;
-    right: auto;
-  }
-  .sm--push--6of12 {
-    position: relative;
-    left: 50%;
-    right: auto;
-  }
-  .sm--push--7of12 {
-    position: relative;
-    left: 58.33333333%;
-    right: auto;
-  }
-  .sm--push--8of12 {
-    position: relative;
-    left: 66.66666667%;
-    right: auto;
-  }
-  .sm--push--9of12 {
-    position: relative;
-    left: 75%;
-    right: auto;
-  }
-  .sm--push--10of12 {
-    position: relative;
-    left: 83.33333333%;
-    right: auto;
-  }
-  .sm--push--11of12 {
-    position: relative;
-    left: 91.66666667%;
-    right: auto;
-  }
-  .sm--push--12of12 {
-    position: relative;
-    left: 100%;
-    right: auto;
   }
   .sm--centered {
     float: none;
@@ -1710,414 +1308,6 @@ a.button:active {
   .md--12of12 {
     width: 100%;
   }
-  .md--offset--0of12 {
-    margin-left: 0;
-  }
-  .md--offset--1of12 {
-    margin-left: 8.33333333%;
-  }
-  .md--offset--2of12 {
-    margin-left: 16.66666667%;
-  }
-  .md--offset--3of12 {
-    margin-left: 25%;
-  }
-  .md--offset--4of12 {
-    margin-left: 33.33333333%;
-  }
-  .md--offset--5of12 {
-    margin-left: 41.66666667%;
-  }
-  .md--offset--6of12 {
-    margin-left: 50%;
-  }
-  .md--offset--7of12 {
-    margin-left: 58.33333333%;
-  }
-  .md--offset--8of12 {
-    margin-left: 66.66666667%;
-  }
-  .md--offset--9of12 {
-    margin-left: 75%;
-  }
-  .md--offset--10of12 {
-    margin-left: 83.33333333%;
-  }
-  .md--offset--11of12 {
-    margin-left: 91.66666667%;
-  }
-  .md--offset--12of12 {
-    margin-left: 100%;
-  }
-  .md--pull--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .md--pull--1of12 {
-    position: relative;
-    right: 8.33333333%;
-    left: auto;
-  }
-  .md--pull--2of12 {
-    position: relative;
-    right: 16.66666667%;
-    left: auto;
-  }
-  .md--pull--3of12 {
-    position: relative;
-    right: 25%;
-    left: auto;
-  }
-  .md--pull--4of12 {
-    position: relative;
-    right: 33.33333333%;
-    left: auto;
-  }
-  .md--pull--5of12 {
-    position: relative;
-    right: 41.66666667%;
-    left: auto;
-  }
-  .md--pull--6of12 {
-    position: relative;
-    right: 50%;
-    left: auto;
-  }
-  .md--pull--7of12 {
-    position: relative;
-    right: 58.33333333%;
-    left: auto;
-  }
-  .md--pull--8of12 {
-    position: relative;
-    right: 66.66666667%;
-    left: auto;
-  }
-  .md--pull--9of12 {
-    position: relative;
-    right: 75%;
-    left: auto;
-  }
-  .md--pull--10of12 {
-    position: relative;
-    right: 83.33333333%;
-    left: auto;
-  }
-  .md--pull--11of12 {
-    position: relative;
-    right: 91.66666667%;
-    left: auto;
-  }
-  .md--pull--12of12 {
-    position: relative;
-    right: 100%;
-    left: auto;
-  }
-  .md--push--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .md--push--1of12 {
-    position: relative;
-    left: 8.33333333%;
-    right: auto;
-  }
-  .md--push--2of12 {
-    position: relative;
-    left: 16.66666667%;
-    right: auto;
-  }
-  .md--push--3of12 {
-    position: relative;
-    left: 25%;
-    right: auto;
-  }
-  .md--push--4of12 {
-    position: relative;
-    left: 33.33333333%;
-    right: auto;
-  }
-  .md--push--5of12 {
-    position: relative;
-    left: 41.66666667%;
-    right: auto;
-  }
-  .md--push--6of12 {
-    position: relative;
-    left: 50%;
-    right: auto;
-  }
-  .md--push--7of12 {
-    position: relative;
-    left: 58.33333333%;
-    right: auto;
-  }
-  .md--push--8of12 {
-    position: relative;
-    left: 66.66666667%;
-    right: auto;
-  }
-  .md--push--9of12 {
-    position: relative;
-    left: 75%;
-    right: auto;
-  }
-  .md--push--10of12 {
-    position: relative;
-    left: 83.33333333%;
-    right: auto;
-  }
-  .md--push--11of12 {
-    position: relative;
-    left: 91.66666667%;
-    right: auto;
-  }
-  .md--push--12of12 {
-    position: relative;
-    left: 100%;
-    right: auto;
-  }
-  .md--centered {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .md--uncentered {
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .md--clear {
-    clear: left;
-  }
-  .md--unclear {
-    float: left;
-  }
-  .md--hide {
-    display: none !important;
-  }
-  .md--show {
-    display: inherit !important;
-  }
-}
-@media \0screen {
-  .grid-container {
-    padding-left: 1.875em;
-    padding-right: 1.875em;
-  }
-  .grid--page {
-    margin-left: -1.875em;
-  }
-  .grid--page > [class*="grid__cell"] {
-    padding-left: 1.875em;
-  }
-  .md--1of12 {
-    width: 8.33333333%;
-  }
-  .md--2of12 {
-    width: 16.66666667%;
-  }
-  .md--3of12 {
-    width: 25%;
-  }
-  .md--4of12 {
-    width: 33.33333333%;
-  }
-  .md--5of12 {
-    width: 41.66666667%;
-  }
-  .md--6of12 {
-    width: 50%;
-  }
-  .md--7of12 {
-    width: 58.33333333%;
-  }
-  .md--8of12 {
-    width: 66.66666667%;
-  }
-  .md--9of12 {
-    width: 75%;
-  }
-  .md--10of12 {
-    width: 83.33333333%;
-  }
-  .md--11of12 {
-    width: 91.66666667%;
-  }
-  .md--12of12 {
-    width: 100%;
-  }
-  .md--offset--0of12 {
-    margin-left: 0;
-  }
-  .md--offset--1of12 {
-    margin-left: 8.33333333%;
-  }
-  .md--offset--2of12 {
-    margin-left: 16.66666667%;
-  }
-  .md--offset--3of12 {
-    margin-left: 25%;
-  }
-  .md--offset--4of12 {
-    margin-left: 33.33333333%;
-  }
-  .md--offset--5of12 {
-    margin-left: 41.66666667%;
-  }
-  .md--offset--6of12 {
-    margin-left: 50%;
-  }
-  .md--offset--7of12 {
-    margin-left: 58.33333333%;
-  }
-  .md--offset--8of12 {
-    margin-left: 66.66666667%;
-  }
-  .md--offset--9of12 {
-    margin-left: 75%;
-  }
-  .md--offset--10of12 {
-    margin-left: 83.33333333%;
-  }
-  .md--offset--11of12 {
-    margin-left: 91.66666667%;
-  }
-  .md--offset--12of12 {
-    margin-left: 100%;
-  }
-  .md--pull--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .md--pull--1of12 {
-    position: relative;
-    right: 8.33333333%;
-    left: auto;
-  }
-  .md--pull--2of12 {
-    position: relative;
-    right: 16.66666667%;
-    left: auto;
-  }
-  .md--pull--3of12 {
-    position: relative;
-    right: 25%;
-    left: auto;
-  }
-  .md--pull--4of12 {
-    position: relative;
-    right: 33.33333333%;
-    left: auto;
-  }
-  .md--pull--5of12 {
-    position: relative;
-    right: 41.66666667%;
-    left: auto;
-  }
-  .md--pull--6of12 {
-    position: relative;
-    right: 50%;
-    left: auto;
-  }
-  .md--pull--7of12 {
-    position: relative;
-    right: 58.33333333%;
-    left: auto;
-  }
-  .md--pull--8of12 {
-    position: relative;
-    right: 66.66666667%;
-    left: auto;
-  }
-  .md--pull--9of12 {
-    position: relative;
-    right: 75%;
-    left: auto;
-  }
-  .md--pull--10of12 {
-    position: relative;
-    right: 83.33333333%;
-    left: auto;
-  }
-  .md--pull--11of12 {
-    position: relative;
-    right: 91.66666667%;
-    left: auto;
-  }
-  .md--pull--12of12 {
-    position: relative;
-    right: 100%;
-    left: auto;
-  }
-  .md--push--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .md--push--1of12 {
-    position: relative;
-    left: 8.33333333%;
-    right: auto;
-  }
-  .md--push--2of12 {
-    position: relative;
-    left: 16.66666667%;
-    right: auto;
-  }
-  .md--push--3of12 {
-    position: relative;
-    left: 25%;
-    right: auto;
-  }
-  .md--push--4of12 {
-    position: relative;
-    left: 33.33333333%;
-    right: auto;
-  }
-  .md--push--5of12 {
-    position: relative;
-    left: 41.66666667%;
-    right: auto;
-  }
-  .md--push--6of12 {
-    position: relative;
-    left: 50%;
-    right: auto;
-  }
-  .md--push--7of12 {
-    position: relative;
-    left: 58.33333333%;
-    right: auto;
-  }
-  .md--push--8of12 {
-    position: relative;
-    left: 66.66666667%;
-    right: auto;
-  }
-  .md--push--9of12 {
-    position: relative;
-    left: 75%;
-    right: auto;
-  }
-  .md--push--10of12 {
-    position: relative;
-    left: 83.33333333%;
-    right: auto;
-  }
-  .md--push--11of12 {
-    position: relative;
-    left: 91.66666667%;
-    right: auto;
-  }
-  .md--push--12of12 {
-    position: relative;
-    left: 100%;
-    right: auto;
-  }
   .md--centered {
     float: none;
     margin-left: auto;
@@ -2177,175 +1367,6 @@ a.button:active {
   }
   .lg--12of12 {
     width: 100%;
-  }
-  .lg--offset--0of12 {
-    margin-left: 0;
-  }
-  .lg--offset--1of12 {
-    margin-left: 8.33333333%;
-  }
-  .lg--offset--2of12 {
-    margin-left: 16.66666667%;
-  }
-  .lg--offset--3of12 {
-    margin-left: 25%;
-  }
-  .lg--offset--4of12 {
-    margin-left: 33.33333333%;
-  }
-  .lg--offset--5of12 {
-    margin-left: 41.66666667%;
-  }
-  .lg--offset--6of12 {
-    margin-left: 50%;
-  }
-  .lg--offset--7of12 {
-    margin-left: 58.33333333%;
-  }
-  .lg--offset--8of12 {
-    margin-left: 66.66666667%;
-  }
-  .lg--offset--9of12 {
-    margin-left: 75%;
-  }
-  .lg--offset--10of12 {
-    margin-left: 83.33333333%;
-  }
-  .lg--offset--11of12 {
-    margin-left: 91.66666667%;
-  }
-  .lg--offset--12of12 {
-    margin-left: 100%;
-  }
-  .lg--pull--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .lg--pull--1of12 {
-    position: relative;
-    right: 8.33333333%;
-    left: auto;
-  }
-  .lg--pull--2of12 {
-    position: relative;
-    right: 16.66666667%;
-    left: auto;
-  }
-  .lg--pull--3of12 {
-    position: relative;
-    right: 25%;
-    left: auto;
-  }
-  .lg--pull--4of12 {
-    position: relative;
-    right: 33.33333333%;
-    left: auto;
-  }
-  .lg--pull--5of12 {
-    position: relative;
-    right: 41.66666667%;
-    left: auto;
-  }
-  .lg--pull--6of12 {
-    position: relative;
-    right: 50%;
-    left: auto;
-  }
-  .lg--pull--7of12 {
-    position: relative;
-    right: 58.33333333%;
-    left: auto;
-  }
-  .lg--pull--8of12 {
-    position: relative;
-    right: 66.66666667%;
-    left: auto;
-  }
-  .lg--pull--9of12 {
-    position: relative;
-    right: 75%;
-    left: auto;
-  }
-  .lg--pull--10of12 {
-    position: relative;
-    right: 83.33333333%;
-    left: auto;
-  }
-  .lg--pull--11of12 {
-    position: relative;
-    right: 91.66666667%;
-    left: auto;
-  }
-  .lg--pull--12of12 {
-    position: relative;
-    right: 100%;
-    left: auto;
-  }
-  .lg--push--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .lg--push--1of12 {
-    position: relative;
-    left: 8.33333333%;
-    right: auto;
-  }
-  .lg--push--2of12 {
-    position: relative;
-    left: 16.66666667%;
-    right: auto;
-  }
-  .lg--push--3of12 {
-    position: relative;
-    left: 25%;
-    right: auto;
-  }
-  .lg--push--4of12 {
-    position: relative;
-    left: 33.33333333%;
-    right: auto;
-  }
-  .lg--push--5of12 {
-    position: relative;
-    left: 41.66666667%;
-    right: auto;
-  }
-  .lg--push--6of12 {
-    position: relative;
-    left: 50%;
-    right: auto;
-  }
-  .lg--push--7of12 {
-    position: relative;
-    left: 58.33333333%;
-    right: auto;
-  }
-  .lg--push--8of12 {
-    position: relative;
-    left: 66.66666667%;
-    right: auto;
-  }
-  .lg--push--9of12 {
-    position: relative;
-    left: 75%;
-    right: auto;
-  }
-  .lg--push--10of12 {
-    position: relative;
-    left: 83.33333333%;
-    right: auto;
-  }
-  .lg--push--11of12 {
-    position: relative;
-    left: 91.66666667%;
-    right: auto;
-  }
-  .lg--push--12of12 {
-    position: relative;
-    left: 100%;
-    right: auto;
   }
   .lg--centered {
     float: none;
@@ -2407,175 +1428,6 @@ a.button:active {
   .xl--12of12 {
     width: 100%;
   }
-  .xl--offset--0of12 {
-    margin-left: 0;
-  }
-  .xl--offset--1of12 {
-    margin-left: 8.33333333%;
-  }
-  .xl--offset--2of12 {
-    margin-left: 16.66666667%;
-  }
-  .xl--offset--3of12 {
-    margin-left: 25%;
-  }
-  .xl--offset--4of12 {
-    margin-left: 33.33333333%;
-  }
-  .xl--offset--5of12 {
-    margin-left: 41.66666667%;
-  }
-  .xl--offset--6of12 {
-    margin-left: 50%;
-  }
-  .xl--offset--7of12 {
-    margin-left: 58.33333333%;
-  }
-  .xl--offset--8of12 {
-    margin-left: 66.66666667%;
-  }
-  .xl--offset--9of12 {
-    margin-left: 75%;
-  }
-  .xl--offset--10of12 {
-    margin-left: 83.33333333%;
-  }
-  .xl--offset--11of12 {
-    margin-left: 91.66666667%;
-  }
-  .xl--offset--12of12 {
-    margin-left: 100%;
-  }
-  .xl--pull--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .xl--pull--1of12 {
-    position: relative;
-    right: 8.33333333%;
-    left: auto;
-  }
-  .xl--pull--2of12 {
-    position: relative;
-    right: 16.66666667%;
-    left: auto;
-  }
-  .xl--pull--3of12 {
-    position: relative;
-    right: 25%;
-    left: auto;
-  }
-  .xl--pull--4of12 {
-    position: relative;
-    right: 33.33333333%;
-    left: auto;
-  }
-  .xl--pull--5of12 {
-    position: relative;
-    right: 41.66666667%;
-    left: auto;
-  }
-  .xl--pull--6of12 {
-    position: relative;
-    right: 50%;
-    left: auto;
-  }
-  .xl--pull--7of12 {
-    position: relative;
-    right: 58.33333333%;
-    left: auto;
-  }
-  .xl--pull--8of12 {
-    position: relative;
-    right: 66.66666667%;
-    left: auto;
-  }
-  .xl--pull--9of12 {
-    position: relative;
-    right: 75%;
-    left: auto;
-  }
-  .xl--pull--10of12 {
-    position: relative;
-    right: 83.33333333%;
-    left: auto;
-  }
-  .xl--pull--11of12 {
-    position: relative;
-    right: 91.66666667%;
-    left: auto;
-  }
-  .xl--pull--12of12 {
-    position: relative;
-    right: 100%;
-    left: auto;
-  }
-  .xl--push--0of12 {
-    position: static;
-    left: auto;
-    right: auto;
-  }
-  .xl--push--1of12 {
-    position: relative;
-    left: 8.33333333%;
-    right: auto;
-  }
-  .xl--push--2of12 {
-    position: relative;
-    left: 16.66666667%;
-    right: auto;
-  }
-  .xl--push--3of12 {
-    position: relative;
-    left: 25%;
-    right: auto;
-  }
-  .xl--push--4of12 {
-    position: relative;
-    left: 33.33333333%;
-    right: auto;
-  }
-  .xl--push--5of12 {
-    position: relative;
-    left: 41.66666667%;
-    right: auto;
-  }
-  .xl--push--6of12 {
-    position: relative;
-    left: 50%;
-    right: auto;
-  }
-  .xl--push--7of12 {
-    position: relative;
-    left: 58.33333333%;
-    right: auto;
-  }
-  .xl--push--8of12 {
-    position: relative;
-    left: 66.66666667%;
-    right: auto;
-  }
-  .xl--push--9of12 {
-    position: relative;
-    left: 75%;
-    right: auto;
-  }
-  .xl--push--10of12 {
-    position: relative;
-    left: 83.33333333%;
-    right: auto;
-  }
-  .xl--push--11of12 {
-    position: relative;
-    left: 91.66666667%;
-    right: auto;
-  }
-  .xl--push--12of12 {
-    position: relative;
-    left: 100%;
-    right: auto;
-  }
   .xl--centered {
     float: none;
     margin-left: auto;
@@ -2603,13 +1455,14 @@ a.button:active {
    |-- Alerts
    ========================================================================== */
 /**
- *
+ * <div class="alert alert__info" role="alert">
+ *   <p>...</p>
+ * </div>
  */
 .alert {
   margin: 1.125em 0;
   padding: 0.84375em 1.125em;
-  border-left: 4px solid transparent;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border-left: 5px solid transparent;
 }
 .alert p,
 .alert ul {
@@ -2621,9 +1474,15 @@ a.button:active {
 .alert p + p {
   margin-top: 0.84375em;
 }
+.alert a {
+  font-weight: 700;
+}
 .alert__info {
   background: #f6fbfe;
   border-color: #1b89c0;
+  color: #1b89c0;
+}
+.alert__info a {
   color: #1b89c0;
 }
 .alert__success {
@@ -2631,9 +1490,15 @@ a.button:active {
   border-color: #2d8f19;
   color: #2d8f19;
 }
+.alert__success a {
+  color: #2d8f19;
+}
 .alert__warning {
   background: #fefaf6;
   border-color: #d87213;
+  color: #d87213;
+}
+.alert__warning a {
   color: #d87213;
 }
 .alert__danger {
@@ -2641,22 +1506,28 @@ a.button:active {
   border-color: #c03535;
   color: #c03535;
 }
+.alert__danger a {
+  color: #c03535;
+}
 /* ==========================================================================
    |-- Navs
    ========================================================================== */
 /**
  * <ul class="nav nav--inline nav--right">
+ *   <li><a href="#">...</a></li>
+ * </ul>
  */
 .nav {
   padding: 0;
   list-style: none;
 }
 .nav a {
-  display: inline-block;
+  display: block;
   text-decoration: none;
 }
 .nav--inline > li {
   display: inline-block;
+  vertical-align: top;
 }
 .nav--right {
   text-align: right;
@@ -2668,29 +1539,31 @@ a.button:active {
   text-align: center;
 }
 /* ==========================================================================
-   |-- Flyout
+   |-- Dropdown
    ========================================================================== */
 /**
- * <li class="flyout">
- *   <a href="#">Flyout</a>
- *   <ul class="flyout__content">...</ul>
- * </li>
+ * <div class="dropdown" id="dropdownMenu1">
+ *   <button>...</button>
+ *   <ul class="dropdown__menu" role="menu" aria-labelledby="dropdownMenu1">
+ *     <li role="presentation"><a href="#" role="menuitem">...</a></li>
+ *     <li class="dropdown__menu__heading" role="presentation">...</li>
+ *   </ul>
+ * </div>
  */
-.flyout {
+.dropdown {
   position: relative;
 }
-.flyout__content {
+.dropdown__menu {
+  display: none;
   position: absolute;
-  left: -10000em;
-  min-width: 9.375em;
-}
-ul.flyout__content {
+  left: 0;
+  min-width: 10em;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.flyout:hover > .flyout__content {
-  left: auto;
+.dropdown.is-open > .dropdown__menu {
+  display: block;
 }
 /* ==========================================================================
    |-- Breadcrumbs
@@ -2698,10 +1571,15 @@ ul.flyout__content {
 /**
  * <nav class="breadcrumbs">
  *   <ol>
- * or us the data attribute to change the separator
+ *     <li><a href="#">Home</a></li>
+ *     <li>About</li>
+ *   </ol>
+ * Or us the data attribute to change the separator.
  * <nav class="breadcrumbs">
  *   <ol>
- *     <li data-breadcrumbs="⟩">
+ *     <li data-breadcrumbs="⟩"><a href="#">Home</a></li>
+ *     <li data-breadcrumbs="⟩">About</li>
+ *   </ol>
  */
 .breadcrumbs {
   margin: 1.125em 0;
@@ -2728,15 +1606,15 @@ ul.flyout__content {
    |-- Pagination
    ========================================================================== */
 /**
- * <nav class="pagination pagination--center">
+ * <nav class="pagination">
  *   <ol>
- *     <li class="pagination__first">
- *     <li class="pagination__prev">
- *     <li>
- *     <li class="is-current">
- *     <li>
- *     <li class="pagination__next">
- *     <li class="pagination__last">
+ *     <li><a href="#">First</a></li>
+ *     <li><a href="#">Previous</a></li>
+ *     <li class="is-current">2</a></li>
+ *     <li><a href="#">Next</a></li>
+ *     <li><a href="#">Last</a></li>
+ *   </ol>
+ * </nav>
  */
 .pagination {
   margin: 1.125em 0;
@@ -2758,6 +1636,10 @@ ul.flyout__content {
 /**
  * <nav class="pager">
  *   <ol>
+ *     <li><a href="#">Previous</a></li>
+ *     <li><a href="#">Next</a></li>
+ *   </ol>
+ * </nav>
  */
 .pager {
   margin: 1.125em 0;
@@ -2779,64 +1661,37 @@ ul.flyout__content {
    ========================================================================== */
 /**
  * <div class="page-header">
- *   <h1 class="page-header__title">...</h1>
+ *   <h1>...</h1>
+ *   <h2>...</h2>
  * </div>
  */
 /* ==========================================================================
-   |-- Lead Copy
+   |-- Lead Paragraph
    ========================================================================== */
 /**
- * <p class="lead">
+ * <p class="lead">...</p>
  */
 .lead {
-  font-size: 1.1875em;
-}
-@media only screen and (min-width: 62em) {
-  .lead {
-    font-size: 1.3125em;
-  }
-}
-@media \0screen {
-  .lead {
-    font-size: 1.3125em;
-  }
+  font-size: 1.25em;
 }
 /* ==========================================================================
    |-- Hero
    ========================================================================== */
 /**
  * <div class="hero">
- *   <div class="hero__heading">
- *   <div class="hero__body">
+ *   <h1>...</h1>
+ *   <h2>...</h2>
+ *   <p>...</p>
+ * </div>
  */
 .hero {
-  margin-top: 0.3em;
-  margin-bottom: 1.125em;
-  font-size: 19px;
-}
-@media only screen and (min-width: 62em) {
-  .hero {
-    font-size: 21px;
-  }
-}
-@media \0screen {
-  .hero {
-    font-size: 21px;
-  }
-}
-.hero__heading {
-  margin-bottom: 0.225em;
-  font-size: 2.25em;
-}
-.hero__body .is-last,
-.hero__body > *:last-child {
-  margin-bottom: 0;
+  font-size: 20px;
 }
 /* ==========================================================================
    |-- Lists
    ========================================================================== */
 /**
- * <ul class="list--square">
+ * <ul class="list--square">...</ul>
  */
 .list--unstyled {
   list-style: none;
@@ -2871,6 +1726,18 @@ ul.flyout__content {
 /* ==========================================================================
    |-- Media Object
    ========================================================================== */
+/**
+ * <div class="media">
+ *   <img class="media__img" src="image.jpg" alt="">
+ *   <div class="media__body">...</div>
+ * </div>
+ */
+.media__img {
+  float: left;
+}
+.media__body {
+  overflow: hidden;
+}
 /* ==========================================================================
    |-- Progress Bar
    ========================================================================== */
@@ -2906,7 +1773,7 @@ ul.flyout__content {
 /**
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-.u-sr-only {
+.u-visuallyhidden {
   overflow: hidden;
   clip: rect(0 0 0 0);
   position: absolute;
@@ -2920,8 +1787,8 @@ ul.flyout__content {
  * Extends the .visuallyhidden class to allow the element to be focusable when navigated
  * to via the keyboard: h5bp.com/p
  */
-.u-sr-only--focusable:active,
-.u-sr-only--focusable:focus {
+.u-visuallyhidden--focusable:active,
+.u-visuallyhidden--focusable:focus {
   overflow: visible;
   clip: auto;
   position: static;
