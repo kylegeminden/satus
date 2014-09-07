@@ -6,21 +6,23 @@
  * Remove default webkit styles (for iOS)
  */
 
-input[type="text"],
-input[type="password"],
-input[type="search"],
-input[type="email"],
-input[type="url"],
-input[type="tel"],
-input[type="number"] {
-    -webkit-appearance: none;
+.form {
+    input[type="text"],
+    input[type="password"],
+    input[type="search"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"] {
+        -webkit-appearance: none;
+    }
 }
 
 /**
  * Allow only vertical resizing of textareas.
  */
 
-textarea {
+.form textarea {
     resize: vertical;
 }
 
@@ -28,17 +30,16 @@ textarea {
  * Better default styling for labels
  */
 
-label {
+.form label {
     display: inline-block;
     margin-bottom: .35em;
 }
 
-/**
- * Forms
- */
-
 .form {
-
+    [type="radio"],
+    [type="checkbox"] {
+        margin: 0 .2em;
+    }
 }
 
 /**
@@ -130,24 +131,15 @@ label {
     }
 }
 
+/**
+ * Set form elements to full width
+ */
+
 .form__input,
 .form__range,
 .form__file {
     width: 100%;
-}
-
-.form__group {
-    margin-bottom: @font-margin;
-
-    &.has-success {
-        .form-input-validation(lighten(@cp-success, 65%); @cp-success; @cp-success; fade(@cp-success, 70%));
-    }
-    &.has-warning {
-        .form-input-validation(lighten(@cp-warning, 52%); @cp-warning; @cp-warning; fade(@cp-warning, 70%));
-    }
-    &.has-error {
-        .form-input-validation(lighten(@cp-danger, 50%); @cp-danger; @cp-danger; fade(@cp-danger, 70%));
-    }
+    max-width: 100%;
 }
 
 /**
@@ -155,7 +147,8 @@ label {
  * <form class="form--inline"> or <input class="form__input form__input--inline">
  */
 
-.form--inline {
+.form--inline,
+.form__group--inline {
     .form__input,
     .form__range,
     .form__file {
@@ -208,6 +201,31 @@ label {
     height: @input-height;
     padding: @input-padding-vertical 0;
     vertical-align: middle;
+}
+
+/**
+ * Form Groups
+ * Contains labels and inputs and adds bottom margin.
+ * <div class="form__group">
+ *   <label>...</label>
+ *   <input class="form__input" type="text">
+ * </div>
+ */
+
+.form__group {
+    margin-bottom: @font-margin;
+
+    // Validation states
+    // background color, border-color, text color
+    &.has-success {
+        .form-input-validation(@cp-success; @cp-success);
+    }
+    &.has-warning {
+        .form-input-validation(@cp-warning; @cp-warning);
+    }
+    &.has-error {
+        .form-input-validation(@cp-danger; @cp-danger);
+    }
 }
 
 /**
