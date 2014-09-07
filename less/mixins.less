@@ -164,14 +164,19 @@
     background: @background;
     border-color: @border;
     color: @color;
+
+    a {
+        color: @color;
+    }
 }
 
-.form-input-validation(@background; @border-color; @color; @placeholder) {
-    color: @color;
+.form-input-validation(@border-color; @color) {
+    label {
+        color: @color;
+    }
+
     .form__input {
-        background: @background;
         border-color: @border-color;
-        .placeholder(@placeholder)
     }
 }
 
