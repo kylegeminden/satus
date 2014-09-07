@@ -4,28 +4,24 @@
 
 /**
  * <div class="hero">
- *   <div class="hero__heading">
- *   <div class="hero__body">
+ *   <h1>...</h1>
+ *   <h2>...</h2>
+ *   <p>...</p>
+ * </div>
  */
 
 .hero {
-    margin-top: (@line-height * .2em);
-    margin-bottom: @font-margin;
-    font-size: round(@font-size-root * 1.1875, 1);
+    font-size: round(@font-size-root * 1.25, 1);
 
-    .query-ie8(@query-lg-min, {
-        font-size: round(@font-size-root * 1.3125, 1);
-    });
+    h1 {
 
-    &__heading {
-        margin-bottom: (@line-height * .15em);
-        font-size: 2.25em;
     }
 
-    &__body {
-        .is-last,
-        > *:last-child {
-            margin-bottom: 0;
-        }
+    h2 {
+
+    }
+
+    p {
+
     }
 }
