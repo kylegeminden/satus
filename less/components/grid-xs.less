@@ -5,10 +5,10 @@
 /**
  * By default the grid is 12 columns across.
  * <div class="grid">
- *   <div class="grid__cell md--12of12">
- *   <div class="grid__cell md--8of12">
- *   <div class="grid__cell md--4of12">
- *   <div class="grid__cell md--12of12">
+ *   <div class="grid__cell md--12of12">..</div>
+ *   <div class="grid__cell md--8of12">..</div>
+ *   <div class="grid__cell md--4of12">..</div>
+ *   <div class="grid__cell md--12of12">..</div>
  * </div>
  *
  * Gutters should be added with a modifier class to keep the grid modular. There is a modifier
@@ -16,8 +16,10 @@
  * using page layouts to add left and right padding.
  * <div class="grid-container">
  *   <div class="grid grid--page">
- *     <div class="grid__cell md--8of12">
- *     <div class="grid__cell md--4of12">
+ *     <div class="grid__cell md--8of12">...</div>
+ *     <div class="grid__cell md--4of12">...</div>
+ *   </div>
+ * </div>
  *
  * Media queries are:
  *  - xs (479px/29.9375em and below)
@@ -26,19 +28,19 @@
  *  - lg (992px/62em and above)
  *  - xl (1382px/86.375em and above)
  *
- * Offsets, pushes and pulls.
+ * Offsets, pushes and pulls. These are disabled by default and are enabled in less/variables.less
  * You can use offset-0of12, push-0of12 and pull-0of12 to undo prior queries.
- * <div class="grid__cell sm--8of12 sm--offset--4of12">
- * <div class="grid__cell sm--8of12 sm--pull--4of12">
- * <div class="grid__cell sm--8of12 sm--push--4of12">
+ * <div class="grid__cell sm--8of12 sm--offset--4of12">...</div>
+ * <div class="grid__cell sm--8of12 sm--pull--4of12">...</div>
+ * <div class="grid__cell sm--8of12 sm--push--4of12">...</div>
  *
  * A cell can be centered or uncentered from a centering from a prior media query.
- * <div class="grid__cell sm--8of12 sm--centered">
- * <div class="grid__cell sm--8of12 sm--centered md--8of12 md--uncentered">
+ * <div class="grid__cell sm--8of12 sm--centered">...</div>
+ * <div class="grid__cell sm--8of12 sm--centered md--8of12 md--uncentered">...</div>
  *
  * A cell can be cleared or uncleared from a prior media query.
- * <div class="grid__cell sm--2of12">
- * <div class="grid__cell sm--4of12 md--2of12 md--clear">
+ * <div class="grid__cell sm--2of12">...</div>
+ * <div class="grid__cell sm--4of12 md--2of12 md--clear">...</div>
  *
  * Show or Hide and element. Example useage of hiding on xs and showing on sm and up
  * <div class="xs--hide sm--show">...</div>
