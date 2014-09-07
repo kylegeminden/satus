@@ -4,6 +4,8 @@
 
 /**
  * <ul class="nav nav--inline nav--right">
+ *   <li><a href="#">...</a></li>
+ * </ul>
  */
 
 .nav {
@@ -11,13 +13,19 @@
     list-style: none;
 
     a {
-        display: inline-block;
+        display: block;
         text-decoration: none;
     }
 
     &--inline {
+
         > li {
             display: inline-block;
+            vertical-align: top;
+
+            > a {
+
+            }
         }
     }
 
