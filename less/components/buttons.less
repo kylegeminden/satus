@@ -3,7 +3,8 @@
    ========================================================================== */
 
 /**
- * <button class="button button--large button--space--right">
+ * <button class="button button--large button--space--right">...</button>
+ * <a class="button button--large button--space--right" role="button">...</a>
  */
 
 .button {
@@ -17,6 +18,7 @@
     line-height: @line-height;
     font-family: @button-font;
     text-decoration: none;
+    text-align: center;
     vertical-align: middle;
     white-space: nowrap;
     -webkit-appearance: none;
@@ -36,6 +38,10 @@
     &[disabled] {
         background: @button-disabled;
         cursor: not-allowed;
+    }
+
+    &--block {
+        display: block;
     }
 
     &--small {
