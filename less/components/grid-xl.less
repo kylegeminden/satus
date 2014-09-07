@@ -1,98 +1,94 @@
-@media @query-xl-min {
-
-    // Gutters
-    .grid-container when (@grid-xl-gutter > @grid-lg-gutter) {
-        .make-grid-container(@grid-xl-gutter);
-    }
-
-    .grid--page when (@grid-xl-gutter > @grid-lg-gutter) {
-        margin-left: -@grid-xl-gutter;
-
-        > [class*="grid__cell"] {
-            padding-left: @grid-xl-gutter;
-        }
-    }
-
-    // Cells
-    .xl-cells(@n, @i: 1) when (@i =< @n) {
-        .xl--@{i}of@{n} {
-            .make-grid-cell(@i);
-        }
-        .xl-cells(@n, (@i + 1));
-    }
-    .xl-cells(@grid-columns); // generate cells
-
-    // Offset Cells
-    .xl-offset() when (@grid-xl-enable-offsets = true) {
-        .xl-offsets(@n, @i: 1) when (@i =< @n) {
-            .xl--offset--@{i}of@{n} {
-                .make-grid-cell-offset(@i);
-            }
-            .xl-offsets(@n, (@i + 1));
-        }
-        // Undo Offset from prior queries
-        .xl--offset--0of@{grid-columns} {
-            margin-left: 0;
-        }
-        .xl-offsets(@grid-columns); // generate offsets
-    }
-    .xl-offset(); // generate offsets if true (set in variables.less)
-
-    // Pull Cells
-    .xl-push-pull() when (@grid-xl-enable-push-pull = true) {
-        .xl-pulls(@n, @i: 1) when (@i =< @n) {
-            .xl--pull--@{i}of@{n} {
-                .make-grid-cell-pull(@i);
-            }
-            .xl-pulls(@n, (@i + 1));
-        }
-        // Undo Pull from prior queries
-        .xl--pull--0of@{grid-columns} {
-            position: static;
-            left: auto;
-            right: auto;
-        }
-        .xl-pulls(@grid-columns); // generate pulls
-
-        // Push Cells
-        .xl-pushes(@n, @i: 1) when (@i =< @n) {
-            .xl--push--@{i}of@{n} {
-                .make-grid-cell-push(@i);
-            }
-            .xl-pushes(@n, (@i + 1));
-        }
-        // Undo Push from prior queries
-        .xl--push--0of@{grid-columns} {
-            position: static;
-            left: auto;
-            right: auto;
-        }
-        .xl-pushes(@grid-columns); // generate pushes
-    }
-    .xl-push-pull(); // generate pushes and pulls if true (set in variables.less)
-
-    // Center Cell
-    .xl--centered {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    // Uncenter Cell from prior queries
-    .xl--uncentered {
-        float: left;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    // Clear Cell
-    .xl--clear { clear: left; }
-
-    // Unclear Cell from prior queries
-    .xl--unclear { float: left; }
-
-    // Show and Hide
-    .xl--hide { display: none !important; }
-    .xl--show { display: inherit !important; }
-
+// Gutters
+.grid-container when (@grid-xl-gutter > @grid-lg-gutter) {
+    .make-grid-container(@grid-xl-gutter);
 }
+
+.grid--page when (@grid-xl-gutter > @grid-lg-gutter) {
+    margin-left: -@grid-xl-gutter;
+
+    > [class*="grid__cell"] {
+        padding-left: @grid-xl-gutter;
+    }
+}
+
+// Cells
+.xl-cells(@n, @i: 1) when (@i =< @n) {
+    .xl--@{i}of@{n} {
+        .make-grid-cell(@i);
+    }
+    .xl-cells(@n, (@i + 1));
+}
+.xl-cells(@grid-columns); // generate cells
+
+// Offset Cells
+.xl-offset() when (@grid-xl-enable-offsets = true) {
+    .xl-offsets(@n, @i: 1) when (@i =< @n) {
+        .xl--offset--@{i}of@{n} {
+            .make-grid-cell-offset(@i);
+        }
+        .xl-offsets(@n, (@i + 1));
+    }
+    // Undo Offset from prior queries
+    .xl--offset--0of@{grid-columns} {
+        margin-left: 0;
+    }
+    .xl-offsets(@grid-columns); // generate offsets
+}
+.xl-offset(); // generate offsets if true (set in variables.less)
+
+// Pull Cells
+.xl-push-pull() when (@grid-xl-enable-push-pull = true) {
+    .xl-pulls(@n, @i: 1) when (@i =< @n) {
+        .xl--pull--@{i}of@{n} {
+            .make-grid-cell-pull(@i);
+        }
+        .xl-pulls(@n, (@i + 1));
+    }
+    // Undo Pull from prior queries
+    .xl--pull--0of@{grid-columns} {
+        position: static;
+        left: auto;
+        right: auto;
+    }
+    .xl-pulls(@grid-columns); // generate pulls
+
+    // Push Cells
+    .xl-pushes(@n, @i: 1) when (@i =< @n) {
+        .xl--push--@{i}of@{n} {
+            .make-grid-cell-push(@i);
+        }
+        .xl-pushes(@n, (@i + 1));
+    }
+    // Undo Push from prior queries
+    .xl--push--0of@{grid-columns} {
+        position: static;
+        left: auto;
+        right: auto;
+    }
+    .xl-pushes(@grid-columns); // generate pushes
+}
+.xl-push-pull(); // generate pushes and pulls if true (set in variables.less)
+
+// Center Cell
+.xl--centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Uncenter Cell from prior queries
+.xl--uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+// Clear Cell
+.xl--clear { clear: left; }
+
+// Unclear Cell from prior queries
+.xl--unclear { float: left; }
+
+// Show and Hide
+.xl--hide { display: none !important; }
+.xl--show { display: inherit !important; }

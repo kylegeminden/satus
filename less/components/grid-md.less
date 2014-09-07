@@ -1,98 +1,94 @@
-.query-ie8(@query-md-min, {
+// Gutters
+.grid-container when (@grid-md-gutter > @grid-sm-gutter) {
+    .make-grid-container(@grid-md-gutter);
+}
 
-    // Gutters
-    .grid-container when (@grid-md-gutter > @grid-sm-gutter) {
-        .make-grid-container(@grid-md-gutter);
+.grid--page when (@grid-md-gutter > @grid-sm-gutter) {
+    margin-left: -@grid-md-gutter;
+
+    > [class*="grid__cell"] {
+        padding-left: @grid-md-gutter;
     }
+}
 
-    .grid--page when (@grid-md-gutter > @grid-sm-gutter) {
-        margin-left: -@grid-md-gutter;
-
-        > [class*="grid__cell"] {
-            padding-left: @grid-md-gutter;
-        }
+// Cells
+.md-cells(@n, @i: 1) when (@i =< @n) {
+    .md--@{i}of@{n} {
+        .make-grid-cell(@i);
     }
+    .md-cells(@n, (@i + 1));
+}
+.md-cells(@grid-columns); // generate cells
 
-    // Cells
-    .md-cells(@n, @i: 1) when (@i =< @n) {
-        .md--@{i}of@{n} {
-            .make-grid-cell(@i);
+// Offset Cells
+.md-offset() when (@grid-md-enable-offsets = true) {
+    .md-offsets(@n, @i: 1) when (@i =< @n) {
+        .md--offset--@{i}of@{n} {
+            .make-grid-cell-offset(@i);
         }
-        .md-cells(@n, (@i + 1));
+        .md-offsets(@n, (@i + 1));
     }
-    .md-cells(@grid-columns); // generate cells
-
-    // Offset Cells
-    .md-offset() when (@grid-md-enable-offsets = true) {
-        .md-offsets(@n, @i: 1) when (@i =< @n) {
-            .md--offset--@{i}of@{n} {
-                .make-grid-cell-offset(@i);
-            }
-            .md-offsets(@n, (@i + 1));
-        }
-        // Undo Offset from prior queries
-        .md--offset--0of@{grid-columns} {
-            margin-left: 0;
-        }
-        .md-offsets(@grid-columns); // generate offsets
-    }
-    .md-offset(); // generate offsets if true (set in variables.less)
-
-    // Pull Cells
-    .md-push-pull() when (@grid-md-enable-push-pull = true) {
-        .md-pulls(@n, @i: 1) when (@i =< @n) {
-            .md--pull--@{i}of@{n} {
-                .make-grid-cell-pull(@i);
-            }
-            .md-pulls(@n, (@i + 1));
-        }
-        // Undo Pull from prior queries
-        .md--pull--0of@{grid-columns} {
-            position: static;
-            left: auto;
-            right: auto;
-        }
-        .md-pulls(@grid-columns); // generate pulls
-
-        // Push Cells
-        .md-pushes(@n, @i: 1) when (@i =< @n) {
-            .md--push--@{i}of@{n} {
-                .make-grid-cell-push(@i);
-            }
-            .md-pushes(@n, (@i + 1));
-        }
-        // Undo Push from prior queries
-        .md--push--0of@{grid-columns} {
-            position: static;
-            left: auto;
-            right: auto;
-        }
-        .md-pushes(@grid-columns); // generate pushes
-    }
-    .md-push-pull(); // generate pushes and pulls if true (set in variables.less)
-
-    // Center Cell
-    .md--centered {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    // Uncenter Cell from prior queries
-    .md--uncentered {
-        float: left;
+    // Undo Offset from prior queries
+    .md--offset--0of@{grid-columns} {
         margin-left: 0;
-        margin-right: 0;
     }
+    .md-offsets(@grid-columns); // generate offsets
+}
+.md-offset(); // generate offsets if true (set in variables.less)
 
-    // Clear Cell
-    .md--clear { clear: left; }
+// Pull Cells
+.md-push-pull() when (@grid-md-enable-push-pull = true) {
+    .md-pulls(@n, @i: 1) when (@i =< @n) {
+        .md--pull--@{i}of@{n} {
+            .make-grid-cell-pull(@i);
+        }
+        .md-pulls(@n, (@i + 1));
+    }
+    // Undo Pull from prior queries
+    .md--pull--0of@{grid-columns} {
+        position: static;
+        left: auto;
+        right: auto;
+    }
+    .md-pulls(@grid-columns); // generate pulls
 
-    // Unclear Cell from prior queries
-    .md--unclear { float: left; }
+    // Push Cells
+    .md-pushes(@n, @i: 1) when (@i =< @n) {
+        .md--push--@{i}of@{n} {
+            .make-grid-cell-push(@i);
+        }
+        .md-pushes(@n, (@i + 1));
+    }
+    // Undo Push from prior queries
+    .md--push--0of@{grid-columns} {
+        position: static;
+        left: auto;
+        right: auto;
+    }
+    .md-pushes(@grid-columns); // generate pushes
+}
+.md-push-pull(); // generate pushes and pulls if true (set in variables.less)
 
-    // Show and Hide
-    .md--hide { display: none !important; }
-    .md--show { display: inherit !important; }
+// Center Cell
+.md--centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-});
+// Uncenter Cell from prior queries
+.md--uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+// Clear Cell
+.md--clear { clear: left; }
+
+// Unclear Cell from prior queries
+.md--unclear { float: left; }
+
+// Show and Hide
+.md--hide { display: none !important; }
+.md--show { display: inherit !important; }
