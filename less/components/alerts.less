@@ -3,15 +3,15 @@
    ========================================================================== */
 
 /**
- *
+ * <div class="alert alert__info" role="alert">
+ *   <p>...</p>
+ * </div>
  */
 
 .alert {
     margin: @font-margin 0;
     padding: (@font-margin * .75) @font-margin;
-    border-left: 4px solid transparent;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.2);
-
+    border-left: 5px solid transparent;
 
     p,
     ul {
@@ -26,6 +26,12 @@
         margin-top: (@font-margin * .75);
     }
 
+    a {
+        font-weight: @font-weight-bold;
+    }
+
+    // Variants
+    // background color, border-color, text color
     &__info {
         .alert-variant(lighten(@cp-info, 55%); @cp-info; @cp-info);
     }
