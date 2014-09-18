@@ -83,7 +83,10 @@
         outline-style: none;
         color: @input-color;
         vertical-align: middle;
-        .tab-focus();
+
+        &:focus {
+            border-color: #129FEA;
+        }
     }
 
     // Reset height for multiple select and text area
