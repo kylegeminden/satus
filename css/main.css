@@ -599,7 +599,7 @@ a {
   color: #0066cc;
 }
 a:focus {
-  border-color: #129FEA;
+  outline: thin dotted;
 }
 a:hover,
 a:focus,
