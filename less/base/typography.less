@@ -121,7 +121,10 @@ ul {
 
 a {
     color: @link-color;
-    .tab-focus();
+
+    &:focus {
+        outline: thin dotted;
+    }
 
     &:hover,
     &:focus,
