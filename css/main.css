@@ -741,35 +741,21 @@ embed {
   -webkit-appearance: none;
 }
 /**
- * Allow only vertical resizing of textareas.
- */
-.form textarea {
-  resize: vertical;
-}
-/**
  * Better default styling for labels
  */
 .form label {
   display: inline-block;
   margin-bottom: .35em;
 }
+/**
+ * Allow only vertical resizing of textareas.
+ */
+.form textarea {
+  resize: vertical;
+}
 .form [type="radio"],
 .form [type="checkbox"] {
   margin: 0 .2em;
-}
-/**
- * Fieldsets
- * <fieldset class="form__fieldset">
- */
-.form__fieldset {
-  padding: 0.625em;
-  border: 1px solid #bfbfbf;
-  -webkit-border-radius: 0.25em;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 0.25em;
-  -moz-background-clip: padding;
-  border-radius: 0.25em;
-  background-clip: padding-box;
 }
 /**
  * Labels
@@ -783,29 +769,25 @@ embed {
  *
  * Apply .form__input to any of the following form inputs
  * <input class="form__input">
- *
- * select,
- * textarea,
- * input[type="text"],
- * input[type="password"],
- * input[type="search"],
- * input[type="email"],
- * input[type="url"],
- * input[type="tel"],
- * input[type="number"],
- * input[type="datetime"],
- * input[type="datetime-local"],
- * input[type="date"],
- * input[type="month"],
- * input[type="time"],
- * input[type="week"],
- * input[type="color"]
- *
  */
-.form__input {
-  height: 2.425em;
-  margin: 0;
-  padding: 0.4em 0.875em;
+.form select,
+.form textarea,
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="search"],
+.form input[type="email"],
+.form input[type="url"],
+.form input[type="tel"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="datetime"],
+.form input[type="datetime-local"],
+.form input[type="month"],
+.form input[type="week"],
+.form input[type="time"],
+.form input[type="color"] {
+  height: 2.525em;
+  padding: 0.7em 0.8em;
   background: #ffffff;
   border: 1px solid #bfbfbf;
   -webkit-border-radius: 0.25em;
@@ -818,63 +800,79 @@ embed {
   color: #222222;
   vertical-align: middle;
 }
-.form__input::-webkit-input-placeholder {
-  color: #999999;
-}
-.form__input:-moz-placeholder {
-  color: #999999;
-}
-.form__input::-moz-placeholder {
-  color: #999999;
-}
-.form__input:-ms-input-placeholder {
-  color: #999999;
-}
-.form__input:focus {
+.form select:focus,
+.form textarea:focus,
+.form input[type="text"]:focus,
+.form input[type="password"]:focus,
+.form input[type="search"]:focus,
+.form input[type="email"]:focus,
+.form input[type="url"]:focus,
+.form input[type="tel"]:focus,
+.form input[type="number"]:focus,
+.form input[type="date"]:focus,
+.form input[type="datetime"]:focus,
+.form input[type="datetime-local"]:focus,
+.form input[type="month"]:focus,
+.form input[type="week"]:focus,
+.form input[type="time"]:focus,
+.form input[type="color"]:focus {
   border-color: #129FEA;
 }
-.form__input[type="color"] {
-  padding: 0;
-}
-textarea.form__input,
-.form__input[size],
-.form__input[multiple] {
+.form textarea,
+.form select[size],
+.form select[multiple] {
   height: auto;
 }
-.form__input[readonly],
-.form__input[disabled],
-fieldset[disabled] .form__input {
-  cursor: not-allowed;
-  background: #f7f7f7;
-  opacity: 1;
-  color: #999999;
-}
-/**
- * Set form elements to full width
- */
-.form__input,
-.form__range,
-.form__file {
+.form input,
+.form select,
+.form textarea {
   width: 100%;
   max-width: 100%;
 }
+.form input[readonly],
+.form select[readonly],
+.form textarea[readonly],
+.form input[disabled],
+.form select[disabled],
+.form textarea[disabled],
+fieldset[disabled] .form input,
+fieldset[disabled] .form select,
+fieldset[disabled] .form textarea {
+  cursor: not-allowed;
+  background: #eeeeee;
+  opacity: 1;
+  color: #999999;
+}
+.form input[type="radio"],
+.form input[type="checkbox"] {
+  width: auto;
+  max-width: none;
+}
+.form input[type="color"] {
+  padding: 0;
+  width: 3.535em;
+}
 /**
- * Make form elements inlnie
- * <form class="form--inline"> or <input class="form__input form__input--inline">
+ * Form output element
+ * http://html5doctor.com/the-output-element/
  */
-.form--inline .form__input,
-.form__group--inline .form__input,
-.form--inline .form__range,
-.form__group--inline .form__range,
-.form--inline .form__file,
-.form__group--inline .form__file {
-  width: auto;
+.form output {
+  height: 2.525em;
+  padding: 0.7em 0;
+  vertical-align: middle;
 }
-.form__input--inline {
+/**
+ * Make form elements inline
+ * <form class="form--inline"> or <div class="form__group--inline">
+ */
+.form--inline input,
+.form__group--inline input,
+.form--inline select,
+.form__group--inline select,
+.form--inline textarea,
+.form__group--inline textarea {
   width: auto;
-}
-.form__input--inline[type="color"] {
-  width: 3.395em;
+  max-width: none;
 }
 /**
  * Add margin to inputs
@@ -897,21 +895,11 @@ fieldset[disabled] .form__input {
   font-size: 0.85em;
 }
 /**
- * Form output element, Does Not Need .fomr__input class
- * http://html5doctor.com/the-output-element/
- * <output class="form__output">
- */
-.form__output {
-  height: 2.425em;
-  padding: 0.4em 0;
-  vertical-align: middle;
-}
-/**
  * Form Groups
  * Contains labels and inputs and adds bottom margin.
  * <div class="form__group">
  *   <label>...</label>
- *   <input class="form__input" type="text">
+ *   <input type="text">
  * </div>
  */
 .form__group {
@@ -937,6 +925,7 @@ fieldset[disabled] .form__input {
 }
 /**
  * Form Grid.
+ * Note, This is dependentant on the grid component(s).
  * <div class="grid grid--form">
  *   <div class="grid__cell sm--6of12">
  *     <input class="form__input">
@@ -956,7 +945,7 @@ fieldset[disabled] .form__input {
  */
 .button {
   display: inline-block;
-  padding: 0.44em 0.875em 0.36em;
+  padding: 0.7em 0.8em;
   background: #0066cc;
   border: 1px solid #0066cc;
   -webkit-border-radius: 0.25em;
@@ -967,7 +956,7 @@ fieldset[disabled] .form__input {
   background-clip: padding-box;
   color: #ffffff;
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1;
   font-family: sans-serif;
   text-decoration: none;
   text-align: center;
@@ -976,8 +965,9 @@ fieldset[disabled] .form__input {
   -webkit-appearance: none;
 }
 .button:focus {
-  border-color: #129FEA;
+  outline: 0;
 }
+.button:focus,
 .button:hover {
   background: #004c99;
   color: #ffffff;
