@@ -125,23 +125,18 @@
 // inputs
 @placeholder-color : @gray-light;
 
-@input-height             : (((@line-height + (unit(@input-padding-vertical) * 2)) * 16 + 2) / 16 * 1em);
-@input-padding-horizontal : 0.875em;
-@input-padding-vertical   : 0.4em;
+@input-height             : (((1 + (unit(@input-padding-vertical) * 2)) * 16 + 2) / 16 * 1em);
+@input-padding-horizontal : 0.8em;
+@input-padding-vertical   : 0.7em;
 @input-bg                 : @white;
 @input-border             : 1px solid lighten(@gray-light, 15%);
 @input-radius             : @border-radius;
 @input-color              : @text-color;
-@input-disabled-bg        : darken(@input-bg, 3%);
-@input-disabled-color     : @placeholder-color;
-
-// fieldsets
-@fieldset-padding         : 0.625em;
-@fieldset-border          : 1px solid lighten(@gray-light, 15%);
-@fieldset-radius          : @border-radius;
+@input-disabled-bg        : @gray-lighter;
+@input-disabled-color     : @gray-light;
 
 // buttons
-@button-padding           : (@input-padding-vertical * 1.1) @input-padding-horizontal (@input-padding-vertical * .9);
+@button-padding           : @input-padding-vertical @input-padding-horizontal;
 @button-bg                : @link-color;
 @button-bg-hover          : @link-color-hover;
 @button-disabled          : lighten(@link-color, 15%);
