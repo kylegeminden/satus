@@ -19,20 +19,20 @@
 }
 
 /**
- * Allow only vertical resizing of textareas.
- */
-
-.form textarea {
-    resize: vertical;
-}
-
-/**
  * Better default styling for labels
  */
 
 .form label {
     display: inline-block;
     margin-bottom: .35em;
+}
+
+/**
+ * Allow only vertical resizing of textareas.
+ */
+
+.form textarea {
+    resize: vertical;
 }
 
 .form {
@@ -43,25 +43,12 @@
 }
 
 /**
- * Fieldsets
- * <fieldset class="form__fieldset">
- */
-
-.form__fieldset {
-    padding: @fieldset-padding;
-    border: @fieldset-border;
-    .radius(@fieldset-radius);
-}
-
-/**
  * Labels
  * <label class="form__label--top">
  */
 
-.form__label {
-    &--top {
-        vertical-align: top;
-    }
+.form__label--top {
+    vertical-align: top;
 }
 
 /**
@@ -69,99 +56,108 @@
  *
  * Apply .form__input to any of the following form inputs
  * <input class="form__input">
- *
- * select,
- * textarea,
- * input[type="text"],
- * input[type="password"],
- * input[type="search"],
- * input[type="email"],
- * input[type="url"],
- * input[type="tel"],
- * input[type="number"],
- * input[type="datetime"],
- * input[type="datetime-local"],
- * input[type="date"],
- * input[type="month"],
- * input[type="time"],
- * input[type="week"],
- * input[type="color"]
- *
  */
 
-.form__input {
-    height: @input-height;
-    margin: 0;
-    padding: @input-padding-vertical @input-padding-horizontal;
-    background: @input-bg;
-    border: @input-border;
-    .radius(@input-radius);
-    outline-style: none;
-    color: @input-color;
-    vertical-align: middle;
-    .placeholder(@placeholder-color);
-    .tab-focus();
-
-    // Reset padding
-    &[type="color"] {
-        padding: 0;
+.form {
+    select,
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="search"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="color"] {
+        height: @input-height;
+        padding: @input-padding-vertical @input-padding-horizontal;
+        background: @input-bg;
+        border: @input-border;
+        .radius(@input-radius);
+        outline-style: none;
+        color: @input-color;
+        vertical-align: middle;
+        .tab-focus();
     }
 
     // Reset height for multiple select and text area
-    textarea&,
-    &[size],
-    &[multiple] {
+    textarea,
+    select[size],
+    select[multiple] {
         height: auto;
     }
 
-    // Styling for disabled and read only inputs
-    // Note for fieldsets: "If this Boolean attribute is set, the form controls that are its
-    // descendants, except descendants of its first optional <legend> element, are disabled,
-    // i.e., not editable."
-    // source: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
-    // Fieldsets are styled anyway so if yours falls under this edge case simply remove the
-    // fieldset selector.
-    &[readonly],
-    &[disabled],
-    fieldset[disabled] & {
-        cursor: not-allowed;
-        background: @input-disabled-bg;
-        opacity: 1; // iOS fix for unreadable disabled content
-        color: @input-disabled-color;
+    input,
+    select,
+    textarea {
+        // Set form elements to full width
+        width: 100%;
+        max-width: 100%;
+
+        // Styling for disabled and read only inputs
+        // Note for fieldsets: "If this Boolean attribute is set, the form controls that are its
+        // descendants, except descendants of its first optional <legend> element, are disabled,
+        // i.e., not editable."
+        // source: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+        // Fieldsets are styled anyway so if yours falls under this edge case simply remove the
+        // fieldset selector.
+        &[readonly],
+        &[disabled],
+        fieldset[disabled] & {
+            cursor: not-allowed;
+            background: @input-disabled-bg;
+            opacity: 1; // iOS fix for unreadable disabled content
+            color: @input-disabled-color;
+        }
+    }
+
+    // Reset width for checkboxes and radios
+    input[type="radio"],
+    input[type="checkbox"] {
+        width: auto;
+        max-width: none;
+    }
+
+    // Reset padding
+    // Set consistent width for color input
+    input[type="color"] {
+        padding: 0;
+        width: @input-height * 1.4;
+    }
+}
+
+
+/**
+ * Form output element
+ * http://html5doctor.com/the-output-element/
+ */
+
+.form {
+    output {
+        height: @input-height;
+        padding: @input-padding-vertical 0;
+        vertical-align: middle;
     }
 }
 
 /**
- * Set form elements to full width
- */
-
-.form__input,
-.form__range,
-.form__file {
-    width: 100%;
-    max-width: 100%;
-}
-
-/**
- * Make form elements inlnie
- * <form class="form--inline"> or <input class="form__input form__input--inline">
+ * Make form elements inline
+ * <form class="form--inline"> or <div class="form__group--inline">
  */
 
 .form--inline,
 .form__group--inline {
-    .form__input,
-    .form__range,
-    .form__file {
+    input,
+    select,
+    textarea {
         width: auto;
-    }
-}
-
-.form__input--inline {
-    width: auto;
-
-    // Set consistent width for color input
-    &[type="color"] {
-        width: @input-height * 1.4;
+        max-width: none;
     }
 }
 
@@ -192,23 +188,11 @@
 }
 
 /**
- * Form output element, Does Not Need .fomr__input class
- * http://html5doctor.com/the-output-element/
- * <output class="form__output">
- */
-
-.form__output {
-    height: @input-height;
-    padding: @input-padding-vertical 0;
-    vertical-align: middle;
-}
-
-/**
  * Form Groups
  * Contains labels and inputs and adds bottom margin.
  * <div class="form__group">
  *   <label>...</label>
- *   <input class="form__input" type="text">
+ *   <input type="text">
  * </div>
  */
 
@@ -230,6 +214,7 @@
 
 /**
  * Form Grid.
+ * Note, This is dependentant on the grid component(s).
  * <div class="grid grid--form">
  *   <div class="grid__cell sm--6of12">
  *     <input class="form__input">
