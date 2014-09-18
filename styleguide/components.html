@@ -19,20 +19,20 @@
         <h1 class="page-header">Components <small>(This is a page header.)</small></h1>
         <div class="grid grid--page">
             <div class="grid__cell md--12of12">
-                <h2>Lead Copy</h2>
+                <h2>Lead Paragraph</h2>
                 <hr>
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, numquam esse fuga officiis sint voluptates ipsum impedit accusamus unde quos possimus id pariatur sequi debitis dignissimos totam modi aperiam perspiciatis. Minima, omnis laboriosam repudiandae illo dolore cumque voluptatum earum excepturi dicta quo? Atque, sapiente, minus nesciunt deserunt natus voluptates fugit.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, officiis, ipsa, nihil, ad maiores corporis totam delectus dolores laudantium expedita placeat possimus commodi at eius harum a earum iusto ipsum repellat praesentium dolorum voluptatem ducimus cum excepturi eligendi. Qui, cupiditate.</p>
-                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, officiis, ipsa, nihil, ad maiores corporis totam delectus dolores laudantium expedita placeat possimus commodi at eius harum a earum iusto ipsum repellat praesentium dolorum voluptatem ducimus cum excepturi eligendi. Qui, cupiditate.</p>
             </div>
             <div class="grid__cell md--12of12">
-                <h1>Heading 1</h1>
+                <h2>Hero</h2>
+                <hr>
                 <div class="hero">
-                    <h1 class="hero__heading">Billboard</h1>
-                    <div class="hero__body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, labore, ipsa, eius non repellendus et omnis esse laudantium possimus voluptates pariatur nisi blanditiis alias soluta temporibus iste perferendis fugiat expedita asperiores eaque magni provident earum! Quaerat, corporis, aperiam omnis ipsam minus aliquid id optio provident molestiae quidem tempore ducimus praesentium.</p>
-                        <p class="is-last"><a href="#" class="button">Button</a></p>
-                    </div>
+                    <h1>Hero H1</h1>
+                    <h2>Hero H2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, labore, ipsa, eius non repellendus et omnis esse laudantium possimus voluptates pariatur nisi blanditiis alias soluta temporibus iste perferendis fugiat expedita asperiores eaque magni provident earum! Quaerat, corporis, aperiam omnis ipsam minus aliquid id optio provident molestiae quidem tempore ducimus praesentium.</p>
+                    <p class="is-last"><a href="#" class="button">Button</a></p>
                 </div>
             </div>
             <div class="grid__cell md--4of12">
@@ -77,20 +77,22 @@
                 </table>
             </div>
             <div class="grid__cell md--4of12">
-                <h2>Flyouts</h2>
+                <h2>Dropdown</h2>
                 <hr>
                 <ul class="nav nav--inline">
-                    <li class="flyout">
-                        <a href="#">Nav Item 1 <b></b></a>
-                        <ul class="flyout__content">
+                    <li class="dropdown is-open" id="dropdownMenu1">
+                        <a href="#">Nav Item 1</a>
+                        <ul class="dropdown__menu" role="menu" aria-labelledby="dropdownMenu1" style="position:static;">
+                            <li class="dropdown__menu__heading">Heading</li>
                             <li><a href="#">Sub Nav Item 1</a></li>
                             <li><a href="#">Sub Nav Item 2</a></li>
                             <li><a href="#">Sub Nav Item 3</a></li>
                         </ul>
                     </li>
+                    <li><a href="#">Nav Item 2</a></li>
                 </ul>
             </div>
-            <div class="grid__cell md--4of12">
+            <div class="grid__cell md--4of12 md--clear">
                 <h2>Breadcrumbs</h2>
                 <hr>
                 <nav class="breadcrumbs">
@@ -143,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid__cell md--4of12">
+            <div class="grid__cell md--4of12 md--clear">
                 <h2>Images</h2>
                 <hr>
                 <img class="img--rounded" alt="" src="http://placehold.it/150x150/0eafff/ffffff.png">
@@ -159,18 +161,18 @@
             <div class="grid__cell md--4of12">
                 <h2>Alerts</h2>
                 <hr>
-                <div class="alert alert__info">
+                <div class="alert alert__info" role="alert">
                     <h4>Heading</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
-                <div class="alert alert__success">
+                <div class="alert alert__success" role="alert">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
-                <div class="alert alert__warning">
+                <div class="alert alert__warning" role="alert">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
-                <div class="alert alert__danger">
+                <div class="alert alert__danger" role="alert">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>
             </div>
