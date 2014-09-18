@@ -15,15 +15,19 @@
     .radius(@button-radius);
     color: @button-font-color;
     font-size: @button-font-size;
-    line-height: @line-height;
+    line-height: 1;
     font-family: @button-font;
     text-decoration: none;
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
     -webkit-appearance: none;
-    .tab-focus();
 
+    &:focus {
+        outline: 0;
+    }
+
+    &:focus,
     &:hover {
         background: @button-bg-hover;
         color: @button-font-color;
