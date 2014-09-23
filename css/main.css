@@ -30,6 +30,7 @@
  *
  * |-- Utilities
  *
+ * | -- Print Styles
 */
 /* ==========================================================================
    |-- Normalize
@@ -713,13 +714,13 @@ embed {
  * From HTML5 Boilerplate http://html5boilerplate.com/
  * http://browsehappy.com/
  * <!--[if lt IE 8]>
- *  <p class="browsehappy">
+ *  <p class="browse-happy">
  *   You are using an <strong>outdated</strong> browser.
  *   Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
  *  </p>
  * <![endif]-->
  */
-.browsehappy {
+.browse-happy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
@@ -912,10 +913,10 @@ fieldset[disabled] .form textarea {
   border-color: #2d8f19;
 }
 .form__group.has-warning label {
-  color: #d87213;
+  color: #ca7d12;
 }
 .form__group.has-warning .form__input {
-  border-color: #d87213;
+  border-color: #ca7d12;
 }
 .form__group.has-error label {
   color: #c03535;
@@ -1453,6 +1454,9 @@ a.button:active {
   margin: 1.125em 0;
   padding: 0.84375em 1.125em;
   border-left: 5px solid transparent;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .alert p,
 .alert ul {
@@ -1484,12 +1488,12 @@ a.button:active {
   color: #2d8f19;
 }
 .alert__warning {
-  background: #fefaf6;
-  border-color: #d87213;
-  color: #d87213;
+  background: #fef8f1;
+  border-color: #ca7d12;
+  color: #ca7d12;
 }
 .alert__warning a {
-  color: #d87213;
+  color: #ca7d12;
 }
 .alert__danger {
   background: #fdf7f7;
@@ -1564,7 +1568,7 @@ a.button:active {
  *     <li><a href="#">Home</a></li>
  *     <li>About</li>
  *   </ol>
- * Or us the data attribute to change the separator.
+ * Or use the data attribute to change the separator.
  * <nav class="breadcrumbs">
  *   <ol>
  *     <li data-breadcrumbs="⟩"><a href="#">Home</a></li>
@@ -1724,6 +1728,7 @@ a.button:active {
  */
 .media__img {
   float: left;
+  padding-right: .75em;
 }
 .media__body {
   overflow: hidden;
@@ -1751,6 +1756,9 @@ a.button:active {
   line-height: 1.875em;
   vertical-align: middle;
   text-align: center;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .progress__bar {
   float: left;
@@ -1763,7 +1771,7 @@ a.button:active {
 /**
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-.u-visuallyhidden {
+.u-visually-hidden {
   overflow: hidden;
   clip: rect(0 0 0 0);
   position: absolute;
@@ -1777,8 +1785,8 @@ a.button:active {
  * Extends the .visuallyhidden class to allow the element to be focusable when navigated
  * to via the keyboard: h5bp.com/p
  */
-.u-visuallyhidden--focusable:active,
-.u-visuallyhidden--focusable:focus {
+.u-visually-hidden--focusable:active,
+.u-visually-hidden--focusable:focus {
   overflow: visible;
   clip: auto;
   position: static;
@@ -1802,5 +1810,64 @@ a.button:active {
 .grid:after,
 .breadcrumbs ol:after {
   clear: both;
+}
+/* ==========================================================================
+   |-- Print Styles
+   Inlined to avoid the additional HTTP request: h5bp.com/r
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
 /*# sourceMappingURL=../css/main.css.map */
