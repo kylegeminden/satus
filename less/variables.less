@@ -14,11 +14,11 @@
 @white : #fff;
 @black : #000;
 
-@gray-darker:            lighten(@black, 13.5%); // #222
-@gray-dark:              lighten(@black, 20%);   // #333
-@gray:                   lighten(@black, 33.5%); // #555
-@gray-light:             lighten(@black, 60%);   // #999
-@gray-lighter:           lighten(@black, 93.5%); // #eee
+@gray-darker  : lighten(@black, 13.5%); // #222
+@gray-dark    : lighten(@black, 20%);   // #333
+@gray         : lighten(@black, 33.5%); // #555
+@gray-light   : lighten(@black, 60%);   // #999
+@gray-lighter : lighten(@black, 93.5%); // #eee
 
 @cp-primary   : hsl(0, 100%, 50%);
 @cp-secondary : tint(@cp-primary, 25%);
@@ -27,20 +27,20 @@
 
 @cp-info    : hsl(200, 75%, 43%);
 @cp-success : hsl(110, 70%, 33%);
-@cp-warning : hsl(29, 84%, 46%);
-@cp-danger   : hsl(0, 57%, 48%);
+@cp-warning : hsl(35, 84%, 43%);
+@cp-danger  : hsl(0, 57%, 48%);
 
 // ==========================================================================
 // |-- Base
 // ==========================================================================
 
-@body-bg         : @white;
+@body-bg : @white;
 
 // ==========================================================================
 // |-- Typography
 // ==========================================================================
 
-@text-color             : @gray-darker;
+@text-color : @gray-darker;
 
 @font-family-sans-serif : sans-serif;
 @font-family-serif      : serif;
@@ -78,7 +78,7 @@
 
 // text selection
 
-@selectionBackground : #b3d4fc;
+@selection-background : #b3d4fc;
 
 // horizontal rule
 // background color can be added to make for bevel effect
@@ -99,17 +99,17 @@
 @blockquote-padding         : 0 1.25em 0;
 
 // code, kbd, samp
-@code-color      : @text-color;
-@code-bg         : darken(@gray-lighter, 2%);
+@code-color : @text-color;
+@code-bg    : darken(@gray-lighter, 2%);
 
 // pre
 
-@pre-padding     : 0.3125em 0.75em;
-@pre-bg          : @code-bg;
-@pre-border      : none;
-@pre-radius      : 3px;
-@pre-font-size   : 0.9em;
-@pre-color       : @gray-darker;
+@pre-padding   : 0.3125em 0.75em;
+@pre-bg        : @code-bg;
+@pre-border    : none;
+@pre-radius    : 3px;
+@pre-font-size : 0.9em;
+@pre-color     : @gray-darker;
 
 // highlight
 
@@ -120,7 +120,7 @@
 // ==========================================================================
 
 // border radius
-@border-radius  : 0.25em;
+@border-radius : 0.25em;
 
 // inputs
 @placeholder-color : @gray-light;
@@ -136,15 +136,15 @@
 @input-disabled-color     : @gray-light;
 
 // buttons
-@button-padding           : @input-padding-vertical @input-padding-horizontal;
-@button-bg                : @link-color;
-@button-bg-hover          : @link-color-hover;
-@button-disabled          : lighten(@link-color, 15%);
-@button-border            : 1px solid @button-bg;
-@button-radius            : @border-radius;
-@button-font-color        : @white;
-@button-font              : @font-family-sans-serif;
-@button-font-size         : 1em;
+@button-padding    : @input-padding-vertical @input-padding-horizontal;
+@button-bg         : @link-color;
+@button-bg-hover   : @link-color-hover;
+@button-disabled   : lighten(@link-color, 15%);
+@button-border     : 1px solid @button-bg;
+@button-radius     : @border-radius;
+@button-font-color : @white;
+@button-font       : @font-family-sans-serif;
+@button-font-size  : 1em;
 
 // ==========================================================================
 // |-- Media Queries
