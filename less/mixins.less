@@ -77,7 +77,6 @@
 // ==========================================================================
 
 // http://css-tricks.com/examples/ShapesOfCSS/
-
 #triangle {
 
     // #triangle > .up(5px, 5px, #ccc)
@@ -143,7 +142,6 @@
     }
 
 }
-
 
 // ==========================================================================
 // |-- Components
@@ -234,16 +232,13 @@
 // |-- Helpers
 // ==========================================================================
 
-
 // Hide visually and from screen readers: h5bp.com/u
-
-.hidden {
+.hidden() {
     display: none !important;
     visibility: hidden;
 }
 
 // Hide only visually, but have it available for screenreaders: h5bp.com/v
-
 .visuallyhidden() {
     overflow: hidden;
     clip: rect(0 0 0 0);
@@ -258,7 +253,6 @@
 // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via
 // the keyboard: h5bp.com/p
 // Add mixin to :active and :focus pseudo classes
-
 .visuallyhidden-focusable() {
     overflow: visible;
     clip: auto;
@@ -269,14 +263,12 @@
 }
 
 // Hide visually and from screen readers, but maintain layout
-
-.invisible {
+.invisible() {
     visibility: hidden;
 }
 
 // Contain floats: h5bp.com/q
 // Clearfix
-
 .clearfix() {
     &:before,
     &:after {
