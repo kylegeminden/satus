@@ -34,18 +34,19 @@
     // Variants
     // background color, border-color, text color
     &__info {
-        .alert-variant(lighten(@cp-info, 55%); @cp-info; @cp-info);
+        .alert-variant(lighten(@cp-info, 54%); @cp-info; darken(@cp-info, 20%));
     }
 
     &__success {
-        .alert-variant(lighten(@cp-success, 65%); @cp-success; @cp-success);
+        .alert-variant(lighten(@cp-success, 64%); @cp-success; darken(@cp-success, 20%));
     }
 
     &__warning {
-        .alert-variant(lighten(@cp-warning, 54%); @cp-warning; @cp-warning);
+        .alert-variant(lighten(@cp-warning, 53%); @cp-warning; darken(@cp-warning, 20%));
     }
 
     &__danger {
-        .alert-variant(lighten(@cp-danger, 50%); @cp-danger; @cp-danger);
+        .alert-variant(lighten(@cp-danger, 49%); @cp-danger; darken(@cp-danger, 20%));
     }
+
 }
