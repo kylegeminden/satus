@@ -80,9 +80,9 @@
 
 #triangle {
 
-    // #triangle > .up(10px, 20px, #ccc)
+    // #triangle > .up(5px, 5px, #ccc)
 
-    .up(@width: 10px; @height: 20px; @color: @k40) {
+    .up(@width; @height; @color) {
         width: 0;
         height: 0;
         border-left: @width solid transparent;
@@ -90,7 +90,7 @@
         border-bottom: @height solid @color;
     }
 
-    .down(@width: 10px; @height: 20px; @color: @k40) {
+    .down(@width; @height; @color) {
         width: 0;
         height: 0;
         border-left: @width solid transparent;
@@ -98,7 +98,7 @@
         border-top: @height solid @color;
     }
 
-    .left(@width: 20px; @height: 10px; @color: @k40) {
+    .left(@width; @height; @color) {
         width: 0;
         height: 0;
         border-top: @height solid transparent;
@@ -106,7 +106,7 @@
         border-bottom: @height solid transparent;
     }
 
-    .right(@width: 20px; @height: 10px; @color: @k40) {
+    .right(@width; @height; @color) {
         width: 0;
         height: 0;
         border-top: @height solid transparent;
@@ -114,28 +114,28 @@
         border-bottom: @height solid transparent;
     }
 
-    .top-left(@width: 20px; @height: 20px; @color: @k40) {
+    .top-left(@width; @height; @color) {
         width: 0;
         height: 0;
         border-top: @height solid @color;
         border-right: @width solid transparent;
     }
 
-    .top-right(@width: 20px; @height: 20px; @color: @k40) {
+    .top-right(@width; @height; @color) {
         width: 0;
         height: 0;
         border-top: @height solid @color;
         border-left: @width solid transparent;
     }
 
-    .bottom-left(@width: 20px; @height: 20px; @color: @k40) {
+    .bottom-left(@width; @height; @color) {
         width: 0;
         height: 0;
         border-bottom: @height solid @color;
         border-right: @width solid transparent;
     }
 
-    .bottom-right(@width: 20px; @height: 20px; @color: @k40) {
+    .bottom-right(@width; @height; @color) {
         width: 0;
         height: 0;
         border-bottom: @height solid @color;
@@ -173,11 +173,15 @@
 // |-- Grid
 // ==========================================================================
 
+// contains row(s)
+// .grid-container { .make-grid-container(1em); }
 .make-grid-container(@gutter: @grid-xs-gutter) {
     padding-left: @gutter;
     padding-right: @gutter;
 }
 
+// contains the cells/columns
+// .grid { .make-grid-row(1em); }
 .make-grid-row(@gutter: @grid-xs-gutter) {
     &:extend(.u-clearfix all);
     margin-left: -@gutter;
@@ -192,7 +196,6 @@
 .make-grid-cell(@column; @total-columns: @grid-columns) {
     width: (100 / @total-columns) * @column * 1%;
 }
-
 .make-grid-cell-offset(@column; @total-columns: @grid-columns) {
     margin-left: (100 / @total-columns) * @column * 1%;
 }
@@ -202,7 +205,6 @@
     left: (100 / @total-columns) * @column * 1%;
     right: auto;
 }
-
 .make-grid-cell-pull(@column; @total-columns: @grid-columns) {
     position: relative;
     right: (100 / @total-columns) * @column * 1%;
@@ -232,18 +234,12 @@
 // |-- Helpers
 // ==========================================================================
 
-// Image replacement
 
-.ir() {
-    overflow: hidden;
-    background-color: transparent;
-    border: 0;
-    &:before {
-        content: "";
-        display: block;
-        width: 0;
-        height: 150%;
-    }
+// Hide visually and from screen readers: h5bp.com/u
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
 }
 
 // Hide only visually, but have it available for screenreaders: h5bp.com/v
@@ -270,6 +266,12 @@
     width: auto;
     height: auto;
     margin: 0;
+}
+
+// Hide visually and from screen readers, but maintain layout
+
+.invisible {
+    visibility: hidden;
 }
 
 // Contain floats: h5bp.com/q
