@@ -12,6 +12,7 @@
     margin: @font-margin 0;
     padding: (@font-margin * .75) @font-margin;
     border-left: 5px solid transparent;
+    .box-shadow(1px 1px 1px rgba(0,0,0,0.2));
 
     p,
     ul {
@@ -41,7 +42,7 @@
     }
 
     &__warning {
-        .alert-variant(lighten(@cp-warning, 52%); @cp-warning; @cp-warning);
+        .alert-variant(lighten(@cp-warning, 54%); @cp-warning; @cp-warning);
     }
 
     &__danger {
