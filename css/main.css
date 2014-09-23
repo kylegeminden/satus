@@ -694,6 +694,7 @@ pre ol {
 audio,
 canvas,
 img,
+svg,
 video {
   vertical-align: middle;
 }
@@ -1472,36 +1473,36 @@ a.button:active {
   font-weight: 700;
 }
 .alert__info {
-  background: #f6fbfe;
+  background: #f2f9fd;
   border-color: #1b89c0;
-  color: #1b89c0;
+  color: #0f4967;
 }
 .alert__info a {
-  color: #1b89c0;
+  color: #0f4967;
 }
 .alert__success {
-  background: #f8fdf6;
+  background: #f4fdf2;
   border-color: #2d8f19;
-  color: #2d8f19;
+  color: #12380a;
 }
 .alert__success a {
-  color: #2d8f19;
+  color: #12380a;
 }
 .alert__warning {
-  background: #fef8f1;
+  background: #fdf6ec;
   border-color: #ca7d12;
-  color: #ca7d12;
+  color: #6c4309;
 }
 .alert__warning a {
-  color: #ca7d12;
+  color: #6c4309;
 }
 .alert__danger {
-  background: #fdf7f7;
+  background: #fcf3f3;
   border-color: #c03535;
-  color: #c03535;
+  color: #701f1f;
 }
 .alert__danger a {
-  color: #c03535;
+  color: #701f1f;
 }
 /* ==========================================================================
    |-- Navs
