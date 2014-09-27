@@ -28,6 +28,11 @@
  *    |-- Media Object
  *    |-- Progress Bar
  *
+ * |-- Layout
+ *    |-- Header
+ *    |-- Content
+ *    |-- Sidebar
+ *
  * |-- Utilities
  *
  * | -- Print Styles
@@ -925,19 +930,6 @@ fieldset[disabled] .form textarea {
 .form__group.has-error .form__input {
   border-color: #c03535;
 }
-/**
- * Form Grid.
- * Note, This is dependentant on the grid component(s).
- * <div class="grid grid--form">
- *   <div class="grid__cell sm--6of12">
- *     <input class="form__input">
- */
-.grid--form {
-  margin-left: -0.625em;
-}
-.grid--form > [class*="grid__cell"] {
-  padding-left: 0.625em;
-}
 /* ==========================================================================
    |-- Buttons
    ========================================================================== */
@@ -1098,8 +1090,8 @@ a.button:active {
  * </div>
  *
  * Gutters should be added with a modifier class to keep the grid modular. There is a modifier
- * class for using the grid for page layouts as well as a container class that wraps the grid when
- * using page layouts to add left and right padding.
+ * class for using the grid for page layouts and forms as well as a container class that wraps the
+ * grid when using page layouts to add left and right padding.
  * <div class="grid-container">
  *   <div class="grid grid--page">
  *     <div class="grid__cell md--8of12">...</div>
@@ -1135,7 +1127,7 @@ a.button:active {
   padding-left: 1.25em;
   padding-right: 1.25em;
 }
-[class*="grid__cell"] {
+.grid__cell {
   float: left;
   width: 100%;
   min-height: 1px;
@@ -1143,8 +1135,14 @@ a.button:active {
 .grid--page {
   margin-left: -1.25em;
 }
-.grid--page > [class*="grid__cell"] {
+.grid--page > .grid__cell {
   padding-left: 1.25em;
+}
+.grid--form {
+  margin-left: -0.625em;
+}
+.grid--form > .grid__cell {
+  padding-left: 0.625em;
 }
 .xs--1of12 {
   width: 8.33333333%;
@@ -1261,7 +1259,7 @@ a.button:active {
   .grid--page {
     margin-left: -1.875em;
   }
-  .grid--page > [class*="grid__cell"] {
+  .grid--page > .grid__cell {
     padding-left: 1.875em;
   }
   .md--1of12 {
@@ -1766,6 +1764,15 @@ a.button:active {
   background: #555555;
   color: #ffffff;
 }
+/* ==========================================================================
+   |-- Header
+   ========================================================================== */
+/* ==========================================================================
+   |-- Content
+   ========================================================================== */
+/* ==========================================================================
+   |-- Footer
+   ========================================================================== */
 /* ==========================================================================
    |-- Utilities
    ========================================================================== */

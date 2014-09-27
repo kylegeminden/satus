@@ -5,7 +5,7 @@
 .grid--page {
   margin-left: -1.875em;
 }
-.grid--page > [class*="grid__cell"] {
+.grid--page > .grid__cell {
   padding-left: 1.875em;
 }
 .md--1of12 {
