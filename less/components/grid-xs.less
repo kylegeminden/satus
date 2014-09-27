@@ -12,8 +12,8 @@
  * </div>
  *
  * Gutters should be added with a modifier class to keep the grid modular. There is a modifier
- * class for using the grid for page layouts as well as a container class that wraps the grid when
- * using page layouts to add left and right padding.
+ * class for using the grid for page layouts and forms as well as a container class that wraps the
+ * grid when using page layouts to add left and right padding.
  * <div class="grid-container">
  *   <div class="grid grid--page">
  *     <div class="grid__cell md--8of12">...</div>
@@ -54,15 +54,23 @@
     &:extend(.u-clearfix all);
 }
 
-[class*="grid__cell"] {
+.grid__cell {
     .make-grid-cells();
 }
 
 .grid--page {
     margin-left: -@grid-xs-gutter;
 
-    > [class*="grid__cell"] {
+    > .grid__cell {
         padding-left: @grid-xs-gutter
+    }
+}
+
+.grid--form {
+    margin-left: -@grid-form-gutter;
+
+    > .grid__cell {
+        padding-left: @grid-form-gutter
     }
 }
 
