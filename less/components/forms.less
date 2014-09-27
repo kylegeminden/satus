@@ -214,19 +214,3 @@
         .form-input-validation(@cp-danger; @cp-danger);
     }
 }
-
-/**
- * Form Grid.
- * Note, This is dependentant on the grid component(s).
- * <div class="grid grid--form">
- *   <div class="grid__cell sm--6of12">
- *     <input class="form__input">
- */
-
-.grid--form {
-    margin-left: -@grid-form-gutter;
-
-    > [class*="grid__cell"] {
-        padding-left: @grid-form-gutter
-    }
-}
