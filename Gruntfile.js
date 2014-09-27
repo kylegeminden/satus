@@ -43,19 +43,6 @@ module.exports = function(grunt) {
                     'css/ie-grid.css': [ 'less/ie-grid.less' ]
                 },
             },
-            style_guide: {
-                options: {
-                    paths: ['style_guide/css'],
-                    // compress: true,
-                    // report: 'gzip',
-                    sourceMap: true,
-                    sourceMapFilename: 'style_guide/css/style-guide.css.map',
-                    sourceMapRootpath: '../',
-                },
-                files: {
-                    'style_guide/css/style-guide.css': [ 'style_guide/less/style-guide.less' ]
-                },
-            },
         },
 
         uglify: {
@@ -86,10 +73,6 @@ module.exports = function(grunt) {
             less: {
                 files: ['less/**/*.less'],
                 tasks: 'less:production',
-            },
-            less_style_guide: {
-                files: ['style_guide/**/*.less'],
-                tasks: 'less:style_guide',
             },
             uglify: {
                 files: ['js/plugins/**/*.js'],
