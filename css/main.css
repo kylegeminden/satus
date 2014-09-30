@@ -728,9 +728,9 @@ embed {
  */
 .browse-happy {
   margin: 0.2em 0;
+  padding: 0.2em 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0;
 }
 /* ==========================================================================
    |-- Forms
@@ -1451,7 +1451,7 @@ a.button:active {
  */
 .alert {
   margin: 1.125em 0;
-  padding: 0.84375em 1.125em;
+  padding: 0.95625em 1.125em;
   border-left: 5px solid transparent;
   -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -1462,10 +1462,10 @@ a.button:active {
   margin-bottom: 0;
 }
 .alert h4 {
-  margin-bottom: 0.5625em;
+  margin-bottom: 0.3375em;
 }
 .alert p + p {
-  margin-top: 0.84375em;
+  margin-top: 0.225em;
 }
 .alert a {
   font-weight: 700;
