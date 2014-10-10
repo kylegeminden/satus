@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Style Guide</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -51,7 +51,7 @@
         <![endif]-->
 
         <div class="header">
-            <div class="grid-container">
+            <div class="grid-container--page">
                 <ul class="header__nav nav nav--inline">
                     <li><a href="#typography">Typography</a></li>
                     <li><a href="#forms">Forms</a></li>
@@ -60,11 +60,11 @@
             </div>
         </div>
 
-        <div class="grid-container">
+        <div class="grid-container--page">
             <div id="typography">
                 <h1>Typography</h1>
                 <hr>
-                <div id="typography" class="grid grid--page">
+                <div class="grid grid--page">
                     <div class="grid__cell md--6of12">
                         <h1>h1 Heading Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, repudiandae.</h1>
                         <h2>h2 Heading Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, iusto!</h2>
@@ -228,16 +228,16 @@
                         <div class="form__group"><label>Email</label> <input type="email" name="email5" placeholder="email address"></div>
                         <div class="form__group"><label>Url</label> <input type="url" name="url5" placeholder="website address"></div>
                         <div class="form__group"><label>Telephone</label> <input type="tel" name="tel5" placeholder="telephone number"></div>
-                        <div class="form__group"><label>Number input</label> <input type="number" value="default value" placeholder="number"></div>
+                        <div class="form__group"><label>Number input</label> <input type="number" placeholder="number"></div>
 
                     </div>
                     <div class="grid__cell md--3of12">
-                        <div class="form__group"><label>Date input</label> <input type="date" value="default value"></div>
-                        <div class="form__group"><label>Date Time input</label> <input type="datetime" value="default value"></div>
-                        <div class="form__group"><label>Date Time Local input</label> <input type="datetime-local" value="default value"></div>
-                        <div class="form__group"><label>Month Time input</label> <input type="month" value="default value"></div>
-                        <div class="form__group"><label>Week Time input</label> <input type="week" value="default value"></div>
-                        <div class="form__group"><label>Time input</label> <input type="time" value="default value"></div>
+                        <div class="form__group"><label>Date input</label> <input type="date"></div>
+                        <div class="form__group"><label>Date Time input</label> <input type="datetime"></div>
+                        <div class="form__group"><label>Date Time Local input</label> <input type="datetime-local"></div>
+                        <div class="form__group"><label>Month Time input</label> <input type="month"></div>
+                        <div class="form__group"><label>Week Time input</label> <input type="week"></div>
+                        <div class="form__group"><label>Time input</label> <input type="time"></div>
                         <div class="form__group"><label>Password input</label> <input type="password" value="password"></div>
                     </div>
                     <div class="grid__cell md--3of12">
@@ -275,7 +275,7 @@
                         </div>
                         <div class="form__group">
                             <label>Multiple Select</label>
-                            <select multiple="multiple" size="7" name="input_5[]" id="input_1_5" value="Select from 3">
+                            <select multiple="multiple" size="7">
                                     <option value="First Choice">First Choice</option>
                                     <option value="Second Choice">Second Choice</option>
                                     <option value="Third Choice">Third Choice</option>
@@ -283,7 +283,7 @@
                         </div>
                         <div class="form__group">
                             <label>Multiple Select with Optgroup</label>
-                            <select multiple="multiple" size="7" name="input_5[]" id="input_1_5" value="Select from 3">
+                            <select multiple="multiple" size="7">
                                 <optgroup label="Option Group 2">
                                     <option value="First Choice">First Choice</option>
                                     <option value="Second Choice">Second Choice</option>
@@ -466,7 +466,7 @@
                         <h2>Progress Bar</h2>
                         <hr>
                         <div class="progress">
-                            <div class="progress__bar" role="progressbar" aria-valuenow="75%" aria-valuemin="0" aria-valuemax="100"  style="width: 75%%;">75%</div>
+                            <div class="progress__bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"  style="width: 75%;">75%</div>
                         </div>
                     </div>
                     <div class="grid__cell md--4of12">
