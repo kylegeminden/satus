@@ -1092,7 +1092,7 @@ a.button:active {
  * Gutters should be added with a modifier class to keep the grid modular. There is a modifier
  * class for using the grid for page layouts and forms as well as a container class that wraps the
  * grid when using page layouts to add left and right padding.
- * <div class="grid-container">
+ * <div class="grid-container--page">
  *   <div class="grid grid--page">
  *     <div class="grid__cell md--8of12">...</div>
  *     <div class="grid__cell md--4of12">...</div>
@@ -1120,10 +1120,10 @@ a.button:active {
  * <div class="grid__cell sm--2of12">...</div>
  * <div class="grid__cell sm--4of12 md--2of12 md--clear">...</div>
  *
- * Show or Hide and element. Example useage of hiding on xs and showing on sm and up
+ * Show or Hide and element. Example useage of hiding on xs and showing on sm and up.
  * <div class="xs--hide sm--show">...</div>
  */
-.grid-container {
+.grid-container--page {
   padding-left: 1.25em;
   padding-right: 1.25em;
 }
@@ -1252,7 +1252,7 @@ a.button:active {
   }
 }
 @media only screen and (min-width: 48em) {
-  .grid-container {
+  .grid-container--page {
     padding-left: 1.875em;
     padding-right: 1.875em;
   }
@@ -1737,7 +1737,7 @@ a.button:active {
    ========================================================================== */
 /**
  * <div class="progress">
- * <div class="progress__bar" role="progressbar" aria-valuenow="75%" aria-valuemin="0" aria-valuemax="100"  * style="width: 75%%;">60%</div>
+ * <div class="progress__bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"  style="width: 75%;">75%</div>
  * </div>
  */
 .progress {
