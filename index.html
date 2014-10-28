@@ -17,14 +17,75 @@
         <script src="js/vendor/wp8-ie10-fix.js"></script>
         <script src="js/vendor/modernizr.js"></script>
     </head>
-    <body>
+    <body itemscope="http://schema.org/WebPage">
 
         <!--[if lt IE 8]>
-            <p class="browse-happy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world!</p>
+        <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+            <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <h2 class="u-visually-hidden">Primary Navigation</h2>
+                <a class="u-visually-hidden" href="#main" title="Go to main content">Go to main content</a>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- /.header -->
+
+        <div class="content">
+            <main id="main" class="main" role="main" itemprop="MainContentOfPage">
+                <section itemscope itemtype="http://schema.org/CreativeWork">
+                    <h1 itemprop="headline">Page Headline</h1>
+                    <div itemprop="text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, aperiam cumque optio distinctio architecto odio aspernatur accusamus dolores dolorem dolore nemo quae ea ab quia aut error mollitia corporis cum adipisci. Saepe qui tenetur assumenda vero, eos quaerat esse ab, minima facilis architecto officia, voluptatum aut at cupiditate? Sapiente doloremque numquam aliquid, laudantium, recusandae iste. Ducimus perspiciatis dolores possimus fuga architecto, eligendi asperiores nulla magnam, illo nam voluptatum minima. Vero dolore veritatis accusantium sequi odit officia quos, praesentium deleniti autem debitis porro ea modi nam, aut, amet ratione delectus sit, corrupti distinctio incidunt dolor maxime quas. Necessitatibus facere quibusdam numquam?</p>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="sidebar" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+                <h2 class="u-visually-hidden">Sidebar</h2>
+                <section>
+                    <h3>Heading 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit, nisi euismod rhoncus semper, nibh dolor blandit augue, a lacinia velit eros eu quam.</p>
+                    <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        <li><a href="#">Category 1</a></li>
+                        <li><a href="#">Category 2</a></li>
+                        <li><a href="#">Category 3</a></li>
+                        <li><a href="#">Category 4</a></li>
+                        <li><a href="#">Category 5</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+        <!-- /.content -->
+
+        <footer role="content-info" itemscope itemtype="http://schema.org/WPFooter">
+            <section>
+                <h2 class="u-visually-hidden">Footer</h2>
+                <section itemscope itemtype="http://schema.org/LocalBusiness">
+                    <h3 itemprop="name">Local Business Name</h3>
+                    <p>
+                        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span itemprop="streetAddress">Street Address</span><br>
+                        <span itemprop="addressLocality">City</span>,
+                        <span itemprop="addressRegion">State</span>
+                        <span itemprop="postalCode">Zip Code</span>
+                        </span><br>
+                        <span>Phone</span>: <span itemprop="telephone"><a href="tel:155555555555">1-555-555-5555</a></span><br>
+                        <span>Fax</span>: <span itemprop="faxNumber"><a href="tel:155555555555">1-555-555-5555</a></span><br>
+                        <span><a href="http://192.168.0.142:8888/satuswp/" itemprop="url" rel="bookmark">website.com</a></span><br>
+                        <span><a href="mailto:you@yourdomain.com" itemprop="email">you@yourdomain.com</a></span><br>
+                        <span itemprop="openingHours" content="Mo-Sa 11:00-14:30">Mon-Sat 11am - 2:30pm</span><br>
+                        <span itemprop="openingHours" content="Mo-Th 17:00-21:30">Mon-Thu 5pm - 9:30pm</span><br>
+                        <span itemprop="openingHours" content="Fr-Sa 17:00-22:00">Fri-Sat 5pm - 10:00pm</span>
+                    </p>
+                </section>
+            </section>
+        </footer>
+        <!-- /.footer -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
