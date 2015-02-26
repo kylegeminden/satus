@@ -5,8 +5,7 @@
         "modernizr"     : "*",
         "jquery"        : "< 2.0",
         "angular"       : "*",
-        "normalize-css" : "*",
-        "lesshat"       : "*"
+        "normalize-css" : "*"
     },
     "private": true
 }
