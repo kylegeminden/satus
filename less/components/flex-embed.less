@@ -15,7 +15,7 @@
     overflow: hidden;
     position: relative;
     height: 0;
-    margin-bottom: @font-margin;
+    margin: @font-margin 0;
 
     iframe,
     object,
@@ -33,10 +33,5 @@
 
     &--16by9 {
         padding-bottom: 56.25%;
-    }
-
-    // padding accounts for youtube's chrome (controls)
-    &--youtube {
-        padding-top: 25px;
     }
 }

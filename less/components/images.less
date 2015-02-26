@@ -6,13 +6,24 @@
  * <img classs="img--rounded" src="image.jpg" alt="">
  */
 
-.img {
+.image {
+    display: inline-block;
 
     &--rounded {
-        .border-radius((8 / 16) * 1em);
+        border-radius: 8px;
     }
 
     &--circle {
-        .border-radius(50%);
+        border-radius: 50%;
+    }
+
+    &--thumbnail {
+        padding: 4px;
+        border: 1px solid @gray-lighter;
+        border-radius: 4px
+    }
+
+    &--fill {
+        width: 100%;
     }
 }

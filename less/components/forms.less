@@ -54,8 +54,7 @@
 /**
  * Form Inputs
  *
- * Apply .form__input to any of the following form inputs
- * <input class="form__input">
+ * Apply form class to the desired form to apply input styles.
  */
 
 .form {
@@ -79,7 +78,7 @@
         padding: @input-padding-vertical @input-padding-horizontal;
         background: @input-bg;
         border: @input-border;
-        .radius(@input-radius);
+        border-radius: @input-radius;
         outline-style: none;
         color: @input-color;
         vertical-align: middle;
@@ -166,27 +165,27 @@
 
 /**
  * Add margin to inputs
- * <input class="form__input form__input--space-right">
+ * <input class="form__control form__control--space-right">
  */
 
-.form__input--space-right {
+.form__control--space-right {
     margin-right: @grid-form-gutter;
 }
 
-.form__input--space-left {
+.form__control--space-left {
     margin-left: @grid-form-gutter;
 }
 
 /**
- * Form input size
- * <input class="form__input form__input--large">
+ * Form control size
+ * <input class="form__control form__control--large">
  */
 
-.form__input--large {
+.form__control--large {
     font-size: @font-size-large;
 }
 
-.form__input--small {
+.form__control--small {
     font-size: @font-size-small;
 }
 
@@ -200,7 +199,7 @@
  */
 
 .form__group {
-    margin-bottom: @font-margin;
+    margin: @font-margin 0;
 
     // Validation states
     // background color, border-color, text color

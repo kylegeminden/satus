@@ -1,39 +1,43 @@
 /* ==========================================================================
-   |-- Dropdown
+   |-- Flyout
    ========================================================================== */
 
 /**
- * <div class="dropdown" id="dropdownMenu1">
+ * This is used for something that drops down and is not for a specific item to keep it as
+ * flexible as possible.
+ * <div class="flyout is-open">
  *   <button>...</button>
- *   <ul class="dropdown__menu" role="menu" aria-labelledby="dropdownMenu1">
- *     <li role="presentation"><a href="#" role="menuitem">...</a></li>
- *     <li class="dropdown__menu__heading" role="presentation">...</li>
- *   </ul>
+ *   <div class="flyout__content">...</div>
  * </div>
  */
 
-.dropdown {
+.flyout {
     position: relative;
 
-    &__menu {
-        display: none;
-        position: absolute;
-        left: 0;
-        min-width: ((160 / 16) * 1em);
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        &__heading {
-
-        }
-
-        a {
-
-        }
+    &.is-open > .flyout__content {
+        display: block;
     }
 
-    &.is-open > .dropdown__menu {
-        display: block;
+    &__content {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        &--up {
+            top: auto;
+            bottom: 0;
+        }
+
+        &--align-right {
+            right: 0;
+            left: auto;
+        }
+
+        &--align-left {
+            right: auto;
+            left: 0;
+        }
     }
 }

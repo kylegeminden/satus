@@ -11,8 +11,8 @@
  * Or use the data attribute to change the separator.
  * <nav class="breadcrumbs">
  *   <ol>
- *     <li data-breadcrumbs="⟩"><a href="#">Home</a></li>
- *     <li data-breadcrumbs="⟩">About</li>
+ *     <li data-breadcrumb="⟩"><a href="#">Home</a></li>
+ *     <li data-breadcrumb="⟩">About</li>
  *   </ol>
  */
 
@@ -34,8 +34,8 @@
             padding: 0 .4em;
         }
 
-        + li[data-breadcrumbs]:before {
-            content: attr(data-breadcrumbs);
+        + li[data-breadcrumb]:before {
+            content: attr(data-breadcrumb);
         }
 
         a {

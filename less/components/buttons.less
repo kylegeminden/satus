@@ -3,8 +3,8 @@
    ========================================================================== */
 
 /**
- * <button class="button button--large button--space--right">...</button>
- * <a class="button button--large button--space--right" role="button">...</a>
+ * <button class="button button--large button--space-right">...</button>
+ * <a class="button button--large button--space-right" role="button">...</a>
  */
 
 .button {
@@ -12,7 +12,7 @@
     padding: @button-padding;
     background: @button-bg;
     border: @button-border;
-    .radius(@button-radius);
+    border-radius: @button-radius;
     color: @button-font-color;
     font-size: @button-font-size;
     line-height: 1;
@@ -56,11 +56,11 @@
         font-size: @font-size-large;
     }
 
-    &--space--right {
+    &--space-right {
         margin-right: @grid-form-gutter;
     }
 
-    &--space--left {
+    &--space-left {
         margin-left: @grid-form-gutter;
     }
 }
