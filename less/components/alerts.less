@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /**
- * <div class="alert alert__info" role="alert">
+ * <div class="alert alert--info" role="alert">
  *   <p>...</p>
  * </div>
  */
@@ -12,19 +12,25 @@
     margin: @font-margin 0;
     padding: (@font-margin * .85) @font-margin;
     border-left: 5px solid transparent;
-    .box-shadow(1px 1px 1px rgba(0,0,0,0.2));
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 
-    p,
-    ul {
+    > :first-child {
+        margin-top: 0;
+    }
+
+    > :last-child {
         margin-bottom: 0;
     }
 
     h4 {
-        margin-bottom: (@font-margin * .3);
+        margin: (@font-margin * .2) 0;
     }
 
-    p + p {
-        margin-top: (@font-margin * .2);
+    p,
+    ul,
+    ol,
+    dl {
+        margin: (@font-margin * .1) 0;
     }
 
     a {
@@ -33,19 +39,19 @@
 
     // Variants
     // background color, border-color, text color
-    &__info {
+    &--info {
         .alert-variant(lighten(@cp-info, 54%); @cp-info; darken(@cp-info, 20%));
     }
 
-    &__success {
+    &--success {
         .alert-variant(lighten(@cp-success, 64%); @cp-success; darken(@cp-success, 20%));
     }
 
-    &__warning {
+    &--warning {
         .alert-variant(lighten(@cp-warning, 53%); @cp-warning; darken(@cp-warning, 20%));
     }
 
-    &__danger {
+    &--danger {
         .alert-variant(lighten(@cp-danger, 49%); @cp-danger; darken(@cp-danger, 20%));
     }
 
