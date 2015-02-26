@@ -14,10 +14,9 @@
  *    |-- Tables
  *    |-- Images
  *    |-- Flexible Embeds
- *    |-- Flexible Google Map
  *    |-- Grid
  *    |-- Alerts
- *    |-- Navs
+ *    |-- Menus
  *    |-- Dropdown
  *    |-- Breadcrumbs
  *    |-- Pagination
@@ -25,7 +24,6 @@
  *    |-- Page Header
  *    |-- Lead Paragraph
  *    |-- Hero
- *    |-- Lists
  *    |-- Media Object
  *    |-- Progress Bar
  *
@@ -39,7 +37,6 @@
  * | -- Print Styles
  */
 
-@import 'lesshat';
 @import 'variables';
 @import 'mixins';
 
@@ -57,22 +54,21 @@
 @import 'components/tables';
 @import 'components/images';
 @import 'components/flex-embed';
-@import 'components/flex-gmap';
 @import 'components/grid-xs';
-@media @query-sm-min {
+@media @mq-sm-min {
     @import 'components/grid-sm';
 }
-@media @query-md-min {
+@media @mq-md-min {
     @import 'components/grid-md';
 }
-@media @query-lg-min {
+@media @mq-lg-min {
     @import 'components/grid-lg';
 }
-@media @query-xl-min {
+@media @mq-xl-min {
     @import 'components/grid-xl';
 }
 @import 'components/alerts';
-@import 'components/navs';
+@import 'components/menus';
 @import 'components/dropdown';
 @import 'components/breadcrumbs';
 @import 'components/pagination';
@@ -80,7 +76,6 @@
 @import 'components/page-header';
 @import 'components/lead-paragraph';
 @import 'components/hero';
-@import 'components/lists';
 @import 'components/media-object';
 @import 'components/progress-bar';
 
