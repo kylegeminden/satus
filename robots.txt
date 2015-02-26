@@ -1,6 +1,0 @@
-# www.robotstxt.org/
-
-User-agent: *
-
-# remove following when ready to index site
-Disallow: /
