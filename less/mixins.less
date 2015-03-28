@@ -147,16 +147,6 @@
 // |-- Components
 // ==========================================================================
 
-.alert-variant(@background; @border; @color) {
-    background: @background;
-    border-color: @border;
-    color: @color;
-
-    a {
-        color: @color;
-    }
-}
-
 .form-input-validation(@border-color; @color) {
     label {
         color: @color;
@@ -171,8 +161,43 @@
 // |-- Grid
 // ==========================================================================
 
+// contains row(s)
+// .grid-container { .make-grid-container(1em); }
+.make-grid-container(@gutter: @grid-xs-gutter) {
+    padding-left: @gutter;
+    padding-right: @gutter;
+}
+
+// contains the cells/columns
+// .grid { .make-grid-row(1em); }
+.make-grid-row(@gutter: @grid-xs-gutter) {
+    &:extend(.u-clearfix all);
+    margin-left: -@gutter;
+}
+
+.make-grid-cells() {
+    display: block;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+}
+
 .make-grid-cell(@column; @total-columns: @grid-columns) {
     width: (100 / @total-columns) * @column * 1%;
+}
+.make-grid-cell-offset(@column; @total-columns: @grid-columns) {
+    margin-left: (100 / @total-columns) * @column * 1%;
+}
+
+.make-grid-cell-push(@column; @total-columns: @grid-columns) {
+    position: relative;
+    left: (100 / @total-columns) * @column * 1%;
+    right: auto;
+}
+.make-grid-cell-pull(@column; @total-columns: @grid-columns) {
+    position: relative;
+    right: (100 / @total-columns) * @column * 1%;
+    left: auto;
 }
 
 // ==========================================================================
