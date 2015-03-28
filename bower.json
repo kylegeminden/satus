@@ -2,9 +2,6 @@
     "name": "satus",
     "version": "3.0.0",
     "dependencies": {
-        "modernizr"     : "*",
-        "jquery"        : "< 2.0",
-        "angular"       : "*",
         "normalize-css" : "*"
     },
     "private": true
