@@ -1,105 +1,511 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Style Guide</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-        <!-- See http://mathiasbynens.be/notes/touch-icons if you wish to not place in root -->
+        <script>
+            !function(a,b){function c(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function d(){var a=t.elements;return"string"==typeof a?a.split(" "):a}function e(a,b){var c=t.elements;"string"!=typeof c&&(c=c.join(" ")),"string"!=typeof a&&(a=a.join(" ")),t.elements=c+" "+a,j(b)}function f(a){var b=s[a[q]];return b||(b={},r++,a[q]=r,s[r]=b),b}function g(a,c,d){if(c||(c=b),l)return c.createElement(a);d||(d=f(c));var e;return e=d.cache[a]?d.cache[a].cloneNode():p.test(a)?(d.cache[a]=d.createElem(a)).cloneNode():d.createElem(a),!e.canHaveChildren||o.test(a)||e.tagUrn?e:d.frag.appendChild(e)}function h(a,c){if(a||(a=b),l)return a.createDocumentFragment();c=c||f(a);for(var e=c.frag.cloneNode(),g=0,h=d(),i=h.length;i>g;g++)e.createElement(h[g]);return e}function i(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return t.shivMethods?g(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+d().join().replace(/[\w\-:]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(t,b.frag)}function j(a){a||(a=b);var d=f(a);return!t.shivCSS||k||d.hasCSS||(d.hasCSS=!!c(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),l||i(a,d),a}var k,l,m="3.7.3-pre",n=a.html5||{},o=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,p=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,q="_html5shiv",r=0,s={};!function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",k="hidden"in a,l=1==a.childNodes.length||function(){b.createElement("a");var a=b.createDocumentFragment();return"undefined"==typeof a.cloneNode||"undefined"==typeof a.createDocumentFragment||"undefined"==typeof a.createElement}()}catch(c){k=!0,l=!0}}();var t={elements:n.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:m,shivCSS:n.shivCSS!==!1,supportsUnknownElements:l,shivMethods:n.shivMethods!==!1,type:"default",shivDocument:j,createElement:g,createDocumentFragment:h,addElements:e};a.html5=t,j(b),"object"==typeof module&&module.exports&&(module.exports=t)}("undefined"!=typeof window?window:this,document);
+        </script>
 
-        <link rel="stylesheet" href="css/main.css">
-        <!--[if IE 8]>
-            <link rel="stylesheet" href="css/ie-grid.css">
-        <![endif]-->
-        <script src="js/vendor/wp8-ie10-fix.js"></script>
-        <script src="js/vendor/modernizr.js"></script>
+        <!-- <link rel="stylesheet" href="css/satus.css"> -->
+
+        <meta name="styleshook" content="">
+
+        <style>
+
+            body {
+                padding-top: 3em;
+            }
+
+            .header {
+                position: fixed;
+                left: 0;
+                top: 0;
+                right: 0;
+                z-index: 100;
+                background: #333;
+            }
+
+            .header__nav {
+                margin: 0 0 0 -.6em;
+            }
+
+            .header__nav a {
+                padding: .6em;
+                color: #fff;
+            }
+        </style>
     </head>
-    <body itemscope="http://schema.org/WebPage">
+    <body>
 
-        <!--[if lt IE 8]>
+        <!--[if lt IE 9]>
             <p class="browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-            <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-                <h2 class="u-visually-hidden">Primary Navigation</h2>
-                <a class="u-visually-hidden" href="#main" title="Go to main content">Go to main content</a>
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
+        <div class="header">
+            <div class="grid-container--page">
+                <ul class="header__nav menu menu--inline">
+                    <li><a href="#base">Base</a></li>
+                    <li><a href="#components">Components</a></li>
                 </ul>
-            </nav>
-        </header>
-        <!-- /.header -->
-
-        <div class="content">
-            <main id="main" class="main" role="main" itemprop="MainContentOfPage">
-                <section itemscope itemtype="http://schema.org/CreativeWork">
-                    <h1 itemprop="headline">Page Headline</h1>
-                    <div itemprop="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, aperiam cumque optio distinctio architecto odio aspernatur accusamus dolores dolorem dolore nemo quae ea ab quia aut error mollitia corporis cum adipisci. Saepe qui tenetur assumenda vero, eos quaerat esse ab, minima facilis architecto officia, voluptatum aut at cupiditate? Sapiente doloremque numquam aliquid, laudantium, recusandae iste. Ducimus perspiciatis dolores possimus fuga architecto, eligendi asperiores nulla magnam, illo nam voluptatum minima. Vero dolore veritatis accusantium sequi odit officia quos, praesentium deleniti autem debitis porro ea modi nam, aut, amet ratione delectus sit, corrupti distinctio incidunt dolor maxime quas. Necessitatibus facere quibusdam numquam?</p>
-                    </div>
-                </section>
-            </main>
-
-            <aside class="sidebar" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
-                <h2 class="u-visually-hidden">Sidebar</h2>
-                <section>
-                    <h3>Heading 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit, nisi euismod rhoncus semper, nibh dolor blandit augue, a lacinia velit eros eu quam.</p>
-                    <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
-                        <li><a href="#">Category 1</a></li>
-                        <li><a href="#">Category 2</a></li>
-                        <li><a href="#">Category 3</a></li>
-                        <li><a href="#">Category 4</a></li>
-                        <li><a href="#">Category 5</a></li>
-                    </ul>
-                </section>
-            </aside>
+            </div>
         </div>
-        <!-- /.content -->
 
-        <footer role="content-info" itemscope itemtype="http://schema.org/WPFooter">
-            <section>
-                <h2 class="u-visually-hidden">Footer</h2>
-                <section itemscope itemtype="http://schema.org/LocalBusiness">
-                    <h3 itemprop="name">Local Business Name</h3>
-                    <p>
-                        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                        <span itemprop="streetAddress">Street Address</span><br>
-                        <span itemprop="addressLocality">City</span>,
-                        <span itemprop="addressRegion">State</span>
-                        <span itemprop="postalCode">Zip Code</span>
-                        </span><br>
-                        <span>Phone</span>: <span itemprop="telephone"><a href="tel:155555555555">1-555-555-5555</a></span><br>
-                        <span>Fax</span>: <span itemprop="faxNumber"><a href="tel:155555555555">1-555-555-5555</a></span><br>
-                        <span><a href="http://192.168.0.142:8888/satuswp/" itemprop="url" rel="bookmark">website.com</a></span><br>
-                        <span><a href="mailto:you@yourdomain.com" itemprop="email">you@yourdomain.com</a></span><br>
-                        <span itemprop="openingHours" content="Mo-Sa 11:00-14:30">Mon-Sat 11am - 2:30pm</span><br>
-                        <span itemprop="openingHours" content="Mo-Th 17:00-21:30">Mon-Thu 5pm - 9:30pm</span><br>
-                        <span itemprop="openingHours" content="Fr-Sa 17:00-22:00">Fri-Sat 5pm - 10:00pm</span>
-                    </p>
-                </section>
-            </section>
-        </footer>
-        <!-- /.footer -->
+        <div class="grid-container--page">
+            <div id="base">
+                <h1>Base</h1>
+                <hr>
+                <div class="grid grid--page">
+                    <div class="grid__cell md--6of12">
+                        <h1>h1 Heading Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, repudiandae.</h1>
+                        <h2>h2 Heading Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, iusto!</h2>
+                        <h3>h3 Heading Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, suscipit.</h3>
+                        <h4>h4 Heading Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, illo?</h4>
+                        <h5>h5 Heading Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, sit.</h5>
+                        <h6>h6 Heading Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, voluptatem!</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+                    </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+                    <div class="grid__cell md--6of12">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+                        <h1>h1 Heading <small>Secondary Text</small></h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+                        <h2>h2 Heading <small>Secondary Text</small></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+
+                        <h3>h3 Heading <small>Secondary Text</small></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+
+                        <h4>h4 Heading <small>Secondary Text</small></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+
+                        <h5>h5 Heading <small>Secondary Text</small></h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+
+                        <h6>h6 Heading <small>Secondary Text</small></h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque tristique condimentum. Nulla facilisi. Proin sed velit arcu, at mattis nibh. Nam rhoncus sem quis erat mollis aliquam. Suspendisse vel mauris nunc, a luctus risus.</p>
+                    </div>
+                    <div class="grid__cell md--4of12 md--clear">
+                        <p>
+                            The <a href="#">a element</a> example<br>
+                            The <abbr>abbr element</abbr> and <abbr title="Title text">abbr element with title</abbr> examples<br>
+                            The <b>b element</b> example<br>
+                            The <cite>cite element</cite> example<br>
+                            The <code>code element</code> example<br>
+                            The <del>del element</del> example<br>
+                            The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples<br>
+                            The <em>em element</em> example<br>
+                            The <i>i element</i> example<br>
+                            The <ins>ins element</ins> example<br>
+                            The <kbd>kbd element</kbd> example<br>
+                            The <mark>mark element</mark> example<br>
+                            The <q>q element <q>inside</q> a q element</q> example<br>
+                            The <s>s element</s> example<br>
+                            The <samp>samp element</samp> example<br>
+                            The <small>small element</small> example<br>
+                            The <span>span element</span> example<br>
+                            The <strike>strike element</strike> example<br>
+                            The <strong>strong element</strong> example<br>
+                            The <sub>sub element</sub> example<br>
+                            The <sup>sup element</sup> example<br>
+                            The <var>var element</var> example<br>
+                            The <u>u element</u> example
+                        </p>
+
+                        <h2>horizontal rule</h2>
+                        <hr>
+
+                        <h2>blockquote</h2>
+                        <blockquote>
+                            <p>Some sort of famous witty quote marked up with a <code>&lt;blockquote&gt;</code> and a child <code>&lt;p&gt;</code> element.
+                            <p><small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                        <blockquote>
+                            <p>Even better philosophical quote marked up with just a <code>&lt;blockquote&gt;</code> element.
+                            <p><small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                    </div>
+                    <div class="grid__cell md--3of12">
+                        <h2>unordered list</h2>
+                        <ul>
+                            <li>Aliquam eget risus erat.</li>
+                            <li>Aliquam eget risus erat.
+                                <ul>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                </ul>
+                                <ol>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                </ol>
+                            </li>
+                            <li>Aliquam eget risus erat.</li>
+                            <li>Aliquam eget risus erat.</li>
+                            <li>Aliquam eget risus erat.</li>
+                        </ul>
+
+                        <h2>ordered list</h2>
+                        <ol>
+                            <li>Aliquam eget risus erat.</li>
+                            <li>Aliquam eget risus erat.
+                                <ul>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                </ul>
+                                <ol>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                    <li>Aliquam eget risus erat.</li>
+                                </ol>
+                            </li>
+                            <li>Aliquam eget risus erat.</li>
+                            <li>Aliquam eget risus erat.</li>
+                            <li>Aliquam eget risus erat.</li>
+                        </ol>
+
+                    </div>
+                    <div class="grid__cell md--5of12">
+                        <h2>definition list</h2>
+                        <dl>
+                            <dt>definition list dt</dt>
+                            <dd>definition list dd</dd>
+                            <dt>definition list dt</dt>
+                            <dd>definition list dd</dd>
+                            <dt>Lorem ipsum dolor sit amet, consectetur adipisicing elit adipisicing elit adipisicing elit</dt>
+                            <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit adipisicing elit adipisicing elit</dd>
+                            <dt>Lorem ipsum dolor sit amet, consectetur adipisicing elit adipisicing elit adipisicing elit</dt>
+                            <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit adipisicing elit adipisicing elit</dd>
+                        </dl>
+                        <h2>Table</h2>
+                        <hr>
+                        <table class="table">
+                            <thead class="table__header">
+                                <tr class="table__row">
+                                    <th class="table__heading">Heading 1</th>
+                                    <th class="table__heading">Heading 2</th>
+                                    <th class="table__heading">Heading 3</th>
+                                </tr>
+                            </thead>
+                            <tfoot class="table__footer">
+                                <tr class="table__row">
+                                    <th class="table__heading">Footer Heading 1</th>
+                                    <th class="table__heading">Footer Heading 2</th>
+                                    <th class="table__heading">Footer Heading 3</th>
+                                </tr>
+                            </tfoot>
+                            <tbody class="table__body">
+                                <tr class="table__row">
+                                    <td class="table__cell">Cell 1</td>
+                                    <td class="table__cell">Cell 2</td>
+                                    <td class="table__cell">Cell 3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>Preformatted Text</h2>
+                        <hr>
+                        <pre><ol><li>&lt;div class="grid"&gt;</li><li>  &lt;div class="grid__cell md--2of3"&gt;</li><li>    &lt;div class="grid"&gt;</li><li>      &lt;div class="grid__cell md--1of2"&gt;&hellip;&lt;/div&gt;</li><li>      &lt;div class="grid__cell md--1of2"&gt;&hellip;&lt;/div&gt;</li><li>    &lt;/div&gt;</li><li>  &lt;/div&gt;</li><li>  &lt;div class="grid__cell md--1of3"&gt;&hellip;&lt;/div&gt;</li><li>&lt;/div&gt;</li></ol></pre>
+                        <pre><ol><li>&lt;div class="grid"&gt;</li><li>  &lt;div class="grid__cell md--2of3"&gt;</li><li>    &lt;div class="grid"&gt;</li><li>      &lt;div class="grid__cell md--1of2"&gt;&hellip;&lt;/div&gt;</li><li>      &lt;div class="grid__cell md--1of2"&gt;&hellip;&lt;/div&gt;</li><li>    &lt;/div&gt;</li><li>  &lt;/div&gt;</li><li>  &lt;div class="grid__cell md--1of3"&gt;&hellip;&lt;/div&gt;</li><li>&lt;/div&gt;</li></ol></pre>
+                        <pre>&lt;div class="grid"&gt;&hellip;&lt;/div&gt;</pre>
+                    </div>
+                </div>
+            </div>
+            <!--  /#typography -->
+
+            <div id="components">
+                <h1>Components</h1>
+                <hr>
+                <h2>Forms</h2>
+                <hr>
+                <div class="form grid grid--form">
+                    <div class="grid__cell md--3of12">
+                        <div class="form__group form__group--inline"><label>Text input</label> <input class="form__control--inline" type="text" placeholder="text"> = <output class="form__output">5</output></div>
+                        <div class="form__group">
+                            <label>Search</label>
+                            <input type="search" name="search5" placeholder="search">
+                        </div>
+                        <div class="form__group"><label>Email</label> <input type="email" name="email5" placeholder="email address"></div>
+                        <div class="form__group"><label>Url</label> <input type="url" name="url5" placeholder="website address"></div>
+                        <div class="form__group"><label>Telephone</label> <input type="tel" name="tel5" placeholder="telephone number"></div>
+                        <div class="form__group"><label>Number input</label> <input type="number" placeholder="number"></div>
+
+                    </div>
+                    <div class="grid__cell md--3of12">
+                        <div class="form__group"><label>Date input</label> <input type="date"></div>
+                        <div class="form__group"><label>Date Time input</label> <input type="datetime"></div>
+                        <div class="form__group"><label>Date Time Local input</label> <input type="datetime-local"></div>
+                        <div class="form__group"><label>Month Time input</label> <input type="month"></div>
+                        <div class="form__group"><label>Week Time input</label> <input type="week"></div>
+                        <div class="form__group"><label>Time input</label> <input type="time"></div>
+                        <div class="form__group"><label>Password input</label> <input type="password" value="password"></div>
+                    </div>
+                    <div class="grid__cell md--3of12">
+                        <div class="form__group"><label>Range</label> <input class="form__range" type="range"></div>
+                        <div class="form__group"><label>File input</label> <input class="form__file" type="file"></div>
+                        <div class="form__group"><label>Color Picker</label> <input class="form__control--inline" type="color"></div>
+                        <div class="form__group"><label>Textarea</label> <textarea cols="30" rows="5">Textarea text</textarea></div>
+                        <div class="form__group"><label>Radio input</label> <input type="radio" name="radio"></div>
+                        <div class="form__group"><label>Checkbox input</label> <input type="checkbox"></div>
+                        <div class="form__group"><input type="radio" name="rad"> <label>Radio input</label></div>
+                        <div class="form__group"><input type="checkbox"> <label>Checkbox input</label></div>
+                    </div>
+                    <div class="grid__cell md--3of12">
+                        <div class="form__group">
+                            <label>Select field</label>
+                            <select>
+                                <option>Option 01</option>
+                                <option>Option 02</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label>Select field with</label>
+                            <select>
+                                <optgroup label="Option Group 2">
+                                    <option value="First Choice">First Choice</option>
+                                    <option value="Second Choice">Second Choice</option>
+                                    <option value="Third Choice">Third Choice</option>
+                                </optgroup>
+                                <optgroup label="Option Group 2">
+                                    <option value="First Choice">First Choice</option>
+                                    <option value="Second Choice">Second Choice</option>
+                                    <option value="Third Choice">Third Choice</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label>Multiple Select</label>
+                            <select multiple="multiple" size="7">
+                                    <option value="First Choice">First Choice</option>
+                                    <option value="Second Choice">Second Choice</option>
+                                    <option value="Third Choice">Third Choice</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label>Multiple Select with Optgroup</label>
+                            <select multiple="multiple" size="7">
+                                <optgroup label="Option Group 2">
+                                    <option value="First Choice">First Choice</option>
+                                    <option value="Second Choice">Second Choice</option>
+                                    <option value="Third Choice">Third Choice</option>
+                                </optgroup>
+                                <optgroup label="Option Group 2">
+                                    <option value="First Choice">First Choice</option>
+                                    <option value="Second Choice">Second Choice</option>
+                                    <option value="Third Choice">Third Choice</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid__cell md--6of12 md--clear">
+                        <div class="form__group form__group--inline">
+                            <select>
+                                <option>Option 01</option>
+                                <option>Option 02</option>
+                            </select>
+                            <button class="button">Button Small</button>
+                        </div>
+                        <div class="form__group form__group--inline"><input class="form__control--small" type="text" placeholder="text"><button class="button button--small">Button Small</button></div>
+                        <div class="form__group form__group--inline"><input type="text" placeholder="text"><button class="button">Button Default</button></div>
+                        <div class="form__group form__group--inline"><input class="form__control--large" type="text" placeholder="text"><button class="button button--large">Button Large</button></div>
+                    </div>
+                    <div class="grid__cell md--6of12">
+                        <div class="form__group form__group--inline"><input class="form__control--small" type="text" placeholder="text"><a href="#" class="button button--small">Button Small</a></div>
+                        <div class="form__group form__group--inline"><input type="text" placeholder="text"><a href="#" class="button">Button Default</a></div>
+                        <div class="form__group form__group--inline"><input class="form__control--large" type="text" placeholder="text"><a href="#" class="button button--large">Button Large</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid--page">
+                <div class="grid__cell md--6of12">
+                    <h2>Lead Paragraph</h2>
+                    <hr>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, numquam esse fuga officiis sint voluptates ipsum impedit accusamus unde quos possimus id pariatur sequi debitis dignissimos totam modi aperiam perspiciatis.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, officiis, ipsa, nihil, ad maiores corporis totam delectus dolores laudantium expedita placeat possimus commodi at eius harum a earum iusto ipsum repellat praesentium dolorum voluptatem ducimus cum excepturi eligendi. Qui, cupiditate.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, officiis, ipsa, nihil, ad maiores corporis totam delectus dolores laudantium expedita placeat.</p>
+                </div>
+                <div class="grid__cell md--6of12">
+                    <h2>Flexible Embeds</h2>
+                    <hr>
+                    <div class="flex-embed">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YE7VzlLtp-4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="grid__cell md--4of12 md--clear">
+                    <h2>Menus</h2>
+                    <hr>
+                    <ul class="menu menu--justify">
+                        <li><a href="#">Nav Item 1</a></li>
+                        <li><a href="#">Nav Item 2</a></li>
+                        <li><a href="#">Nav Item 3</a></li>
+                    </ul>
+                    <ul class="menu menu--inline">
+                        <li><a href="#">Nav Item 1</a></li>
+                        <li><a href="#">Nav Item 2</a></li>
+                        <li><a href="#">Nav Item 3</a></li>
+                    </ul>
+                </div>
+                <div class="grid__cell md--4of12">
+                    <h2>Dropdown</h2>
+                    <hr>
+                    <ul class="menu menu--inline">
+                        <li class="dropdown is-open" id="dropdownMenu1">
+                            <a href="#">Nav Item 1</a>
+                            <ul class="dropdown__content menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">Sub Nav Item 1</a></li>
+                                <li><a href="#">Sub Nav Item 2</a></li>
+                                <li><a href="#">Sub Nav Item 3 Sub Nav Item 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Nav Item 2</a></li>
+                    </ul>
+                </div>
+                <div class="grid__cell md--4of12">
+                    <h2>Breadcrumbs</h2>
+                    <hr>
+                    <nav class="breadcrumbs">
+                        <ol>
+                            <li><a href="#">home</a></li>
+                            <li><a href="#">parent</a></li>
+                            <li>current</li>
+                        </ol>
+                    </nav>
+                    <nav class="breadcrumbs">
+                        <ol>
+                            <li data-breadcrumb="⟩"><a href="#">home</a></li>
+                            <li data-breadcrumb="⟩"><a href="#">parent</a></li>
+                            <li data-breadcrumb="⟩">current</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="grid__cell md--4of12 md--clear">
+                    <h2>Pagination</h2>
+                    <hr>
+                    <nav class="pagination">
+                        <ol>
+                            <li class="pagination__first"><a href="#">First</a></li>
+                            <li class="pagination__prev"><a href="#">Previous</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a class="is-current" href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li class="pagination__next"><a href="#">Next</a></li>
+                            <li class="pagination__last"><a href="#">Last</a></li>
+                        </ol>
+                    </nav>
+                    <h2>Pager</h2>
+                    <hr>
+                    <nav class="pager">
+                        <ol>
+                            <li class="pager__prev"><a href="">Previous</a></li>
+                            <li class="pager__next"><a href="">Next</a></li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="grid__cell md--4of12">
+                    <h2>Media Object</h2>
+                    <hr>
+                    <div class="media">
+                        <div class="media__image media__image--left" style="width:100px;height:100px;">
+                            <img alt="" width="100" height="100" src="http://placehold.it/100x100/0eafff/ffffff.png">
+                        </div>
+                        <div class="media__body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, sit similique fugit aut quaerat sequi esse doloribus culpa autem laborum.
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media__body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, sit similique fugit aut quaerat sequi esse doloribus culpa autem laborum.
+                        </div>
+                        <div class="media__image media__image--right" style="width:100px;height:100px;">
+                            <img alt="" width="100" height="100" src="http://placehold.it/100x100/0eafff/ffffff.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__cell md--4of12">
+                    <h2>Images</h2>
+                    <hr>
+                    <div class="grid grid--form">
+                        <div class="grid__cell xs--4of12">
+                            <img class="image image--rounded" alt="" src="http://placehold.it/150x150/0eafff/ffffff.png">
+                        </div>
+                        <div class="grid__cell xs--4of12">
+                            <img class="image image--circle" alt="" src="http://placehold.it/150x150/0eafff/ffffff.png">
+                        </div>
+                        <div class="grid__cell xs--4of12">
+                            <img class="image image--thumbnail" alt="" src="http://placehold.it/150x150/0eafff/ffffff.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#components -->
+        </div>
+
         <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+            /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
+             * Build: http://modernizr.com/download/#-flexbox-cssclasses-testprop-testallprops-domprefixes-load
+             */
+            ;window.Modernizr=function(a,b,c){function x(a){j.cssText=a}function y(a,b){return x(prefixes.join(a+";")+(b||""))}function z(a,b){return typeof a===b}function A(a,b){return!!~(""+a).indexOf(b)}function B(a,b){for(var d in a){var e=a[d];if(!A(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function C(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:z(f,"function")?f.bind(d||b):f}return!1}function D(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+n.join(d+" ")+d).split(" ");return z(b,"string")||z(b,"undefined")?B(e,b):(e=(a+" "+o.join(d+" ")+d).split(" "),C(e,b,c))}var d="2.8.3",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m="Webkit Moz O ms",n=m.split(" "),o=m.toLowerCase().split(" "),p={},q={},r={},s=[],t=s.slice,u,v={}.hasOwnProperty,w;!z(v,"undefined")&&!z(v.call,"undefined")?w=function(a,b){return v.call(a,b)}:w=function(a,b){return b in a&&z(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=t.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(t.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(t.call(arguments)))};return e}),p.flexbox=function(){return D("flexWrap")};for(var E in p)w(p,E)&&(u=E.toLowerCase(),e[u]=p[E](),s.push((e[u]?"":"no-")+u));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)w(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},x(""),i=k=null,e._version=d,e._domPrefixes=o,e._cssomPrefixes=n,e.testProp=function(a){return B([a])},e.testAllProps=D,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+s.join(" "):""),e}(this,this.document),function(a,b,c){function d(a){return"[object Function]"==o.call(a)}function e(a){return"string"==typeof a}function f(){}function g(a){return!a||"loaded"==a||"complete"==a||"uninitialized"==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){("c"==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&&g(l.readyState)&&(u.r=o=1,!q&&h(),l.onload=l.onreadystatechange=null,b)){"img"!=a&&m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&&y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&&(r=1,y[c]=[]),"object"==a?l.data=c:(l.src=c,l.type=a),l.width=l.height="0",l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),"img"!=a&&(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||"j",e(a)?i("c"==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&&h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName("script")[0],o={}.toString,p=[],q=0,r="MozAppearance"in l.style,s=r&&!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&&"[object Opera]"==o.call(a.opera),l=!!b.attachEvent&&!l,u=r?"object":l?"script":"img",v=l?"script":u,w=Array.isArray||function(a){return"[object Array]"==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&&(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split("!"),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f<d;f++)g=a[f].split("="),(e=z[g.shift()])&&(c=e(c,g));for(f=0;f<b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(".").pop().split("?").shift(),i.bypass||(e&&(e=d(e)?e:e[a]||e[g]||e[a.split("/").pop().split("?")[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&&"css"==i.url.split(".").pop().split("?").shift()?"c":c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&&f.load(function(){k(),e&&e(i.origUrl,h,g),j&&j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return b}(),a)a.hasOwnProperty(n)&&(!c&&!--m&&(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&&a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&&l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&&c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i<a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&&h(j,l);else Object(a)===a&&h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&&b.addEventListener&&(b.readyState="loading",b.addEventListener("DOMContentLoaded",A=function(){b.removeEventListener("DOMContentLoaded",A,0),b.readyState="complete"},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement("script"),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&&g(k.readyState)&&(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement("link"),j,c=i?h:c||f;e.href=a,e.rel="stylesheet",e.type="text/css";for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))};
+        </script>
+
+        <script>
+            /*!
+            loadCSS: load a CSS file asynchronously.
+            [c]2014 @scottjehl, Filament Group, Inc.
+            Licensed MIT
+            */
+            function loadCSS( href, before, media ){
+                "use strict";
+                // Arguments explained:
+                // `href` is the URL for your CSS file.
+                // `before` defines the element we'll use as a reference for injecting our <link>
+                //  the following meta tag must be create and placed where you wish to load the style
+                //  sheets or specify otherwise.
+                //  <meta name="styleshook" content="">
+                // `media` is the media type for the css file, defaults to all if nothing entered
+                // note: `insertBefore` is used instead of `appendChild`, for safety
+                // re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+                var ss = window.document.createElement( "link" );
+                var ref = before || window.document.querySelector('meta[name="styleshook"]');
+                var sheets = window.document.styleSheets;
+                ss.rel = "stylesheet";
+                ss.href = href;
+                ss.media = media || "all";
+                // inject link
+                ref.parentNode.insertBefore( ss, ref );
+                return ss;
+            }
+            function stylesToLoad() {
+                loadCSS("css/satus.css");
+            }
+            // requestAnimationFrame helps with FOUC in browsers that support it.
+            var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+                webkitRequestAnimationFrame || msRequestAnimationFrame;
+            if (raf) raf(stylesToLoad);
+            else window.addEventListener('load', stylesToLoad);
         </script>
     </body>
 </html>
