@@ -1026,7 +1026,14 @@ a.button:active {
   padding-left: 1.25em;
   padding-right: 1.25em;
 }
+.grid {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .grid__cell {
+  display: block;
   float: left;
   width: 100%;
   min-height: 1px;
