@@ -1,20 +1,20 @@
 /* ==========================================================================
-   |-- Flyout
+   |-- Dropdowns
    ========================================================================== */
 
 /**
  * This is used for something that drops down and is not for a specific item to keep it as
  * flexible as possible.
- * <div class="flyout is-open">
+ * <div class="dropdown is-open">
  *   <button>...</button>
- *   <div class="flyout__content">...</div>
+ *   <div class="dropdown__content">...</div>
  * </div>
  */
 
-.flyout {
+.dropdown {
     position: relative;
 
-    &.is-open > .flyout__content {
+    &.is-open > .dropdown__content {
         display: block;
     }
 
@@ -24,8 +24,9 @@
         top: 0;
         left: 0;
         z-index: 1000;
+        min-width: 180px;
 
-        &--up {
+        &--above {
             top: auto;
             bottom: 0;
         }
