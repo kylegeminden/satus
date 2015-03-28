@@ -4,19 +4,36 @@
 
 /**
  * <div class="media">
- *   <img class="media__img" src="image.jpg" alt="">
+ *   <div class="media__image media__image--left">
+ *      <img src="image.jpg" alt="">
+ *   </div>
  *   <div class="media__body">...</div>
  * </div>
  */
 
 .media {
 
-    &__img {
-        float: left;
-        padding-right: .75em;
+    &-list {
+        padding: 0;
+        list-style: none;
+    }
+
+    &__image,
+    &__body {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    &__image {
+        &--left {
+            padding-right: .75em;
+        }
+        &--right {
+            padding-left: .75em;
+        }
     }
 
     &__body {
-        overflow: hidden;
+
     }
 }
