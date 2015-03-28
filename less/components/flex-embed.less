@@ -16,10 +16,12 @@
     position: relative;
     height: 0;
     margin: @font-margin 0;
+    padding-bottom: 56.25%; // 16by9 ratio
 
+    embed,
+    video,
     iframe,
-    object,
-        embed {
+    object {
         position: absolute;
         top: 0;
         left: 0;
@@ -31,7 +33,12 @@
         padding-bottom: 67.5%;
     }
 
-    &--16by9 {
-        padding-bottom: 56.25%;
+    // for google maps
+    &--gmap {
+        img,
+        embed,
+        object {
+            max-width: none !important;
+        }
     }
 }
