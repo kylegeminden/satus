@@ -11,19 +11,7 @@ module.exports = function(grunt) {
                 },
                 // dest : src
                 files: {
-                    'lesshat.less': 'lesshat/build/lesshat.less',
                     'base/normalize.less': 'normalize-css/normalize.css',
-                }
-            },
-            jsVendor: {
-                options: {
-                    destPrefix: 'js/vendor',
-                },
-                // dest : src
-                files: {
-                    'modernizr.js': 'modernizr/modernizr.js',
-                    'jquery.min.js': 'jquery/dist/jquery.min.js',
-                    'angular.min.js': 'angular/angular.min.js',
                 },
             },
         },
@@ -32,39 +20,41 @@ module.exports = function(grunt) {
             production: {
                 options: {
                     paths: ['css'],
-                    // compress: true,
-                    // report: 'gzip',
                     sourceMap: true,
-                    sourceMapFilename: 'css/main.css.map',
+                    sourceMapFilename: 'css/satus.css.map',
+                    sourceMapURL: 'satus.css.map',
                     sourceMapRootpath: '../',
                 },
                 files: {
-                    'css/main.css': [ 'less/satus.less' ],
-                    'css/ie-grid.css': [ 'less/ie-grid.less' ]
+                    'css/satus.css': [ 'less/satus.less' ]
                 },
             },
         },
 
-        uglify: {
-            options: {
-                // report: 'gzip';
-            },
-            plugins: {
-                files: {
-                    'js/plugins/<%= pkg.name %>.js': [
-                        'js/plugins/yourplugin.js'
-                    ]
-                },
-            },
-        },
-
-        imagemin: {
-            touchicons: {
+        csscomb: {
+            css: {
                 options: {
-                    optimizationLevel: 7,
+                    config: '.csscomb.json'
                 },
                 files: {
-                    'apple-touch-icon-precomposed.png': 'apple-touch-icon-precomposed.png'
+                    'css/satus.css': ['css/satus.css'],
+                },
+            },
+        },
+
+        autoprefixer: {
+            options: {
+                browsers: ['last 5 versions']
+            },
+            satus: {
+                files:  { 'css/satus.css' : 'css/satus.css' }
+            },
+        },
+
+        cssmin: {
+            target: {
+                files: {
+                    'css/satus.min.css' : ['css/satus.css']
                 },
             },
         },
@@ -72,11 +62,7 @@ module.exports = function(grunt) {
         watch: {
             less: {
                 files: ['less/**/*.less'],
-                tasks: 'less:production',
-            },
-            uglify: {
-                files: ['js/plugins/**/*.js'],
-                tasks: 'uglify',
+                tasks: ['less'],
             },
             css: {
                 files: ['css/**/*.css'],
@@ -90,24 +76,19 @@ module.exports = function(grunt) {
                     livereload: true,
                 },
             },
-            js: {
-                files: ['js/**/*.js'],
-                options: {
-                    livereload: true,
-                },
-            },
         },
 
     });
 
-    //load our tasks
+    // Load our tasks
     grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-csscomb');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    //default tasks to run
+    // Default task(s)
     grunt.registerTask('default', 'watch');
 
 }
