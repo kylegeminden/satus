@@ -1,13 +1,13 @@
 // Gutters
 .grid-container--page when (@grid-md-gutter > @grid-sm-gutter) {
-    padding: 0 (@grid-md-gutter * 2);
+    .make-grid-container(@grid-md-gutter);
 }
 
 .grid--page when (@grid-md-gutter > @grid-sm-gutter) {
-    margin: 0 -@grid-md-gutter;
+    margin-left: -@grid-md-gutter;
 
     > .grid__cell {
-        padding: 0 @grid-md-gutter;
+        padding-left: @grid-md-gutter;
     }
 }
 
@@ -19,3 +19,76 @@
     .md-cells(@n, (@i + 1));
 }
 .md-cells(@grid-columns); // generate cells
+
+// Offset Cells
+.md-offset() when (@grid-md-enable-offsets = true) {
+    .md-offsets(@n, @i: 1) when (@i =< @n) {
+        .md--offset--@{i}of@{n} {
+            .make-grid-cell-offset(@i);
+        }
+        .md-offsets(@n, (@i + 1));
+    }
+    // Undo Offset from prior queries
+    .md--offset--0of@{grid-columns} {
+        margin-left: 0;
+    }
+    .md-offsets(@grid-columns); // generate offsets
+}
+.md-offset(); // generate offsets if true (set in variables.less)
+
+// Pull Cells
+.md-push-pull() when (@grid-md-enable-push-pull = true) {
+    .md-pulls(@n, @i: 1) when (@i =< @n) {
+        .md--pull--@{i}of@{n} {
+            .make-grid-cell-pull(@i);
+        }
+        .md-pulls(@n, (@i + 1));
+    }
+    // Undo Pull from prior queries
+    .md--pull--0of@{grid-columns} {
+        position: static;
+        left: auto;
+        right: auto;
+    }
+    .md-pulls(@grid-columns); // generate pulls
+
+    // Push Cells
+    .md-pushes(@n, @i: 1) when (@i =< @n) {
+        .md--push--@{i}of@{n} {
+            .make-grid-cell-push(@i);
+        }
+        .md-pushes(@n, (@i + 1));
+    }
+    // Undo Push from prior queries
+    .md--push--0of@{grid-columns} {
+        position: static;
+        left: auto;
+        right: auto;
+    }
+    .md-pushes(@grid-columns); // generate pushes
+}
+.md-push-pull(); // generate pushes and pulls if true (set in variables.less)
+
+// Center Cell
+.md--centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Uncenter Cell from prior queries
+.md--uncentered {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+// Clear Cell
+.md--clear { clear: left; }
+
+// Unclear Cell from prior queries
+.md--unclear { float: left; }
+
+// Show and Hide
+.md--hide { display: none !important; }
+.md--show { display: inherit !important; }
