@@ -101,16 +101,16 @@
 
 // code, kbd, samp
 @code-color : @text-color;
-@code-bg    : darken(@gray-lighter, 2%);
+@code-bg    : @gray-lighter;
 
 // pre
 
 @pre-padding   : 0.3125em 0.75em;
-@pre-bg        : @code-bg;
+@pre-bg        : @gray-dark;
 @pre-border    : none;
-@pre-radius    : 3px;
+@pre-radius    : @border-radius;
 @pre-font-size : 1em;
-@pre-color     : @gray-darker;
+@pre-color     : @white;
 
 // highlight
 
@@ -181,10 +181,25 @@
 
 @grid-columns   : 12;
 
-@grid-xs-gutter : ((10 / 16) * 1rem);
-@grid-sm-gutter : ((10 / 16) * 1rem);
-@grid-md-gutter : ((15 / 16) * 1rem);
-@grid-lg-gutter : ((15 / 16) * 1rem);
-@grid-xl-gutter : ((15 / 16) * 1rem);
+@grid-xs-gutter : ((20 / 16) * 1em);
+@grid-sm-gutter : ((20 / 16) * 1em);
+@grid-md-gutter : ((30 / 16) * 1em);
+@grid-lg-gutter : ((30 / 16) * 1em);
+@grid-xl-gutter : ((30 / 16) * 1em);
 
-@grid-form-gutter : ((5 / 16) * 1rem);
+@grid-form-gutter : ((10 / 16) * 1em);
+
+@grid-xs-enable-offsets   : false;
+@grid-xs-enable-push-pull : false;
+
+@grid-sm-enable-offsets   : false;
+@grid-sm-enable-push-pull : false;
+
+@grid-md-enable-offsets   : false;
+@grid-md-enable-push-pull : false;
+
+@grid-lg-enable-offsets   : false;
+@grid-lg-enable-push-pull : false;
+
+@grid-xl-enable-offsets   : false;
+@grid-xl-enable-push-pull : false;
