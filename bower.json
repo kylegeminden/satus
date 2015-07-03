@@ -2,7 +2,7 @@
     "name": "satus",
     "version": "3.0.0",
     "dependencies": {
-        "normalize-css" : "*"
+        "normalize-css" : "^3.0.3"
     },
     "private": true
 }

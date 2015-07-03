@@ -1,0 +1,32 @@
+// *** TABLE OF CONTENTS ***
+//
+// |-- Color Palette
+// |-- Base
+// |-- Typography
+// |-- Components
+// |-- Media Queries
+// |-- Grid
+
+// ==========================================================================
+// |-- Color Palette
+// ==========================================================================
+
+$white : #fff;
+$black : #000;
+
+$gray-darker  : lighten($black, 13.5%);
+$gray-dark    : lighten($black, 20%);
+$gray         : lighten($black, 33.5%);
+$gray-light   : lighten($black, 60%);
+$gray-lighter : lighten($black, 85%);
+
+$cp-info    : hsl(200, 75%, 43%);
+$cp-success : hsl(110, 70%, 33%);
+$cp-warning : hsl(35, 84%, 43%);
+$cp-danger  : hsl(0, 57%, 48%);
+
+// ==========================================================================
+// |-- Base
+// ==========================================================================
+
+$body-bg : $white;
