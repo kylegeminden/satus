@@ -11,22 +11,145 @@
 // |-- Color Palette
 // ==========================================================================
 
-$white : #fff;
-$black : #000;
+$white : hsla(0, 0%, 100%, 1);
+$black : hsla(0, 0%, 0%, 1);
+$body-bg : hsla(0, 0%, 100%, 1);
+$text-color : hsla(0, 0%, 0%, 1);
 
-$gray-darker  : lighten($black, 13.5%);
-$gray-dark    : lighten($black, 20%);
-$gray         : lighten($black, 33.5%);
-$gray-light   : lighten($black, 60%);
-$gray-lighter : lighten($black, 85%);
-
-$cp-info    : hsl(200, 75%, 43%);
-$cp-success : hsl(110, 70%, 33%);
-$cp-warning : hsl(35, 84%, 43%);
-$cp-danger  : hsl(0, 57%, 48%);
+$cp-info    : hsla(200, 75%, 43%, 1);
+$cp-success : hsla(110, 70%, 33%, 1);
+$cp-warning : hsla(35, 84%, 43%, 1);
+$cp-danger  : hsla(0, 57%, 48%, 1);
 
 // ==========================================================================
 // |-- Base
 // ==========================================================================
 
-$body-bg : $white;
+$border-radius : 0.25em;
+
+// ==========================================================================
+// |-- Typography
+// ==========================================================================
+
+$font-family-sans-serif : 'Helvetica Neue';
+$font-family-serif      : serif;
+$font-family-monospace  : monospace;
+$font-family-base       : $font-family-sans-serif;
+
+$font-weight-lighter : lighter;
+$font-weight-normal  : 400;
+$font-weight-bold    : 700;
+$font-weight-bolder  : bolder;
+$font-weight-base    : $font-weight-normal;
+
+$font-size-root  : 100%;
+$font-size-small : 0.85em;
+$font-size-large : 1.25em;
+
+$line-height : 1.5;
+$font-margin : $line-height * 0.75em;
+
+// headings
+
+$headings-font-family : inherit;
+$headings-font-weight : $font-weight-bold;
+$headings-line-height : 1.3;
+$headings-color       : inherit;
+
+// alternate font
+
+$alt-font-family  : serif;
+$alt-font-weight  : $font-weight-base;
+
+// links
+
+$link-color       : #06c;
+$link-color-hover : darken($link-color, 10%);
+
+// text selection
+
+$selection-background : #b3d4fc;
+
+// horizontal rule
+// background color can be added to make for bevel effect
+
+$hr-bg           : transparent;
+$hr-border-bolor : lighten($text-color, 80%);
+
+// mark
+
+$mark-font-color : $text-color;
+$mark-bg : #ff0;
+
+// code, kbd, samp
+$code-color : $text-color;
+$code-bg    : lighten($text-color, 97%);
+
+// pre
+
+$pre-padding   : 0.3125em 0.75em;
+$pre-bg        : lighten($text-color, 97%);
+$pre-border    : none;
+$pre-radius    : $border-radius;
+$pre-font-size : 1em;
+$pre-color     : $text-color;
+
+// ==========================================================================
+// |-- Components
+// ==========================================================================
+
+// inputs
+
+$placeholder-color : lighten($text-color, 60%);
+
+$input-height             : 2.5em;
+$input-padding-horizontal : 0.7em;
+$input-padding-vertical   : 0.55em;
+$input-bg                 : $white;
+$input-border             : 1px solid lighten($text-color, 60%);
+$input-focus-border-color : #129FEA;
+$input-radius             : $border-radius;
+$input-color              : $text-color;
+$input-disabled-bg        : lighten($text-color, 97%);
+$input-disabled-color     : lighten($text-color, 60%);
+
+// buttons
+
+$button-padding    : 0.75em 0.8em 0.65em;
+$button-bg         : lighten($text-color, 85%);
+$button-bg-hover   : lighten($text-color, 80%);
+$button-disabled   : lighten($text-color, 15%);
+$button-border     : 1px solid $button-bg;
+$button-radius     : $border-radius;
+$button-font-color : $text-color;
+$button-font       : $font-family-sans-serif;
+$button-font-size  : 1em;
+
+// ==========================================================================
+// |-- Grid
+// ==========================================================================
+
+// $grid-columns   : 12;
+
+// $grid-xs-gutter : ((20 / 16) * 1em);
+// $grid-sm-gutter : ((20 / 16) * 1em);
+// $grid-md-gutter : ((30 / 16) * 1em);
+// $grid-lg-gutter : ((30 / 16) * 1em);
+// $grid-xl-gutter : ((30 / 16) * 1em);
+
+// $grid-form-gutter : ((10 / 16) * 1em);
+
+// $grid-xs-enable-offsets   : false;
+// $grid-xs-enable-push-pull : false;
+
+// $grid-sm-enable-offsets   : false;
+// $grid-sm-enable-push-pull : false;
+
+// $grid-md-enable-offsets   : false;
+// $grid-md-enable-push-pull : false;
+
+// $grid-lg-enable-offsets   : false;
+// $grid-lg-enable-push-pull : false;
+
+// $grid-xl-enable-offsets   : false;
+// $grid-xl-enable-push-pull : false;

@@ -4,8 +4,6 @@
  *    |-- Normalize
  *    |-- Reset
  *    |-- Typography
- *    |-- Code
- *    |-- Embedded Content
  *
  * |-- Components
  *    |-- Browser Upgrade
@@ -291,7 +289,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -418,6 +417,485 @@ table {
 td,
 th {
   padding: 0;
+}
+
+/* ==========================================================================
+   |-- Reset
+   ========================================================================== */
+/**
+ * Change `box-sizing` from default `content-box` to `border-box` on all elements
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+ * IE10 Metro responsive
+ * Required for Windows 8 Metro split-screen snapping with IE10
+ * http://timkadlec.com/2013/01/windows-phone-8-and-device-width/
+ * http://mattstow.com/responsive-design-in-ie10-on-windows-phone-8.html
+ */
+@-webkit-viewport {
+  width: device-width;
+}
+
+@-moz-viewport {
+  width: device-width;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+/**
+ * Remove default spacing and border for appropriate elements.
+ */
+iframe {
+  border: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * Reset search back to border box due to normalize
+ */
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+/**
+ * Disables default styles for invalid form fields.
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
+ */
+:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/**
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Fluid embedded content
+ */
+img,
+video,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   |-- Typography
+   ========================================================================== */
+html {
+  color: black;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: "Helvetica Neue";
+}
+
+/**
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/**
+ * Headings
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-weight: 700;
+  line-height: 1.3;
+  font-family: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1 {
+  margin: 1.2em 0 0.675em;
+  font-size: 2em;
+}
+
+h2 {
+  margin: 1.575em 0 0.825em;
+  font-size: 1.5em;
+}
+
+h3 {
+  margin: 1.65em 0 0.975em;
+  font-size: 1.3125em;
+}
+
+h4 {
+  margin: 1.95em 0 1.05em;
+  font-size: 1.125em;
+}
+
+h5 {
+  margin: 2.175em 0 1.2em;
+  font-size: 1em;
+}
+
+h6 {
+  margin: 2.25em 0 1.35em;
+  font-size: .875em;
+}
+
+/**
+ * Set bottom margin on appropriate elements due to reset
+ */
+p,
+menu,
+figure,
+fieldset,
+ul, ol, dl,
+blockquote,
+table,
+form,
+pre,
+hr {
+  margin: 1.125em 0;
+}
+
+/**
+ * Add em padding on nested lists for proper scaling
+ */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  padding-left: 2em;
+}
+
+/**
+ * Set defaults to em for proper scaling.
+ */
+dd {
+  margin-left: 2.5em;
+}
+
+/**
+ * Link styles
+ */
+a {
+  color: #06c;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover, a:active {
+  outline: 0;
+}
+
+a:hover, a:focus, a:active {
+  color: #004d99;
+}
+
+/**
+ * Set font weight
+ */
+b, strong {
+  font-weight: 700;
+}
+
+dt {
+  font-weight: 700;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+
+mark {
+  background: #ff0;
+  color: black;
+}
+
+/**
+ * Better default styling for pre, code, kbd, samp and pre elements
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace;
+}
+
+code {
+  padding: 2px;
+  background: #f7f7f7;
+  color: black;
+  font-weight: 400;
+}
+
+pre {
+  padding: 0.3125em 0.75em;
+  background: #f7f7f7;
+  border: none;
+  border-radius: 0.25em;
+  color: black;
+  font-size: 1em;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+pre ol {
+  margin: 0;
+}
+
+/* ==========================================================================
+   |-- Forms
+   ========================================================================== */
+/**
+ * Remove default webkit styles (for iOS)
+ */
+.form select:not([multiple*="multiple"]),
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="search"],
+.form input[type="email"],
+.form input[type="url"],
+.form input[type="tel"],
+.form input[type="number"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/**
+ * Better default styling for labels
+ */
+.form label {
+  display: inline-block;
+  margin-bottom: .35em;
+}
+
+/**
+ * Allow only vertical resizing of textareas.
+ */
+.form textarea {
+  resize: vertical;
+}
+
+.form [type="radio"],
+.form [type="checkbox"] {
+  margin: 0 .2em;
+}
+
+/**
+ * Labels
+ * <label class="form__label--top">
+ */
+.form__label--top {
+  vertical-align: top;
+}
+
+/**
+ * Form Inputs
+ *
+ * Apply form class to the desired form to apply input styles.
+ */
+.form select,
+.form textarea,
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="search"],
+.form input[type="email"],
+.form input[type="url"],
+.form input[type="tel"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="datetime"],
+.form input[type="datetime-local"],
+.form input[type="month"],
+.form input[type="week"],
+.form input[type="time"],
+.form input[type="color"] {
+  height: 2.5em;
+  padding: 0 0.7em;
+  background: white;
+  border: 1px solid #999999;
+  border-radius: 0.25em;
+  outline-style: none;
+  line-height: normal;
+  color: black;
+}
+
+.form select:focus,
+.form textarea:focus,
+.form input[type="text"]:focus,
+.form input[type="password"]:focus,
+.form input[type="search"]:focus,
+.form input[type="email"]:focus,
+.form input[type="url"]:focus,
+.form input[type="tel"]:focus,
+.form input[type="number"]:focus,
+.form input[type="date"]:focus,
+.form input[type="datetime"]:focus,
+.form input[type="datetime-local"]:focus,
+.form input[type="month"]:focus,
+.form input[type="week"]:focus,
+.form input[type="time"]:focus,
+.form input[type="color"]:focus {
+  border-color: #129FEA;
+}
+
+.form textarea,
+.form select[multiple] {
+  height: auto;
+  padding-top: 0.55em;
+  padding-bottom: 0.55em;
+}
+
+.form textarea {
+  line-height: 1.5;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  max-width: 100%;
+}
+
+.form input[readonly], .form input[disabled],
+fieldset[disabled] .form input,
+.form select[readonly],
+.form select[disabled],
+fieldset[disabled]
+.form select,
+.form textarea[readonly],
+.form textarea[disabled],
+fieldset[disabled]
+.form textarea {
+  cursor: not-allowed;
+  background: #f7f7f7;
+  opacity: 1;
+  color: #999999;
+}
+
+.form input[type="radio"],
+.form input[type="checkbox"] {
+  width: auto;
+  max-width: none;
+}
+
+.form input[type="color"] {
+  padding: 0;
+}
+
+/**
+ * Form output element
+ * http://html5doctor.com/the-output-element/
+ */
+.form output {
+  height: 2.5em;
+}
+
+/**
+ * Make form elements inline
+ * <form class="form--inline"> or <div class="form__group--inline">
+ */
+.form--inline input,
+.form--inline select,
+.form--inline textarea,
+.form__group--inline input,
+.form__group--inline select,
+.form__group--inline textarea {
+  width: auto;
+  max-width: none;
+}
+
+/**
+ * Add margin to inputs
+ * <input class="form__control form__control--space-right">
+ */
+/**
+ * Form control size
+ * <input class="form__control form__control--large">
+ */
+.form__control--large {
+  font-size: 1.25em;
+}
+
+.form__control--small {
+  font-size: 0.85em;
+}
+
+/**
+ * Form Groups
+ * Contains labels and inputs and adds bottom margin.
+ * <div class="form__group">
+ *   <label>...</label>
+ *   <input type="text">
+ * </div>
+ */
+.form__group {
+  margin: 1.125em 0;
 }
 
 /*# sourceMappingURL=../css/satus.css.map */

@@ -1,0 +1,92 @@
+/* ==========================================================================
+   |-- Reset
+   ========================================================================== */
+
+/**
+ * Change `box-sizing` from default `content-box` to `border-box` on all elements
+ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/**
+ * IE10 Metro responsive
+ * Required for Windows 8 Metro split-screen snapping with IE10
+ * http://timkadlec.com/2013/01/windows-phone-8-and-device-width/
+ * http://mattstow.com/responsive-design-in-ie10-on-windows-phone-8.html
+ */
+
+@-webkit-viewport { width: device-width }
+@-moz-viewport    { width: device-width }
+@-ms-viewport     { width: device-width }
+@-o-viewport      { width: device-width }
+@viewport         { width: device-width }
+
+/**
+ * Remove default spacing and border for appropriate elements.
+ */
+
+iframe {
+    border: 0;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/**
+ * Reset search back to border box due to normalize
+ */
+
+input[type="search"] {
+    box-sizing: border-box;
+}
+
+/**
+ * Disables default styles for invalid form fields.
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid
+ */
+
+:invalid {
+    box-shadow: none;
+}
+
+:-moz-submit-invalid {
+    box-shadow: none;
+}
+
+:-moz-ui-invalid {
+    box-shadow: none;
+}
+
+/**
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/**
+ * Fluid embedded content
+ */
+
+img,
+video,
+object,
+embed {
+    max-width: 100%;
+    height: auto;
+}

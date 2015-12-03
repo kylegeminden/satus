@@ -9,6 +9,10 @@ gulp.task('bowercopy', function() {
     gulp.src('bower_components/normalize-css/normalize.css')
         .pipe(rename('_normalize.scss'))
         .pipe(gulp.dest('scss/base/'));
+    gulp.src('bower_components/include-media/dist/_include-media.scss')
+        .pipe(gulp.dest('scss/plugins'));
+    gulp.src('bower_components/include-media-columns/_include-media-columns.scss')
+        .pipe(gulp.dest('scss/plugins'));
 });
 
 gulp.task('buildcss', function() {

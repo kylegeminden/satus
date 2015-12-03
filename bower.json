@@ -2,7 +2,9 @@
     "name": "satus",
     "version": "3.0.0",
     "dependencies": {
-        "normalize-css" : "^3.0.3"
+        "normalize-css" : "^3.0.3",
+        "include-media" : "^1.4.2",
+        "include-media-columns" : "^1.2.0"
     },
     "private": true
 }

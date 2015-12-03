@@ -1,0 +1,219 @@
+/* ==========================================================================
+   |-- Forms
+   ========================================================================== */
+
+/**
+ * Remove default webkit styles (for iOS)
+ */
+
+.form {
+    select:not([multiple*="multiple"]),
+    input[type="text"],
+    input[type="password"],
+    input[type="search"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"] {
+        appearance: none;
+    }
+}
+
+/**
+ * Better default styling for labels
+ */
+
+.form label {
+    display: inline-block;
+    margin-bottom: .35em;
+}
+
+/**
+ * Allow only vertical resizing of textareas.
+ */
+
+.form textarea {
+    resize: vertical;
+}
+
+.form {
+    [type="radio"],
+    [type="checkbox"] {
+        margin: 0 .2em;
+    }
+}
+
+/**
+ * Labels
+ * <label class="form__label--top">
+ */
+
+.form__label--top {
+    vertical-align: top;
+}
+
+/**
+ * Form Inputs
+ *
+ * Apply form class to the desired form to apply input styles.
+ */
+
+.form {
+    select,
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="search"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="color"] {
+        height: $input-height;
+        padding: 0 $input-padding-horizontal;
+        background: $input-bg;
+        border: $input-border;
+        border-radius: $input-radius;
+        outline-style: none;
+        line-height: normal;
+        color: $input-color;
+
+        &:focus {
+            border-color: $input-focus-border-color;
+        }
+    }
+
+    // Reset height for multiple select and text area and add vertical padding
+    textarea,
+    select[multiple] {
+        height: auto;
+        padding-top: $input-padding-vertical;
+        padding-bottom: $input-padding-vertical;
+    }
+
+    textarea {
+        line-height: $line-height;
+    }
+
+
+    input,
+    select,
+    textarea {
+        // Set form elements to full width
+        width: 100%;
+        max-width: 100%;
+
+        // Styling for disabled and read only inputs
+        // Note for fieldsets: "If this Boolean attribute is set, the form controls that are its
+        // descendants, except descendants of its first optional <legend> element, are disabled,
+        // i.e., not editable."
+        // source: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+        // Fieldsets are styled anyway so if yours falls under this edge case simply remove the
+        // fieldset selector.
+        &[readonly],
+        &[disabled],
+        fieldset[disabled] & {
+            cursor: not-allowed;
+            background: $input-disabled-bg;
+            opacity: 1; // iOS fix for unreadable disabled content
+            color: $input-disabled-color;
+        }
+    }
+
+    // Reset width for checkboxes and radios
+    input[type="radio"],
+    input[type="checkbox"] {
+        width: auto;
+        max-width: none;
+    }
+
+    // Reset padding
+    // Set consistent width for color input
+    input[type="color"] {
+        padding: 0;
+    }
+}
+
+
+/**
+ * Form output element
+ * http://html5doctor.com/the-output-element/
+ */
+
+.form {
+    output {
+        height: $input-height;
+    }
+}
+
+/**
+ * Make form elements inline
+ * <form class="form--inline"> or <div class="form__group--inline">
+ */
+
+.form--inline,
+.form__group--inline {
+    input,
+    select,
+    textarea {
+        width: auto;
+        max-width: none;
+    }
+}
+
+/**
+ * Add margin to inputs
+ * <input class="form__control form__control--space-right">
+ */
+
+.form__control--space-right {
+    // margin-right: $grid-form-gutter;
+}
+
+.form__control--space-left {
+    // margin-left: $grid-form-gutter;
+}
+
+/**
+ * Form control size
+ * <input class="form__control form__control--large">
+ */
+
+.form__control--large {
+    font-size: $font-size-large;
+}
+
+.form__control--small {
+    font-size: $font-size-small;
+}
+
+/**
+ * Form Groups
+ * Contains labels and inputs and adds bottom margin.
+ * <div class="form__group">
+ *   <label>...</label>
+ *   <input type="text">
+ * </div>
+ */
+
+.form__group {
+    margin: $font-margin 0;
+
+    // Validation states
+    // background color, border-color, text color
+//     &.has-success {
+//         .form-input-validation($cp-success; $cp-success);
+//     }
+//     &.has-warning {
+//         .form-input-validation($cp-warning; $cp-warning);
+//     }
+//     &.has-error {
+//         .form-input-validation($cp-danger; $cp-danger);
+//     }
+}
